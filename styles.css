@@ -1,8 +1,3 @@
-/* Центрируем текст */
-header, section, footer {
-    text-align: center;
-}
-
 /* Основные стили */
 body {
     font-family: Arial, sans-serif;
@@ -12,6 +7,7 @@ body {
     padding: 0;
 }
 
+/* Стили для header */
 header {
     background-color: #333;
     color: white;
@@ -19,10 +15,16 @@ header {
     text-align: center;
 }
 
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
-    text-align: center; /* Центрируем навигацию */
+    margin: 10px 0;
+    display: inline-block;
 }
 
 nav ul li {
@@ -34,27 +36,92 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
+nav ul li a:hover {
+    color: #f0a500;
+}
+
+/* Стили для секций */
 section {
-    margin: 20px 0;
-    padding: 20px;
+    margin: 40px 0;
+    padding: 40px 20px;
     background-color: #fff;
     border: 1px solid #ddd;
-    text-align: center; /* Центрируем текст */
+    text-align: center;
 }
 
 h2 {
     color: #333;
+    margin-bottom: 20px;
 }
 
-/* Центрируем футер */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Стили для преимуществ */
+.advantages-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.advantage-item {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advantage-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.advantage-item h3 {
+    margin-top: 0;
+    color: #f0a500;
+}
+
+/* Стили для футера */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: 20px;
+    margin-top: 40px;
 }
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .advantages-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .advantage-item {
+        width: 80%;
+    }
+
+    nav ul {
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
