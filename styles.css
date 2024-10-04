@@ -18,6 +18,7 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5em;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 nav ul {
@@ -43,6 +44,12 @@ nav ul li a:hover {
     color: #f0a500;
 }
 
+/* Анимация для элементов */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 /* Стили для секций */
 section {
     margin: 40px 0;
@@ -57,21 +64,14 @@ h2 {
     margin-bottom: 20px;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
-/* Стили для преимуществ */
+/* Преимущества */
 .advantages-container {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .advantage-item {
@@ -90,6 +90,12 @@ ul li {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+.advantage-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
 .advantage-item h3 {
     margin-top: 0;
     color: #f0a500;
@@ -102,6 +108,27 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-media {
+    margin-bottom: 10px;
+}
+
+.social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img {
+    width: 40px;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
 }
 
 /* Мобильные стили */
