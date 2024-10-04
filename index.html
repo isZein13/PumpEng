@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PumpEng - Онлайн Школа Английского</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Ссылка на стили -->
+    <title>PumpEng - Главная</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -15,63 +15,75 @@
                 <li><a href="#courses">Список Курсов</a></li>
                 <li><a href="#resources">Бесплатные Ресурсы</a></li>
                 <li><a href="#reviews">Отзывы</a></li>
-                <li><a href="#contact">Запись на Урок</a></li>
+                <li><a href="#sign-up">Запись на Урок</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="advantages">
-        <h2>Преимущества</h2>
-        <div class="advantages-container">
-            <div class="advantage-item">
-                <img src="advantage1.jpg" alt="Практическая направленность">
-                <h3>Практическая направленность</h3>
-                <p>Мы делаем акцент на использовании английского в реальных жизненных ситуациях.</p>
+    <main>
+        <!-- Раздел Преимущества -->
+        <section id="advantages">
+            <h2>Преимущества</h2>
+            <div class="advantages-container">
+                <div class="advantage-block">
+                    <h3>Практическая направленность</h3>
+                    <p>Мы делаем акцент на использовании английского в реальных жизненных ситуациях.</p>
+                </div>
+                <div class="advantage-block">
+                    <h3>Индивидуальный подход</h3>
+                    <p>Каждый студент получает персональные рекомендации по обучению.</p>
+                </div>
+                <div class="advantage-block">
+                    <h3>Опытные преподаватели</h3>
+                    <p>Наши преподаватели – эксперты с многолетним опытом.</p>
+                </div>
             </div>
-            <div class="advantage-item">
-                <img src="advantage2.jpg" alt="Индивидуальный подход">
-                <h3>Индивидуальный подход</h3>
-                <p>Каждый студент получает персональные рекомендации по обучению.</p>
+        </section>
+
+        <!-- Раздел Список Курсов -->
+        <section id="courses">
+            <h2>Наши Курсы</h2>
+            <ul>
+                <li><a href="travel-english.html">Английский для путешествий</a></li>
+                <li><a href="business-english.html">Деловой английский</a></li>
+                <li><a href="beginner-intensive.html">Интенсивный курс для начинающих</a></li>
+            </ul>
+        </section>
+
+        <!-- Раздел Бесплатные Ресурсы -->
+        <section id="resources">
+            <h2>Бесплатные Ресурсы</h2>
+            <p>Здесь вы найдете учебные материалы, видеоуроки, и полезные статьи.</p>
+            <ul>
+                <li><a href="#">Видеоуроки по грамматике</a></li>
+                <li><a href="#">Планы уроков и упражнения</a></li>
+                <li><a href="#">Тесты для самопроверки</a></li>
+            </ul>
+        </section>
+
+        <!-- Раздел Отзывы -->
+        <section id="reviews">
+            <h2>Отзывы наших студентов</h2>
+            <div class="review">
+                <p>"Отличные преподаватели и интересный материал! Английский стал даваться намного легче."</p>
+                <p>- Анна П.</p>
             </div>
-            <div class="advantage-item">
-                <img src="advantage3.jpg" alt="Опытные преподаватели">
-                <h3>Опытные преподаватели</h3>
-                <p>Наши преподаватели – эксперты с многолетним опытом.</p>
+            <div class="review">
+                <p>"Индивидуальный подход помог мне понять, что именно нужно для моего уровня и целей."</p>
+                <p>- Сергей К.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="courses">
-        <h2>Список Курсов</h2>
-        <ul>
-            <li>Английский для путешествий</li>
-            <li>Деловой английский</li>
-            <li>Интенсивный курс для начинающих</li>
-        </ul>
-    </section>
-
-    <section id="resources">
-        <h2>Бесплатные онлайн ресурсы</h2>
-        <p>Скоро здесь появятся полезные материалы для изучения английского языка!</p>
-    </section>
-
-    <section id="reviews">
-        <h2>Отзывы</h2>
-        <p>Отзывы наших студентов помогут вам определиться с выбором курса!</p>
-    </section>
-
-    <section id="contact">
-        <h2>Запись на урок</h2>
-        <p>Заполните <a href="https://forms.gle/вашa-ссылка-на-гугл-форму" target="_blank">форму</a>, чтобы записаться на урок или вебинар.</p>
-    </section>
+        <!-- Раздел Запись на Урок -->
+        <section id="sign-up">
+            <h2>Записаться на Урок</h2>
+            <p>Заполните форму ниже, и мы свяжемся с вами для подтверждения записи на пробное занятие.</p>
+            <a href="https://forms.gle/your-google-form-link" class="sign-up-button">Записаться</a>
+        </section>
+    </main>
 
     <footer>
-        <div class="social-media">
-            <a href="#" class="social-icon"><img src="facebook-icon.png" alt="Facebook"></a>
-            <a href="#" class="social-icon"><img src="instagram-icon.png" alt="Instagram"></a>
-            <a href="#" class="social-icon"><img src="linkedin-icon.png" alt="LinkedIn"></a>
-        </div>
-        <p>© 2024 PumpEng - Онлайн Школа Английского</p>
+        <p>&copy; 2024 PumpEng. Все права защищены.</p>
     </footer>
 </body>
 </html>
