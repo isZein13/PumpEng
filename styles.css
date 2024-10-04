@@ -65,13 +65,17 @@ h2 {
 }
 
 /* Преимущества */
+/* Добавьте этот стиль в ваш CSS файл */
 .advantages-container {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
+    justify-content: space-between; /* Распределяет блоки по ширине */
+    gap: 20px; /* Расстояние между блоками */
+    margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+.advantage-block {
+    flex: 1; /* Заставляет блоки занимать равное пространство */
+    text-align: center; /* Выровнять текст по центру */
 }
 
 .advantage-item {
