@@ -3,9 +3,12 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    background-image: url('hero-image.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url('hero-image.jpg'); /* Правильный путь к изображению */
+    background-size: cover; /* Заполняет всю область */
+    background-repeat: no-repeat; 
+    background-attachment: fixed; /* Фон фиксирован */
+    position: relative; /* Для использования z-index */
+
 }
 
 header {
@@ -13,6 +16,8 @@ header {
     padding: 20px;
     text-align: center;
     color: white;
+    position: relative; /* Для использования z-index */
+    z-index: 1;  /* Header поверх фона */
 }
 
 .logo-container {
