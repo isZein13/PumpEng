@@ -130,22 +130,65 @@ footer {
     background-color: #f2f2f2;
 }
 
-footer .social-links {
+.form-info { /* Стиль для текста над кнопкой */
+  font-size: 0.9em; /* Чуть меньше основной текст */
+  margin-bottom: 10px;
+  color: #004aad;
+
+}
+.sign-up-button {
+  display: inline-block;
+  padding: 15px 30px; /* Увеличиваем padding */
+  font-size: 1.2em; /* Увеличиваем размер шрифта */
+  background-color: #f0a500;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px; /* Более скругленные углы */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);  /* Тень для объема */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sign-up-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.25);
+
+
+  background-color: #FF5733;
+
+
+}
+
+.social-links {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-bottom: 10px;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 15px;
+
+}
+
+.social-links p { /* Стиль для текста в футере */
+    margin: 0; /* Убираем лишний отступ */
+
+    font-size: 15px;
+    color: #004aad;
+
 }
 
 
-footer .social-links a img {
+.social-links a img {
+    width: 30px;
+    height: 30px;
     transition: transform 0.3s ease;
+
+
 }
 
-footer .social-links a:hover img {
+.social-links a:hover img {
     transform: scale(1.1);
-}
 
+}
 
 
 
