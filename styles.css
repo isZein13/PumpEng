@@ -5,7 +5,7 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Цвет фона body */
+    background-color: #f4f4f4; /* Цвет фона страницы, можно изменить */
 }
 
 header {
@@ -13,8 +13,9 @@ header {
     padding: 20px;
     text-align: center;
     color: white;
-    position: relative;
     z-index: 1; /* Header поверх hero-image */
+    position: relative; /* Для z-index */
+
 }
 
 .logo-container {
@@ -112,8 +113,6 @@ section {
 main {
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 112px); /* Высота экрана минус header и footer */
-    position: relative; /* Для позиционирования footer */
 }
 
 #hero {
@@ -124,7 +123,7 @@ main {
 
 .hero-image {
     background-image: url("hero-image.jpg");
-    flex-grow: 1; /* Растягивает изображение на всю доступную высоту */
+    height: calc(100vh - 112px); /* Высота hero-image: высота экрана - header - footer */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -133,6 +132,7 @@ main {
     align-items: center;
     position: relative;
 }
+
 
 .hero-text {
     position: absolute;
@@ -201,6 +201,7 @@ main {
     color: #555;
 }
 
+
 .reviews-container {
     display: flex;
     flex-wrap: wrap;
@@ -214,14 +215,13 @@ main {
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
     text-align: center;
-}
 
+}
 
 footer {
     text-align: center;
     padding: 20px 0;
     background-color: #f2f2f2;
-    width: 100%; /* Footer занимает всю ширину */
 }
 
 .social-links {
@@ -230,19 +230,21 @@ footer {
     align-items: center;
     margin-top: 20px;
     padding-top: 20px;
+
 }
 
 .social-links .icons {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 10px; /* Отступ между иконками и текстом */
+    margin-bottom: 10px;
+
 }
 
 .social-links p {
     font-size: 15px;
     color: #004aad;
-    margin: 0; /* Убираем отступы у текста */
+    margin: 0;
 }
 
 .social-links a img {
