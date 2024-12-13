@@ -16,12 +16,10 @@ header {
     padding: 20px;
     text-align: center;
     color: white;
-    position: relative; /* Для z-index */
-    z-index: 1; /* Header поверх hero-image */
-    width: 100%; /* Header занимает всю ширину */
+    position: relative;
+    z-index: 1;
+    width: 100%;
     box-sizing: border-box;
-
-
 }
 
 .logo-container {
@@ -39,12 +37,12 @@ h1, h2, h3 {
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none; /* Убираем маркеры списка */
     padding: 0;
     margin: 10px 0;
-    display: flex; /* Используем flexbox для центрирования */
-    justify-content: center; /* Центрируем элементы меню */
-    width: 100%; /* Меню занимает всю ширину */
+    display: flex;
+    justify-content: center;
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -66,15 +64,10 @@ nav ul li a:hover {
 main {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрируем содержимое main */
-    min-height: calc(100vh - 112px);  /*  Занимает всю высоту экрана, минус высота header и footer.  */
+    align-items: center;
+    min-height: calc(100vh - 112px); /*  Высота экрана минус header и footer.  */
     width: 100%;
-
-
-
 }
-
-
 
 section {
     width: 90%;
@@ -98,7 +91,7 @@ section {
 
 .advantage-block {
     flex: 1 1 300px;
-    width: calc(33.33% - 20px);
+    width: calc(33.33% - 20px); /* Ширина с учетом отступов */
     max-width: 400px;
     padding: 20px;
     border: 1px solid #ddd;
@@ -118,65 +111,35 @@ section {
     transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-    .advantage-block {
-        width: 45%;
-    }
-    nav ul {
-        flex-direction: column; /* Меню в столбик на мобильных */
-        align-items: center; /* Центрируем элементы меню по вертикали */
-
-
-    }
-
-    nav ul li {
-        margin: 5px 0; /* Отступы между элементами меню в столбик */
-
-    }
-
-}
-
-
-
-@media (max-width: 500px) {
-    .advantage-block {
-        width: 90%;
-    }
-}
 
 #hero {
     position: relative;
     text-align: center;
     color: white;
     background: none;
-    width: 100%; /* Баннер занимает всю ширину */
-
+    width: 100%;
 }
 
 .hero-image {
     background: none;
-    height: calc(100vh - 112px); /* Высота баннера = высота экрана - header - footer */
-    width: 100%; /* Баннер занимает всю ширину */
+    height: calc(100vh - 112px);
+    width: 100%;
     background-image: url("hero-image.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
     position: relative;
 }
 
-
 .hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-shadow: 2px 2px 4px #000000;
+    max-width: 800px; /* Ограничиваем максимальную ширину текста */
     padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    border-radius: 10px; /* Скругленные углы у фона текста */
 }
-
 
 .form-info {
     font-size: 0.9em;
@@ -202,24 +165,49 @@ section {
     background-color: #FF5733;
 }
 
-
 .courses-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  /* Адаптивные колонки */
-
-
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
-
+    width: 90%; /* Ограничиваем ширину сетки курсов */
 
 }
+
+.course-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.course-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.course-card:hover {
+    transform: scale(1.05);
+}
+
+.course-card h3 {
+    margin-top: 0;
+    color: #004aad;
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    color: #555;
+}
+
 .reviews-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  /* Адаптивные колонки */
-
-
-
+    display: grid; /* Используем grid для адаптивной сетки отзывов */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Адаптивные колонки */
     grid-gap: 20px;
-    justify-content: center;
+    width: 90%; /* Ограничиваем ширину сетки отзывов */
+
+
 }
 
 .review {
@@ -232,53 +220,12 @@ section {
 }
 
 
-.course-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-
-
-}
-
-.course-card a {
-
-  text-decoration: none;
-  color: inherit;
-}
-
-.course-card:hover {
-
-
-    transform: scale(1.05);
-
-}
-
-.course-card h3 {
-
-    margin-top: 0;
-    color: #004aad;
-    margin-bottom: 10px;
-
-
-}
-
-.course-card p {
-
-    color: #555;
-}
-
-
-
-
-
 footer {
     text-align: center;
     padding: 20px 0;
     background-color: #f2f2f2;
     width: 100%;
+    margin-top: auto; /* Прижимаем футер к низу */
 }
 
 .social-links {
@@ -310,4 +257,22 @@ footer {
 
 .social-links a:hover img {
     transform: scale(1.1);
+}
+
+
+
+@media (max-width: 768px) {
+
+    /* ... другие стили ... */
+
+    nav ul {
+        flex-direction: column; /* Меню в столбик */
+        align-items: center;
+    }
+     nav ul li {
+
+        margin: 5px 0;
+
+    }
+
 }
