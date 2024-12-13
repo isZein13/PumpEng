@@ -5,10 +5,10 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    background-image: url("hero-image.jpg"); /* Путь к фоновому изображению */
+    background-image: url("hero-image.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Фон фиксированный */
+    background-attachment: fixed;
 }
 
 header {
@@ -18,8 +18,11 @@ header {
     color: white;
     position: relative; /* Для z-index */
     z-index: 1; /* Header поверх hero-image */
-}
+    width: 100%; /* Header занимает всю ширину */
+    box-sizing: border-box;
 
+
+}
 
 .logo-container {
     display: flex;
@@ -39,12 +42,13 @@ nav ul {
     list-style-type: none;
     padding: 0;
     margin: 10px 0;
-    display: inline-block;
-    text-align: center;
+    display: flex; /* Используем flexbox для центрирования */
+    justify-content: center; /* Центрируем элементы меню */
+    width: 100%; /* Меню занимает всю ширину */
+    box-sizing: border-box;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 10px;
 }
 
@@ -59,13 +63,26 @@ nav ul li a:hover {
     color: #f0a500;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое main */
+    min-height: calc(100vh - 112px);  /*  Занимает всю высоту экрана, минус высота header и footer.  */
+    width: 100%;
+
+
+
+}
+
+
+
 section {
-    margin: 40px auto;
+    width: 90%;
+    margin: 40px 0;
     padding: 40px 20px;
     background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid #ddd;
     border-radius: 10px;
-    max-width: 900px;
     text-align: center;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -105,7 +122,21 @@ section {
     .advantage-block {
         width: 45%;
     }
+    nav ul {
+        flex-direction: column; /* Меню в столбик на мобильных */
+        align-items: center; /* Центрируем элементы меню по вертикали */
+
+
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Отступы между элементами меню в столбик */
+
+    }
+
 }
+
+
 
 @media (max-width: 500px) {
     .advantage-block {
@@ -113,26 +144,27 @@ section {
     }
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* main занимает всю высоту экрана */
-
-}
-
-
 #hero {
-     position: relative;
+    position: relative;
     text-align: center;
     color: white;
-    background: none; /* Убираем фон */
+    background: none;
+    width: 100%; /* Баннер занимает всю ширину */
+
 }
 
 .hero-image {
-    background: none; /* Убираем фон */
-
-    height: calc(100vh - 112px); /*  Задаем высоту .hero-image */
-
+    background: none;
+    height: calc(100vh - 112px); /* Высота баннера = высота экрана - header - footer */
+    width: 100%; /* Баннер занимает всю ширину */
+    background-image: url("hero-image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 
@@ -173,43 +205,20 @@ main {
 
 .courses-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  /* Адаптивные колонки */
+
+
     grid-gap: 20px;
+
+
 }
-
-.course-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.course-card a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.course-card:hover {
-    transform: scale(1.05);
-}
-
-.course-card h3 {
-    margin-top: 0;
-    color: #004aad;
-    margin-bottom: 10px;
-}
-
-.course-card p {
-    color: #555;
-}
-
-
 .reviews-container {
-    display: flex;
-    flex-wrap: wrap; /* Для адаптивности */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  /* Адаптивные колонки */
 
+
+
+    grid-gap: 20px;
     justify-content: center;
 }
 
@@ -220,14 +229,56 @@ main {
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
     text-align: center;
+}
+
+
+.course-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+
 
 }
+
+.course-card a {
+
+  text-decoration: none;
+  color: inherit;
+}
+
+.course-card:hover {
+
+
+    transform: scale(1.05);
+
+}
+
+.course-card h3 {
+
+    margin-top: 0;
+    color: #004aad;
+    margin-bottom: 10px;
+
+
+}
+
+.course-card p {
+
+    color: #555;
+}
+
+
+
+
 
 footer {
     text-align: center;
     padding: 20px 0;
     background-color: #f2f2f2;
-
+    width: 100%;
 }
 
 .social-links {
@@ -243,7 +294,6 @@ footer {
     justify-content: center;
     gap: 10px;
     margin-bottom: 10px;
-
 }
 
 .social-links p {
