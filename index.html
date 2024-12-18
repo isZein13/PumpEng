@@ -8,21 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+  <header></header>
+  <div id="main-content"></div> <footer></footer>
 
-    <script>
-        // Функция для асинхронной загрузки HTML
-        async function loadHTML(element, file) {
-            const response = await fetch(file);
-            const html = await response.text();
-            document.querySelector(element).innerHTML = html;
-        }
+  <script>
+    async function loadHTML(element, file) {
+      const response = await fetch(file);
+      const html = await response.text();
+      document.querySelector(element).innerHTML = html;
+    }
 
-        loadHTML('header', 'header.html');
-        loadHTML('main', 'main.html'); // Создайте файл main.html!
-        loadHTML('footer', 'footer.html');
-    </script>
+    loadHTML('header', 'header.html');
+    loadHTML('#main-content', 'main.html');
+    loadHTML('footer', 'footer.html');
+  </script>
 </body>
 </html>
