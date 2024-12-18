@@ -124,7 +124,7 @@ section {
     background: none;
     height: calc(100vh - 112px);
     width: 100%;
-    background-image: url("hero-image.jpg");
+   
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
