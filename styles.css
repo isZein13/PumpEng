@@ -5,10 +5,10 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    background-image: url("hero-image.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: #f4f4f4; /* Фон для body */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* main занимает всю высоту экрана */
 }
 
 header {
@@ -37,7 +37,7 @@ h1, h2, h3 {
 }
 
 nav ul {
-    list-style: none; /* Убираем маркеры списка */
+    list-style: none;
     padding: 0;
     margin: 10px 0;
     display: flex;
@@ -64,81 +64,44 @@ nav ul li a:hover {
 main {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    min-height: calc(100vh - 112px); /*  Высота экрана минус header и footer.  */
+    align-items: center; /* Центрируем содержимое горизонтально */
+    justify-content: center; /* Центрируем содержимое вертикально */
+    flex-grow: 1; /* main занимает оставшееся пространство */
     width: 100%;
+    background-color: transparent; /* Убираем фон у main */
+    padding: 20px; /* Отступы для контента */
+    box-sizing: border-box;
 }
-
-section {
-    width: 90%;
-    margin: 40px 0;
-    padding: 40px 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.advantages-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-    margin: 20px 0;
-}
-
-.advantage-block {
-    flex: 1 1 300px;
-    width: calc(33.33% - 20px); /* Ширина с учетом отступов */
-    max-width: 400px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.advantage-block i {
-    font-size: 2em;
-    margin-bottom: 10px;
-    color: #004AAD;
-}
-
-.advantage-block:hover {
-    transform: scale(1.05);
-}
-
 
 #hero {
     position: relative;
     text-align: center;
     color: white;
-    background: none;
+    background: none; /* Убираем фон */
     width: 100%;
+    margin: 0; /* Убираем отступы */
 }
 
 .hero-image {
-    background: none;
-    height: calc(100vh - 112px);
-    width: 100%;
-   
+    background-image: url("hero-image.jpg");
+    min-height: calc(100vh - 128px);/* Высота экрана минус header и footer */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    justify-content: center; /* Центрирование по горизонтали */
-    align-items: center; /* Центрирование по вертикали */
+    justify-content: center;
+    align-items: center;
     position: relative;
+    width: 100%;
 }
 
 .hero-text {
-    max-width: 800px; /* Ограничиваем максимальную ширину текста */
+    max-width: 800px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
-    border-radius: 10px; /* Скругленные углы у фона текста */
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    text-align: center;
+
 }
 
 .form-info {
@@ -165,12 +128,45 @@ section {
     background-color: #FF5733;
 }
 
+.advantages-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    margin: 20px auto; /* Центрируем контейнер */
+    width: 90%;
+}
+
+.advantage-block {
+    flex: 1 1 300px;
+    width: calc(33.33% - 20px);
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.advantage-block i {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #004AAD;
+}
+
+
+.advantage-block:hover {
+    transform: scale(1.05);
+}
+
 .courses-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Две колонки */
     grid-gap: 20px;
-    width: 90%; /* Ограничиваем ширину сетки курсов */
-
+    width: 90%;
+    margin: 20px auto; /* Центрируем сетку */
 }
 
 .course-card {
@@ -191,6 +187,7 @@ section {
     transform: scale(1.05);
 }
 
+
 .course-card h3 {
     margin-top: 0;
     color: #004aad;
@@ -201,47 +198,84 @@ section {
     color: #555;
 }
 
-.reviews-container {
-    display: grid; /* Используем grid для адаптивной сетки отзывов */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Адаптивные колонки */
-    grid-gap: 20px;
-    width: 90%; /* Ограничиваем ширину сетки отзывов */
 
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    width: 90%; /* Ограничиваем ширину контейнера */
+    margin: 20px auto;  /* Центрируем контейнер */
 
 }
 
 .review {
-    margin: 10px;
-    padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
+
 }
 
+
+
+#resources ul{
+    list-style: none;
+    padding: 0;
+
+
+}
+
+#resources li {
+
+
+    margin: 10px 0;
+
+
+}
+
+#resources li a {
+
+  text-decoration: none;
+  color: inherit;
+
+
+}
+
+#sign-up p{
+    max-width: 500px;
+    margin: 20px auto;
+
+}
 
 footer {
     text-align: center;
     padding: 20px 0;
     background-color: #f2f2f2;
     width: 100%;
-    margin-top: auto; /* Прижимаем футер к низу */
+    margin-top: auto; /* Футер внизу страницы */
+    margin-top: 20px;
+    box-sizing: border-box;
 }
+
 
 .social-links {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
-    padding-top: 20px;
+    padding: 20px;
+
+
 }
 
 .social-links .icons {
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    justify-content: center; /* Центрируем иконки */
+    gap: 10px; /* Расстояние между иконками */
     margin-bottom: 10px;
 }
+
+
 
 .social-links p {
     font-size: 15px;
@@ -255,24 +289,31 @@ footer {
     transition: transform 0.3s ease;
 }
 
+
 .social-links a:hover img {
     transform: scale(1.1);
+
+
 }
 
 
 
 @media (max-width: 768px) {
-
-    /* ... другие стили ... */
-
     nav ul {
-        flex-direction: column; /* Меню в столбик */
+        flex-direction: column;
         align-items: center;
     }
-     nav ul li {
-
+    nav ul li {
         margin: 5px 0;
-
     }
 
+
+
+    .courses-grid {
+
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Одна колонка на мобильных */
+
+
+
+    }
 }
