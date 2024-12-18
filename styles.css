@@ -73,26 +73,31 @@ main {
     box-sizing: border-box;
 }
 
-#hero {
-    position: relative;
-    text-align: center;
-    color: white;
-    background: none; /* Убираем фон */
-    width: 100%;
-    margin: 0; /* Убираем отступы */
-}
-
-.hero-image {
-    background-image: url("hero-image.jpg");
-    min-height: calc(100vh - 128px);/* Высота экрана минус header и footer */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.intro {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     width: 100%;
+    margin-top: 20px;  /* Добавьте отступ сверху, если нужно */
+    text-align: center; /* Центрируем текст */
+
+}
+
+.intro-text {
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(0, 0, 102, 0.8); /* Цвет фона */
+    border-radius: 10px;
+    color: white; /* Цвет текста */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+
+}
+
+.form-info {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+
 }
 
 .hero-text {
