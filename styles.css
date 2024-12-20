@@ -23,7 +23,23 @@ header {
     box-sizing: border-box;
 }
 
-/* ... стили для логотипа и заголовка ... */
+.logo-container { /* Стили для контейнера логотипа */
+    display: flex;
+    justify-content: center; /* Центрируем логотип */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.logo-container img { /* Стили для самого логотипа */
+    width: 100px; /*  Установите нужную ширину */
+    height: 50px;  /* Установите нужную высоту */
+    /* или используйте max-width/max-height или object-fit, как описано в предыдущем ответе */
+}
+
+h1 { /* Стили для заголовка в header */
+    margin: 0; /* Убираем стандартный отступ */
+    font-size: 2em; /* Размер шрифта */
+    /* ... другие стили для h1, если нужны  */
+}
 
 nav ul {
     list-style: none;
