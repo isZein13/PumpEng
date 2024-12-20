@@ -1,6 +1,24 @@
+
 body {
     font-family: Arial, sans-serif;
-@@ -22,19 +23,7 @@ header {
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-image: url("hero-image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgba(0, 0, 102, 0.8);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -9,16 +27,34 @@ body {
     justify-content: center;
     margin-bottom: 10px;
 }
+
 .logo-container img {
     max-width: 200px;
 }
+
 h1, h2, h3 {
     color: #004AAD;
 }
 
 nav ul {
     list-style: none;
-@@ -58,9 +47,10 @@ nav ul li a {
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -28,7 +64,8 @@ nav ul li a:hover {
 main {
     display: flex;
     flex-direction: column;
-@@ -69,7 +59,7 @@ main {
+    align-items: center;
+    flex-grow: 1;
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
@@ -36,14 +73,18 @@ main {
 }
 
 .intro {
-@@ -79,6 +69,7 @@ main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     margin-bottom: 40px;
     text-align: center;
 }
 
 .intro-text {
-@@ -88,92 +79,128 @@ main {
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(0, 0, 102, 0.8);
     border-radius: 10px;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -95,6 +136,7 @@ section {
 
 
 
+
 .advantages-container {
     display: flex;
 
@@ -128,13 +170,16 @@ section {
     transform: scale(1.05);
 }
 
+
 .courses-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Две колонки */
     grid-gap: 20px;
 }
 
-@@ -183,61 +210,90 @@ section {
+.course-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -196,7 +241,13 @@ section {
 
 
 }
-@@ -251,26 +307,35 @@ section {
+
+#sign-up p{
+    max-width: 500px;
+    margin: 20px auto;
+
+
+}
 
 
 footer {
@@ -223,14 +274,17 @@ footer {
 .social-links .icons {
     display: flex;
 
-@@ -279,6 +344,21 @@ footer {
+    gap: 10px;
+
 
 
 
 }
 
 
-@@ -288,23 +368,70 @@ footer {
+.social-links a img {
+    width: 30px;
+    height: 30px;
     transition: transform 0.3s ease;
 }
 
