@@ -1,11 +1,4 @@
-.transparent-section {
-    background-color: transparent;
-}
 
-.no-frame { /* Новый стиль для удаления рамки */
-    border: none;
-    padding: 0;
-}
 body {
     font-family: Arial, sans-serif;
     color: #333;
@@ -129,6 +122,17 @@ section {
     border-radius: 10px;
     text-align: center; /* Текст по центру */
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+.transparent-section {
+    background-color: transparent;
+}
+
+.no-frame {
+    border: none;
+    padding: 0;
+}
+
 }
 
 
