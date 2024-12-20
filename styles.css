@@ -251,25 +251,22 @@ section {
 
 
 footer {
-
-    padding: 20px 0;
-
-
-    width: 100%;
-    margin-top: auto; /* Футер внизу страницы */
-
-    box-sizing: border-box;
-
+    /* ... (другие стили footer) */
+    display: flex; /* Используем flexbox для футера */
+    flex-direction: column; /* Выравниваем элементы по вертикали */
+    align-items: center; /* Центрируем элементы по горизонтали */
 }
 
 
 .social-links {
     display: flex;
-
-    align-items: center;
+    justify-content: center;
+    align-items: center; /* Центрируем элементы по вертикали */
 
     padding: 20px;
+    gap: 20px;
 
+    flex-wrap: wrap; /* Разрешаем перенос на новую строку */
 
 }
 
@@ -280,18 +277,10 @@ footer {
     gap: 10px;
 
 
-}
-
-
-
-
-.social-links p {
-
-    color: #004aad;
-
 
 
 }
+
 
 .social-links a img {
     width: 30px;
@@ -299,31 +288,23 @@ footer {
     transition: transform 0.3s ease;
 }
 
-
 .social-links a:hover img {
     transform: scale(1.1);
+}
+
+@media (max-width: 600px) { /* Адаптивность для мобильных */
+
+.social-links {
+    flex-direction: column; /* Текст и иконки в столбик */
+    align-items: center;
+
+}
+.social-links p{
+    margin-bottom: 15px;
+
 
 
 }
 
 
-
-
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 5px 0;
-    }
-
-        .courses-grid {
-
-            grid-template-columns: 1fr; /* Одна колонка */
-
-
-
-        }
 }
