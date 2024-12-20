@@ -1,6 +1,10 @@
-/* styles.css */
 .transparent-section {
-  background-color: transparent;
+    background-color: transparent;
+}
+
+.no-frame { /* Новый стиль для удаления рамки */
+    border: none;
+    padding: 0;
 }
 body {
     font-family: Arial, sans-serif;
