@@ -5,8 +5,8 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    /* Фоновое изображение с градиентным затемнением */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("ПУТЬ/К/hero-image.jpg");
+   /* Фоновое изображение с градиентным затемнением */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("hero-image.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed; /* Фиксированный фон */
