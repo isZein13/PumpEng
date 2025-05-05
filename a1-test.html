@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест на уровень A1 - PumpEng</title>
+    <meta name="description" content="Пройдите онлайн тест на уровень английского A1 (Beginner) от школы PumpEng с мгновенной проверкой и объяснениями ответов.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Дополнительные стили для теста можно вынести в отдельный файл или добавить в styles.css -->
+    <link rel="stylesheet" href="test-styles.css">
+</head>
+<body>
+    <header>
+        <!-- Шапка будет загружена здесь скриптом -->
+    </header>
+
+    <main>
+        <section id="test-section">
+            <h2>Тест на уровень A1 (Beginner)</h2>
+            <p>Выберите один правильный ответ для каждого вопроса. Для проверки письменного задания обратитесь к преподавателю.</p>
+
+            <!-- Контейнер для вопросов теста -->
+            <form id="a1-test-form">
+                <div id="a1-test-questions">
+                    <!-- Вопросы будут сгенерированы JavaScript -->
+                    <p>Загрузка теста...</p>
+                </div>
+
+                <!-- Кнопка проверки -->
+                <button type="button" id="submit-a1-test">Проверить ответы</button>
+            </form>
+
+            <!-- Контейнер для результатов -->
+            <div id="a1-test-results" style="display: none;">
+                <h3>Ваши результаты:</h3>
+                <p id="a1-score"></p>
+                <h4>Разбор ответов:</h4>
+                <div id="a1-explanations">
+                    <!-- Объяснения будут добавлены JavaScript -->
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <!-- Подвал будет загружен здесь скриптом -->
+    </footer>
+
+     <!-- Кнопка Наверх -->
+     <button id="scrollToTopBtn" title="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <!-- Скрипт с логикой теста -->
+    <script src="a1-test-logic.js"></script>
+</body>
+</html>
