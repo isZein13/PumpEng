@@ -1,0 +1,226 @@
+/* test-styles.css */
+
+/* Общие стили для секции теста */
+#test-section {
+    text-align: left; /* Выравниваем текст вопросов и опций по левому краю внутри секции */
+    background-color: #f9f9f9; /* Слегка другой фон для теста */
+}
+
+#test-section h2, #test-section h3, #test-section h4 {
+    text-align: center; /* Заголовки по центру */
+}
+
+/* Контейнер с вопросами */
+#a1-test-questions {
+    margin-bottom: 30px;
+}
+
+/* Стиль для одного вопроса */
+.test-question {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.test-question p strong {
+    display: block; /* Вопрос на всю ширину */
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+/* Контейнер для вариантов ответа */
+.test-options {
+    display: flex;
+    flex-direction: column; /* Варианты друг под другом */
+    gap: 10px; /* Отступ между вариантами */
+}
+
+.test-options label {
+    display: block; /* Метка на всю ширину */
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.test-options label:hover {
+    background-color: #f0f8ff; /* Легкий фон при наведении */
+    border-color: #a0d3ff;
+}
+
+.test-options input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Стиль для выбранного варианта (необязательно, т.к. есть стандартный вид) */
+/* .test-options input[type="radio"]:checked + label { */
+    /* background-color: #e0f0ff; */
+    /* border-color: #77beff; */
+/* } */
+
+
+/* Текст для чтения */
+.reading-passage {
+    background-color: #eef5ff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #0056b3;
+}
+.reading-passage h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: left;
+     color: #004AAD;
+}
+.reading-passage p {
+    margin-bottom: 0;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Письменное задание */
+.writing-question textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit; /* Наследовать шрифт */
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* Кнопка проверки */
+#submit-a1-test {
+    display: block; /* На всю ширину */
+    width: auto; /* Авто ширина */
+    min-width: 200px; /* Минимальная ширина */
+    margin: 30px auto 20px auto; /* Центрирование */
+    padding: 12px 25px;
+    font-size: 1.1em;
+    background-color: #28a745; /* Зеленый цвет */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#submit-a1-test:hover {
+    background-color: #218838; /* Темнее при наведении */
+    transform: scale(1.02);
+}
+
+/* Контейнер результатов */
+#a1-test-results {
+    margin-top: 40px;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+}
+#a1-test-results h3, #a1-test-results h4 {
+    margin-bottom: 15px;
+}
+#a1-score {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Разделитель между объяснениями */
+#a1-explanations hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 25px 0;
+}
+
+/* Блок объяснения одного вопроса */
+.result-item {
+    padding: 15px;
+    margin-bottom: 10px; /* Убрал, т.к. есть hr */
+    border-radius: 5px;
+    border-left-width: 5px;
+    border-left-style: solid;
+}
+
+.result-item p {
+    margin: 5px 0;
+     text-align: left; /* Текст объяснений слева */
+}
+.result-item strong { /* Убираем лишнюю жирность, оставляем только у заголовков */
+     /* font-weight: normal; */
+}
+.result-item > p > strong { /* Первый strong (заголовок вопроса) - жирный */
+     font-weight: bold;
+}
+
+
+/* Стили для правильных/неправильных ответов */
+.correct-answer {
+    border-left-color: #28a745; /* Зеленая полоска */
+    background-color: #eaf6ec; /* Светло-зеленый фон */
+}
+.incorrect-answer {
+    border-left-color: #dc3545; /* Красная полоска */
+    background-color: #fbebec; /* Светло-красный фон */
+}
+
+/* Детали объяснения */
+.explanation-details {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #ccc;
+    font-size: 0.95em;
+    color: #333;
+}
+.explanation-details p {
+     margin-bottom: 10px;
+}
+.explanation-details ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.explanation-details li {
+    margin-bottom: 8px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+/* Подсветка правильного варианта в объяснении */
+.correct-option-explanation {
+    background-color: rgba(40, 167, 69, 0.1); /* Полупрозрачный зеленый */
+    /* font-weight: bold; */ /* Можно сделать жирным */
+}
+.correct-option-explanation strong::after {
+    content: " ✅"; /* Значок галочки */
+    color: #28a745;
+}
+
+/* Ответ на письменное задание */
+pre.writing-answer {
+    white-space: pre-wrap; /* Перенос строк */
+    word-wrap: break-word; /* Перенос длинных слов */
+    background-color: #f8f9fa;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    max-height: 200px; /* Ограничение высоты */
+    overflow-y: auto; /* Прокрутка, если текст длинный */
+    font-family: inherit;
+    font-size: 1em;
+    margin-top: 5px;
+    text-align: left;
+}
+p.explanation-note {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-top: 10px;
+}
