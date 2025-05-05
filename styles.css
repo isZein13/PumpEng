@@ -1,77 +1,136 @@
 /* styles.css */
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif; /* Можно выбрать другой шрифт */
     color: #333;
     margin: 0;
     padding: 0;
-    background-image: url("hero-image.jpg");
+    /* Фоновое изображение с градиентным затемнением */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("ПУТЬ/К/hero-image.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed; /* Фиксированный фон */
+    background-position: center center; /* Центрирование фона */
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* Минимальная высота равна высоте экрана */
+    line-height: 1.6; /* Улучшает читаемость текста */
 }
 
 header {
-    background-color: rgba(0, 0, 102, 0.8);
-    padding: 20px;
+    background-color: rgba(0, 0, 102, 0.9); /* Темно-синий полупрозрачный фон */
+    padding: 15px 20px;
     text-align: center;
     color: white;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Небольшая тень */
 }
 
 .logo-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Уменьшил отступ */
 }
 
 .logo-container img {
-    width: 100px;
-    height: 50px;
+    /* Задайте размеры вашего лого */
+    height: 40px; /* Пример высоты */
+    width: auto; /* Ширина автоматически */
 }
 
-h1, h2, h3 {
+header h1 {
+    margin: 5px 0 10px 0; /* Уменьшил отступы */
+    font-size: 1.8em; /* Немного уменьшил размер */
+    font-weight: normal; /* Сделал не таким жирным */
+    color: #fff; /* Цвет заголовка в шапке */
+}
+
+h2 { /* Стили для заголовков секций */
     color: #004AAD;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.6em;
+}
+
+h3 { /* Стили для подзаголовков */
+     color: #0056b3; /* Чуть светлее основного синего */
+     margin-top: 20px;
+     margin-bottom: 15px;
+     font-size: 1.3em;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 10px 0;
+    margin: 0; /* Убрал отступы по умолчанию */
     display: flex;
     justify-content: center;
-    width: 100%;
-    box-sizing: border-box;
+    flex-wrap: wrap; /* Позволяет переноситься на другую строку на узких экранах */
+    gap: 5px 15px; /* Отступы между пунктами */
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin: 0; /* Убираем лишние отступы */
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    padding: 8px 12px; /* Добавил паддинги для удобства нажатия */
+    border-radius: 5px; /* Слегка скруглил */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #f0a500;
+nav ul li a:hover, nav ul li a:focus { /* Добавил :focus для доступности */
+    background-color: rgba(255, 255, 255, 0.2); /* Легкая подсветка при наведении */
+    color: #f0a500; /* Оранжевый цвет при наведении */
+    outline: none; /* Убираем стандартный контур фокуса */
 }
+
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-grow: 1;
+    flex-grow: 1; /* Занимает доступное пространство */
     width: 100%;
-    padding: 20px;
+    padding: 0; /* Убираем паддинг */
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: transparent; /* Основной фон прозрачный */
+}
+
+/* Контейнер для секций на главной странице */
+#main-content {
+     width: 100%;
+     /* Не задаем фон здесь, фон будет у каждой секции */
+     padding-top: 0; /* Убираем отступ сверху */
+     padding-bottom: 20px;
+}
+
+/* Общие стили для всех секций */
+main section {
+    width: 90%;
+    max-width: 1100px; /* Максимальная ширина контента */
+    margin: 25px auto; /* Вертикальный отступ между секциями */
+    padding: 35px 25px; /* Внутренние отступы */
+    background-color: rgba(255, 255, 255, 0.95); /* Почти непрозрачный белый фон */
+    border: none; /* Убрал рамку */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); /* Улучшенная тень */
+}
+
+/* Секция Intro на главной */
+section.transparent-section {
+    background-color: transparent;
+    box-shadow: none;
+    padding-top: 40px;
+    padding-bottom: 20px; /* Уменьшил нижний отступ */
+    margin-bottom: 0; /* Убрал нижний отступ */
 }
 
 .intro {
@@ -79,232 +138,364 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-bottom: 40px;
     text-align: center;
+    padding: 0 20px; /* Паддинги для интро */
 }
 
 .intro-text {
-    max-width: 800px;
-    padding: 20px;
-    background-color: rgba(0, 0, 102, 0.8);
+    max-width: 750px; /* Немного уменьшил */
+    padding: 30px 40px; /* Внутренние отступы */
+    background-color: rgba(0, 0, 102, 0.9); /* Фон интро блока */
     border-radius: 10px;
     color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.intro-text h2 {
+    color: #f0a500; /* Оранжевый заголовок */
+    margin-bottom: 15px;
+}
+
+.intro-text p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
 }
 
 .form-info {
     font-size: 0.9em;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    opacity: 0.9;
 }
 
+/* Кнопка записи */
 .sign-up-button {
     display: inline-block;
-    padding: 15px 30px;
-    font-size: 1.2em;
-    background-color: #f0a500;
+    padding: 14px 28px; /* Немного изменил размеры */
+    font-size: 1.15em; /* Немного изменил размер */
+    background-color: #f0a500; /* Оранжевый */
     color: white;
     text-decoration: none;
-    border-radius: 25px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 30px; /* Сильнее скруглил */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
+    border: none; /* Убрал рамку, если она есть */
+    cursor: pointer;
 }
 
-.sign-up-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
-    background-color: #e69500;
+.sign-up-button:hover, .sign-up-button:focus {
+    transform: translateY(-2px) scale(1.03); /* Небольшой подъем и увеличение */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    background-color: #e69500; /* Чуть темнее при наведении */
+    outline: none;
 }
 
-section {
-    width: 90%;
-    margin: 20px auto;
-    padding: 40px 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-main .transparent-section {
-    background-color: transparent;
-}
-
-main .no-frame {
-    border: none;
-    padding: 0;
+/* Секция преимуществ */
+#advantages {
+     background-color: rgba(245, 245, 245, 0.95); /* Чуть сероватый фон для выделения */
 }
 
 .advantages-container {
     display: flex;
-    justify-content: center;
-    width: 90%;
-    margin: 20px auto;
-    gap: 20px;
+    justify-content: space-around; /* Равномерное распределение */
+    width: 100%; /* Ширина контейнера */
+    margin: 0 auto; /* Убрал лишний отступ */
+    gap: 25px;
     flex-wrap: wrap;
 }
 
 .advantage-block {
-    flex: 1 1 20%;
-    max-width: 350px;
-    padding: 20px;
+    flex: 1 1 28%; /* Гибкие блоки, минимум 28% ширины */
+    max-width: 320px; /* Макс ширина блока */
+    padding: 25px;
     border-radius: 10px;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff; /* Белый фон для блоков */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
 .advantage-block i {
-    font-size: 2em;
-    margin-bottom: 10px;
+    font-size: 2.5em; /* Увеличил иконки */
+    margin-bottom: 15px;
     color: #004AAD;
 }
 
-.advantage-block:hover {
-    transform: scale(1.05);
+.advantage-block h3 {
+    font-size: 1.2em; /* Уменьшил заголовок */
+    margin-bottom: 10px;
 }
 
+.advantage-block:hover {
+    transform: translateY(-5px); /* Подъем при наведении */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Секция курсов */
 .courses-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Три колонки */
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Адаптивная сетка */
+    gap: 25px; /* Отступ между карточками */
 }
 
 .course-card {
-    border: 1px solid #ddd;
+    border: 1px solid #eee; /* Очень светлая рамка */
     border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px 25px; /* Паддинги */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     text-align: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Flex для выравнивания контента */
+    flex-direction: column; /* Элементы в столбец */
+    justify-content: space-between; /* Распределяем пространство */
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .course-card a {
     text-decoration: none;
-    color: #004AAD;
-    transition: color 0.3s ease;
+    color: inherit; /* Наследуем цвет текста */
     display: block;
 }
 
-.course-card:hover {
-    transform: scale(1.05);
-    background-color: #f9f9f9;
+.course-card a:hover h3 { /* Меняем цвет заголовка при наведении на карточку */
+     color: #f0a500;
 }
-
-.course-card a:hover {
-    color: #f0a500;
-    cursor: pointer;
-}
-
 
 .course-card h3 {
     margin-top: 0;
     margin-bottom: 10px;
+    color: #004AAD; /* Синий заголовок */
+    font-size: 1.25em;
+    transition: color 0.3s ease; /* Плавная смена цвета */
 }
 
 .course-card p {
     color: #555;
+    font-size: 0.95em;
+    flex-grow: 1; /* Позволяет параграфу занять место */
+    margin-bottom: 0; /* Убираем нижний отступ у параграфа */
 }
 
-.reviews-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 20px;
-}
-
-.review {
-    border-radius: 5px;
-    padding: 20px;
-    text-align: center;
-}
-
+/* Секция Ресурсы */
 #resources ul {
     list-style: none;
     padding: 0;
+    margin: 20px 0 0 0; /* Отступ сверху */
 }
 
 #resources li {
-    margin: 10px 0;
+    margin: 12px 0;
 }
 
 #resources li a {
     text-decoration: none;
-    color: inherit;
+    color: #0056b3; /* Цвет ссылок */
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
+#resources li a:hover {
+    color: #f0a500; /* Оранжевый при наведении */
+    text-decoration: underline;
+}
+
+/* Секция Отзывы */
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.review {
+    border-radius: 8px;
+    padding: 25px;
+    text-align: left; /* Выравнивание по левому краю */
+    background-color: #f9f9f9; /* Светлый фон для отзыва */
+    border-left: 5px solid #004AAD; /* Синяя полоска слева */
+}
+
+.review p {
+    margin: 0;
+    font-style: italic; /* Курсив для цитаты */
+    color: #444;
+}
+
+.review p::before { /* Добавляем кавычки */
+    content: '“';
+    font-size: 1.5em;
+    color: #004AAD;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.review p::after {
+    content: '”';
+    font-size: 1.5em;
+    color: #004AAD;
+    margin-left: 5px;
+     vertical-align: middle;
+}
+
+
+/* Секция Запись на урок */
+#sign-up {
+    background-color: rgba(0, 0, 102, 0.9); /* Темно-синий фон */
+    color: white;
+}
+#sign-up h2 {
+    color: #f0a500; /* Оранжевый заголовок */
+}
 #sign-up p {
-    max-width: 500px;
-    margin: 20px auto;
+    max-width: 600px;
+    margin: 0 auto 25px auto; /* Отступы */
+    font-size: 1.05em;
 }
 
+/* Списки на страницах курсов */
+#course-topics ul, #target-audience ul {
+    list-style: disc; /* Маркеры списка */
+    text-align: left; /* Выравнивание по левому краю */
+    max-width: 700px; /* Ограничение ширины списка */
+    margin: 15px auto; /* Центрирование */
+    padding-left: 30px; /* Отступ слева для маркеров */
+}
+#course-topics li, #target-audience li {
+    margin-bottom: 8px; /* Отступ между пунктами */
+}
+
+
+/* Подвал */
 footer {
-    padding: 20px 0;
+    background-color: #fff; /* Белый фон футера */
+    color: #333;
+    padding: 25px 0;
     width: 100%;
-    margin-top: auto;
+    margin-top: auto; /* Прижимает футер к низу */
     text-align: center;
     box-sizing: border-box;
+    border-top: 1px solid #ddd; /* Разделитель */
 }
 
 .social-links {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
-    padding: 20px;
-    gap: 20px; /* Added gap for better spacing */
-    flex-wrap: wrap;
+    flex-direction: row; /* Горизонтально по умолчанию */
+    padding: 0 20px 15px 20px; /* Паддинг снизу */
+    gap: 20px;
+    flex-wrap: wrap; /* Перенос на другую строку */
 }
 
 .social-links .icons {
     display: flex;
-    gap: 10px;
+    gap: 15px; /* Отступ между иконками */
 }
 
 .social-links p {
-    color: #004aad;
-    margin-right: 20px;
+    color: #333;
+    margin: 0; /* Убираем лишние отступы */
 }
 
 .social-links a img {
     width: 30px;
     height: 30px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8; /* Слегка прозрачные иконки */
 }
 
 .social-links a:hover img {
-    transform: scale(1.1);
+    transform: scale(1.15); /* Увеличение при наведении */
+    opacity: 1; /* Полная непрозрачность */
 }
 
+footer p:last-child { /* Стили для копирайта */
+    color: #777; /* Серый цвет */
+    font-size: 0.9em;
+    margin-top: 10px; /* Отступ сверху */
+    margin-bottom: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+     .courses-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Немного уменьшаем мин. ширину */
+    }
+    .advantage-block {
+        flex-basis: 45%; /* По два блока в ряд на планшетах */
+        max-width: none; /* Снимаем ограничение макс. ширины */
+    }
+}
+
+
 @media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em; /* Уменьшаем заголовок сайта */
+    }
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        /* flex-direction: column; /* Убрал, т.к. flex-wrap лучше */
+        /* align-items: center; */
+        gap: 5px 10px; /* Уменьшаем отступы в меню */
+    }
+    nav ul li a {
+        padding: 6px 10px; /* Уменьшаем паддинги ссылок */
+        font-size: 0.95em;
     }
 
-    nav ul li {
-        margin: 5px 0;
+    main section {
+         padding: 25px 15px; /* Уменьшаем паддинги секций */
+         width: 95%; /* Чуть шире на мобильных */
+         margin: 20px auto;
+    }
+
+    .intro-text {
+         padding: 20px;
+    }
+    .intro-text h2 {
+        font-size: 1.6em;
+    }
+     .intro-text p {
+        font-size: 1em;
+    }
+
+    h2 { font-size: 1.4em; margin-bottom: 20px; }
+    h3 { font-size: 1.15em; margin-bottom: 10px; }
+
+    .advantages-container {
+       flex-direction: column; /* Преимущества друг под другом */
+       align-items: center;
+       gap: 20px;
+    }
+    .advantage-block {
+        width: 90%; /* Ширина блоков преимуществ */
+        max-width: 400px;
+        flex-basis: auto;
     }
 
     .courses-grid {
-        grid-template-columns: 1fr;
-    }
-    .advantages-container {
-        justify-content: center;
-        width: 90%;
+        grid-template-columns: 1fr; /* Одна колонка */
         gap: 20px;
     }
-    .advantage-block {
-        width: 100%;
-        flex: 1 1 auto;
+
+    .reviews-container {
+         grid-template-columns: 1fr; /* Одна колонка */
+         gap: 20px;
     }
-        .social-links {
-            flex-direction: column; /* Vertical alignment on smaller screens */
-            align-items: center;
-        }
-        .social-links p {
-            margin-right: 0;
-            margin-bottom: 15px;
-        }
+
+    .social-links {
+        flex-direction: column; /* Вертикально */
+        align-items: center;
+        gap: 15px; /* Уменьшаем отступ */
+        padding-bottom: 10px;
+    }
+     .social-links p {
+        margin: 0 0 5px 0; /* Отступ снизу у текста */
+     }
+
+     #course-topics ul, #target-audience ul {
+        padding-left: 20px; /* Уменьшаем отступ для списков */
+     }
 }
-
-
 
