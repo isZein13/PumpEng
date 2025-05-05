@@ -1,4 +1,4 @@
-/* test-styles.css */
+/* test-styles.css - Обновлен для A1, A2, B1 */
 
 /* Общие стили для секции теста */
 #test-section {
@@ -10,8 +10,10 @@
     text-align: center; /* Заголовки по центру */
 }
 
-/* Контейнер с вопросами */
-#a1-test-questions {
+/* Контейнеры с вопросами (одинаковые ID не страшны, т.к. они на разных страницах) */
+#a1-test-questions,
+#a2-test-questions,
+#b1-test-questions {
     margin-bottom: 30px;
 }
 
@@ -57,13 +59,6 @@
     vertical-align: middle;
 }
 
-/* Стиль для выбранного варианта (необязательно, т.к. есть стандартный вид) */
-/* .test-options input[type="radio"]:checked + label { */
-    /* background-color: #e0f0ff; */
-    /* border-color: #77beff; */
-/* } */
-
-
 /* Текст для чтения */
 .reading-passage {
     background-color: #eef5ff;
@@ -93,41 +88,60 @@
     font-family: inherit; /* Наследовать шрифт */
     font-size: 1em;
     margin-top: 10px;
+    min-height: 100px; /* Минимальная высота для удобства */
 }
 
-/* Кнопка проверки */
-#submit-a1-test {
-    display: block; /* На всю ширину */
-    width: auto; /* Авто ширина */
-    min-width: 200px; /* Минимальная ширина */
-    margin: 30px auto 20px auto; /* Центрирование */
-    padding: 12px 25px;
+/* Кнопка проверки для ВСЕХ тестов */
+#submit-a1-test,
+#submit-a2-test,
+#submit-b1-test { /* <<<=== ДОБАВЛЕН ID кнопки B1 */
+    display: block;
+    width: fit-content;
+    min-width: 180px;
+    margin: 30px auto 20px auto;
+    padding: 12px 28px;
     font-size: 1.1em;
-    background-color: #28a745; /* Зеленый цвет */
+    font-weight: bold;
+    background-color: #004AAD; /* Основной синий цвет */
     color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
 }
 
-#submit-a1-test:hover {
-    background-color: #218838; /* Темнее при наведении */
-    transform: scale(1.02);
+#submit-a1-test:hover,
+#submit-a2-test:hover,
+#submit-b1-test:hover { /* <<<=== ДОБАВЛЕН ID кнопки B1 */
+    background-color: #00337a;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
 }
 
-/* Контейнер результатов */
-#a1-test-results {
+
+/* Контейнеры результатов (одинаковые ID не страшны) */
+#a1-test-results,
+#a2-test-results,
+#b1-test-results {
     margin-top: 40px;
     padding: 25px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #fff;
 }
-#a1-test-results h3, #a1-test-results h4 {
+#a1-test-results h3, #a1-test-results h4,
+#a2-test-results h3, #a2-test-results h4,
+#b1-test-results h3, #b1-test-results h4 {
     margin-bottom: 15px;
+    text-align: center; /* Центрируем заголовки результатов */
 }
-#a1-score {
+
+/* Отображение балла */
+#a1-score,
+#a2-score,
+#b1-score {
     font-size: 1.3em;
     font-weight: bold;
     margin-bottom: 25px;
@@ -135,7 +149,9 @@
 }
 
 /* Разделитель между объяснениями */
-#a1-explanations hr {
+#a1-explanations hr,
+#a2-explanations hr,
+#b1-explanations hr {
     border: none;
     border-top: 1px solid #eee;
     margin: 25px 0;
@@ -144,7 +160,7 @@
 /* Блок объяснения одного вопроса */
 .result-item {
     padding: 15px;
-    margin-bottom: 10px; /* Убрал, т.к. есть hr */
+    margin-bottom: 0; /* Убран, т.к. есть hr */
     border-radius: 5px;
     border-left-width: 5px;
     border-left-style: solid;
@@ -152,24 +168,20 @@
 
 .result-item p {
     margin: 5px 0;
-     text-align: left; /* Текст объяснений слева */
+     text-align: left;
 }
-.result-item strong { /* Убираем лишнюю жирность, оставляем только у заголовков */
-     /* font-weight: normal; */
-}
-.result-item > p > strong { /* Первый strong (заголовок вопроса) - жирный */
+.result-item > p > strong {
      font-weight: bold;
 }
 
-
 /* Стили для правильных/неправильных ответов */
 .correct-answer {
-    border-left-color: #28a745; /* Зеленая полоска */
-    background-color: #eaf6ec; /* Светло-зеленый фон */
+    border-left-color: #28a745;
+    background-color: #eaf6ec;
 }
 .incorrect-answer {
-    border-left-color: #dc3545; /* Красная полоска */
-    background-color: #fbebec; /* Светло-красный фон */
+    border-left-color: #dc3545;
+    background-color: #fbebec;
 }
 
 /* Детали объяснения */
@@ -196,24 +208,23 @@
 
 /* Подсветка правильного варианта в объяснении */
 .correct-option-explanation {
-    background-color: rgba(40, 167, 69, 0.1); /* Полупрозрачный зеленый */
-    /* font-weight: bold; */ /* Можно сделать жирным */
+    background-color: rgba(40, 167, 69, 0.1);
 }
 .correct-option-explanation strong::after {
-    content: " ✅"; /* Значок галочки */
+    content: " ✅";
     color: #28a745;
 }
 
 /* Ответ на письменное задание */
 pre.writing-answer {
-    white-space: pre-wrap; /* Перенос строк */
-    word-wrap: break-word; /* Перенос длинных слов */
+    white-space: pre-wrap;
+    word-wrap: break-word;
     background-color: #f8f9fa;
     padding: 10px;
     border: 1px solid #dee2e6;
     border-radius: 4px;
-    max-height: 200px; /* Ограничение высоты */
-    overflow-y: auto; /* Прокрутка, если текст длинный */
+    max-height: 200px;
+    overflow-y: auto;
     font-family: inherit;
     font-size: 1em;
     margin-top: 5px;
@@ -223,4 +234,5 @@ p.explanation-note {
     font-size: 0.9em;
     color: #6c757d;
     margin-top: 10px;
+     text-align: left; /* Примечание слева */
 }
