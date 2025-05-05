@@ -211,9 +211,10 @@ section.transparent-section {
     outline: none;
 }
 
-/* Секция преимуществ */
+/* Секция преимуществ - ФОН УБРАН */
 #advantages {
-     background-color: rgba(245, 245, 245, 0.95);
+     /* background-color: rgba(245, 245, 245, 0.95); */ /* Фон убран */
+     /* остальные стили секции остаются */
 }
 
 .advantages-container {
@@ -232,11 +233,11 @@ section.transparent-section {
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #fff;
+    background-color: #fff; /* Белый фон для самих блоков остается */
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    display: flex; /* Добавлено для выравнивания */
-    flex-direction: column; /* Добавлено для выравнивания */
-    align-items: center; /* Добавлено для выравнивания */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .advantage-block i {
     font-size: 2.5em;
@@ -247,11 +248,11 @@ section.transparent-section {
 .advantage-block h3 {
     font-size: 1.2em;
     margin-bottom: 10px;
-    margin-top: 10px; /* Добавлен отступ */
-    text-align: center; /* Центрирование */
+    margin-top: 10px;
+    text-align: center;
 }
 .advantage-block p {
-    text-align: center; /* Центрирование */
+    text-align: center;
 }
 
 
@@ -259,6 +260,7 @@ section.transparent-section {
     transform: translateY(-5px);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Секция курсов */
 .courses-grid {
@@ -277,7 +279,6 @@ section.transparent-section {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    /* align-items: center; Убрал, т.к. text-align: center уже есть */
     justify-content: space-between;
 }
 
@@ -289,7 +290,7 @@ section.transparent-section {
 .course-card a {
     text-decoration: none;
     color: inherit;
-    display: block; /* Можно оставить */
+    display: block;
 }
 
 .course-card a:hover h3 {
@@ -302,7 +303,7 @@ section.transparent-section {
     color: #004AAD;
     font-size: 1.25em;
     transition: color 0.3s ease;
-    text-align: center; /* Центрирование */
+    text-align: center;
 }
 
 .course-card p {
@@ -310,23 +311,23 @@ section.transparent-section {
     font-size: 0.95em;
     flex-grow: 1;
     margin-bottom: 0;
-     text-align: center; /* Центрирование */
+     text-align: center;
 }
 
-/* Секция Ресурсы */
+/* Секция Ресурсы - ТЕКСТ ЦЕНТРИРОВАН */
 #resources p {
-     text-align: center; /* Параграф по центру */
+     text-align: center;
 }
 #resources ul {
-    list-style: none; /* Убираем маркеры */
-    padding: 0; /* Убираем внутренний отступ */
-    margin: 20px 0 0 0; /* Отступ сверху */
-    /* Убираем display: inline-block; и text-align: left; отсюда */
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    /* display: inline-block; и text-align: left убраны */
 }
 
 #resources li {
-    margin: 12px 0; /* Отступы между пунктами */
-    text-align: center; /* <<<=== ДОБАВЛЕНО: Центрируем текст внутри li */
+    margin: 12px 0;
+    text-align: center; /* Текст внутри li центрирован */
 }
 
 #resources li a {
@@ -334,7 +335,6 @@ section.transparent-section {
     color: #0056b3;
     font-weight: bold;
     transition: color 0.3s ease;
-    /* text-align: center; можно и здесь, но на li должно хватить */
 }
 
 #resources li a:hover {
@@ -352,7 +352,7 @@ section.transparent-section {
 .review {
     border-radius: 8px;
     padding: 25px;
-    text-align: left; /* Оставляем слева для цитат */
+    text-align: left;
     background-color: #f9f9f9;
     border-left: 5px solid #004AAD;
 }
@@ -361,7 +361,7 @@ section.transparent-section {
     margin: 0;
     font-style: italic;
     color: #444;
-     text-align: left; /* Текст цитаты слева */
+     text-align: left;
 }
 
 .review p::before {
@@ -384,31 +384,32 @@ section.transparent-section {
 #sign-up {
     background-color: rgba(0, 0, 102, 0.9);
     color: white;
+    text-align: center; /* Центрируем все содержимое секции */
 }
 #sign-up h2 {
     color: #f0a500;
-     text-align: center; /* Центрирование */
+     text-align: center;
 }
 #sign-up p {
     max-width: 600px;
     margin: 0 auto 25px auto;
     font-size: 1.05em;
-     text-align: center; /* Центрирование */
+     text-align: center;
 }
 
 /* Списки на страницах курсов */
 #course-topics ul, #target-audience ul {
-    display: inline-block; /* Центрируем блок списка */
+    display: inline-block;
     list-style: disc;
-    text-align: left; /* Текст внутри слева */
+    text-align: left;
     max-width: 700px;
     margin: 15px auto;
-    padding-left: 0; /* Убираем отступ по умолчанию */
-    list-style-position: inside; /* Маркеры внутри блока */
+    padding-left: 0;
+    list-style-position: inside;
 }
 #course-topics li, #target-audience li {
     margin-bottom: 8px;
-    text-align: left; /* Текст элементов списка слева */
+    text-align: left;
 }
 
 
@@ -418,7 +419,7 @@ footer {
     color: #333;
     padding: 25px 0;
     width: 100%;
-    margin-top: auto; /* Прижимает футер к низу */
+    margin-top: auto;
     text-align: center;
 }
 
@@ -459,8 +460,35 @@ footer p:last-child { /* Копирайт */
     font-size: 0.9em;
     margin-top: 10px;
     margin-bottom: 0;
-    text-align: center; /* Центрирование */
+    text-align: center;
 }
+
+
+/* === Кнопка Наверх === */
+#scrollToTopBtn {
+    display: none; /* Скрыта по умолчанию */
+    position: fixed; /* Фиксированное положение */
+    bottom: 30px; /* Отступ снизу */
+    right: 30px; /* Отступ справа */
+    z-index: 99; /* Поверх других элементов */
+    border: none; /* Без рамки */
+    outline: none; /* Без контура */
+    background-color: #004AAD; /* Синий фон */
+    color: white; /* Белая иконка */
+    cursor: pointer; /* Курсор-указатель */
+    padding: 12px 15px; /* Внутренние отступы */
+    border-radius: 50%; /* Круглая кнопка */
+    font-size: 18px; /* Размер иконки */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+    transition: background-color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease; /* Плавные переходы */
+    opacity: 0.8; /* Небольшая прозрачность */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #00337a; /* Темнее при наведении */
+    opacity: 1; /* Полная непрозрачность */
+}
+
 
 /* === Адаптивность === */
 
@@ -470,7 +498,7 @@ footer p:last-child { /* Копирайт */
         gap: 15px;
     }
     main section {
-        width: 92%; /* Немного шире */
+        width: 92%;
     }
 }
 
@@ -572,6 +600,12 @@ footer p:last-child { /* Копирайт */
         padding: 5px 8px;
     }
     .advantage-block {
-        width: 95%; /* Чуть шире */
+        width: 95%;
+    }
+    #scrollToTopBtn { /* Кнопка Наверх на телефонах */
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 13px;
+        font-size: 16px;
     }
 }
