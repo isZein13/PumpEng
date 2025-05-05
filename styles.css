@@ -1,127 +1,144 @@
 /* styles.css */
 
-body {
-    font-family: 'Arial', sans-serif; /* Можно выбрать другой шрифт */
-    color: #333;
+html, body {
+    height: 100%; /* Важно для прижатия футера */
     margin: 0;
     padding: 0;
-   /* Фоновое изображение с градиентным затемнением */
+    box-sizing: border-box; /* Применяем ко всем элементам для предсказуемости */
+}
+
+*, *:before, *:after {
+    box-sizing: inherit; /* Наследование box-sizing */
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    /* Фоновое изображение с градиентным затемнением */
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("hero-image.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Фиксированный фон */
-    background-position: center center; /* Центрирование фона */
+    background-attachment: fixed;
+    background-position: center center;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Минимальная высота равна высоте экрана */
-    line-height: 1.6; /* Улучшает читаемость текста */
+    min-height: 100%; /* Используем min-height для корректного растягивания */
+    line-height: 1.6;
 }
 
 header {
-    background-color: rgba(0, 0, 102, 0.9); /* Темно-синий полупрозрачный фон */
+    background-color: rgba(0, 0, 102, 0.9);
     padding: 15px 20px;
     text-align: center;
     color: white;
     width: 100%;
-    box-sizing: border-box;
-    position: relative;
+    position: relative; /* Можно оставить, если понадобится */
     z-index: 10;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Небольшая тень */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .logo-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 5px; /* Уменьшил отступ */
+    margin-bottom: 5px;
 }
 
 .logo-container img {
-    /* Задайте размеры вашего лого */
-    height: 40px; /* Пример высоты */
-    width: auto; /* Ширина автоматически */
+    height: 40px;
+    width: auto;
 }
 
 header h1 {
-    margin: 5px 0 10px 0; /* Уменьшил отступы */
-    font-size: 1.8em; /* Немного уменьшил размер */
-    font-weight: normal; /* Сделал не таким жирным */
-    color: #fff; /* Цвет заголовка в шапке */
+    margin: 5px 0 10px 0;
+    font-size: 1.8em;
+    font-weight: normal;
+    color: #fff;
 }
 
-h2 { /* Стили для заголовков секций */
+h2 { /* Заголовки секций */
     color: #004AAD;
     margin-top: 0;
     margin-bottom: 25px;
     font-size: 1.6em;
+    text-align: center; /* Убедимся, что заголовки H2 по центру */
 }
 
-h3 { /* Стили для подзаголовков */
-     color: #0056b3; /* Чуть светлее основного синего */
+h3 { /* Подзаголовки */
+     color: #0056b3;
      margin-top: 20px;
      margin-bottom: 15px;
      font-size: 1.3em;
+     text-align: center; /* Убедимся, что заголовки H3 по центру */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0; /* Убрал отступы по умолчанию */
+    margin: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Позволяет переноситься на другую строку на узких экранах */
-    gap: 5px 15px; /* Отступы между пунктами */
+    flex-wrap: wrap;
+    gap: 5px 15px;
 }
 
 nav ul li {
-    margin: 0; /* Убираем лишние отступы */
+    margin: 0;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    padding: 8px 12px; /* Добавил паддинги для удобства нажатия */
-    border-radius: 5px; /* Слегка скруглил */
+    padding: 8px 12px;
+    border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-nav ul li a:hover, nav ul li a:focus { /* Добавил :focus для доступности */
-    background-color: rgba(255, 255, 255, 0.2); /* Легкая подсветка при наведении */
-    color: #f0a500; /* Оранжевый цвет при наведении */
-    outline: none; /* Убираем стандартный контур фокуса */
+nav ul li a:hover, nav ul li a:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #f0a500;
+    outline: none;
 }
 
 
 main {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    flex-grow: 1; /* Занимает доступное пространство */
+    align-items: center; /* Центрируем дочерние элементы (контейнеры секций) */
+    flex-grow: 1; /* Занимает оставшееся место */
     width: 100%;
-    padding: 0; /* Убираем паддинг */
+    padding: 0;
     box-sizing: border-box;
-    background-color: transparent; /* Основной фон прозрачный */
+    background-color: transparent;
 }
 
 /* Контейнер для секций на главной странице */
 #main-content {
      width: 100%;
      /* Не задаем фон здесь, фон будет у каждой секции */
-     padding-top: 0; /* Убираем отступ сверху */
+     padding-top: 0;
      padding-bottom: 20px;
+     display: block; /* Убедимся, что блочный */
+     /* max-width и margin убраны, центрированием занимается main */
 }
 
 /* Общие стили для всех секций */
 main section {
-    width: 90%;
-    max-width: 1100px; /* Максимальная ширина контента */
-    margin: 25px auto; /* Вертикальный отступ между секциями */
-    padding: 35px 25px; /* Внутренние отступы */
-    background-color: rgba(255, 255, 255, 0.95); /* Почти непрозрачный белый фон */
-    border: none; /* Убрал рамку */
+    width: 90%; /* Ширина относительно родителя */
+    max-width: 1100px; /* Максимальная ширина */
+    margin: 25px auto; /* Авто-отступы для центрирования, если вдруг main не сработает */
+    padding: 35px 25px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: none;
     border-radius: 10px;
+    text-align: center; /* Центрируем весь текст внутри секции по умолчанию */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Центрируем параграфы внутри секций */
+main section p {
     text-align: center;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); /* Улучшенная тень */
 }
 
 /* Секция Intro на главной */
@@ -129,8 +146,10 @@ section.transparent-section {
     background-color: transparent;
     box-shadow: none;
     padding-top: 40px;
-    padding-bottom: 20px; /* Уменьшил нижний отступ */
-    margin-bottom: 0; /* Убрал нижний отступ */
+    padding-bottom: 20px;
+    margin-bottom: 0;
+    width: 100%; /* Шире, чем обычные секции */
+    max-width: none; /* Снимаем ограничение ширины */
 }
 
 .intro {
@@ -139,115 +158,127 @@ section.transparent-section {
     align-items: center;
     width: 100%;
     text-align: center;
-    padding: 0 20px; /* Паддинги для интро */
+    padding: 0 20px;
 }
 
 .intro-text {
-    max-width: 750px; /* Немного уменьшил */
-    padding: 30px 40px; /* Внутренние отступы */
-    background-color: rgba(0, 0, 102, 0.9); /* Фон интро блока */
+    max-width: 750px;
+    padding: 30px 40px;
+    background-color: rgba(0, 0, 102, 0.9);
     border-radius: 10px;
     color: white;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .intro-text h2 {
-    color: #f0a500; /* Оранжевый заголовок */
+    color: #f0a500;
     margin-bottom: 15px;
+    text-align: center; /* Явное центрирование */
 }
 
 .intro-text p {
     font-size: 1.1em;
     margin-bottom: 15px;
+     text-align: center; /* Явное центрирование */
 }
 
 .form-info {
     font-size: 0.9em;
     margin-bottom: 20px;
     opacity: 0.9;
+     text-align: center; /* Явное центрирование */
 }
 
 /* Кнопка записи */
 .sign-up-button {
     display: inline-block;
-    padding: 14px 28px; /* Немного изменил размеры */
-    font-size: 1.15em; /* Немного изменил размер */
-    background-color: #f0a500; /* Оранжевый */
+    padding: 14px 28px;
+    font-size: 1.15em;
+    background-color: #f0a500;
     color: white;
     text-decoration: none;
-    border-radius: 30px; /* Сильнее скруглил */
+    border-radius: 30px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    border: none; /* Убрал рамку, если она есть */
+    border: none;
     cursor: pointer;
 }
 
 .sign-up-button:hover, .sign-up-button:focus {
-    transform: translateY(-2px) scale(1.03); /* Небольшой подъем и увеличение */
+    transform: translateY(-2px) scale(1.03);
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
-    background-color: #e69500; /* Чуть темнее при наведении */
+    background-color: #e69500;
     outline: none;
 }
 
 /* Секция преимуществ */
 #advantages {
-     background-color: rgba(245, 245, 245, 0.95); /* Чуть сероватый фон для выделения */
+     background-color: rgba(245, 245, 245, 0.95);
 }
 
 .advantages-container {
     display: flex;
-    justify-content: space-around; /* Равномерное распределение */
-    width: 100%; /* Ширина контейнера */
-    margin: 0 auto; /* Убрал лишний отступ */
+    justify-content: space-around;
+    width: 100%;
+    margin: 0 auto;
     gap: 25px;
     flex-wrap: wrap;
 }
 
 .advantage-block {
-    flex: 1 1 28%; /* Гибкие блоки, минимум 28% ширины */
-    max-width: 320px; /* Макс ширина блока */
+    flex: 1 1 28%;
+    max-width: 320px;
     padding: 25px;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #fff; /* Белый фон для блоков */
+    background-color: #fff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    display: flex; /* Добавлено для выравнивания */
+    flex-direction: column; /* Добавлено для выравнивания */
+    align-items: center; /* Добавлено для выравнивания */
 }
-
 .advantage-block i {
-    font-size: 2.5em; /* Увеличил иконки */
+    font-size: 2.5em;
     margin-bottom: 15px;
     color: #004AAD;
 }
 
 .advantage-block h3 {
-    font-size: 1.2em; /* Уменьшил заголовок */
+    font-size: 1.2em;
     margin-bottom: 10px;
+    margin-top: 10px; /* Добавлен отступ */
+    text-align: center; /* Центрирование */
+}
+.advantage-block p {
+    text-align: center; /* Центрирование */
 }
 
+
 .advantage-block:hover {
-    transform: translateY(-5px); /* Подъем при наведении */
+    transform: translateY(-5px);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Секция курсов */
 .courses-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Адаптивная сетка */
-    gap: 25px; /* Отступ между карточками */
+    grid-template-columns: repeat(5, 1fr); /* 5 колонок по умолчанию */
+    gap: 20px;
 }
 
 .course-card {
-    border: 1px solid #eee; /* Очень светлая рамка */
+    border: 1px solid #eee;
     border-radius: 10px;
-    padding: 20px 25px; /* Паддинги */
+    padding: 20px 25px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     text-align: center;
     background-color: #fff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex; /* Flex для выравнивания контента */
-    flex-direction: column; /* Элементы в столбец */
-    justify-content: space-between; /* Распределяем пространство */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; Убрал, т.к. text-align: center уже есть */
+    justify-content: space-between;
 }
 
 .course-card:hover {
@@ -257,34 +288,41 @@ section.transparent-section {
 
 .course-card a {
     text-decoration: none;
-    color: inherit; /* Наследуем цвет текста */
-    display: block;
+    color: inherit;
+    display: block; /* Можно оставить */
 }
 
-.course-card a:hover h3 { /* Меняем цвет заголовка при наведении на карточку */
+.course-card a:hover h3 {
      color: #f0a500;
 }
 
 .course-card h3 {
     margin-top: 0;
     margin-bottom: 10px;
-    color: #004AAD; /* Синий заголовок */
+    color: #004AAD;
     font-size: 1.25em;
-    transition: color 0.3s ease; /* Плавная смена цвета */
+    transition: color 0.3s ease;
+    text-align: center; /* Центрирование */
 }
 
 .course-card p {
     color: #555;
     font-size: 0.95em;
-    flex-grow: 1; /* Позволяет параграфу занять место */
-    margin-bottom: 0; /* Убираем нижний отступ у параграфа */
+    flex-grow: 1;
+    margin-bottom: 0;
+     text-align: center; /* Центрирование */
 }
 
 /* Секция Ресурсы */
+#resources p {
+     text-align: center; /* Центрирование */
+}
 #resources ul {
+    display: inline-block; /* Центрируем блок списка */
+    text-align: left; /* Текст слева */
     list-style: none;
     padding: 0;
-    margin: 20px 0 0 0; /* Отступ сверху */
+    margin: 20px 0 0 0;
 }
 
 #resources li {
@@ -293,13 +331,13 @@ section.transparent-section {
 
 #resources li a {
     text-decoration: none;
-    color: #0056b3; /* Цвет ссылок */
+    color: #0056b3;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 #resources li a:hover {
-    color: #f0a500; /* Оранжевый при наведении */
+    color: #f0a500;
     text-decoration: underline;
 }
 
@@ -313,18 +351,19 @@ section.transparent-section {
 .review {
     border-radius: 8px;
     padding: 25px;
-    text-align: left; /* Выравнивание по левому краю */
-    background-color: #f9f9f9; /* Светлый фон для отзыва */
-    border-left: 5px solid #004AAD; /* Синяя полоска слева */
+    text-align: left; /* Оставляем слева для цитат */
+    background-color: #f9f9f9;
+    border-left: 5px solid #004AAD;
 }
 
 .review p {
     margin: 0;
-    font-style: italic; /* Курсив для цитаты */
+    font-style: italic;
     color: #444;
+     text-align: left; /* Текст цитаты слева */
 }
 
-.review p::before { /* Добавляем кавычки */
+.review p::before {
     content: '“';
     font-size: 1.5em;
     color: #004AAD;
@@ -342,111 +381,131 @@ section.transparent-section {
 
 /* Секция Запись на урок */
 #sign-up {
-    background-color: rgba(0, 0, 102, 0.9); /* Темно-синий фон */
+    background-color: rgba(0, 0, 102, 0.9);
     color: white;
 }
 #sign-up h2 {
-    color: #f0a500; /* Оранжевый заголовок */
+    color: #f0a500;
+     text-align: center; /* Центрирование */
 }
 #sign-up p {
     max-width: 600px;
-    margin: 0 auto 25px auto; /* Отступы */
+    margin: 0 auto 25px auto;
     font-size: 1.05em;
+     text-align: center; /* Центрирование */
 }
 
 /* Списки на страницах курсов */
 #course-topics ul, #target-audience ul {
-    list-style: disc; /* Маркеры списка */
-    text-align: left; /* Выравнивание по левому краю */
-    max-width: 700px; /* Ограничение ширины списка */
-    margin: 15px auto; /* Центрирование */
-    padding-left: 30px; /* Отступ слева для маркеров */
+    display: inline-block; /* Центрируем блок списка */
+    list-style: disc;
+    text-align: left; /* Текст внутри слева */
+    max-width: 700px;
+    margin: 15px auto;
+    padding-left: 0; /* Убираем отступ по умолчанию */
+    list-style-position: inside; /* Маркеры внутри блока */
 }
 #course-topics li, #target-audience li {
-    margin-bottom: 8px; /* Отступ между пунктами */
+    margin-bottom: 8px;
+    text-align: left; /* Текст элементов списка слева */
 }
 
 
 /* Подвал */
 footer {
-    background-color: #fff; /* Белый фон футера */
+    background-color: #fff;
     color: #333;
     padding: 25px 0;
     width: 100%;
     margin-top: auto; /* Прижимает футер к низу */
     text-align: center;
-    box-sizing: border-box;
-    border-top: 1px solid #ddd; /* Разделитель */
 }
 
 .social-links {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row; /* Горизонтально по умолчанию */
-    padding: 0 20px 15px 20px; /* Паддинг снизу */
+    flex-direction: row;
+    padding: 0 20px 15px 20px;
     gap: 20px;
-    flex-wrap: wrap; /* Перенос на другую строку */
+    flex-wrap: wrap;
 }
 
 .social-links .icons {
     display: flex;
-    gap: 15px; /* Отступ между иконками */
+    gap: 15px;
 }
 
 .social-links p {
     color: #333;
-    margin: 0; /* Убираем лишние отступы */
+    margin: 0;
 }
 
 .social-links a img {
     width: 30px;
     height: 30px;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0.8; /* Слегка прозрачные иконки */
+    opacity: 0.8;
 }
 
 .social-links a:hover img {
-    transform: scale(1.15); /* Увеличение при наведении */
-    opacity: 1; /* Полная непрозрачность */
+    transform: scale(1.15);
+    opacity: 1;
 }
 
-footer p:last-child { /* Стили для копирайта */
-    color: #777; /* Серый цвет */
+footer p:last-child { /* Копирайт */
+    color: #777;
     font-size: 0.9em;
-    margin-top: 10px; /* Отступ сверху */
+    margin-top: 10px;
     margin-bottom: 0;
+    text-align: center; /* Центрирование */
 }
 
-/* Адаптивность */
-@media (max-width: 992px) {
-     .courses-grid {
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Немного уменьшаем мин. ширину */
+/* === Адаптивность === */
+
+@media (max-width: 1200px) { /* Ноутбуки и большие планшеты */
+    .courses-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+        gap: 15px;
+    }
+    main section {
+        width: 92%; /* Немного шире */
+    }
+}
+
+@media (max-width: 992px) { /* Планшеты */
+    .courses-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+         gap: 15px;
     }
     .advantage-block {
-        flex-basis: 45%; /* По два блока в ряд на планшетах */
-        max-width: none; /* Снимаем ограничение макс. ширины */
+        flex-basis: 45%; /* По два блока в ряд */
+        max-width: none;
+    }
+     main section {
+        width: 94%;
+    }
+    header h1 {
+        font-size: 1.6em;
     }
 }
 
 
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5em; /* Уменьшаем заголовок сайта */
+@media (max-width: 768px) { /* Небольшие планшеты */
+     header h1 {
+        font-size: 1.5em;
     }
     nav ul {
-        /* flex-direction: column; /* Убрал, т.к. flex-wrap лучше */
-        /* align-items: center; */
-        gap: 5px 10px; /* Уменьшаем отступы в меню */
+        gap: 5px 10px;
     }
     nav ul li a {
-        padding: 6px 10px; /* Уменьшаем паддинги ссылок */
+        padding: 6px 10px;
         font-size: 0.95em;
     }
 
     main section {
-         padding: 25px 15px; /* Уменьшаем паддинги секций */
-         width: 95%; /* Чуть шире на мобильных */
+         padding: 25px 15px;
+         width: 95%;
          margin: 20px auto;
     }
 
@@ -464,38 +523,54 @@ footer p:last-child { /* Стили для копирайта */
     h3 { font-size: 1.15em; margin-bottom: 10px; }
 
     .advantages-container {
-       flex-direction: column; /* Преимущества друг под другом */
+       flex-direction: column;
        align-items: center;
        gap: 20px;
     }
     .advantage-block {
-        width: 90%; /* Ширина блоков преимуществ */
+        width: 90%;
         max-width: 400px;
         flex-basis: auto;
     }
 
     .courses-grid {
-        grid-template-columns: 1fr; /* Одна колонка */
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+        gap: 15px;
     }
 
     .reviews-container {
-         grid-template-columns: 1fr; /* Одна колонка */
+         grid-template-columns: 1fr;
          gap: 20px;
     }
 
     .social-links {
-        flex-direction: column; /* Вертикально */
+        flex-direction: column;
         align-items: center;
-        gap: 15px; /* Уменьшаем отступ */
+        gap: 15px;
         padding-bottom: 10px;
     }
      .social-links p {
-        margin: 0 0 5px 0; /* Отступ снизу у текста */
+        margin: 0 0 5px 0;
      }
 
-     #course-topics ul, #target-audience ul {
-        padding-left: 20px; /* Уменьшаем отступ для списков */
+     #course-topics ul, #target-audience ul, #resources ul {
+        padding-left: 0; /* Убираем левый паддинг для списков */
      }
 }
 
+@media (max-width: 576px) { /* Телефоны */
+    .courses-grid {
+        grid-template-columns: 1fr; /* 1 колонка */
+         gap: 15px;
+    }
+    header h1 {
+        font-size: 1.4em;
+    }
+     nav ul li a {
+        font-size: 0.9em;
+        padding: 5px 8px;
+    }
+    .advantage-block {
+        width: 95%; /* Чуть шире */
+    }
+}
