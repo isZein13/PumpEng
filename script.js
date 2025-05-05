@@ -39,3 +39,55 @@ if (document.readyState === 'loading') {
     // DOM уже загружен
     initializeComponents();
 }
+
+
+// ======== Логика для кнопки "Наверх" ========
+
+// Получаем кнопку
+let scrollTopButton = document.getElementById("scrollToTopBtn");
+
+// Показываем/скрываем кнопку при прокрутке
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  // Сначала проверяем, существует ли кнопка на странице
+  scrollTopButton = document.getElementById("scrollToTopBtn"); // На всякий случай получаем элемент снова, если DOM изменился
+  if (scrollTopButton) {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      scrollTopButton.style.display = "block";
+      // Плавное появление (если используете visibility/opacity в CSS)
+      // requestAnimationFrame(() => {
+      //    scrollTopButton.style.visibility = "visible";
+      //    scrollTopButton.style.opacity = "0.8";
+      // });
+    } else {
+      scrollTopButton.style.display = "none";
+      // Плавное исчезание (если используете visibility/opacity в CSS)
+      // requestAnimationFrame(() => {
+      //    scrollTopButton.style.visibility = "hidden";
+      //    scrollTopButton.style.opacity = "0";
+      // });
+    }
+  }
+}
+
+// Прокрутка наверх при клике
+// Проверяем еще раз, т.к. скрипт может выполниться до того, как кнопка появится
+if (scrollTopButton) {
+  scrollTopButton.addEventListener('click', function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+} else {
+    // Если кнопки нет сразу, попробуем добавить слушатель после загрузки DOM
+    document.addEventListener('DOMContentLoaded', () => {
+         scrollTopButton = document.getElementById("scrollToTopBtn");
+         if (scrollTopButton) {
+              scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+              });
+         }
+    });
+}
+
+
+// ======== Конец логики для кнопки "Наверх" ========
