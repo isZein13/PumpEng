@@ -315,18 +315,18 @@ section.transparent-section {
 
 /* Секция Ресурсы */
 #resources p {
-     text-align: center; /* Центрирование */
+     text-align: center; /* Параграф по центру */
 }
 #resources ul {
-    display: inline-block; /* Центрируем блок списка */
-    text-align: left; /* Текст слева */
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 0 0;
+    list-style: none; /* Убираем маркеры */
+    padding: 0; /* Убираем внутренний отступ */
+    margin: 20px 0 0 0; /* Отступ сверху */
+    /* Убираем display: inline-block; и text-align: left; отсюда */
 }
 
 #resources li {
-    margin: 12px 0;
+    margin: 12px 0; /* Отступы между пунктами */
+    text-align: center; /* <<<=== ДОБАВЛЕНО: Центрируем текст внутри li */
 }
 
 #resources li a {
@@ -334,6 +334,7 @@ section.transparent-section {
     color: #0056b3;
     font-weight: bold;
     transition: color 0.3s ease;
+    /* text-align: center; можно и здесь, но на li должно хватить */
 }
 
 #resources li a:hover {
