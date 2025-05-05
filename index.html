@@ -3,25 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PumpEng - Главная</title>
+    <title>PumpEng - Эффективные Курсы Английского Языка Онлайн</title> <!-- Уникальный Title -->
+    <meta name="description" content="PumpEng предлагает курсы английского языка для всех уровней: от начинающих до продвинутых, деловой английский, подготовка к IELTS. Индивидуальный подход. Записывайтесь!"> <!-- Уникальное Description -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- FontAwesome -->
 </head>
 <body>
-    <header></header>
-    <div id="main-content"></div>
-    <footer></footer>
+    <header>
+        <!-- Шапка будет загружена здесь скриптом -->
+    </header>
+
+    <div id="main-content">
+        <!-- Основной контент главной страницы будет загружен сюда из main.html -->
+    </div>
+
+    <footer>
+        <!-- Подвал будет загружен здесь скриптом -->
+    </footer>
 
     <script>
-    async function loadHTML(element, file) {
-        const response = await fetch(file);
-        const html = await response.text();
-        document.querySelector(element).innerHTML = html;
-    }
+        // Скрипт для загрузки ТОЛЬКО основного контента для index.html
+        async function loadMainContent() {
+            try {
+                const response = await fetch('main.html');
+                if (!response.ok) throw new Error('Could not fetch main.html');
+                const html = await response.text();
+                const mainContentElement = document.querySelector('#main-content');
+                if (mainContentElement) {
+                    mainContentElement.innerHTML = html;
+                } else {
+                    console.error('Element with id "main-content" not found.');
+                }
+            } catch (error) {
+                console.error('Error loading main content:', error);
+                const mainContentElement = document.querySelector('#main-content');
+                 if (mainContentElement) {
+                    mainContentElement.innerHTML = '<p style="color: red; text-align: center; padding: 20px;">Не удалось загрузить основное содержимое.</p>';
+                 }
+            }
+        }
+        // Загружаем основной контент ПОСЛЕ полной загрузки DOM
+        // Это гарантирует, что скрипт script.js тоже успеет выполниться и создать header/footer
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadMainContent);
+        } else {
+            loadMainContent(); // Загружаем сразу, если DOM уже готов
+        }
+    </script>
+    <script src="script.js"></script> <!-- Ссылка на ОБЩИЙ скрипт загрузки header/footer -->
 
-    loadHTML('header', 'header.html');
-    loadHTML('#main-content', 'main.html');
-    loadHTML('footer', 'footer.html');
-</script>
 </body>
 </html>
