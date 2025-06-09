@@ -1,11 +1,11 @@
 /* tests-overview-styles.css */
 
-/* Секция "Hero" для страницы тестов */
 #tests-hero {
-    background: linear-gradient(rgba(0, 74, 173, 0.8), rgba(0, 50, 120, 0.8)), url('hero-image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll !important; /* <<<=== ДОБАВЛЕНО !important */
+    /* Было: background: linear-gradient(rgba(0, 74, 173, 0.8), rgba(0, 50, 120, 0.8)), url('hero-image.jpg'); */
+    background: linear-gradient(rgba(0, 74, 173, 0.9), rgba(0, 50, 120, 0.95)); /* <<<=== ИЗМЕНЕНО: Оставляем только градиент, можно сделать его чуть плотнее */
+    background-size: cover; /* Можно оставить, хотя для градиента не так критично */
+    background-position: center; /* Можно оставить */
+    /* background-attachment убираем, т.к. нет изображения для закрепления/прокрутки */
     color: white;
     padding: 60px 20px;
     text-align: center;
