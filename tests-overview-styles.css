@@ -5,7 +5,7 @@
     background: linear-gradient(rgba(0, 74, 173, 0.8), rgba(0, 50, 120, 0.8)), url('hero-image.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: scroll; /* <<<=== ИЗМЕНЕНО ЗДЕСЬ (было fixed из-за наследования от body) */
+    background-attachment: scroll !important; /* <<<=== ДОБАВЛЕНО !important */
     color: white;
     padding: 60px 20px;
     text-align: center;
