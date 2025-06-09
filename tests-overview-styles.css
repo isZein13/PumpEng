@@ -2,18 +2,20 @@
 
 /* Секция "Hero" для страницы тестов */
 #tests-hero {
-    background: linear-gradient(rgba(0, 74, 173, 0.8), rgba(0, 50, 120, 0.8)), url('hero-image.jpg'); /* Используем тот же фон, но с другим градиентом */
+    background: linear-gradient(rgba(0, 74, 173, 0.8), rgba(0, 50, 120, 0.8)), url('hero-image.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: scroll; /* <<<=== ИЗМЕНЕНО ЗДЕСЬ (было fixed из-за наследования от body) */
     color: white;
     padding: 60px 20px;
     text-align: center;
-    margin-bottom: 0; /* Убираем отступ снизу, если он есть у секций */
-    border-radius: 0; /* Убираем скругление, если есть у секций */
-    box-shadow: none; /* Убираем тень */
-    width: 100%; /* На всю ширину */
-    max-width: none; /* Снимаем ограничение */
+    margin-bottom: 0;
+    border-radius: 0;
+    box-shadow: none;
+    width: 100%;
+    max-width: none;
 }
+
 
 #tests-hero .hero-content h1 {
     font-size: 2.8em;
