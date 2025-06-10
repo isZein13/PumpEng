@@ -1,5 +1,56 @@
 /* styles.css */
 
+/* === Стили для Хлебных крошек === */
+.breadcrumbs-container {
+    background-color: #f8f9fa; /* Светлый фон, как у секции #courses-preview */
+    padding: 10px 0;      /* Вертикальные отступы */
+    border-bottom: 1px solid #e9ecef; /* Тонкая линия снизу */
+    width: 100%; /* На всю ширину */
+}
+
+.breadcrumbs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Располагаем элементы в ряд */
+    flex-wrap: wrap; /* Позволяем переноситься, если не помещаются */
+    /* Центрируем крошки на странице */
+    max-width: 1100px; /* Та же максимальная ширина, что и у секций */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px; /* Отступы по бокам, как у секций */
+    padding-right: 20px;
+}
+
+.breadcrumb-item {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.breadcrumb-item a {
+    color: #0056b3; /* Цвет ссылок */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: #003366; /* Темнее при наведении */
+    text-decoration: underline;
+}
+
+.breadcrumb-item + .breadcrumb-item::before { /* Разделитель между элементами */
+    content: ">"; /* Или можно использовать иконку FontAwesome: '\f054' (fas fa-chevron-right) */
+    /* font-family: "Font Awesome 5 Free"; /* Если используете иконку */
+    /* font-weight: 900; /* Для solid иконок */
+    padding: 0 8px; /* Отступы вокруг разделителя */
+    color: #6c757d; /* Цвет разделителя */
+}
+
+.breadcrumb-item.active { /* Стиль для текущей (неактивной) страницы */
+    color: #212529; /* Более темный цвет для текущей страницы */
+    font-weight: bold;
+}
+
 html, body {
     height: 100%; /* Важно для прижатия футера */
     margin: 0;
