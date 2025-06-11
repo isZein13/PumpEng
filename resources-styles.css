@@ -1,0 +1,151 @@
+/* resources-styles.css */
+
+#resources-hero {
+    background: linear-gradient(rgba(30, 130, 76, 0.85), rgba(22, 96, 56, 0.9)); /* Зеленый градиент для ресурсов */
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    margin-bottom: 0;
+    border-radius: 0;
+    box-shadow: none;
+    width: 100%;
+    max-width: none;
+}
+
+#resources-hero .hero-content h1 {
+    font-size: 2.6em;
+    margin-bottom: 15px;
+    color: #f0f0f0; /* Светлый для контраста с зеленым */
+}
+
+#resources-hero .hero-content p {
+    font-size: 1.15em;
+    max-width: 750px;
+    margin: 0 auto 15px auto;
+    line-height: 1.6;
+}
+
+/* Секция с категориями ресурсов */
+#resources-categories {
+    padding-top: 40px;
+    padding-bottom: 50px;
+    background-color: #f8f9fa;
+}
+
+#resources-categories h2 {
+    margin-bottom: 35px;
+    font-size: 2em;
+    color: #333;
+    text-align: center;
+}
+
+.resource-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Адаптивная сетка */
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.resource-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 25px 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    /* border-top: 5px solid #27ae60; /* Зеленая верхняя рамка для всех */
+}
+
+.resource-card:hover {
+    /* transform: translateY(-5px); */
+    /* box-shadow: 0 10px 25px rgba(0,0,0,0.1); */
+}
+
+.resource-card-icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #27ae60; /* Основной зеленый для иконок */
+    text-align: center;
+}
+
+.resource-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.resource-card p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Параграф занимает доступное место */
+    text-align: left; /* Текст описания слева */
+}
+
+.resource-links {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.resource-links li {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.resource-links li a {
+    color: #0056b3; /* Синий для ссылок */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.resource-links li a:hover {
+    color: #003366;
+    text-decoration: underline;
+}
+.resource-links li a[target="_blank"]::after { /* Значок внешней ссылки */
+    content: "\f35d"; /* fas fa-external-link-alt */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 0.8em;
+    margin-left: 5px;
+    opacity: 0.7;
+}
+
+
+.resource-category-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #27ae60; /* Зеленый */
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    margin-top: auto; /* Прижать кнопку к низу, если карточки разной высоты */
+}
+.resource-category-button.coming-soon {
+    background-color: #95a5a6; /* Серый для "скоро" */
+    cursor: default;
+}
+
+.resource-category-button:not(.coming-soon):hover {
+    background-color: #229954; /* Темнее зеленый */
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #resources-hero .hero-content h1 {
+        font-size: 2em;
+    }
+    .resource-cards-container {
+        grid-template-columns: 1fr;
+    }
+}
