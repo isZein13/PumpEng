@@ -1,11 +1,9 @@
 /* tests-overview-styles.css */
 
 #tests-hero {
-    /* Было: background: linear-gradient(rgba(0, 74, 173, 0.8), rgba(0, 50, 120, 0.8)), url('hero-image.jpg'); */
-    background: linear-gradient(rgba(0, 74, 173, 0.9), rgba(0, 50, 120, 0.95)); /* <<<=== ИЗМЕНЕНО: Оставляем только градиент, можно сделать его чуть плотнее */
-    background-size: cover; /* Можно оставить, хотя для градиента не так критично */
-    background-position: center; /* Можно оставить */
-    /* background-attachment убираем, т.к. нет изображения для закрепления/прокрутки */
+    background: linear-gradient(rgba(0, 74, 173, 0.9), rgba(0, 50, 120, 0.95));
+    background-size: cover;
+    background-position: center;
     color: white;
     padding: 60px 20px;
     text-align: center;
@@ -75,7 +73,9 @@
 .test-card.level-a1 { border-top-color: #4CAF50; /* Зеленый */ }
 .test-card.level-a2 { border-top-color: #2196F3; /* Синий */ }
 .test-card.level-b1 { border-top-color: #FFC107; /* Желтый/Оранжевый */ }
-/* Добавьте цвета для B2, C1 и т.д. */
+.test-card.level-b2 { border-top-color: #e74c3c; /* Красный */ }
+.test-card.level-c1 { border-top-color: #673AB7; /* Глубокий фиолетовый */ }
+
 
 .test-card-icon {
     font-size: 3em; /* Размер иконки */
@@ -84,6 +84,8 @@
 .test-card.level-a1 .test-card-icon { color: #4CAF50; }
 .test-card.level-a2 .test-card-icon { color: #2196F3; }
 .test-card.level-b1 .test-card-icon { color: #FFC107; }
+.test-card.level-b2 .test-card-icon { color: #e74c3c; }
+.test-card.level-c1 .test-card-icon { color: #673AB7; }
 
 
 .test-card h3 {
@@ -115,10 +117,16 @@
 .test-card.level-a1 .test-card-button { background-color: #4CAF50; }
 .test-card.level-a2 .test-card-button { background-color: #2196F3; }
 .test-card.level-b1 .test-card-button { background-color: #FFC107; color: #333; /* Текст темный для желтой кнопки */ }
+.test-card.level-b2 .test-card-button { background-color: #e74c3c; }
+.test-card.level-c1 .test-card-button { background-color: #673AB7; }
+
 
 .test-card.level-a1 .test-card-button:hover { background-color: #388E3C; }
 .test-card.level-a2 .test-card-button:hover { background-color: #1976D2; }
 .test-card.level-b1 .test-card-button:hover { background-color: #FFA000; }
+.test-card.level-b2 .test-card-button:hover { background-color: #c0392b; }
+.test-card.level-c1 .test-card-button:hover { background-color: #512DA8; }
+
 
 .test-card-button:hover {
     transform: scale(1.05);
