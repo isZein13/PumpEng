@@ -1,19 +1,21 @@
-/* test-styles.css - Обновлен для A1, A2, B1 */
+/* test-styles.css - Обновлен для A1, A2, B1, B2, C1 */
 
 /* Общие стили для секции теста */
 #test-section {
-    text-align: left; /* Выравниваем текст вопросов и опций по левому краю внутри секции */
-    background-color: #f9f9f9; /* Слегка другой фон для теста */
+    text-align: left;
+    background-color: #f9f9f9;
 }
 
 #test-section h2, #test-section h3, #test-section h4 {
-    text-align: center; /* Заголовки по центру */
+    text-align: center;
 }
 
-/* Контейнеры с вопросами (одинаковые ID не страшны, т.к. они на разных страницах) */
+/* Контейнеры с вопросами */
 #a1-test-questions,
 #a2-test-questions,
-#b1-test-questions {
+#b1-test-questions,
+#b2-test-questions,
+#c1-test-questions { /* <<<=== ДОБАВЛЕН ID C1 */
     margin-bottom: 30px;
 }
 
@@ -27,7 +29,7 @@
 }
 
 .test-question p strong {
-    display: block; /* Вопрос на всю ширину */
+    display: block;
     margin-bottom: 15px;
     font-size: 1.1em;
     line-height: 1.5;
@@ -36,12 +38,12 @@
 /* Контейнер для вариантов ответа */
 .test-options {
     display: flex;
-    flex-direction: column; /* Варианты друг под другом */
-    gap: 10px; /* Отступ между вариантами */
+    flex-direction: column;
+    gap: 10px;
 }
 
 .test-options label {
-    display: block; /* Метка на всю ширину */
+    display: block;
     padding: 10px 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -50,7 +52,7 @@
 }
 
 .test-options label:hover {
-    background-color: #f0f8ff; /* Легкий фон при наведении */
+    background-color: #f0f8ff;
     border-color: #a0d3ff;
 }
 
@@ -85,16 +87,18 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-family: inherit; /* Наследовать шрифт */
+    font-family: inherit;
     font-size: 1em;
     margin-top: 10px;
-    min-height: 100px; /* Минимальная высота для удобства */
+    min-height: 100px;
 }
 
 /* Кнопка проверки для ВСЕХ тестов */
 #submit-a1-test,
 #submit-a2-test,
-#submit-b1-test { /* <<<=== ДОБАВЛЕН ID кнопки B1 */
+#submit-b1-test,
+#submit-b2-test,
+#submit-c1-test { /* <<<=== ДОБАВЛЕН ID кнопки C1 */
     display: block;
     width: fit-content;
     min-width: 180px;
@@ -102,7 +106,7 @@
     padding: 12px 28px;
     font-size: 1.1em;
     font-weight: bold;
-    background-color: #004AAD; /* Основной синий цвет */
+    background-color: #004AAD;
     color: white;
     border: none;
     border-radius: 30px;
@@ -114,34 +118,44 @@
 
 #submit-a1-test:hover,
 #submit-a2-test:hover,
-#submit-b1-test:hover { /* <<<=== ДОБАВЛЕН ID кнопки B1 */
+#submit-b1-test:hover,
+#submit-b2-test:hover,
+#submit-c1-test:hover { /* <<<=== ДОБАВЛЕН ID кнопки C1 */
     background-color: #00337a;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
     transform: translateY(-1px);
 }
 
 
-/* Контейнеры результатов (одинаковые ID не страшны) */
+/* Контейнеры результатов */
 #a1-test-results,
 #a2-test-results,
-#b1-test-results {
+#b1-test-results,
+#b2-test-results,
+#c1-test-results { /* <<<=== ДОБАВЛЕН ID C1 */
     margin-top: 40px;
     padding: 25px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #fff;
 }
+
+/* Заголовки внутри результатов */
 #a1-test-results h3, #a1-test-results h4,
 #a2-test-results h3, #a2-test-results h4,
-#b1-test-results h3, #b1-test-results h4 {
+#b1-test-results h3, #b1-test-results h4,
+#b2-test-results h3, #b2-test-results h4,
+#c1-test-results h3, #c1-test-results h4 { /* <<<=== ДОБАВЛЕН ID C1 */
     margin-bottom: 15px;
-    text-align: center; /* Центрируем заголовки результатов */
+    text-align: center;
 }
 
 /* Отображение балла */
 #a1-score,
 #a2-score,
-#b1-score {
+#b1-score,
+#b2-score,
+#c1-score { /* <<<=== ДОБАВЛЕН ID C1 */
     font-size: 1.3em;
     font-weight: bold;
     margin-bottom: 25px;
@@ -151,7 +165,9 @@
 /* Разделитель между объяснениями */
 #a1-explanations hr,
 #a2-explanations hr,
-#b1-explanations hr {
+#b1-explanations hr,
+#b2-explanations hr,
+#c1-explanations hr { /* <<<=== ДОБАВЛЕН ID C1 */
     border: none;
     border-top: 1px solid #eee;
     margin: 25px 0;
@@ -160,7 +176,7 @@
 /* Блок объяснения одного вопроса */
 .result-item {
     padding: 15px;
-    margin-bottom: 0; /* Убран, т.к. есть hr */
+    margin-bottom: 0;
     border-radius: 5px;
     border-left-width: 5px;
     border-left-style: solid;
@@ -234,5 +250,5 @@ p.explanation-note {
     font-size: 0.9em;
     color: #6c757d;
     margin-top: 10px;
-     text-align: left; /* Примечание слева */
+     text-align: left;
 }
