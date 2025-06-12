@@ -25,17 +25,17 @@
 }
 
 .reading-level-section {
-    margin-bottom: 30px; /* Уменьшил отступ между секциями уровней */
-    /* Убираем фон и рамку отсюда, они будут у details */
+    margin-bottom: 25px;
+    /* Стили фона и рамки теперь у .level-details */
 }
 
 /* Стили для сворачиваемых/разворачиваемых блоков */
 .level-details, .task-details {
-    margin-bottom: 20px; /* Отступ между блоками details */
+    margin-bottom: 20px;
     border: 1px solid #e0e0e0;
-    border-radius: 8px; /* Скругление больше */
+    border-radius: 8px;
     background-color: #fff;
-    overflow: hidden; /* Чтобы внутренние элементы не вылезали за скругленные углы */
+    overflow: hidden;
 }
 .level-details:last-child, .task-details:last-child {
     margin-bottom: 0;
@@ -43,20 +43,24 @@
 
 
 .level-summary, .task-summary {
-    padding: 18px 25px; /* Увеличил паддинги */
+    padding: 18px 25px;
     cursor: pointer;
-    display: flex; /* Используем flex для выравнивания заголовка и стрелки */
-    justify-content: space-between; /* Размещаем элементы по краям */
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     background-color: #f8f9fa;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid transparent; /* По умолчанию нет линии под summary */
     transition: background-color 0.2s ease;
-    position: relative; /* Для псевдоэлемента-стрелки */
+    position: relative;
 }
 .level-details[open] > .level-summary,
 .task-details[open] > .task-summary {
-    border-bottom-style: solid;
-    background-color: #f1f3f5; /* Чуть темнее фон, когда открыто */
+    border-bottom-color: #e0e0e0; /* Линия появляется, когда открыто */
+    background-color: #f1f3f5;
+}
+.level-details:not([open]) > .level-summary,
+.task-details:not([open]) > .task-summary {
+     border-bottom-color: transparent; /* Нет линии, когда закрыто */
 }
 
 
@@ -64,24 +68,23 @@
     background-color: #e9ecef;
 }
 
-/* Стили для заголовков внутри summary */
 .level-summary h2, .task-summary h3 {
     margin: 0;
     padding: 0;
     border-bottom: none;
     display: inline-flex;
     align-items: center;
-    /* width: calc(100% - 30px); /* Ширина текста, оставляя место для стрелки */
+    flex-grow: 1; /* Чтобы заголовок занимал доступное место */
 }
 .level-summary h2 {
-    font-size: 1.7em; /* Чуть больше */
+    font-size: 1.7em;
     color: #333;
 }
 .task-summary h3 {
-    font-size: 1.35em; /* Чуть больше */
+    font-size: 1.35em;
     color: #0056b3;
 }
-.level-summary h2 .level-icon, .task-summary h3 .level-icon { /* Общий стиль для иконок в summary */
+.level-summary h2 .level-icon, .task-summary h3 .level-icon {
     margin-right: 12px;
 }
 /* Цвета иконок для уровней в summary */
@@ -93,40 +96,40 @@
 
 
 /* Стрелка для details/summary */
-.level-summary::after, .task-summary::after { /* Используем ::after и не абсолютное позиционирование */
+.level-summary::after, .task-summary::after {
     content: '\f078'; /* Иконка FontAwesome: fas fa-chevron-down */
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     transition: transform 0.2s ease-in-out;
-    font-size: 1em; /* Размер стрелки */
+    font-size: 1em;
     color: #555;
-    /* margin-left: auto; /* Прижимает стрелку вправо, если summary - flex */
+    margin-left: 15px; /* Отступ от текста заголовка */
 }
 
 .level-details[open] > .level-summary::after,
 .task-details[open] > .task-summary::after {
-    transform: rotate(-180deg); /* Поворачиваем стрелку вверх */
+    transform: rotate(-180deg);
 }
 
 
-.level-content { /* Обертка для контента уровня внутри details */
-    padding: 0px 25px 25px 25px; /* Паддинг только для содержимого, не для summary */
-    border-top: 1px solid transparent; /* Предотвращает схлопывание отступов */
+.level-content {
+    padding: 0px 25px 25px 25px;
+    border-top: 1px solid transparent; /* Только если summary не имеет нижней границы */
 }
-.task-details .reading-task { /* Убираем лишние отступы у вложенного task */
-    padding-top: 15px;
+.task-details .reading-task {
+    padding-top: 20px; /* Отступ сверху для самого блока задания внутри task-details */
 }
 
 
 .reading-task {
-    /* padding: 10px 0 0 0; */ /* Паддинг теперь у .level-content или .task-details */
     background-color: transparent;
     border: none;
     box-shadow: none;
     margin-bottom: 0;
 }
 
-.reading-task h3 {
+.reading-task h3 { /* Заголовок текста внутри .reading-task, если он остался */
+    /* Эти стили могут быть уже не нужны, если заголовок в .task-summary */
     font-size: 1.4em;
     color: #0056b3;
     margin-bottom: 15px;
@@ -151,7 +154,7 @@
 }
 
 
-.reading-task h4 {
+.reading-task h4 { /* "Вопросы к тексту" */
     font-size: 1.2em;
     color: #333;
     margin-top: 25px;
@@ -179,23 +182,24 @@
 }
 .reading-options label {
     display: block;
-    padding: 8px 12px;
+    padding: 10px 15px; /* Увеличил паддинг для удобства */
     border: 1px solid #ddd;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 .reading-options label:hover {
-    background-color: #f0f8ff;
+    background-color: #e9f5ff; /* Немного изменил цвет */
+    border-color: #b0dfff;
 }
 .reading-options input[type="radio"] {
-    margin-right: 8px;
+    margin-right: 10px; /* Увеличил отступ */
     vertical-align: middle;
 }
 
 .check-reading-answers-btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 25px; /* Увеличил паддинг */
     font-size: 1em;
     font-weight: bold;
     color: white;
@@ -203,7 +207,7 @@
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 20px; /* Увеличил отступ */
     transition: background-color 0.3s ease;
 }
 .check-reading-answers-btn:hover {
@@ -211,21 +215,21 @@
 }
 
 .reading-feedback {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 5px;
-    background-color: #f9f9f9; /* Фон для блока с результатами */
-    border: 1px solid #eee;
+    margin-top: 25px; /* Увеличил отступ */
+    padding: 20px;  /* Увеличил паддинг */
+    border-radius: 6px; /* Скругление */
+    background-color: #f9f9f9;
+    border: 1px solid #e7e7e7;
 }
 .reading-feedback h4 {
     text-align: center;
     margin-top: 0;
     margin-bottom: 15px;
-    font-size: 1.2em;
+    font-size: 1.25em; /* Крупнее */
     color: #333;
 }
 .reading-feedback p {
-    margin: 8px 0; /* Увеличил отступы */
+    margin: 8px 0;
     text-align: left;
     line-height: 1.5;
 }
@@ -238,17 +242,17 @@
     font-weight: bold;
 }
 .reading-feedback .explanation-text {
-    font-style: normal; /* Убрал курсив */
-    font-size: 0.95em; /* Чуть больше */
+    font-style: normal;
+    font-size: 0.95em;
     color: #444;
-    margin-top: 5px;
-    padding-left: 15px; /* Небольшой отступ для объяснения */
-    border-left: 3px solid #ddd; /* Линия слева от объяснения */
+    margin-top: 8px; /* Отступ от ответа */
+    padding-left: 15px;
+    border-left: 3px solid #ccc; /* Выделение объяснения */
 }
 .reading-feedback hr {
     border: none;
-    border-top: 1px dashed #ccc; /* Пунктирный разделитель */
-    margin: 15px 0; /* Увеличил отступы */
+    border-top: 1px dashed #ccc;
+    margin: 18px 0; /* Увеличил отступы */
 }
 
 
@@ -263,13 +267,13 @@
     .task-summary h3 {
         font-size: 1.25em;
     }
-     .reading-task h3 { /* Заголовок текста внутри задания */
+     .reading-task h3 {
         font-size: 1.2em;
     }
      .reading-level-section .level-summary, .reading-level-section .task-summary {
-        padding: 12px 15px;
+        padding: 15px 20px; /* Уменьшил паддинги для summary */
     }
     .reading-level-section .level-content {
-        padding: 15px;
+        padding: 15px 20px 20px 20px; /* Уменьшил паддинги для контента */
     }
 }
