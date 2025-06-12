@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Упражнения на Чтение (Reading Comprehension) - PumpEng</title>
-    <meta name="description" content="Проверьте и улучшите свои навыки чтения на английском языке с помощью текстов и вопросов для уровней от A1 до C1. Упражнения от школы PumpEng.">
+    <title>Упражнения на Чтение (A1-C1) - PumpEng</title>
+    <meta name="description" content="Улучшите навыки чтения на английском: тексты и вопросы для уровней от A1 до C1 с мгновенной проверкой и объяснениями. Упражнения от школы PumpEng.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="reading-comprehension-styles.css">
@@ -34,51 +34,56 @@
 
             <!-- Уровень A1 -->
             <div class="reading-level-section" id="level-a1">
-                <details class="level-details" open> <!-- Развернут по умолчанию -->
+                <details class="level-details" open>
                     <summary class="level-summary">
                         <h2><i class="fas fa-leaf level-icon"></i> Уровень A1 (Beginner)</h2>
                     </summary>
                     <div class="level-content">
-                        <details class="task-details">
+                        <details class="task-details" open>
                             <summary class="task-summary">
-                                <h3>Текст 1: My Pet Rabbit</h3>
+                                <h3>Текст 1: My School Day</h3>
                             </summary>
                             <div class="reading-task">
                                 <div class="reading-text-content">
-                                    <p>I have a pet. It is a rabbit. My rabbit's name is Fluffy. Fluffy is white. She has long ears and a small pink nose. Fluffy likes carrots and green leaves. She lives in a hutch in my garden. I play with Fluffy every day. She is very soft and cute.</p>
+                                    <p>My name is Anna. I am a student. I go to school every day from Monday to Friday. My school is big. I have many friends at school. My favorite subject is English. I like to read books and learn new words. After school, I do my homework. Then I play with my little dog, Lucky. Lucky is very funny.</p>
                                 </div>
-                                <h4>Вопросы к тексту "My Pet Rabbit":</h4>
-                                <form class="reading-questions-form">
+                                <h4>Вопросы к тексту "My School Day":</h4>
+                                <form class="reading-questions-form" id="form_a1_school_day">
                                     <div class="reading-question">
-                                        <p><strong>1. What kind of pet is Fluffy?</strong></p>
+                                        <p><strong>1. What is Anna's favorite subject?</strong></p>
                                         <div class="reading-options">
-                                            <label><input type="radio" name="q1_a1_rabbit" value="a"> a) A cat</label>
-                                            <label><input type="radio" name="q1_a1_rabbit" value="b"> b) A dog</label>
-                                            <label><input type="radio" name="q1_a1_rabbit" value="c"> c) A rabbit</label>
+                                            <label><input type="radio" name="q1_a1_school_day" value="a"> a) Math</label>
+                                            <label><input type="radio" name="q1_a1_school_day" value="b"> b) Science</label>
+                                            <label><input type="radio" name="q1_a1_school_day" value="c"> c) English</label>
+                                            <label><input type="radio" name="q1_a1_school_day" value="d"> d) History</label>
+                                            <label><input type="radio" name="q1_a1_school_day" value="e"> e) Art</label>
                                         </div>
                                     </div>
                                     <div class="reading-question">
-                                        <p><strong>2. What color is Fluffy?</strong></p>
+                                        <p><strong>2. When does Anna go to school?</strong></p>
                                         <div class="reading-options">
-                                            <label><input type="radio" name="q2_a1_rabbit" value="a"> a) Black</label>
-                                            <label><input type="radio" name="q2_a1_rabbit" value="b"> b) White</label>
-                                            <label><input type="radio" name="q2_a1_rabbit" value="c"> c) Brown</label>
+                                            <label><input type="radio" name="q2_a1_school_day" value="a"> a) Every day</label>
+                                            <label><input type="radio" name="q2_a1_school_day" value="b"> b) Only on Monday</label>
+                                            <label><input type="radio" name="q2_a1_school_day" value="c"> c) From Monday to Friday</label>
+                                            <label><input type="radio" name="q2_a1_school_day" value="d"> d) On weekends</label>
+                                            <label><input type="radio" name="q2_a1_school_day" value="e"> e) Three days a week</label>
                                         </div>
                                     </div>
                                     <div class="reading-question">
-                                        <p><strong>3. What does Fluffy like to eat?</strong></p>
+                                        <p><strong>3. What does Anna do after school before playing with her dog?</strong></p>
                                         <div class="reading-options">
-                                            <label><input type="radio" name="q3_a1_rabbit" value="a"> a) Apples and bananas</label>
-                                            <label><input type="radio" name="q3_a1_rabbit" value="b"> b) Fish and milk</label>
-                                            <label><input type="radio" name="q3_a1_rabbit" value="c"> c) Carrots and green leaves</label>
+                                            <label><input type="radio" name="q3_a1_school_day" value="a"> a) Watches TV</label>
+                                            <label><input type="radio" name="q3_a1_school_day" value="b"> b) Does her homework</label>
+                                            <label><input type="radio" name="q3_a1_school_day" value="c"> c) Eats dinner</label>
+                                            <label><input type="radio" name="q3_a1_school_day" value="d"> d) Reads a book</label>
+                                            <label><input type="radio" name="q3_a1_school_day" value="e"> e) Goes to the park</label>
                                         </div>
                                     </div>
-                                    <button type="button" class="check-reading-answers-btn" data-form-id="a1_rabbit">Проверить ответы</button>
+                                    <button type="button" class="check-reading-answers-btn" data-form-id="a1_school_day">Проверить ответы</button>
                                     <div class="reading-feedback" style="display:none;"></div>
                                 </form>
                             </div>
                         </details>
-                        <!-- Можно добавить еще тексты A1 -->
                     </div>
                 </details>
             </div>
@@ -92,44 +97,49 @@
                     <div class="level-content">
                         <details class="task-details">
                             <summary class="task-summary">
-                                <h3>Текст 1: A Day at the Beach</h3>
+                                <h3>Текст 1: A Surprise Birthday Party</h3>
                             </summary>
                             <div class="reading-task">
                                 <div class="reading-text-content">
-                                    <p>Yesterday, my family and I went to the beach. The weather was sunny and warm. We took a big umbrella and some towels. My brother, Sam, and I built a large sandcastle near the water. Later, we swam in the sea. The water was a little cold, but it was fun. For lunch, we had sandwiches and fruit. In the afternoon, we played volleyball. I was tired but very happy when we went home.</p>
+                                    <p>Last Saturday was my friend Leo's birthday. We decided to have a surprise party for him. His sister, Mia, helped us. We bought a big chocolate cake and some colorful balloons. We invited all his close friends. When Leo came home from his football practice, everyone shouted "Surprise!" He was very surprised and happy. We played games, ate cake, and listened to music. Leo said it was his best birthday ever.</p>
                                 </div>
-                                <h4>Вопросы к тексту "A Day at the Beach":</h4>
-                                <form class="reading-questions-form">
+                                <h4>Вопросы к тексту "A Surprise Birthday Party":</h4>
+                                <form class="reading-questions-form" id="form_a2_party">
                                     <div class="reading-question">
-                                        <p><strong>1. What was the weather like?</strong></p>
+                                        <p><strong>1. Who helped to organize the party?</strong></p>
                                         <div class="reading-options">
-                                            <label><input type="radio" name="q1_a2_beach" value="a"> a) Rainy and cold</label>
-                                            <label><input type="radio" name="q1_a2_beach" value="b"> b) Sunny and warm</label>
-                                            <label><input type="radio" name="q1_a2_beach" value="c"> c) Cloudy and windy</label>
+                                            <label><input type="radio" name="q1_a2_party" value="a"> a) Leo's brother</label>
+                                            <label><input type="radio" name="q1_a2_party" value="b"> b) Leo's parents</label>
+                                            <label><input type="radio" name="q1_a2_party" value="c"> c) Leo's sister, Mia</label>
+                                            <label><input type="radio" name="q1_a2_party" value="d"> d) Leo's football coach</label>
+                                            <label><input type="radio" name="q1_a2_party" value="e"> e) Leo himself</label>
                                         </div>
                                     </div>
                                     <div class="reading-question">
-                                        <p><strong>2. What did the narrator and Sam build?</strong></p>
+                                        <p><strong>2. What did they buy for the party?</strong></p>
                                         <div class="reading-options">
-                                            <label><input type="radio" name="q2_a2_beach" value="a"> a) A boat</label>
-                                            <label><input type="radio" name="q2_a2_beach" value="b"> b) A sandcastle</label>
-                                            <label><input type="radio" name="q2_a2_beach" value="c"> c) A house</label>
+                                            <label><input type="radio" name="q2_a2_party" value="a"> a) Pizza and drinks</label>
+                                            <label><input type="radio" name="q2_a2_party" value="b"> b) A chocolate cake and balloons</label>
+                                            <label><input type="radio" name="q2_a2_party" value="c"> c) New footballs</label>
+                                            <label><input type="radio" name="q2_a2_party" value="d"> d) Gifts and cards</label>
+                                            <label><input type="radio" name="q2_a2_party" value="e"> e) Ice cream and cookies</label>
                                         </div>
                                     </div>
                                     <div class="reading-question">
-                                        <p><strong>3. What did they have for lunch?</strong></p>
+                                        <p><strong>3. How did Leo feel when he saw the surprise?</strong></p>
                                         <div class="reading-options">
-                                            <label><input type="radio" name="q3_a2_beach" value="a"> a) Pizza and soda</label>
-                                            <label><input type="radio" name="q3_a2_beach" value="b"> b) Ice cream</label>
-                                            <label><input type="radio" name="q3_a2_beach" value="c"> c) Sandwiches and fruit</label>
+                                            <label><input type="radio" name="q3_a2_party" value="a"> a) Angry</label>
+                                            <label><input type="radio" name="q3_a2_party" value="b"> b) Sad</label>
+                                            <label><input type="radio" name="q3_a2_party" value="c"> c) Tired</label>
+                                            <label><input type="radio" name="q3_a2_party" value="d"> d) Surprised and happy</label>
+                                            <label><input type="radio" name="q3_a2_party" value="e"> e) Confused</label>
                                         </div>
                                     </div>
-                                    <button type="button" class="check-reading-answers-btn" data-form-id="a2_beach">Проверить ответы</button>
+                                    <button type="button" class="check-reading-answers-btn" data-form-id="a2_party">Проверить ответы</button>
                                     <div class="reading-feedback" style="display:none;"></div>
                                 </form>
                             </div>
                         </details>
-                        <!-- Можно добавить еще тексты A2 -->
                     </div>
                 </details>
             </div>
@@ -143,40 +153,45 @@
                     <div class="level-content">
                         <details class="task-details">
                             <summary class="task-summary">
-                                <h3>Текст 1: My First Job Interview</h3>
+                                <h3>Текст 1: Choosing a Career Path</h3>
                             </summary>
                             <div class="reading-task">
                                 <div class="reading-text-content">
-                                    <p>[ЗАПОЛНИТЕ ТЕКСТ B1 ЗДЕСЬ: История о первом собеседовании. Должен содержать Past Simple, возможно, немного Present Perfect для описания опыта. Лексика о чувствах, подготовке, самом процессе интервью и результате. Примерно 120-150 слов.]</p>
-                                    <p>Example: I remember my first job interview clearly. I had just graduated from university and was looking for a position as a junior marketing assistant. I spent days preparing, researching the company, and practicing common interview questions. On the day, I was incredibly nervous, but I tried to stay calm. The interviewer asked me about my studies, my strengths, and why I wanted to work for their company. I think I answered most questions well, though I stumbled on one or two. A week later, they called to offer me the job! I was so excited.</p>
+                                    <p>Choosing a career path is one of the most significant decisions a young person makes. It's often influenced by various factors such as personal interests, skills, parental expectations, and perceived job market demands. Some people know exactly what they want to do from an early age, while others might explore several options before settling on a profession. It's important to research different careers, understand the required qualifications, and consider the long-term prospects. Talking to professionals in fields of interest can also provide valuable insights. Ultimately, finding a career that is both fulfilling and provides a stable income is a common goal, though the definition of "fulfilling" can vary greatly from person to person.</p>
                                 </div>
-                                <h4>Вопросы к тексту "My First Job Interview":</h4>
-                                <form class="reading-questions-form">
+                                <h4>Вопросы к тексту "Choosing a Career Path":</h4>
+                                <form class="reading-questions-form" id="form_b1_career">
                                     <div class="reading-question">
-                                        <p><strong>1. What position was the narrator applying for?</strong></p>
+                                        <p><strong>1. Which of these is NOT mentioned as a factor influencing career choice?</strong></p>
                                         <div class="reading-options">
-                                            <label><input type="radio" name="q1_b1_interview" value="a"> a) Senior Manager</label>
-                                            <label><input type="radio" name="q1_b1_interview" value="b"> b) Junior Marketing Assistant</label>
-                                            <label><input type="radio" name="q1_b1_interview" value="c"> c) HR Specialist</label>
+                                            <label><input type="radio" name="q1_b1_career" value="a"> a) Personal interests</label>
+                                            <label><input type="radio" name="q1_b1_career" value="b"> b) Advice from celebrities</label>
+                                            <label><input type="radio" name="q1_b1_career" value="c"> c) Skills</label>
+                                            <label><input type="radio" name="q1_b1_career" value="d"> d) Parental expectations</label>
+                                            <label><input type="radio" name="q1_b1_career" value="e"> e) Job market demands</label>
                                         </div>
                                     </div>
                                     <div class="reading-question">
-                                        <p><strong>2. How did the narrator feel on the day of the interview?</strong></p>
+                                        <p><strong>2. What can provide valuable insights when choosing a career, according to the text?</strong></p>
                                         <div class="reading-options">
-                                            <label><input type="radio" name="q2_b1_interview" value="a"> a) Very confident</label>
-                                            <label><input type="radio" name="q2_b1_interview" value="b"> b) Calm and relaxed</label>
-                                            <label><input type="radio" name="q2_b1_interview" value="c"> c) Incredibly nervous</label>
+                                            <label><input type="radio" name="q2_b1_career" value="a"> a) Guessing what will be popular in the future</label>
+                                            <label><input type="radio" name="q2_b1_career" value="b"> b) Only focusing on high-paying jobs</label>
+                                            <label><input type="radio" name="q2_b1_career" value="c"> c) Talking to professionals in interesting fields</label>
+                                            <label><input type="radio" name="q2_b1_career" value="d"> d) Ignoring personal interests</label>
+                                            <label><input type="radio" name="q2_b1_career" value="e"> e) Choosing the first option available</label>
                                         </div>
                                     </div>
                                     <div class="reading-question">
-                                        <p><strong>3. What was the result of the interview?</strong></p>
+                                        <p><strong>3. What is described as a common goal in finding a career?</strong></p>
                                         <div class="reading-options">
-                                            <label><input type="radio" name="q3_b1_interview" value="a"> a) They didn't get the job.</label>
-                                            <label><input type="radio" name="q3_b1_interview" value="b"> b) They were offered the job.</label>
-                                            <label><input type="radio" name="q3_b1_interview" value="c"> c) They were asked for a second interview.</label>
+                                            <label><input type="radio" name="q3_b1_career" value="a"> a) A career that requires no effort</label>
+                                            <label><input type="radio" name="q3_b1_career" value="b"> b) A career that is only about making a lot of money</label>
+                                            <label><input type="radio" name="q3_b1_career" value="c"> c) A career that is both fulfilling and provides stability</label>
+                                            <label><input type="radio" name="q3_b1_career" value="d"> d) A career chosen solely based on parental advice</label>
+                                            <label><input type="radio" name="q3_b1_career" value="e"> e) A career that allows for frequent changes</label>
                                         </div>
                                     </div>
-                                    <button type="button" class="check-reading-answers-btn" data-form-id="b1_interview">Проверить ответы</button>
+                                    <button type="button" class="check-reading-answers-btn" data-form-id="b1_career">Проверить ответы</button>
                                     <div class="reading-feedback" style="display:none;"></div>
                                 </form>
                             </div>
@@ -194,40 +209,45 @@
                     <div class="level-content">
                          <details class="task-details">
                             <summary class="task-summary">
-                                <h3>Текст 1: The Importance of Urban Green Spaces</h3>
+                                <h3>Текст 1: The Rise of Artificial Intelligence</h3>
                             </summary>
                             <div class="reading-task">
                                 <div class="reading-text-content">
-                                    <p>[ЗАПОЛНИТЕ ТЕКСТ B2 ЗДЕСЬ: Обсуждение важности зеленых зон в городах. Может включать Conditionals, Passive Voice, более сложную лексику. Примерно 180-220 слов.]</p>
-                                    <p>Example: Urban green spaces, such as parks, public gardens, and even small community plots, play a crucial role in the well-being of city dwellers and the overall health of an urban environment. Beyond their aesthetic appeal, these areas provide essential ecosystem services. They help to mitigate the urban heat island effect, improve air quality by absorbing pollutants, and reduce stormwater runoff. Furthermore, access to green spaces has been consistently linked to improved mental and physical health. Studies have shown that spending time in nature can reduce stress, boost mood, and encourage physical activity. As cities continue to grow, the anning and preservation of these green oases are becoming increasingly vital for creating sustainable and livable urban futures.</p>
+                                    <p>Artificial Intelligence (AI) is rapidly transforming various sectors, from healthcare and finance to entertainment and transportation. Its ability to process vast amounts of data and perform complex tasks with increasing accuracy has led to significant advancements. However, the proliferation of AI also raises profound ethical questions and societal concerns. Issues such as job displacement due to automation, algorithmic bias, and the potential for misuse in surveillance or autonomous weaponry demand careful consideration and robust regulatory frameworks. As AI continues to evolve, a multidisciplinary approach involving technologists, policymakers, ethicists, and the public will be crucial to harnessing its benefits while mitigating its risks.</p>
                                 </div>
-                                <h4>Вопросы к тексту "The Importance of Urban Green Spaces":</h4>
-                                <form class="reading-questions-form">
+                                <h4>Вопросы к тексту "The Rise of Artificial Intelligence":</h4>
+                                <form class="reading-questions-form" id="form_b2_ai">
                                     <div class="reading-question">
-                                        <p><strong>1. Which of the following is NOT mentioned as a benefit of urban green spaces?</strong></p>
+                                        <p><strong>1. According to the passage, what is one of the capabilities of AI?</strong></p>
                                         <div class="reading-options">
-                                            <label><input type="radio" name="q1_b2_green" value="a"> a) Improving air quality</label>
-                                            <label><input type="radio" name="q1_b2_green" value="b"> b) Increasing property values</label>
-                                            <label><input type="radio" name="q1_b2_green" value="c"> c) Reducing stress</label>
+                                            <label><input type="radio" name="q1_b2_ai" value="a"> a) Exclusively creating artistic content</label>
+                                            <label><input type="radio" name="q1_b2_ai" value="b"> b) Understanding human emotions perfectly</label>
+                                            <label><input type="radio" name="q1_b2_ai" value="c"> c) Processing large datasets and performing complex tasks</label>
+                                            <label><input type="radio" name="q1_b2_ai" value="d"> d) Replacing all human jobs immediately</label>
+                                            <label><input type="radio" name="q1_b2_ai" value="e"> e) Operating only in the entertainment sector</label>
                                         </div>
                                     </div>
-                                    <div class="reading-question">
-                                        <p><strong>2. The "urban heat island effect" refers to _____.</strong></p>
+                                     <div class="reading-question">
+                                        <p><strong>2. Which of the following is mentioned as a societal concern regarding AI?</strong></p>
                                         <div class="reading-options">
-                                            <label><input type="radio" name="q2_b2_green" value="a"> a) cities being popular tourist destinations in summer</label>
-                                            <label><input type="radio" name="q2_b2_green" value="b"> b) cities being warmer than surrounding rural areas</label>
-                                            <label><input type="radio" name="q2_b2_green" value="c"> c) the best places to find green spaces in a city</label>
+                                            <label><input type="radio" name="q2_b2_ai" value="a"> a) Its inability to perform complex tasks</label>
+                                            <label><input type="radio" name="q2_b2_ai" value="b"> b) The high cost of AI development</label>
+                                            <label><input type="radio" name="q2_b2_ai" value="c"> c) Job displacement due to automation</label>
+                                            <label><input type="radio" name="q2_b2_ai" value="d"> d) Its limited application in various sectors</label>
+                                            <label><input type="radio" name="q2_b2_ai" value="e"> e) Its slow pace of evolution</label>
                                         </div>
                                     </div>
-                                    <div class="reading-question">
-                                        <p><strong>3. According to the passage, what is essential for sustainable urban futures?</strong></p>
+                                     <div class="reading-question">
+                                        <p><strong>3. What does the passage suggest is crucial as AI continues to evolve?</strong></p>
                                         <div class="reading-options">
-                                            <label><input type="radio" name="q3_b2_green" value="a"> a) Building more skyscrapers</label>
-                                            <label><input type="radio" name="q3_b2_green" value="b"> b) Reducing the number of parks</label>
-                                            <label><input type="radio" name="q3_b2_green" value="c"> c) Planning and preserving green spaces</label>
+                                            <label><input type="radio" name="q3_b2_ai" value="a"> a) Limiting public discussion on AI ethics</label>
+                                            <label><input type="radio" name="q3_b2_ai" value="b"> b) A multidisciplinary approach to manage its benefits and risks</label>
+                                            <label><input type="radio" name="q3_b2_ai" value="c"> c) Allowing AI to develop without any regulations</label>
+                                            <label><input type="radio" name="q3_b2_ai" value="d"> d) Focusing solely on the technological advancements of AI</label>
+                                            <label><input type="radio" name="q3_b2_ai" value="e"> e) Preventing AI from being used in transportation</label>
                                         </div>
                                     </div>
-                                    <button type="button" class="check-reading-answers-btn" data-form-id="b2_green">Проверить ответы</button>
+                                    <button type="button" class="check-reading-answers-btn" data-form-id="b2_ai">Проверить ответы</button>
                                     <div class="reading-feedback" style="display:none;"></div>
                                 </form>
                             </div>
@@ -245,40 +265,45 @@
                     <div class="level-content">
                         <details class="task-details">
                             <summary class="task-summary">
-                                <h3>Текст 1: The Nuances of Cross-Cultural Communication</h3>
+                                <h3>Текст 1: The Subjectivity of Historical Narratives</h3>
                             </summary>
                             <div class="reading-task">
                                 <div class="reading-text-content">
-                                     <p>[ЗАПОЛНИТЕ ТЕКСТ C1 ЗДЕСЬ: Сложный текст о межкультурной коммуникации, возможно, с идиомами, сложными грамматическими конструкциями, абстрактными понятиями. Примерно 250-300 слов.]</p>
-                                     <p>Example: Effective cross-cultural communication extends far beyond mere linguistic proficiency; it necessitates a profound understanding of implicit cultural norms, varying communication styles, and non-verbal cues that can significantly differ across societies. What might be considered direct and efficient in one culture could be perceived as abrupt or even rude in another. High-context cultures, for instance, rely heavily on shared experiences and unspoken understandings, where meaning is often embedded in the context rather than explicitly stated. Conversely, low-context cultures tend to favor explicit, direct communication. Navigating these subtleties requires not only cultural sensitivity and empathy but also a willingness to adapt one's own communication approach to foster mutual understanding and avoid potential misunderstandings that can hinder international collaborations and personal relationships.</p>
+                                     <p>The interpretation of historical events is seldom a monolithic endeavor; rather, it is a complex tapestry woven from diverse perspectives, biases, and the inherent limitations of available evidence. Historians, despite striving for objectivity, are inevitably influenced by their own cultural, social, and temporal contexts. Consequently, historical narratives are not static truths etched in stone but are continuously re-evaluated and reinterpreted as new evidence emerges or as societal values shift. The very act of selecting which events to highlight and which to omit can profoundly shape the resultant narrative. This inherent subjectivity underscores the importance of engaging with multiple historical accounts and critically analyzing the methodologies and motivations fatores. It is a reminder that history is as much about the present's dialogue with the past as it is about the past itself.</p>
                                 </div>
-                                <h4>Вопросы к тексту "The Nuances of Cross-Cultural Communication":</h4>
-                                <form class="reading-questions-form">
+                                <h4>Вопросы к тексту "The Subjectivity of Historical Narratives":</h4>
+                                <form class="reading-questions-form" id="form_c1_history">
                                     <div class="reading-question">
-                                        <p><strong>1. According to the passage, what is crucial for effective cross-cultural communication beyond language skills?</strong></p>
+                                        <p><strong>1. What does the passage suggest about historical narratives?</strong></p>
                                         <div class="reading-options">
-                                            <label><input type="radio" name="q1_c1_culture" value="a"> a) Speaking multiple languages fluently</label>
-                                            <label><input type="radio" name="q1_c1_culture" value="b"> b) A deep understanding of implicit cultural norms and non-verbal cues</label>
-                                            <label><input type="radio" name="q1_c1_culture" value="c"> c) Adhering strictly to one's own communication style</label>
+                                            <label><input type="radio" name="q1_c1_history" value="a"> a) They are absolute and unchangeable truths.</label>
+                                            <label><input type="radio" name="q1_c1_history" value="b"> b) They are solely based on universally accepted facts.</label>
+                                            <label><input type="radio" name="q1_c1_history" value="c"> c) They are subject to re-evaluation and influenced by various contexts.</label>
+                                            <label><input type="radio" name="q1_c1_history" value="d"> d) They are created only by historians who are completely objective.</label>
+                                            <label><input type="radio" name="q1_c1_history" value="e"> e) They primarily focus on future predictions based on past events.</label>
                                         </div>
                                     </div>
                                     <div class="reading-question">
-                                        <p><strong>2. What characterizes high-context cultures, as mentioned in the text?</strong></p>
+                                        <p><strong>2. According to the text, what influences historians despite their efforts for objectivity?</strong></p>
                                         <div class="reading-options">
-                                            <label><input type="radio" name="q2_c1_culture" value="a"> a) They prefer explicit and direct statements.</label>
-                                            <label><input type="radio" name="q2_c1_culture" value="b"> b) Meaning is often conveyed through shared experiences and context.</label>
-                                            <label><input type="radio" name="q2_c1_culture" value="c"> c) They rarely use non-verbal cues.</label>
+                                            <label><input type="radio" name="q2_c1_history" value="a"> a) The desire to create fictional stories.</label>
+                                            <label><input type="radio" name="q2_c1_history" value="b"> b) Pressure from political institutions.</label>
+                                            <label><input type="radio" name="q2_c1_history" value="c"> c) Their personal financial gains.</label>
+                                            <label><input type="radio" name="q2_c1_history" value="d"> d) Their own cultural, social, and temporal contexts.</label>
+                                            <label><input type="radio" name="q2_c1_history" value="e"> e) A lack of sufficient evidence for any event.</label>
                                         </div>
                                     </div>
                                     <div class="reading-question">
-                                        <p><strong>3. What can hinder international collaborations, according to the passage?</strong></p>
+                                        <p><strong>3. What does the "inherent subjectivity" of history emphasize the importance of?</strong></p>
                                         <div class="reading-options">
-                                            <label><input type="radio" name="q3_c1_culture" value="a"> a) Over-reliance on linguistic proficiency</label>
-                                            <label><input type="radio" name="q3_c1_culture" value="b"> b) Adapting one's communication approach</label>
-                                            <label><input type="radio" name="q3_c1_culture" value="c"> c) Potential misunderstandings due to cultural subtleties</label>
+                                            <label><input type="radio" name="q3_c1_history" value="a"> a) Accepting the first historical account one encounters.</label>
+                                            <label><input type="radio" name="q3_c1_history" value="b"> b) Disregarding older historical interpretations.</label>
+                                            <label><input type="radio" name="q3_c1_history" value="c"> c) Engaging with multiple accounts and critically analyzing them.</label>
+                                            <label><input type="radio" name="q3_c1_history" value="d"> d) Focusing only on events highlighted by famous historians.</label>
+                                            <label><input type="radio" name="q3_c1_history" value="e"> e) Believing that history has no relevance to the present.</label>
                                         </div>
                                     </div>
-                                    <button type="button" class="check-reading-answers-btn" data-form-id="c1_culture">Проверить ответы</button>
+                                    <button type="button" class="check-reading-answers-btn" data-form-id="c1_history">Проверить ответы</button>
                                     <div class="reading-feedback" style="display:none;"></div>
                                 </form>
                             </div>
