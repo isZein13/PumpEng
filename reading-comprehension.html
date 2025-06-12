@@ -7,7 +7,7 @@
     <meta name="description" content="Проверьте и улучшите свои навыки чтения на английском языке с помощью текстов и вопросов для уровней от A1 до C1. Упражнения от школы PumpEng.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="reading-comprehension-styles.css"> <!-- Новые стили -->
+    <link rel="stylesheet" href="reading-comprehension-styles.css">
 </head>
 <body>
     <header>
@@ -31,130 +31,260 @@
         </section>
 
         <section id="reading-exercises">
+
             <!-- Уровень A1 -->
             <div class="reading-level-section" id="level-a1">
-                <h2><i class="fas fa-leaf level-icon"></i> Уровень A1 (Beginner)</h2>
-                <div class="reading-task">
-                    <h3>Текст 1: My Cat</h3>
-                    <div class="reading-text-content">
-                        <p>This is my cat. His name is Tom. Tom is a big cat. He is black and white. Tom likes to sleep. He sleeps on my bed. He also likes to play with a small ball. I love my cat Tom.</p>
+                <details class="level-details" open> <!-- Развернут по умолчанию -->
+                    <summary class="level-summary">
+                        <h2><i class="fas fa-leaf level-icon"></i> Уровень A1 (Beginner)</h2>
+                    </summary>
+                    <div class="level-content">
+                        <details class="task-details">
+                            <summary class="task-summary">
+                                <h3>Текст 1: My Pet Rabbit</h3>
+                            </summary>
+                            <div class="reading-task">
+                                <div class="reading-text-content">
+                                    <p>I have a pet. It is a rabbit. My rabbit's name is Fluffy. Fluffy is white. She has long ears and a small pink nose. Fluffy likes carrots and green leaves. She lives in a hutch in my garden. I play with Fluffy every day. She is very soft and cute.</p>
+                                </div>
+                                <h4>Вопросы к тексту "My Pet Rabbit":</h4>
+                                <form class="reading-questions-form">
+                                    <div class="reading-question">
+                                        <p><strong>1. What kind of pet is Fluffy?</strong></p>
+                                        <div class="reading-options">
+                                            <label><input type="radio" name="q1_a1_rabbit" value="a"> a) A cat</label>
+                                            <label><input type="radio" name="q1_a1_rabbit" value="b"> b) A dog</label>
+                                            <label><input type="radio" name="q1_a1_rabbit" value="c"> c) A rabbit</label>
+                                        </div>
+                                    </div>
+                                    <div class="reading-question">
+                                        <p><strong>2. What color is Fluffy?</strong></p>
+                                        <div class="reading-options">
+                                            <label><input type="radio" name="q2_a1_rabbit" value="a"> a) Black</label>
+                                            <label><input type="radio" name="q2_a1_rabbit" value="b"> b) White</label>
+                                            <label><input type="radio" name="q2_a1_rabbit" value="c"> c) Brown</label>
+                                        </div>
+                                    </div>
+                                    <div class="reading-question">
+                                        <p><strong>3. What does Fluffy like to eat?</strong></p>
+                                        <div class="reading-options">
+                                            <label><input type="radio" name="q3_a1_rabbit" value="a"> a) Apples and bananas</label>
+                                            <label><input type="radio" name="q3_a1_rabbit" value="b"> b) Fish and milk</label>
+                                            <label><input type="radio" name="q3_a1_rabbit" value="c"> c) Carrots and green leaves</label>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="check-reading-answers-btn" data-form-id="a1_rabbit">Проверить ответы</button>
+                                    <div class="reading-feedback" style="display:none;"></div>
+                                </form>
+                            </div>
+                        </details>
+                        <!-- Можно добавить еще тексты A1 -->
                     </div>
-                    <h4>Вопросы к тексту "My Cat":</h4>
-                    <form class="reading-questions-form">
-                        <div class="reading-question">
-                            <p><strong>1. What is the cat's name?</strong></p>
-                            <div class="reading-options">
-                                <label><input type="radio" name="q1_a1" value="a"> a) Max</label>
-                                <label><input type="radio" name="q1_a1" value="b"> b) Tom</label>
-                                <label><input type="radio" name="q1_a1" value="c"> c) Sam</label>
-                            </div>
-                        </div>
-                        <div class="reading-question">
-                            <p><strong>2. What color is Tom?</strong></p>
-                            <div class="reading-options">
-                                <label><input type="radio" name="q2_a1" value="a"> a) Black</label>
-                                <label><input type="radio" name="q2_a1" value="b"> b) White</label>
-                                <label><input type="radio" name="q2_a1" value="c"> c) Black and white</label>
-                            </div>
-                        </div>
-                        <div class="reading-question">
-                            <p><strong>3. Where does Tom like to sleep?</strong></p>
-                            <div class="reading-options">
-                                <label><input type="radio" name="q3_a1" value="a"> a) On the floor</label>
-                                <label><input type="radio" name="q3_a1" value="b"> b) On my bed</label>
-                                <label><input type="radio" name="q3_a1" value="c"> c) In a box</label>
-                            </div>
-                        </div>
-                        <button type="button" class="check-reading-answers-btn" data-form-id="a1_text1">Проверить ответы (A1 - Текст 1)</button>
-                        <div class="reading-feedback" style="display:none;"></div>
-                    </form>
-                </div>
-                <!-- Здесь можно добавить еще тексты для A1 -->
+                </details>
             </div>
 
             <!-- Уровень A2 -->
             <div class="reading-level-section" id="level-a2">
-                <h2><i class="fas fa-seedling level-icon"></i> Уровень A2 (Elementary)</h2>
-                <div class="reading-task">
-                    <h3>Текст 1: My Weekend</h3>
-                    <div class="reading-text-content">
-                        <p>Last weekend, I visited my grandparents. They live in a small house in the countryside. On Saturday, I helped my grandfather in the garden. We planted some flowers. In the evening, my grandmother cooked a delicious dinner. On Sunday, we went for a walk in the forest. It was a very nice weekend.</p>
-                    </div>
-                    <h4>Вопросы к тексту "My Weekend":</h4>
-                    <form class="reading-questions-form">
-                        <div class="reading-question">
-                            <p><strong>1. Where do the grandparents live?</strong></p>
-                            <div class="reading-options">
-                                <label><input type="radio" name="q1_a2" value="a"> a) In a big city</label>
-                                <label><input type="radio" name="q1_a2" value="b"> b) In the countryside</label>
-                                <label><input type="radio" name="q1_a2" value="c"> c) Near the sea</label>
+                <details class="level-details">
+                    <summary class="level-summary">
+                        <h2><i class="fas fa-seedling level-icon"></i> Уровень A2 (Elementary)</h2>
+                    </summary>
+                    <div class="level-content">
+                        <details class="task-details">
+                            <summary class="task-summary">
+                                <h3>Текст 1: A Day at the Beach</h3>
+                            </summary>
+                            <div class="reading-task">
+                                <div class="reading-text-content">
+                                    <p>Yesterday, my family and I went to the beach. The weather was sunny and warm. We took a big umbrella and some towels. My brother, Sam, and I built a large sandcastle near the water. Later, we swam in the sea. The water was a little cold, but it was fun. For lunch, we had sandwiches and fruit. In the afternoon, we played volleyball. I was tired but very happy when we went home.</p>
+                                </div>
+                                <h4>Вопросы к тексту "A Day at the Beach":</h4>
+                                <form class="reading-questions-form">
+                                    <div class="reading-question">
+                                        <p><strong>1. What was the weather like?</strong></p>
+                                        <div class="reading-options">
+                                            <label><input type="radio" name="q1_a2_beach" value="a"> a) Rainy and cold</label>
+                                            <label><input type="radio" name="q1_a2_beach" value="b"> b) Sunny and warm</label>
+                                            <label><input type="radio" name="q1_a2_beach" value="c"> c) Cloudy and windy</label>
+                                        </div>
+                                    </div>
+                                    <div class="reading-question">
+                                        <p><strong>2. What did the narrator and Sam build?</strong></p>
+                                        <div class="reading-options">
+                                            <label><input type="radio" name="q2_a2_beach" value="a"> a) A boat</label>
+                                            <label><input type="radio" name="q2_a2_beach" value="b"> b) A sandcastle</label>
+                                            <label><input type="radio" name="q2_a2_beach" value="c"> c) A house</label>
+                                        </div>
+                                    </div>
+                                    <div class="reading-question">
+                                        <p><strong>3. What did they have for lunch?</strong></p>
+                                        <div class="reading-options">
+                                            <label><input type="radio" name="q3_a2_beach" value="a"> a) Pizza and soda</label>
+                                            <label><input type="radio" name="q3_a2_beach" value="b"> b) Ice cream</label>
+                                            <label><input type="radio" name="q3_a2_beach" value="c"> c) Sandwiches and fruit</label>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="check-reading-answers-btn" data-form-id="a2_beach">Проверить ответы</button>
+                                    <div class="reading-feedback" style="display:none;"></div>
+                                </form>
                             </div>
-                        </div>
-                        <!-- Добавьте еще вопросы для A2 -->
-                        <button type="button" class="check-reading-answers-btn" data-form-id="a2_text1">Проверить ответы (A2 - Текст 1)</button>
-                        <div class="reading-feedback" style="display:none;"></div>
-                    </form>
-                </div>
+                        </details>
+                        <!-- Можно добавить еще тексты A2 -->
+                    </div>
+                </details>
             </div>
 
             <!-- Уровень B1 -->
             <div class="reading-level-section" id="level-b1">
-                <h2><i class="fas fa-rocket level-icon"></i> Уровень B1 (Intermediate)</h2>
-                <!-- Здесь будет текст и вопросы для B1 -->
-                <p>(Содержимое для B1 будет добавлено позже)</p>
+                <details class="level-details">
+                    <summary class="level-summary">
+                        <h2><i class="fas fa-rocket level-icon"></i> Уровень B1 (Intermediate)</h2>
+                    </summary>
+                    <div class="level-content">
+                        <details class="task-details">
+                            <summary class="task-summary">
+                                <h3>Текст 1: My First Job Interview</h3>
+                            </summary>
+                            <div class="reading-task">
+                                <div class="reading-text-content">
+                                    <p>[ЗАПОЛНИТЕ ТЕКСТ B1 ЗДЕСЬ: История о первом собеседовании. Должен содержать Past Simple, возможно, немного Present Perfect для описания опыта. Лексика о чувствах, подготовке, самом процессе интервью и результате. Примерно 120-150 слов.]</p>
+                                    <p>Example: I remember my first job interview clearly. I had just graduated from university and was looking for a position as a junior marketing assistant. I spent days preparing, researching the company, and practicing common interview questions. On the day, I was incredibly nervous, but I tried to stay calm. The interviewer asked me about my studies, my strengths, and why I wanted to work for their company. I think I answered most questions well, though I stumbled on one or two. A week later, they called to offer me the job! I was so excited.</p>
+                                </div>
+                                <h4>Вопросы к тексту "My First Job Interview":</h4>
+                                <form class="reading-questions-form">
+                                    <div class="reading-question">
+                                        <p><strong>1. What position was the narrator applying for?</strong></p>
+                                        <div class="reading-options">
+                                            <label><input type="radio" name="q1_b1_interview" value="a"> a) Senior Manager</label>
+                                            <label><input type="radio" name="q1_b1_interview" value="b"> b) Junior Marketing Assistant</label>
+                                            <label><input type="radio" name="q1_b1_interview" value="c"> c) HR Specialist</label>
+                                        </div>
+                                    </div>
+                                    <div class="reading-question">
+                                        <p><strong>2. How did the narrator feel on the day of the interview?</strong></p>
+                                        <div class="reading-options">
+                                            <label><input type="radio" name="q2_b1_interview" value="a"> a) Very confident</label>
+                                            <label><input type="radio" name="q2_b1_interview" value="b"> b) Calm and relaxed</label>
+                                            <label><input type="radio" name="q2_b1_interview" value="c"> c) Incredibly nervous</label>
+                                        </div>
+                                    </div>
+                                    <div class="reading-question">
+                                        <p><strong>3. What was the result of the interview?</strong></p>
+                                        <div class="reading-options">
+                                            <label><input type="radio" name="q3_b1_interview" value="a"> a) They didn't get the job.</label>
+                                            <label><input type="radio" name="q3_b1_interview" value="b"> b) They were offered the job.</label>
+                                            <label><input type="radio" name="q3_b1_interview" value="c"> c) They were asked for a second interview.</label>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="check-reading-answers-btn" data-form-id="b1_interview">Проверить ответы</button>
+                                    <div class="reading-feedback" style="display:none;"></div>
+                                </form>
+                            </div>
+                        </details>
+                    </div>
+                </details>
             </div>
 
             <!-- Уровень B2 -->
             <div class="reading-level-section" id="level-b2">
-                <h2><i class="fas fa-plane level-icon"></i> Уровень B2 (Upper-Intermediate)</h2>
-                 <div class="reading-task">
-                    <h3>Текст 1: The Tetris Effect</h3>
-                    <div class="reading-text-content">
-                        <p>Tetris effect is a syndrome named after the video game Tetris. It occurs when one devotes an excessive amount of time to an activity or game, which begins to overtake the person's thoughts and dreams. At its release in 1984, the game of Tetris took the world by storm and people began to devote massive amounts of time to it. Players began to see the game's abstract shapes in everyday life, and visualized how pieces of furniture and other objects would fit together to form perfect rows, for example. They even saw falling blocks in their dreams. Though Tetris’ heyday is long behind us, the Tetris effect still lives on. It can emerge as a consequence of ordinary hobbies, tasks, or playing other games. It is also prevalent in computer programmers and mathematicians who often see lines of code and complex equations as they try to fall asleep at night.</p>
+                <details class="level-details">
+                    <summary class="level-summary">
+                        <h2><i class="fas fa-plane level-icon"></i> Уровень B2 (Upper-Intermediate)</h2>
+                    </summary>
+                    <div class="level-content">
+                         <details class="task-details">
+                            <summary class="task-summary">
+                                <h3>Текст 1: The Importance of Urban Green Spaces</h3>
+                            </summary>
+                            <div class="reading-task">
+                                <div class="reading-text-content">
+                                    <p>[ЗАПОЛНИТЕ ТЕКСТ B2 ЗДЕСЬ: Обсуждение важности зеленых зон в городах. Может включать Conditionals, Passive Voice, более сложную лексику. Примерно 180-220 слов.]</p>
+                                    <p>Example: Urban green spaces, such as parks, public gardens, and even small community plots, play a crucial role in the well-being of city dwellers and the overall health of an urban environment. Beyond their aesthetic appeal, these areas provide essential ecosystem services. They help to mitigate the urban heat island effect, improve air quality by absorbing pollutants, and reduce stormwater runoff. Furthermore, access to green spaces has been consistently linked to improved mental and physical health. Studies have shown that spending time in nature can reduce stress, boost mood, and encourage physical activity. As cities continue to grow, the anning and preservation of these green oases are becoming increasingly vital for creating sustainable and livable urban futures.</p>
+                                </div>
+                                <h4>Вопросы к тексту "The Importance of Urban Green Spaces":</h4>
+                                <form class="reading-questions-form">
+                                    <div class="reading-question">
+                                        <p><strong>1. Which of the following is NOT mentioned as a benefit of urban green spaces?</strong></p>
+                                        <div class="reading-options">
+                                            <label><input type="radio" name="q1_b2_green" value="a"> a) Improving air quality</label>
+                                            <label><input type="radio" name="q1_b2_green" value="b"> b) Increasing property values</label>
+                                            <label><input type="radio" name="q1_b2_green" value="c"> c) Reducing stress</label>
+                                        </div>
+                                    </div>
+                                    <div class="reading-question">
+                                        <p><strong>2. The "urban heat island effect" refers to _____.</strong></p>
+                                        <div class="reading-options">
+                                            <label><input type="radio" name="q2_b2_green" value="a"> a) cities being popular tourist destinations in summer</label>
+                                            <label><input type="radio" name="q2_b2_green" value="b"> b) cities being warmer than surrounding rural areas</label>
+                                            <label><input type="radio" name="q2_b2_green" value="c"> c) the best places to find green spaces in a city</label>
+                                        </div>
+                                    </div>
+                                    <div class="reading-question">
+                                        <p><strong>3. According to the passage, what is essential for sustainable urban futures?</strong></p>
+                                        <div class="reading-options">
+                                            <label><input type="radio" name="q3_b2_green" value="a"> a) Building more skyscrapers</label>
+                                            <label><input type="radio" name="q3_b2_green" value="b"> b) Reducing the number of parks</label>
+                                            <label><input type="radio" name="q3_b2_green" value="c"> c) Planning and preserving green spaces</label>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="check-reading-answers-btn" data-form-id="b2_green">Проверить ответы</button>
+                                    <div class="reading-feedback" style="display:none;"></div>
+                                </form>
+                            </div>
+                        </details>
                     </div>
-                    <h4>Вопросы к тексту "The Tetris Effect":</h4>
-                    <form class="reading-questions-form">
-                        <div class="reading-question">
-                            <p><strong>1. According to the passage, the Tetris effect is a syndrome that _____.</strong></p>
-                            <div class="reading-options">
-                                <label><input type="radio" name="q1_b2_tetris" value="A"> A) has disappeared along with the game itself</label>
-                                <label><input type="radio" name="q1_b2_tetris" value="B"> B) emerges as people are playing the game Tetris</label>
-                                <label><input type="radio" name="q1_b2_tetris" value="C"> C) is not experienced by people who never play the game</label>
-                                <label><input type="radio" name="q1_b2_tetris" value="D"> D) always occurs during sleep</label>
-                                <label><input type="radio" name="q1_b2_tetris" value="E"> E) can also be experienced by computer programmers</label>
-                            </div>
-                        </div>
-                         <div class="reading-question">
-                            <p><strong>2. As pointed out in the passage, the game of Tetris _____.</strong></p>
-                            <div class="reading-options">
-                                <label><input type="radio" name="q2_b2_tetris" value="A"> A) did not captivate so many people in its initial years as it does now</label>
-                                <label><input type="radio" name="q2_b2_tetris" value="B"> B) quickly became popular across the world when it first came out</label>
-                                <label><input type="radio" name="q2_b2_tetris" value="C"> C) is still at its peak today</label>
-                                <label><input type="radio" name="q2_b2_tetris" value="D"> D) can be played while one is engaged in an ordinary everyday activity</label>
-                                <label><input type="radio" name="q2_b2_tetris" value="E"> E) was not as popular as the other video games of its time</label>
-                            </div>
-                        </div>
-                         <div class="reading-question">
-                            <p><strong>3. The purpose of this passage is to _____.</strong></p>
-                            <div class="reading-options">
-                                <label><input type="radio" name="q3_b2_tetris" value="A"> A) introduce a condition named after the game of Tetris</label>
-                                <label><input type="radio" name="q3_b2_tetris" value="B"> B) compare the effects of Tetris with those of other video games</label>
-                                <label><input type="radio" name="q3_b2_tetris" value="C"> C) analyze the reasons why people devote so much of their time to playing Tetris</label>
-                                <label><input type="radio" name="q3_b2_tetris" value="D"> D) discuss why the heyday of the game of Tetris is over</label>
-                                <label><input type="radio" name="q3_b2_tetris" value="E"> E) introduce the game of Tetris</label>
-                            </div>
-                        </div>
-                        <button type="button" class="check-reading-answers-btn" data-form-id="b2_tetris">Проверить ответы (B2 - Tetris)</button>
-                        <div class="reading-feedback" style="display:none;"></div>
-                    </form>
-                </div>
+                </details>
             </div>
 
             <!-- Уровень C1 -->
             <div class="reading-level-section" id="level-c1">
-                <h2><i class="fas fa-user-graduate level-icon"></i> Уровень C1 (Advanced)</h2>
-                <!-- Здесь будет текст и вопросы для C1 -->
-                <p>(Содержимое для C1 будет добавлено позже)</p>
+                <details class="level-details">
+                    <summary class="level-summary">
+                        <h2><i class="fas fa-user-graduate level-icon"></i> Уровень C1 (Advanced)</h2>
+                    </summary>
+                    <div class="level-content">
+                        <details class="task-details">
+                            <summary class="task-summary">
+                                <h3>Текст 1: The Nuances of Cross-Cultural Communication</h3>
+                            </summary>
+                            <div class="reading-task">
+                                <div class="reading-text-content">
+                                     <p>[ЗАПОЛНИТЕ ТЕКСТ C1 ЗДЕСЬ: Сложный текст о межкультурной коммуникации, возможно, с идиомами, сложными грамматическими конструкциями, абстрактными понятиями. Примерно 250-300 слов.]</p>
+                                     <p>Example: Effective cross-cultural communication extends far beyond mere linguistic proficiency; it necessitates a profound understanding of implicit cultural norms, varying communication styles, and non-verbal cues that can significantly differ across societies. What might be considered direct and efficient in one culture could be perceived as abrupt or even rude in another. High-context cultures, for instance, rely heavily on shared experiences and unspoken understandings, where meaning is often embedded in the context rather than explicitly stated. Conversely, low-context cultures tend to favor explicit, direct communication. Navigating these subtleties requires not only cultural sensitivity and empathy but also a willingness to adapt one's own communication approach to foster mutual understanding and avoid potential misunderstandings that can hinder international collaborations and personal relationships.</p>
+                                </div>
+                                <h4>Вопросы к тексту "The Nuances of Cross-Cultural Communication":</h4>
+                                <form class="reading-questions-form">
+                                    <div class="reading-question">
+                                        <p><strong>1. According to the passage, what is crucial for effective cross-cultural communication beyond language skills?</strong></p>
+                                        <div class="reading-options">
+                                            <label><input type="radio" name="q1_c1_culture" value="a"> a) Speaking multiple languages fluently</label>
+                                            <label><input type="radio" name="q1_c1_culture" value="b"> b) A deep understanding of implicit cultural norms and non-verbal cues</label>
+                                            <label><input type="radio" name="q1_c1_culture" value="c"> c) Adhering strictly to one's own communication style</label>
+                                        </div>
+                                    </div>
+                                    <div class="reading-question">
+                                        <p><strong>2. What characterizes high-context cultures, as mentioned in the text?</strong></p>
+                                        <div class="reading-options">
+                                            <label><input type="radio" name="q2_c1_culture" value="a"> a) They prefer explicit and direct statements.</label>
+                                            <label><input type="radio" name="q2_c1_culture" value="b"> b) Meaning is often conveyed through shared experiences and context.</label>
+                                            <label><input type="radio" name="q2_c1_culture" value="c"> c) They rarely use non-verbal cues.</label>
+                                        </div>
+                                    </div>
+                                    <div class="reading-question">
+                                        <p><strong>3. What can hinder international collaborations, according to the passage?</strong></p>
+                                        <div class="reading-options">
+                                            <label><input type="radio" name="q3_c1_culture" value="a"> a) Over-reliance on linguistic proficiency</label>
+                                            <label><input type="radio" name="q3_c1_culture" value="b"> b) Adapting one's communication approach</label>
+                                            <label><input type="radio" name="q3_c1_culture" value="c"> c) Potential misunderstandings due to cultural subtleties</label>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="check-reading-answers-btn" data-form-id="c1_culture">Проверить ответы</button>
+                                    <div class="reading-feedback" style="display:none;"></div>
+                                </form>
+                            </div>
+                        </details>
+                    </div>
+                </details>
             </div>
 
         </section>
@@ -166,6 +296,6 @@
 
      <button id="scrollToTopBtn" title="Наверх"><i class="fas fa-arrow-up"></i></button>
     <script src="script.js"></script>
-    <script src="reading-comprehension-logic.js"></script> <!-- Новый JS для этой страницы -->
+    <script src="reading-comprehension-logic.js"></script>
 </body>
 </html>
