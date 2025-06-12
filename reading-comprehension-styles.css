@@ -1,0 +1,195 @@
+/* reading-comprehension-styles.css */
+
+#reading-hero {
+    background: linear-gradient(rgba(76, 175, 80, 0.85), rgba(56, 142, 60, 0.9)); /* Зеленый градиент */
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#reading-hero .hero-content h1 {
+    font-size: 2.6em;
+    margin-bottom: 15px;
+}
+
+#reading-hero .hero-content p {
+    font-size: 1.15em;
+    max-width: 750px;
+    margin: 0 auto 15px auto;
+}
+
+#reading-exercises {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.reading-level-section {
+    margin-bottom: 40px;
+    padding: 25px;
+    background-color: #fff; /* Белый фон для секции уровня */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.reading-level-section h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    display: flex;
+    align-items: center;
+}
+.reading-level-section h2 .level-icon {
+    margin-right: 15px;
+    color: #007bff; /* Пример цвета для иконки уровня */
+}
+/* Цвета иконок для уровней */
+#level-a1 h2 .level-icon { color: #28a745; } /* Зеленый */
+#level-a2 h2 .level-icon { color: #17a2b8; } /* Бирюзовый */
+#level-b1 h2 .level-icon { color: #ffc107; } /* Желтый */
+#level-b2 h2 .level-icon { color: #fd7e14; } /* Оранжевый */
+#level-c1 h2 .level-icon { color: #dc3545; } /* Красный */
+
+
+.reading-task {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    /* border-bottom: 1px dashed #ddd; */ /* Можно добавить разделитель между заданиями */
+}
+.reading-task:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.reading-task h3 { /* Заголовок текста/задания */
+    font-size: 1.4em;
+    color: #0056b3;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.reading-text-content {
+    background-color: #f8f9fa;
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    line-height: 1.7;
+    text-align: justify; /* Выравнивание по ширине для текста */
+    border: 1px solid #e9ecef;
+}
+.reading-text-content p {
+    margin-bottom: 10px;
+    text-align: justify;
+}
+.reading-text-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+.reading-task h4 { /* Заголовок "Вопросы к тексту" */
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.reading-questions-form .reading-question {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fdfdff;
+    border: 1px solid #eef;
+    border-radius: 5px;
+}
+.reading-questions-form .reading-question p strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.05em;
+}
+
+.reading-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.reading-options label {
+    display: block;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.reading-options label:hover {
+    background-color: #f0f8ff;
+}
+.reading-options input[type="radio"] {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.check-reading-answers-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff; /* Синий */
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+.check-reading-answers-btn:hover {
+    background-color: #0056b3;
+}
+
+.reading-feedback {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+.reading-feedback p {
+    margin: 5px 0;
+    text-align: left;
+}
+.reading-feedback .correct {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+.reading-feedback .incorrect {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+.reading-feedback .explanation-title {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+.reading-feedback .explanation-text {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #reading-hero .hero-content h1 {
+        font-size: 2em;
+    }
+    .reading-level-section h2 {
+        font-size: 1.5em;
+    }
+     .reading-task h3 {
+        font-size: 1.25em;
+    }
+}
