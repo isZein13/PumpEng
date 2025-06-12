@@ -25,45 +25,108 @@
 }
 
 .reading-level-section {
-    margin-bottom: 40px;
-    padding: 25px;
-    background-color: #fff; /* Белый фон для секции уровня */
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 30px; /* Уменьшил отступ между секциями уровней */
+    /* Убираем фон и рамку отсюда, они будут у details */
 }
 
-.reading-level-section h2 {
-    font-size: 1.8em;
-    color: #333;
-    margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #eee;
-    display: flex;
-    align-items: center;
+/* Стили для сворачиваемых/разворачиваемых блоков */
+.level-details, .task-details {
+    margin-bottom: 20px; /* Отступ между блоками details */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px; /* Скругление больше */
+    background-color: #fff;
+    overflow: hidden; /* Чтобы внутренние элементы не вылезали за скругленные углы */
 }
-.reading-level-section h2 .level-icon {
-    margin-right: 15px;
-    color: #007bff; /* Пример цвета для иконки уровня */
-}
-/* Цвета иконок для уровней */
-#level-a1 h2 .level-icon { color: #28a745; } /* Зеленый */
-#level-a2 h2 .level-icon { color: #17a2b8; } /* Бирюзовый */
-#level-b1 h2 .level-icon { color: #ffc107; } /* Желтый */
-#level-b2 h2 .level-icon { color: #fd7e14; } /* Оранжевый */
-#level-c1 h2 .level-icon { color: #dc3545; } /* Красный */
-
-
-.reading-task {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    /* border-bottom: 1px dashed #ddd; */ /* Можно добавить разделитель между заданиями */
-}
-.reading-task:last-child {
-    border-bottom: none;
+.level-details:last-child, .task-details:last-child {
     margin-bottom: 0;
 }
 
-.reading-task h3 { /* Заголовок текста/задания */
+
+.level-summary, .task-summary {
+    padding: 18px 25px; /* Увеличил паддинги */
+    cursor: pointer;
+    display: flex; /* Используем flex для выравнивания заголовка и стрелки */
+    justify-content: space-between; /* Размещаем элементы по краям */
+    align-items: center;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.2s ease;
+    position: relative; /* Для псевдоэлемента-стрелки */
+}
+.level-details[open] > .level-summary,
+.task-details[open] > .task-summary {
+    border-bottom-style: solid;
+    background-color: #f1f3f5; /* Чуть темнее фон, когда открыто */
+}
+
+
+.level-summary:hover, .task-summary:hover {
+    background-color: #e9ecef;
+}
+
+/* Стили для заголовков внутри summary */
+.level-summary h2, .task-summary h3 {
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+    display: inline-flex;
+    align-items: center;
+    /* width: calc(100% - 30px); /* Ширина текста, оставляя место для стрелки */
+}
+.level-summary h2 {
+    font-size: 1.7em; /* Чуть больше */
+    color: #333;
+}
+.task-summary h3 {
+    font-size: 1.35em; /* Чуть больше */
+    color: #0056b3;
+}
+.level-summary h2 .level-icon, .task-summary h3 .level-icon { /* Общий стиль для иконок в summary */
+    margin-right: 12px;
+}
+/* Цвета иконок для уровней в summary */
+#level-a1 .level-summary h2 .level-icon { color: #28a745; }
+#level-a2 .level-summary h2 .level-icon { color: #17a2b8; }
+#level-b1 .level-summary h2 .level-icon { color: #ffc107; }
+#level-b2 .level-summary h2 .level-icon { color: #fd7e14; }
+#level-c1 .level-summary h2 .level-icon { color: #dc3545; }
+
+
+/* Стрелка для details/summary */
+.level-summary::after, .task-summary::after { /* Используем ::after и не абсолютное позиционирование */
+    content: '\f078'; /* Иконка FontAwesome: fas fa-chevron-down */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    transition: transform 0.2s ease-in-out;
+    font-size: 1em; /* Размер стрелки */
+    color: #555;
+    /* margin-left: auto; /* Прижимает стрелку вправо, если summary - flex */
+}
+
+.level-details[open] > .level-summary::after,
+.task-details[open] > .task-summary::after {
+    transform: rotate(-180deg); /* Поворачиваем стрелку вверх */
+}
+
+
+.level-content { /* Обертка для контента уровня внутри details */
+    padding: 0px 25px 25px 25px; /* Паддинг только для содержимого, не для summary */
+    border-top: 1px solid transparent; /* Предотвращает схлопывание отступов */
+}
+.task-details .reading-task { /* Убираем лишние отступы у вложенного task */
+    padding-top: 15px;
+}
+
+
+.reading-task {
+    /* padding: 10px 0 0 0; */ /* Паддинг теперь у .level-content или .task-details */
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 0;
+}
+
+.reading-task h3 {
     font-size: 1.4em;
     color: #0056b3;
     margin-bottom: 15px;
@@ -76,7 +139,7 @@
     border-radius: 5px;
     margin-bottom: 20px;
     line-height: 1.7;
-    text-align: justify; /* Выравнивание по ширине для текста */
+    text-align: justify;
     border: 1px solid #e9ecef;
 }
 .reading-text-content p {
@@ -88,7 +151,7 @@
 }
 
 
-.reading-task h4 { /* Заголовок "Вопросы к тексту" */
+.reading-task h4 {
     font-size: 1.2em;
     color: #333;
     margin-top: 25px;
@@ -136,7 +199,7 @@
     font-size: 1em;
     font-weight: bold;
     color: white;
-    background-color: #007bff; /* Синий */
+    background-color: #007bff;
     border: none;
     border-radius: 25px;
     cursor: pointer;
@@ -151,45 +214,62 @@
     margin-top: 20px;
     padding: 15px;
     border-radius: 5px;
+    background-color: #f9f9f9; /* Фон для блока с результатами */
+    border: 1px solid #eee;
+}
+.reading-feedback h4 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #333;
 }
 .reading-feedback p {
-    margin: 5px 0;
+    margin: 8px 0; /* Увеличил отступы */
     text-align: left;
+    line-height: 1.5;
 }
 .reading-feedback .correct {
     color: #155724;
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
-    padding: 5px 10px;
-    border-radius: 3px;
+    font-weight: bold;
 }
 .reading-feedback .incorrect {
     color: #721c24;
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
-    padding: 5px 10px;
-    border-radius: 3px;
-}
-.reading-feedback .explanation-title {
     font-weight: bold;
-    margin-top: 10px;
-    display: block;
 }
 .reading-feedback .explanation-text {
-    font-style: italic;
-    font-size: 0.9em;
-    color: #555;
+    font-style: normal; /* Убрал курсив */
+    font-size: 0.95em; /* Чуть больше */
+    color: #444;
+    margin-top: 5px;
+    padding-left: 15px; /* Небольшой отступ для объяснения */
+    border-left: 3px solid #ddd; /* Линия слева от объяснения */
 }
+.reading-feedback hr {
+    border: none;
+    border-top: 1px dashed #ccc; /* Пунктирный разделитель */
+    margin: 15px 0; /* Увеличил отступы */
+}
+
 
 /* Адаптивность */
 @media (max-width: 768px) {
     #reading-hero .hero-content h1 {
         font-size: 2em;
     }
-    .reading-level-section h2 {
+    .level-summary h2 {
         font-size: 1.5em;
     }
-     .reading-task h3 {
+    .task-summary h3 {
         font-size: 1.25em;
+    }
+     .reading-task h3 { /* Заголовок текста внутри задания */
+        font-size: 1.2em;
+    }
+     .reading-level-section .level-summary, .reading-level-section .task-summary {
+        padding: 12px 15px;
+    }
+    .reading-level-section .level-content {
+        padding: 15px;
     }
 }
