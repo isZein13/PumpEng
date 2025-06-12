@@ -7,7 +7,7 @@
     <meta name="description" content="Полезные материалы от школы PumpEng: видеоуроки по грамматике, словари, списки неправильных глаголов, таблицы времен и другие ресурсы для изучения английского языка.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="resources-styles.css">
+    <link rel="stylesheet" href="resources-styles.css"> <!-- Стили для этой страницы -->
 </head>
 <body>
     <header>
@@ -33,17 +33,18 @@
             <h2>Категории ресурсов:</h2>
             <div class="resource-cards-container">
 
+                <!-- Категория 1: Видеоуроки -->
                 <div class="resource-card">
                     <div class="resource-card-icon"><i class="fas fa-video"></i></div>
                     <h3>Видеоуроки по грамматике</h3>
                     <p>Наглядные объяснения сложных правил, разбор примеров и практические советы от наших преподавателей.</p>
                     <ul class="resource-links">
                         <li><a href="grammar-lessons.html">Перейти к видеоурокам (Наполнение)</a></li>
-                        <!-- Убрал отдельные ссылки на уроки, т.к. есть общая -->
                     </ul>
-                     <a href="grammar-lessons.html" class="resource-category-button">Смотреть видеоуроки</a>
+                    <a href="grammar-lessons.html" class="resource-category-button">Смотреть видеоуроки</a>
                 </div>
 
+                <!-- Категория 2: Словари и Лексика -->
                 <div class="resource-card">
                     <div class="resource-card-icon"><i class="fas fa-book-open"></i></div>
                     <h3>Словари и Лексика</h3>
@@ -56,6 +57,7 @@
                     </ul>
                 </div>
 
+                <!-- Категория 3: Грамматические Таблицы и Списки -->
                 <div class="resource-card">
                     <div class="resource-card-icon"><i class="fas fa-table-list"></i></div>
                     <h3>Грамматические Таблицы и Списки</h3>
@@ -63,20 +65,25 @@
                     <ul class="resource-links">
                         <li><a href="pronouns_types.pdf" target="_blank">Типы местоимений в английском (PDF)</a></li>
                         <li><a href="English_Tenses_Comparison_Table.pdf" target="_blank">Сравнительная таблица времен (PDF)</a></li>
+                        <!-- ДОБАВЛЕНА ССЫЛКА НА ПРЕДЛОГИ -->
+                        <li><a href="Prepositions_with_Russian_and_Link.pdf" target="_blank">Предлоги с переводом и примерами (PDF)</a></li>
                         <li><a href="#" target="_blank">Таблица неправильных глаголов (PDF, Скоро)</a></li>
-                        <li><a href="#" target="_blank">Основные предлоги (PNG, Скоро)</a></li>
+                        <!-- Убрал старую ссылку на предлоги, если она была ошибочной -->
                     </ul>
                 </div>
 
-                 <div class="resource-card"> <!-- ИЗМЕНЕНО НА УПРАЖНЕНИЯ НА ЧТЕНИЕ -->
-                    <div class="resource-card-icon"><i class="fas fa-book-reader"></i></div> <!-- Иконка чтения -->
-                    <h3>Упражнения на Чтение</h3>
-                    <p>Проверьте и улучшите свои навыки понимания текстов на английском языке для разных уровней (A1-C1).</p>
+                 <!-- Категория 4: Тесты и Упражнения -->
+                <div class="resource-card">
+                    <div class="resource-card-icon"><i class="fas fa-book-reader"></i></div> <!-- Иконка чтения, т.к. тесты переехали -->
+                    <h3>Тесты и Упражнения</h3>
+                    <p>Проверьте свои знания и отработайте грамматику, лексику и навыки чтения с помощью наших материалов.</p> <!-- Обновил описание -->
                     <ul class="resource-links">
-                        <li><a href="reading-comprehension.html">Перейти к упражнениям на чтение</a></li>
-                        <!-- Можно добавить ссылки на другие типы упражнений, если появятся -->
+                        <li><a href="tests-overview.html">Тесты на определение уровня (A1, A2, B1)</a></li>
+                        <li><a href="reading-comprehension.html">Упражнения на чтение (A1-C1)</a></li>
+                        <li><a href="#" target="_blank">Упражнения на грамматику (Онлайн, Скоро)</a></li>
                     </ul>
-                    <a href="reading-comprehension.html" class="resource-category-button">Начать упражнения</a>
+                     <a href="tests-overview.html" class="resource-category-button" style="margin-bottom: 10px;">Пройти тесты</a> <!-- Кнопка на тесты -->
+                     <a href="reading-comprehension.html" class="resource-category-button">Упражнения на чтение</a> <!-- Кнопка на чтение -->
                 </div>
 
             </div>
@@ -87,7 +94,11 @@
         <!-- Подвал -->
     </footer>
 
-     <button id="scrollToTopBtn" title="Наверх"><i class="fas fa-arrow-up"></i></button>
+     <!-- Кнопка Наверх -->
+     <button id="scrollToTopBtn" title="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script src="script.js"></script>
 </body>
 </html>
