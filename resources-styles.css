@@ -15,7 +15,7 @@
 #resources-hero .hero-content h1 {
     font-size: 2.6em;
     margin-bottom: 15px;
-    color: #f0f0f0; /* Светлый для контраста с зеленым */
+    color: #f0f0f0;
 }
 
 #resources-hero .hero-content p {
@@ -25,7 +25,6 @@
     line-height: 1.6;
 }
 
-/* Секция с категориями ресурсов */
 #resources-categories {
     padding-top: 40px;
     padding-bottom: 50px;
@@ -41,7 +40,7 @@
 
 .resource-cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Адаптивная сетка */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
     max-width: 1200px;
     margin: 0 auto;
@@ -55,20 +54,12 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
     display: flex;
     flex-direction: column;
-    /* border-top: 5px solid #27ae60; /* Убрана общая зеленая верхняя рамка */
-}
-
-.resource-card:hover {
-    /* Можно оставить или убрать эффект при наведении на всю карточку,
-       если акцент смещается на ссылки внутри */
-    /* transform: translateY(-5px); */
-    /* box-shadow: 0 10px 25px rgba(0,0,0,0.1); */
 }
 
 .resource-card-icon {
     font-size: 2.5em;
     margin-bottom: 15px;
-    color: #27ae60; /* Основной зеленый для иконок по умолчанию */
+    color: #27ae60;
     text-align: center;
 }
 
@@ -84,33 +75,48 @@
     color: #555;
     line-height: 1.6;
     margin-bottom: 20px;
-    flex-grow: 1; /* Параграф занимает доступное место */
+    flex-grow: 1; 
     text-align: left; 
 }
 
-.resource-links {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 20px;
-    text-align: left;
+/* === ОБЩИЕ СТИЛИ ДЛЯ ВСЕХ ССЫЛОК ВНУТРИ КАРТОЧКИ РЕСУРСОВ === */
+.resource-links, 
+.resource-card .resource-category-button { /* Применяем общие стили и к бывшим кнопкам */
+    list-style: none; /* Для ul */
+    padding-left: 0;  /* Для ul */
+    margin-bottom: 10px; /* Отступ снизу для всего блока ссылок или отдельной ссылки-кнопки */
+    text-align: left; /* Выравнивание по левому краю */
 }
 
-.resource-links li {
-    margin-bottom: 10px;
+.resource-links li,
+.resource-card .resource-category-button { /* Стили для каждого элемента списка И для бывшей кнопки */
+    margin-bottom: 10px; /* Отступ между ссылками */
     font-size: 0.95em;
 }
 
-.resource-links li a {
-    color: #0056b3; /* Синий для ссылок */
+.resource-links li a,
+.resource-card .resource-category-button { /* Стили для тега <a> */
+    color: #0056b3;      /* Синий цвет */
     text-decoration: none;
-    transition: color 0.2s ease;
+    font-weight: normal; /* Убираем жирность у бывших кнопок, чтобы было как у ссылок */
+    background-color: transparent; /* Убеждаемся, что фона нет */
+    padding: 0;         /* Убираем специфичные паддинги кнопок */
+    border: none;       /* Убираем рамки кнопок */
+    border-radius: 0;   /* Убираем скругление кнопок */
+    display: inline;    /* Чтобы вели себя как обычные текстовые ссылки */
+    transition: color 0.2s ease, text-decoration 0.2s ease;
 }
-.resource-links li a:hover {
+
+.resource-links li a:hover,
+.resource-card .resource-category-button:not(.coming-soon):hover {
     color: #003366;
     text-decoration: underline;
 }
-.resource-links li a[target="_blank"]::after { /* Значок внешней ссылки */
-    content: "\f35d"; /* fas fa-external-link-alt */
+
+/* Специальные стили для ссылок, открывающихся в новой вкладке */
+.resource-links li a[target="_blank"]::after,
+.resource-card .resource-category-button[target="_blank"]::after {
+    content: "\f35d"; 
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     font-size: 0.8em;
@@ -118,39 +124,17 @@
     opacity: 0.7;
 }
 
-/* === ИЗМЕНЕННЫЕ СТИЛИ ДЛЯ КНОПОК-ССЫЛОК КАТЕГОРИЙ === */
-.resource-category-button {
-    display: inline-block; 
-    padding: 5px 0;     
-    font-size: 0.95em;   
-    font-weight: bold;   
-    color: #0056b3;      /* Синий цвет */
-    background-color: transparent; /* Без фона */
-    text-decoration: none;
-    border-radius: 0;     /* Без скругления */
-    transition: color 0.2s ease, text-decoration 0.2s ease; /* Добавил text-decoration в transition */
-    align-self: flex-start; 
-    margin-top: 15px;    /* Отступ сверху от списка ссылок */
-    border: none;        /* Убедимся, что нет рамки */
-}
-
-.resource-category-button.coming-soon {
+/* Стили для неактивных ссылок/кнопок "Скоро" */
+.resource-card .resource-category-button.coming-soon {
     color: #95a5a6; 
     cursor: default;
     text-decoration: none; 
-    background-color: transparent; 
 }
-.resource-category-button.coming-soon:hover {
+.resource-card .resource-category-button.coming-soon:hover {
     color: #95a5a6; 
     text-decoration: none;
 }
-
-.resource-category-button:not(.coming-soon):hover {
-    color: #003366;      
-    text-decoration: underline; 
-    background-color: transparent; 
-}
-/* === КОНЕЦ ИЗМЕНЕННЫХ СТИЛЕЙ ДЛЯ КНОПОК-ССЫЛОК === */
+/* === КОНЕЦ ОБЩИХ СТИЛЕЙ ДЛЯ ССЫЛОК === */
 
 
 /* Адаптивность */
@@ -161,13 +145,11 @@
     .resource-cards-container {
         grid-template-columns: 1fr;
     }
-     .resource-card p { /* Описание категории */
-        text-align: center; /* Можно вернуть по центру на мобильных */
+     .resource-card p { 
+        text-align: center; 
     }
-    .resource-links {
-        text-align: center; /* Ссылки тоже по центру */
-    }
-    .resource-category-button {
-        align-self: center; /* Кнопку-ссылку тоже по центру */
+    .resource-links,
+    .resource-card .resource-category-button { /* Центрируем на мобильных */
+        text-align: center;
     }
 }
