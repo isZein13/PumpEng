@@ -1,187 +1,389 @@
 /* grammar-exercise-styles.css */
 
+/* Герой-секция для страницы темы */
 #grammar-hero {
-    background: linear-gradient(rgba(0, 100, 170, 0.85), rgba(0, 60, 120, 0.9));
+От    /* background: linear-gradient(rgba(0, 100, 170, 0лично! Вот CSS и JavaScript для вашей страницы упражнений по Present Simple (`a.85), rgba(0, 60, 120, 0.9)); /* Об1-present-simple-exercises.html`).
+
+**1. `grammar-exercise-styles.css` (щий синий, можно переопределять инлайн */
     color: white;
-    padding: 50px 20px;
+    padding: 40pxПолный код)**
+
+Этот CSS-файл будет общим для всех страниц с грамматическими упражнениями по 20px; /* Уменьшил паддинг */
     text-align: center;
-    margin-bottom: 0;
+    margin-bottom темам. Он немного доработан по сравнению с предыдущей версией, чтобы лучше подходить для страницы,: 0; /* Убрал нижний отступ у секции hero */
 }
 
-#grammar-hero .hero-content h1 {
-    font-size: 2.6em;
-    margin-bottom: 15px;
+#grammar-hero . посвященной одной теме.
+
+hero-content h1 {
+    font-size: 2.2em; /* Немного уменьшил */
+    ```css
+/* grammar-exercise-styles.css */
+
+/* Герой-секция для страницы темы */
+#grammar-hero {
+    background: linear-gradient(rgba(23, 1margin-bottom: 10px;
+    display: flex; /* Для иконки и текста в ряд62, 184, 0.85), rgba(13, 138, */
+    align-items: center;
+    justify-content: center;
+}
+#grammar-hero 158, 0.9)); /* Пример градиента, можно менять для разных уровней/тем */
+     .hero-content h1 .topic-icon { /* Иконка в заголовке */
+    margin-right: 15px;
+    font-size: 0.9em; /* Размер относительно H1 */
+    color: white;
+    padding: 40px 20px; /* Уменьшил паддинг */
+opacity: 0.9;
 }
 
 #grammar-hero .hero-content p {
-    font-size: 1.15em;
-    max-width: 750px;
-    margin: 0 auto 15px auto;
+    font-size    text-align: center;
+    margin-bottom: 0; /* Убираем отступ, если есть: 1.1em; /* Уменьшил */
+    max-width: 700px;
+    margin */
 }
 
-#grammar-topics-container {
-    padding-top: 30px;
+#grammar-hero .hero-content h1 {
+    font-size: 2.: 0 auto 10px auto; /* Уменьшил нижний отступ */
+}
+
+/* Кон2em; /* Немного уменьшил */
+    margin-bottom: 10px;
+    display: flex;тейнер для объяснения темы и форм с упражнениями */
+#grammar-topic-content {
+    padding /* Для иконки и текста в ряд */
+    align-items: center;
+    justify-content: center-top: 30px;
     padding-bottom: 40px;
+    /* background-color: #;
+}
+#grammar-hero .hero-content h1 .topic-icon { /* Иконка вf8f9fa; /* Можно задать фон для всей области с упражнениями */
 }
 
-.grammar-topic-details {
-    margin-bottom: 25px; /* Отступ между темами */
-    border: 1px solid #d3e0ea;
-    border-radius: 8px;
-    background-color: #fff;
-    overflow: hidden;
-}
-.grammar-topic-details:last-child {
-    margin-bottom: 0;
+.topic-explanation { заголовке */
+    margin-right: 15px;
+    font-size: 0.9em;
+    font-size: 1em; /* Увеличил для читаемости */
+    color: # /* Относительно h1 */
+    color: #cceeff; /* Светлый цвет для иконки */
 }
 
-.grammar-topic-summary {
+#grammar-hero .hero-content p {
+    font-size: 1.1em;33475b; /* Темно-сине-серый */
+    margin-bottom: 3 /* Немного уменьшил */
+    max-width: 700px;
+    margin: 0 auto 10px auto;
+}
+
+/* Контейнер для объяснения темы и упражнений */
+#grammar0px; /* Отступ после объяснения */
     padding: 18px 25px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #e9f2fa;
-    border-bottom: 1px solid transparent;
-    transition: background-color 0.2s ease;
-    position: relative;
-}
-.grammar-topic-details[open] > .grammar-topic-summary {
-    border-bottom-color: #d3e0ea;
-    background-color: #dde8f3;
-}
-.grammar-topic-details:not([open]) > .grammar-topic-summary {
-     border-bottom-color: transparent;
+    background--topic-content {
+    padding-top: 30px;
+    padding-bottom: 4color: #e9f2f9; /* Очень светлый синеватый фон */
+    border-left0px;
+    background-color: #f8f9fa; /* Светлый фон для области с упражнениями */: 5px solid #007bff; /* Синяя акцентная линия */
+    border-radius: 6
 }
 
-.grammar-topic-summary:hover {
-    background-color: #dce6f0;
-}
-
-.grammar-topic-summary h3 {
-    margin: 0;
-    padding: 0;
-    border-bottom: none;
-    display: inline-flex;
-    align-items: center;
-    flex-grow: 1;
-    font-size: 1.4em;
-    color: #004a7c;
-}
-.grammar-topic-summary h3 .topic-icon {
-    margin-right: 12px;
-    color: #007bff;
-    font-size: 1.1em;
-}
-
-/* Стрелка для details/summary */
-.grammar-topic-summary::after {
-    content: '\f078'; /* fas fa-chevron-down */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    transition: transform 0.2s ease-in-out;
-    font-size: 1em;
-    color: #555;
-    margin-left: 15px;
-}
-.grammar-topic-details[open] > .grammar-topic-summary::after {
-    transform: rotate(-180deg);
-}
-
-.topic-content {
-    padding: 20px 25px 25px 25px;
-}
 .topic-explanation {
-    font-size: 0.95em;
-    color: #455a64;
-    margin-bottom: 25px;
-    padding: 12px 18px; /* Увеличил паддинг */
-    background-color: #f8f9fc; /* Чуть другой фон */
-    border-left: 4px solid #007bff;
-    border-radius: 4px;
-    line-height: 1.6; /* Увеличил интервал */
+    font-size: 1em; /* Увеличил для читаpx;
+    line-height: 1.65;
+    max-width: 900pxемости */
+    color: #33475b; /* Темно-сине-серый */; /* Ограничиваем ширину для лучшей читаемости */
+    margin-left: auto;
+    margin-right: auto;
+}
+.topic-explanation ul {
+    list-style-position: inside;
+    padding-
+    margin: 0 auto 30px auto; /* Центрирование и отступ */
+    paddingleft: 5px;
+    margin-top: 10px;
+}
+.topic-explanation li {
+: 20px;
+    background-color: #e9f7fe; /* Очень светло-голубой    margin-bottom: 5px;
 }
 .topic-explanation strong {
-    color: #0056b3;
+    color: #0 */
+    border-left: 5px solid #007bff; /* Синяя акцентная линия */056b3; /* Темнее синий для акцентов */
 }
 
-/* Стили для форм с упражнениями внутри темы */
+
+/* Стили для форм с
+    border-radius: 6px;
+    line-height: 1.7;
+    max упражнениями внутри темы */
 .grammar-exercises-form {
-    margin-bottom: 30px; /* Отступ между блоками упражнений (формами) */
-    padding-bottom: 20px;
-    border-bottom: 1px dashed #e0e0e0; /* Разделитель между упражнениями */
+    margin-bottom: 40px; /*-width: 900px; /* Ограничение ширины для лучшей читаемости */
 }
-.grammar-exercises-form:last-child {
+.topic-explanation strong {
+    color: #0056b3; /* Темнее синий для выде Отступ между блоками упражнений (формами) */
+    padding: 25px; /* Внутренний отления */
+}
+.topic-explanation ul {
+    list-style-position: inside;
+    padding-leftступ для рамки */
+    border: 1px solid #dee2e6; /* Рамка вокруг: 0;
+    margin-top: 10px;
+}
+.topic-explanation li {
+    margin каждого упражнения */
+    border-radius: 8px;
+    background-color: #fff; /*-bottom: 5px;
+}
+
+
+/* Стили для форм с упражнениями */
+.grammar-exercises Белый фон для упражнения */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Легкая тень */
+}
+.grammar-exercises-form {
+    max-width: 850px; /* Ограничение ширины формы */
+    margin: 0 auto 40px auto; /* Центрирование и отступ между упражнениями */
+    padding: -form:last-child {
     margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
 }
 .grammar-exercises-form h4 { /* Заголовок каждого упражнения */
-    font-size: 1.15em;
-    color: #2c3e50; /* Темно-синий */
-    margin-top: 0;
-    margin-bottom: 15px;
+    font-size: 1.25em; /* К25px 30px; /* Внутренние отступы формы */
+    background-color: #рупнее */
+    color: #2c3e50;
+    margin-top: 0;ffffff; /* Белый фон для каждого упражнения */
+    border: 1px solid #dee2e6;
+    margin-bottom: 20px; /* Отступ до первого вопроса */
+    padding-bottom:  /* Светлая рамка */
+    border-radius: 8px;
+    box-shadow: 0 10px;
+    border-bottom: 1px solid #eee;
+}
+
+
+.grammar-exercises4px 12px rgba(0,0,0,0.05); /* Легкая тень-form .grammar-exercise {
+    margin-bottom: 18px;
+    padding: 15px; */
+}
+.grammar-exercises-form:last-child { /* Убираем нижний отступ у последнего
+    background-color: #fdfdff; /* Очень легкий фон для каждого вопроса */
+    border: упражнения */
+    margin-bottom: 0;
+}
+
+.grammar-exercises-form h4 { /* Заголо 1px solid #f0f2f5; /* Едва заметная рамка */
+    border-вок каждого упражнения */
+    font-size: 1.3em; /* Крупнее */
+    color:radius: 5px;
+}
+.grammar-exercises-form .grammar-exercise:last-of-type {
+ #17a2b8; /* Бирюзовый акцент */
+    margin-top: 0;    margin-bottom: 0;
+}
+
+.grammar-exercises-form .grammar-exercise p strong {
+    margin-bottom: 20px;
+    text-align: left; /* Заголовок упраж
+    display: block;
+    margin-bottom: 12px;
+    font-size: 1.0нения слева */
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee5em;
+    color: #333;
+    line-height: 1.4; /* Для;
 }
 
 
 .grammar-exercises-form .grammar-exercise {
-    margin-bottom: 18px; /* Отступ между вопросами в одном упражнении */
-    padding: 15px;
-    background-color: #fdfdff;
-    border: 1px solid #eef;
-    border-radius: 5px;
-}
-.grammar-exercises-form .grammar-exercise:last-of-type { /* Убрать отступ у последнего вопроса в блоке */
-    margin-bottom: 0;
-}
-
-.grammar-exercises-form .grammar-exercise p strong {
-    display: block;
-    margin-bottom: 12px;
-    font-size: 1.05em;
-    color: #333;
+    margin-bottom: 20 лучшей читаемости длинных вопросов */
 }
 
 .exercise-options {
     display: flex;
-    flex-direction: column;
+    flex-directionpx; /* Отступ между вопросами */
+    padding-bottom: 15px; /* Отступ под: column;
     gap: 10px;
 }
 .exercise-options label {
     display: block;
     padding: 12px 15px;
-    border: 1px solid #ccd5e0;
+    border: 1px solid вопросом */
+    /* background-color: #fdfdff; */ /* Убрал фон, т.к #ccd5e0;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s ease, border-color 0.2s ease;
-    line-height: 1.4;
+    . форма уже белая */
+    /* border: 1px solid #eef; */ /* Убралline-height: 1.4;
+    background-color: #fff; /* Фон для вариантов ответа */
+} рамку */
+    border-bottom: 1px dotted #e0e0e0; /* Пунктирный разделитель между вопросами */
+    border-radius: 0; /* Убрал скругление */
 }
 .exercise-options label:hover {
     background-color: #eef4fa;
-    border-color: #a0c7e8;
+    border-color
+.grammar-exercises-form .grammar-exercise:last-of-type { /* Убираем отступ и: #a0c7e8;
 }
 .exercise-options input[type="radio"] {
-    margin-right: 10px;
+    margin- рамку у последнего вопроса */
+    margin-bottom: 0;
+    padding-bottom: 0;
+right: 10px;
     vertical-align: middle;
 }
 
 
-.check-grammar-answers-btn {
+.check-grammar-answers-btn {    border-bottom: none;
+}
+
+.grammar-exercises-form .grammar-exercise p strong {
+
     display: inline-block;
-    padding: 12px 28px;
-    font-size: 1.05em;
-    font-weight: bold;
+    padding: 12px 30px; /* Увеличил    display: block;
+    margin-bottom: 15px; /* Больше отступ */
+    font паддинг */
+    font-size: 1.1em;   /* Крупнее */
+    font-size: 1.1em; /* Крупнее текст вопроса */
+    color: #21252-weight: bold;
     color: white;
-    background-color: #17a2b8;
+    background-color: #17a2b8; /* Би9; /* Почти черный для вопроса */
+    line-height: 1.5;
+    text-align:рюзовый */
     border: none;
     border-radius: 25px;
-    cursor: pointer;
-    margin-top: 20px; /* Отступ от последнего вопроса/упражнения */
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor left; /* Текст вопроса слева */
+}
+
+.exercise-options {
+    display: flex;
+    flex-: pointer;
+    margin-top: 25px; /* Отступ от последнего вопроса */
+    transition: background-direction: column;
+    gap: 12px; /* Отступ между вариантами */
+    text-align:color 0.3s ease, transform 0.2s ease;
 }
 .check-grammar-answers-btn:hover {
     background-color: #138496;
-    transform: translateY(-1px);
+    transform: left; /* Варианты ответов слева */
+}
+.exercise-options label {
+    display translateY(-1px);
+}
+
+.grammar-feedback {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: block;
+    padding: 12px 18px; /* Увеличил паддинг */
+    border: 1px solid #ced4da; /* Более заметная рамка */
+    border-radius: 5: #f8f9fa; /* Фон для блока с результатами */
+    border: 1px solid #epx; /* Скругление */
+    cursor: pointer;
+    transition: background-color 0.20e6ed; /* Рамка */
+}
+.grammar-feedback h4 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    fonts ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    line-height: 1.4;
+    background-color: #f8f9fa; /* Ле-size: 1.25em;
+    color: #333;
+}
+.grammar-feedback p {
+    margin: 10px 0;
+    text-align: left;
+гкий фон для вариантов */
+}
+.exercise-options label:hover {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+    box-shadow: 0 2    line-height: 1.5;
+}
+.grammar-feedback .correct {
+    color: #155724; /* Темно-зеленый */
+    font-weight: bold;
+}px 4px rgba(0,0,0,0.05);
+}
+.exercise-options input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle;
+
+.grammar-feedback .incorrect {
+    color: #721c24; /* Темно-    transform: scale(1.1); /* Чуть крупнее радио-кнопки */
+}
+/* Стикрасный */
+    font-weight: bold;
+}
+.grammar-feedback .explanation-text {
+    fontль для выбранной опции */
+.exercise-options input[type="radio"]:checked + span { /* Если-style: normal;
+    font-size: 0.95em;
+    color: #455a64; /* Темно-серый */
+    margin-top: 8px;
+    padding: текст обернут */
+    /* font-weight: bold; */
+}
+.exercise-options label. 10px 15px; /* Паддинг для объяснения */
+    border-left: 4px solid #b0bec5; /* Серая линия */
+    background-color: #f1f3f5selected-option-style { /* Можно добавить этот класс JSом при выборе */
+    background-color: #d1e7ff;
+    border-color: #74b5f3;
+    font-weight:; /* Очень светлый фон */
+    border-radius: 0 4px 4px 0;
+}
+.grammar-feedback hr {
+    border: none;
+    border-top: 1px dashed #ced 500;
+}
+
+
+.check-grammar-answers-btn {
+    display: block; /* Чтобы margin auto работал */
+    width: fit-content; /* Ширина по содержимому */
+    margin: 4da; /* Пунктирный разделитель */
+    margin: 18px 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #grammar-hero .hero-content h1 {
+        font-size: 1.8em;25px auto 0 auto; /* Центрирование и отступ сверху */
+    padding: 12px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+ /* Уменьшил */
+    }
+    #grammar-hero .hero-content p {
+        font-size: 1em;
+    }
+    .topic-explanation {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+    .grammar-exercises-form h4    color: white;
+    background-color: #007bff; /* Синяя кнопка проверки */
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.check-grammar-answers-btn:hover {
+    background-color: #0056b3;
+     {
+        font-size: 1.15em;
+    }
+    .grammar-exercises-form .grammar-exercise {
+        padding: 12px;
+    }
+    .check-grammar-answers-btn {
+        padding: 10px 25px;
+        font-size: 1em;
+    }
+    .grammar-feedback {
+        padding: 15px;
+    }
+}
+transform: translateY(-1px);
 }
 
 .grammar-feedback {
@@ -196,52 +398,4 @@
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 1.25em;
-    color: #333;
-}
-.grammar-feedback p {
-    margin: 10px 0;
-    text-align: left;
-    line-height: 1.5;
-}
-.grammar-feedback .correct {
-    color: #155724;
-    font-weight: bold;
-}
-.grammar-feedback .incorrect {
-    color: #721c24;
-    font-weight: bold;
-}
-.grammar-feedback .explanation-text {
-    font-style: normal;
-    font-size: 0.95em;
-    color: #444;
-    margin-top: 8px;
-    padding: 8px 12px;
-    border-left: 3px solid #b0bec5;
-    background-color: #eceff1;
-    border-radius: 0 4px 4px 0;
-}
-.grammar-feedback hr {
-    border: none;
-    border-top: 1px dashed #ccc;
-    margin: 18px 0;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    #grammar-hero .hero-content h1 {
-        font-size: 2em;
-    }
-    .grammar-topic-summary h3 {
-        font-size: 1.25em;
-    }
-     .grammar-topic-details .grammar-topic-summary {
-        padding: 15px 20px;
-    }
-    .grammar-topic-details .topic-content {
-        padding: 15px 20px 20px 20px;
-    }
-    .grammar-exercises-form h4 {
-        font-size: 1.1em;
-    }
-}
+    color: #3```
