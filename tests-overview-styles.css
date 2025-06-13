@@ -151,3 +151,15 @@
         font-size: 1.4em;
     }
 }
+.test-card.level-grammar {
+    border-top-color: #673ab7; /* Например, фиолетовый */
+}
+.test-card.level-grammar .test-card-icon i {
+    color: #673ab7; /* Тот же фиолетовый для иконки */
+}
+.test-card.level-grammar .test-card-button {
+    background-color: #673ab7; /* Тот же фиолетовый для кнопки */
+}
+.test-card.level-grammar .test-card-button:hover {
+    background-color: #512da8; /* Темнее фиолетовый */
+}
