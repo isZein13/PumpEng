@@ -49,20 +49,32 @@ document.addEventListener('DOMContentLoaded', () => {
         "a1_qf_ex4_q9": { correct: "a", explanation: "'Your parents' (they) используется с 'do': Where do your parents work?" },
         "a1_qf_ex4_q10": { correct: "b", explanation: "'This word' (it) используется с 'does': What does this word mean?" },
 
-        // --- Упражнение 5: Составление вопросов к ответам ---
-        "a1_qf_ex5_q1": { correct: "c", explanation: "Ответ 'My name is John' является ответом на вопрос 'What is your name?'." },
-        "a1_qf_ex5_q2": { correct: "c", explanation: "Ответ 'I am from London' является ответом на вопрос 'Where are you from?'." },
-        "a1_qf_ex5_q3": { correct: "b", explanation: "Ответ 'Yes, I like pizza' является ответом на общий вопрос 'Do you like pizza?'." },
-        "a1_qf_ex5_q4": { correct: "c", explanation: "Ответ 'She works in a hospital' является ответом на вопрос о месте 'Where does she work?'. ('What does she do?' - про профессию)." },
-        "a1_qf_ex5_q5": { correct: "b", explanation: "Ответ 'I get up at 7 o'clock' является ответом на вопрос о времени 'What time do you get up?'." },
-        "a1_qf_ex5_q6": { correct: "c", explanation: "Ответ 'No, he doesn't play tennis' является ответом на общий вопрос 'Does he play tennis?'." },
-        "a1_qf_ex5_q7": { correct: "c", explanation: "Ответ 'My favorite color is blue' является ответом на вопрос 'What is your favorite color?'." },
-        "a1_qf_ex5_q8": { correct: "d", explanation: "Ответ 'They are my friends' является ответом на вопрос 'Who are they?'." },
-        "a1_qf_ex5_q9": { correct: "b", explanation: "Ответ 'Yes, I am a student' является ответом на общий вопрос 'Are you a student?'." },
-        "a1_qf_ex5_q10": { correct: "c", explanation: "Ответ 'He is 10 years old' является ответом на вопрос 'How old is he?'." }
+        // --- Упражнение 5: Question Tags (с 'to be') ---
+        "a1_qf_ex5_q1": { correct: "b", explanation: "Утверждение с 'is', хвостик отрицательный 'isn't she?'" },
+        "a1_qf_ex5_q2": { correct: "b", explanation: "Утверждение с 'are', хвостик отрицательный 'aren't they?'" },
+        "a1_qf_ex5_q3": { correct: "a", explanation: "Отрицание с 'isn't', хвостик утвердительный 'is he?'" },
+        "a1_qf_ex5_q4": { correct: "b", explanation: "Утверждение с 'are', хвостик отрицательный 'aren't you?'" },
+        "a1_qf_ex5_q5": { correct: "b", explanation: "Утверждение с 'is', хвостик отрицательный 'isn't it?'" },
+        "a1_qf_ex5_q6": { correct: "b", explanation: "Утверждение с 'are', хвостик отрицательный 'aren't we?'" },
+        "a1_qf_ex5_q7": { correct: "c", explanation: "Особый случай для 'I am': I am right, aren't I?" },
+        "a1_qf_ex5_q8": { correct: "c", explanation: "Отрицание 'This isn't', хвостик утвердительный 'is it?' (this меняется на it в хвостике)." },
+        "a1_qf_ex5_q9": { correct: "d", explanation: "Утверждение 'Those are', хвостик отрицательный 'aren't they?' (those меняется на they)." },
+        "a1_qf_ex5_q10": { correct: "b", explanation: "Утверждение 'Your brother is', хвостик отрицательный 'isn't he?'." },
+
+        // --- Упражнение 6: Question Tags (с 'do/does') ---
+        "a1_qf_ex6_q1": { correct: "b", explanation: "Утверждение с Present Simple (like), хвостик с 'don't you?'" },
+        "a1_qf_ex6_q2": { correct: "b", explanation: "Утверждение с Present Simple (plays), хвостик с 'doesn't he?'" },
+        "a1_qf_ex6_q3": { correct: "a", explanation: "Отрицание с 'don't', хвостик утвердительный 'do they?'" },
+        "a1_qf_ex6_q4": { correct: "c", explanation: "Отрицание с 'doesn't', хвостик утвердительный 'does she?'" },
+        "a1_qf_ex6_q5": { correct: "b", explanation: "Утверждение с Present Simple (know), хвостик с 'don't we?'" },
+        "a1_qf_ex6_q6": { correct: "d", explanation: "Утверждение 'Your brother works' (he works), хвостик 'doesn't he?'" },
+        "a1_qf_ex6_q7": { correct: "a", explanation: "Отрицание 'You don't want', хвостик 'do you?'" },
+        "a1_qf_ex6_q8": { correct: "d", explanation: "Утверждение 'This car goes' (it goes), хвостик 'doesn't it?'" },
+        "a1_qf_ex6_q9": { correct: "b", explanation: "Утверждение 'They like', хвостик 'don't they?'" },
+        "a1_qf_ex6_q10": { correct: "c", explanation: "Отрицание 'It doesn't rain', хвостик 'does it?'" }
     };
 
-    // Код для проверки ответов (остается таким же, как в grammar-exercise-logic.js)
+    // Код для проверки ответов (остается таким же)
     const checkButtons = document.querySelectorAll('.check-grammar-answers-btn');
 
     checkButtons.forEach(button => {
