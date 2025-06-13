@@ -1,0 +1,247 @@
+/* grammar-exercise-styles.css */
+
+#grammar-hero {
+    background: linear-gradient(rgba(0, 100, 170, 0.85), rgba(0, 60, 120, 0.9));
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#grammar-hero .hero-content h1 {
+    font-size: 2.6em;
+    margin-bottom: 15px;
+}
+
+#grammar-hero .hero-content p {
+    font-size: 1.15em;
+    max-width: 750px;
+    margin: 0 auto 15px auto;
+}
+
+#grammar-topics-container {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.grammar-topic-details {
+    margin-bottom: 25px; /* Отступ между темами */
+    border: 1px solid #d3e0ea;
+    border-radius: 8px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.grammar-topic-details:last-child {
+    margin-bottom: 0;
+}
+
+.grammar-topic-summary {
+    padding: 18px 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e9f2fa;
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.2s ease;
+    position: relative;
+}
+.grammar-topic-details[open] > .grammar-topic-summary {
+    border-bottom-color: #d3e0ea;
+    background-color: #dde8f3;
+}
+.grammar-topic-details:not([open]) > .grammar-topic-summary {
+     border-bottom-color: transparent;
+}
+
+.grammar-topic-summary:hover {
+    background-color: #dce6f0;
+}
+
+.grammar-topic-summary h3 {
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+    display: inline-flex;
+    align-items: center;
+    flex-grow: 1;
+    font-size: 1.4em;
+    color: #004a7c;
+}
+.grammar-topic-summary h3 .topic-icon {
+    margin-right: 12px;
+    color: #007bff;
+    font-size: 1.1em;
+}
+
+/* Стрелка для details/summary */
+.grammar-topic-summary::after {
+    content: '\f078'; /* fas fa-chevron-down */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    transition: transform 0.2s ease-in-out;
+    font-size: 1em;
+    color: #555;
+    margin-left: 15px;
+}
+.grammar-topic-details[open] > .grammar-topic-summary::after {
+    transform: rotate(-180deg);
+}
+
+.topic-content {
+    padding: 20px 25px 25px 25px;
+}
+.topic-explanation {
+    font-size: 0.95em;
+    color: #455a64;
+    margin-bottom: 25px;
+    padding: 12px 18px; /* Увеличил паддинг */
+    background-color: #f8f9fc; /* Чуть другой фон */
+    border-left: 4px solid #007bff;
+    border-radius: 4px;
+    line-height: 1.6; /* Увеличил интервал */
+}
+.topic-explanation strong {
+    color: #0056b3;
+}
+
+/* Стили для форм с упражнениями внутри темы */
+.grammar-exercises-form {
+    margin-bottom: 30px; /* Отступ между блоками упражнений (формами) */
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #e0e0e0; /* Разделитель между упражнениями */
+}
+.grammar-exercises-form:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.grammar-exercises-form h4 { /* Заголовок каждого упражнения */
+    font-size: 1.15em;
+    color: #2c3e50; /* Темно-синий */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+
+.grammar-exercises-form .grammar-exercise {
+    margin-bottom: 18px; /* Отступ между вопросами в одном упражнении */
+    padding: 15px;
+    background-color: #fdfdff;
+    border: 1px solid #eef;
+    border-radius: 5px;
+}
+.grammar-exercises-form .grammar-exercise:last-of-type { /* Убрать отступ у последнего вопроса в блоке */
+    margin-bottom: 0;
+}
+
+.grammar-exercises-form .grammar-exercise p strong {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 1.05em;
+    color: #333;
+}
+
+.exercise-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.exercise-options label {
+    display: block;
+    padding: 12px 15px;
+    border: 1px solid #ccd5e0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    line-height: 1.4;
+}
+.exercise-options label:hover {
+    background-color: #eef4fa;
+    border-color: #a0c7e8;
+}
+.exercise-options input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+.check-grammar-answers-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 1.05em;
+    font-weight: bold;
+    color: white;
+    background-color: #17a2b8;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px; /* Отступ от последнего вопроса/упражнения */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.check-grammar-answers-btn:hover {
+    background-color: #138496;
+    transform: translateY(-1px);
+}
+
+.grammar-feedback {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    border: 1px solid #e7e7e7;
+}
+.grammar-feedback h4 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.25em;
+    color: #333;
+}
+.grammar-feedback p {
+    margin: 10px 0;
+    text-align: left;
+    line-height: 1.5;
+}
+.grammar-feedback .correct {
+    color: #155724;
+    font-weight: bold;
+}
+.grammar-feedback .incorrect {
+    color: #721c24;
+    font-weight: bold;
+}
+.grammar-feedback .explanation-text {
+    font-style: normal;
+    font-size: 0.95em;
+    color: #444;
+    margin-top: 8px;
+    padding: 8px 12px;
+    border-left: 3px solid #b0bec5;
+    background-color: #eceff1;
+    border-radius: 0 4px 4px 0;
+}
+.grammar-feedback hr {
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 18px 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #grammar-hero .hero-content h1 {
+        font-size: 2em;
+    }
+    .grammar-topic-summary h3 {
+        font-size: 1.25em;
+    }
+     .grammar-topic-details .grammar-topic-summary {
+        padding: 15px 20px;
+    }
+    .grammar-topic-details .topic-content {
+        padding: 15px 20px 20px 20px;
+    }
+    .grammar-exercises-form h4 {
+        font-size: 1.1em;
+    }
+}
