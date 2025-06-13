@@ -26,7 +26,6 @@
 
 .reading-level-section {
     margin-bottom: 25px;
-    /* Стили фона и рамки теперь у .level-details */
 }
 
 /* Стили для сворачиваемых/разворачиваемых блоков */
@@ -37,7 +36,10 @@
     background-color: #fff;
     overflow: hidden;
 }
-.level-details:last-child, .task-details:last-child {
+.level-details:last-child { /* Убираем нижний отступ у последней секции уровня */
+    margin-bottom: 0;
+}
+.level-content > .task-details:last-child { /* Убираем нижний отступ у последнего задания в уровне */
     margin-bottom: 0;
 }
 
@@ -49,18 +51,18 @@
     justify-content: space-between;
     align-items: center;
     background-color: #f8f9fa;
-    border-bottom: 1px solid transparent; /* По умолчанию нет линии под summary */
+    border-bottom: 1px solid transparent;
     transition: background-color 0.2s ease;
     position: relative;
 }
 .level-details[open] > .level-summary,
 .task-details[open] > .task-summary {
-    border-bottom-color: #e0e0e0; /* Линия появляется, когда открыто */
+    border-bottom-color: #e0e0e0;
     background-color: #f1f3f5;
 }
 .level-details:not([open]) > .level-summary,
 .task-details:not([open]) > .task-summary {
-     border-bottom-color: transparent; /* Нет линии, когда закрыто */
+     border-bottom-color: transparent;
 }
 
 
@@ -74,7 +76,7 @@
     border-bottom: none;
     display: inline-flex;
     align-items: center;
-    flex-grow: 1; /* Чтобы заголовок занимал доступное место */
+    flex-grow: 1;
 }
 .level-summary h2 {
     font-size: 1.7em;
@@ -84,7 +86,7 @@
     font-size: 1.35em;
     color: #0056b3;
 }
-.level-summary h2 .level-icon, .task-summary h3 .level-icon {
+.level-summary h2 .level-icon { /* Иконка уровня внутри h2 */
     margin-right: 12px;
 }
 /* Цвета иконок для уровней в summary */
@@ -97,13 +99,13 @@
 
 /* Стрелка для details/summary */
 .level-summary::after, .task-summary::after {
-    content: '\f078'; /* Иконка FontAwesome: fas fa-chevron-down */
+    content: '\f078';
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     transition: transform 0.2s ease-in-out;
     font-size: 1em;
     color: #555;
-    margin-left: 15px; /* Отступ от текста заголовка */
+    margin-left: 15px;
 }
 
 .level-details[open] > .level-summary::after,
@@ -114,10 +116,10 @@
 
 .level-content {
     padding: 0px 25px 25px 25px;
-    border-top: 1px solid transparent; /* Только если summary не имеет нижней границы */
+    border-top: 1px solid transparent;
 }
 .task-details .reading-task {
-    padding-top: 20px; /* Отступ сверху для самого блока задания внутри task-details */
+    padding-top: 20px;
 }
 
 
@@ -128,25 +130,17 @@
     margin-bottom: 0;
 }
 
-.reading-task h3 { /* Заголовок текста внутри .reading-task, если он остался */
-    /* Эти стили могут быть уже не нужны, если заголовок в .task-summary */
-    font-size: 1.4em;
-    color: #0056b3;
-    margin-bottom: 15px;
-    text-align: left;
-}
-
 .reading-text-content {
-    background-color: #f8f9fa;
-    padding: 15px 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    background-color: #fdfdff; /* Чуть светлее фон для текста */
+    padding: 20px; /* Увеличил паддинг */
+    border-radius: 6px; /* Скругление */
+    margin-bottom: 25px; /* Отступ до вопросов */
     line-height: 1.7;
     text-align: justify;
     border: 1px solid #e9ecef;
 }
 .reading-text-content p {
-    margin-bottom: 10px;
+    margin-bottom: 12px; /* Отступ между параграфами */
     text-align: justify;
 }
 .reading-text-content p:last-child {
@@ -155,69 +149,81 @@
 
 
 .reading-task h4 { /* "Вопросы к тексту" */
-    font-size: 1.2em;
+    font-size: 1.25em; /* Крупнее */
     color: #333;
     margin-top: 25px;
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* Отступ до вопросов */
     text-align: left;
 }
 
 .reading-questions-form .reading-question {
     margin-bottom: 20px;
     padding: 15px;
-    background-color: #fdfdff;
-    border: 1px solid #eef;
+    background-color: #fff; /* Фон для блока вопроса */
+    border: 1px solid #e0e6ed; /* Рамка */
     border-radius: 5px;
 }
 .reading-questions-form .reading-question p strong {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 12px; /* Отступ */
     font-size: 1.05em;
+    color: #222; /* Темнее текст вопроса */
 }
 
 .reading-options {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px; /* Отступ между вариантами */
 }
 .reading-options label {
     display: block;
-    padding: 10px 15px; /* Увеличил паддинг для удобства */
-    border: 1px solid #ddd;
+    padding: 12px 15px; /* Увеличил паддинг */
+    border: 1px solid #ccd5e0; /* Рамка варианта */
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s ease, border-color 0.2s ease;
+    line-height: 1.4; /* Для лучшей читаемости */
 }
 .reading-options label:hover {
-    background-color: #e9f5ff; /* Немного изменил цвет */
-    border-color: #b0dfff;
+    background-color: #eef4fa;
+    border-color: #a0c7e8;
 }
 .reading-options input[type="radio"] {
-    margin-right: 10px; /* Увеличил отступ */
+    margin-right: 10px;
     vertical-align: middle;
 }
+/* Подсветка выбранного варианта */
+.reading-options input[type="radio"]:checked + span { /* Если текст обернут в span после input */
+    /* font-weight: bold; */
+}
+.reading-options label.selected-option { /* Можно добавить класс JS-ом */
+    background-color: #d1e7ff;
+    border-color: #74b5f3;
+}
+
 
 .check-reading-answers-btn {
     display: inline-block;
-    padding: 10px 25px; /* Увеличил паддинг */
-    font-size: 1em;
+    padding: 12px 28px; /* Увеличил паддинг */
+    font-size: 1.05em; /* Чуть больше */
     font-weight: bold;
     color: white;
     background-color: #007bff;
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    margin-top: 20px; /* Увеличил отступ */
-    transition: background-color 0.3s ease;
+    margin-top: 25px; /* Отступ от последнего вопроса */
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 .check-reading-answers-btn:hover {
     background-color: #0056b3;
+    transform: translateY(-1px);
 }
 
 .reading-feedback {
-    margin-top: 25px; /* Увеличил отступ */
-    padding: 20px;  /* Увеличил паддинг */
-    border-radius: 6px; /* Скругление */
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 6px;
     background-color: #f9f9f9;
     border: 1px solid #e7e7e7;
 }
@@ -225,11 +231,11 @@
     text-align: center;
     margin-top: 0;
     margin-bottom: 15px;
-    font-size: 1.25em; /* Крупнее */
+    font-size: 1.25em;
     color: #333;
 }
 .reading-feedback p {
-    margin: 8px 0;
+    margin: 10px 0; /* Увеличил отступы */
     text-align: left;
     line-height: 1.5;
 }
@@ -245,14 +251,16 @@
     font-style: normal;
     font-size: 0.95em;
     color: #444;
-    margin-top: 8px; /* Отступ от ответа */
-    padding-left: 15px;
-    border-left: 3px solid #ccc; /* Выделение объяснения */
+    margin-top: 8px;
+    padding: 8px 12px; /* Паддинг для объяснения */
+    border-left: 3px solid #b0bec5; /* Выделение объяснения */
+    background-color: #eceff1; /* Легкий фон для объяснения */
+    border-radius: 0 4px 4px 0;
 }
 .reading-feedback hr {
     border: none;
     border-top: 1px dashed #ccc;
-    margin: 18px 0; /* Увеличил отступы */
+    margin: 18px 0;
 }
 
 
@@ -267,13 +275,19 @@
     .task-summary h3 {
         font-size: 1.25em;
     }
-     .reading-task h3 {
-        font-size: 1.2em;
+     .reading-text-content {
+        padding: 15px;
+    }
+     .reading-task h4 { /* "Вопросы к тексту" */
+        font-size: 1.15em;
     }
      .reading-level-section .level-summary, .reading-level-section .task-summary {
-        padding: 15px 20px; /* Уменьшил паддинги для summary */
+        padding: 15px 20px;
     }
     .reading-level-section .level-content {
-        padding: 15px 20px 20px 20px; /* Уменьшил паддинги для контента */
+        padding: 15px 20px 20px 20px;
+    }
+    .reading-options label {
+        padding: 10px 12px;
     }
 }
