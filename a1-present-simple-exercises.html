@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Упражнения: Present Simple (A1) - PumpEng</title>
-    <meta name="description" content="Практикуйте Present Simple: утверждения, отрицания, вопросы. 50 упражнений для уровня A1 с автопроверкой.">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Практикуйте Present Simple: утверждения, отрицания, вопросы. 50 упражнений для уровня A1 с автопроверкой и объяснениями от школы PumpEng.">
+    <link rel="stylesheet" href="styles.css"> <!-- Общие стили сайта -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="grammar-exercise-styles.css"> <!-- Используем те же стили -->
+    <link rel="stylesheet" href="grammar-exercise-styles.css"> <!-- Стили для страниц грамматических упражнений -->
 </head>
 <body>
     <header>
-        <!-- Шапка -->
+        <!-- Шапка будет загружена здесь скриптом script.js -->
     </header>
 
     <main>
@@ -19,592 +19,125 @@
             <ol class="breadcrumbs">
                 <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
                 <li class="breadcrumb-item"><a href="resources.html">Бесплатные Ресурсы</a></li>
-                <!-- Ссылка на страницу-хаб уровней грамматики (создать позже) -->
                 <li class="breadcrumb-item"><a href="grammar-exercises-overview.html">Грамматические Упражнения</a></li>
-                <!-- Ссылка на страницу тем A1 (создать позже) -->
+                <!-- Ссылка на страницу со списком тем A1 (предполагаем, что она будет создана) -->
                 <li class="breadcrumb-item"><a href="a1-grammar-topics-overview.html">Уровень A1</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Present Simple</li>
             </ol>
         </nav>
 
-        <section id="grammar-hero" style="background: linear-gradient(rgba(23, 162, 184, 0.85), rgba(13, 138, 158, 0.9));"> <!-- Бирюзовый градиент -->
+        <section id="grammar-hero" style="background: linear-gradient(rgba(23, 162, 184, 0.85), rgba(13, 138, 158, 0.9));">
             <div class="hero-content">
-                <h1>Present Simple (Настоящее простое время)</h1>
-                <p>Упражнения для отработки регулярных действий, привычек и фактов.</p>
+                <h1><i class="fas fa-clock topic-icon" style="margin-right: 10px; color: #fff; font-size: 0.9em;"></i>Present Simple (Настоящее простое время)</h1>
+                <p>Упражнения для отработки регулярных действий, привычек и общеизвестных фактов.</p>
             </div>
         </section>
 
-        <section id="grammar-topics-container"> <!-- Используем этот ID для общих отступов -->
-            <div class="topic-content" style="padding-top:0;"> <!-- Убираем верхний padding, т.к. hero уже есть -->
-                <p class="topic-explanation"><strong>Present Simple</strong> используется для описания действий, которые происходят регулярно, обычно, всегда (привычки, рутина), а также для общеизвестных фактов и истин.
-                <br><strong>Утверждения:</strong> I/You/We/They + V1 (play). He/She/It + V1s (plays).
-                <br><strong>Отрицания:</strong> I/You/We/They + don't + V1 (don't play). He/She/It + doesn't + V1 (doesn't play).
-                <br><strong>Вопросы:</strong> Do + I/you/we/they + V1? (Do you play?). Does + he/she/it + V1? (Does she play?).
+        <section id="grammar-topic-content"> <!-- Используем другой ID, если не хотим details/summary здесь -->
+            <div class="topic-explanation">
+                <p><strong>Present Simple</strong> используется для:</p>
+                <ul>
+                    <li>Регулярных действий, привычек, рутины (<em>I <strong>get up</strong> at 7 AM. She often <strong>visits</strong> her friends.</em>)</li>
+                    <li>Общеизвестных фактов и истин (<em>The Earth <strong>goes</strong> around the Sun. Water <strong>boils</strong> at 100°C.</em>)</li>
+                    <li>Расписаний и программ (<em>The train <strong>leaves</strong> at 9 AM.</em>)</li>
+                </ul>
+                <p><strong>Формы:</strong><br>
+                Утверждения: I/You/We/They + <strong>V1</strong> (<em>play</em>). He/She/It + <strong>V1s/es</strong> (<em>plays, watches</em>).<br>
+                Отрицания: I/You/We/They + <strong>don't</strong> + V1. He/She/It + <strong>doesn't</strong> + V1.<br>
+                Вопросы: <strong>Do</strong> + I/you/we/they + V1? <strong>Does</strong> + he/she/it + V1?
                 </p>
-
-                <!-- Упражнение 1: Выберите правильную форму глагола (I/You/We/They) -->
-                <form class="grammar-exercises-form" id="form_a1_ps_ex1">
-                    <h4>Упражнение 1: Утверждения (I, You, We, They)</h4>
-                    <div class="grammar-exercise">
-                        <p><strong>1. I ___ (to read) books in the evening.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q1_a1_ps_ex1" value="a"> a) read</label>
-                            <label><input type="radio" name="q1_a1_ps_ex1" value="b"> b) reads</label>
-                            <label><input type="radio" name="q1_a1_ps_ex1" value="c"> c) am reading</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>2. We ___ (to play) football on Saturdays.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q2_a1_ps_ex1" value="a"> a) play</label>
-                            <label><input type="radio" name="q2_a1_ps_ex1" value="b"> b) plays</label>
-                            <label><input type="radio" name="q2_a1_ps_ex1" value="c"> c) are playing</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>3. You ___ (to speak) English very well.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q3_a1_ps_ex1" value="a"> a) speak</label>
-                            <label><input type="radio" name="q3_a1_ps_ex1" value="b"> b) speaks</label>
-                            <label><input type="radio" name="q3_a1_ps_ex1" value="c"> c) are speaking</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>4. They ___ (to live) in a big house.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q4_a1_ps_ex1" value="a"> a) live</label>
-                            <label><input type="radio" name="q4_a1_ps_ex1" value="b"> b) lives</label>
-                            <label><input type="radio" name="q4_a1_ps_ex1" value="c"> c) are living</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>5. My friends ___ (to like) pizza.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q5_a1_ps_ex1" value="a"> a) like</label>
-                            <label><input type="radio" name="q5_a1_ps_ex1" value="b"> b) likes</label>
-                            <label><input type="radio" name="q5_a1_ps_ex1" value="c"> c) are liking</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>6. I ___ (to get up) at 7 o'clock every morning.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q6_a1_ps_ex1" value="a"> a) get up</label>
-                            <label><input type="radio" name="q6_a1_ps_ex1" value="b"> b) gets up</label>
-                            <label><input type="radio" name="q6_a1_ps_ex1" value="c"> c) am getting up</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>7. You ___ (to drink) coffee for breakfast.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q7_a1_ps_ex1" value="a"> a) drink</label>
-                            <label><input type="radio" name="q7_a1_ps_ex1" value="b"> b) drinks</label>
-                            <label><input type="radio" name="q7_a1_ps_ex1" value="c"> c) are drinking</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>8. We ___ (to go) to the cinema on Fridays.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q8_a1_ps_ex1" value="a"> a) go</label>
-                            <label><input type="radio" name="q8_a1_ps_ex1" value="b"> b) goes</label>
-                            <label><input type="radio" name="q8_a1_ps_ex1" value="c"> c) are going</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>9. They ___ (to study) English at school.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q9_a1_ps_ex1" value="a"> a) study</label>
-                            <label><input type="radio" name="q9_a1_ps_ex1" value="b"> b) studies</label>
-                            <label><input type="radio" name="q9_a1_ps_ex1" value="c"> c) are studying</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>10. I ___ (to have) two brothers.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q10_a1_ps_ex1" value="a"> a) have</label>
-                            <label><input type="radio" name="q10_a1_ps_ex1" value="b"> b) has</label>
-                            <label><input type="radio" name="q10_a1_ps_ex1" value="c"> c) am having</label>
-                        </div>
-                    </div>
-                    <button type="button" class="check-grammar-answers-btn" data-form-id="a1_ps_ex1">Проверить Упр. 1</button>
-                    <div class="grammar-feedback" style="display:none;"></div>
-                </form>
-
-                <!-- Упражнение 2: Выберите правильную форму глагола (He/She/It) -->
-                <form class="grammar-exercises-form" id="form_a1_ps_ex2">
-                    <h4>Упражнение 2: Утверждения (He, She, It)</h4>
-                    <div class="grammar-exercise">
-                        <p><strong>1. My father ___ (to work) in a bank.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q1_a1_ps_ex2" value="a"> a) work</label>
-                            <label><input type="radio" name="q1_a1_ps_ex2" value="b"> b) works</label>
-                            <label><input type="radio" name="q1_a1_ps_ex2" value="c"> c) is working</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>2. She ___ (to teach) music at our school.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q2_a1_ps_ex2" value="a"> a) teach</label>
-                            <label><input type="radio" name="q2_a1_ps_ex2" value="b"> b) teachs</label>
-                            <label><input type="radio" name="q2_a1_ps_ex2" value="c"> c) teaches</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>3. The cat ___ (to sleep) on the sofa.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q3_a1_ps_ex2" value="a"> a) sleep</label>
-                            <label><input type="radio" name="q3_a1_ps_ex2" value="b"> b) sleeps</label>
-                            <label><input type="radio" name="q3_a1_ps_ex2" value="c"> c) is sleeping</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>4. He ___ (to go) to the gym three times a week.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q4_a1_ps_ex2" value="a"> a) go</label>
-                            <label><input type="radio" name="q4_a1_ps_ex2" value="b"> b) goes</label>
-                            <label><input type="radio" name="q4_a1_ps_ex2" value="c"> c) is going</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>5. My mother ___ (to cook) delicious dinners.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q5_a1_ps_ex2" value="a"> a) cook</label>
-                            <label><input type="radio" name="q5_a1_ps_ex2" value="b"> b) cooks</label>
-                            <label><input type="radio" name="q5_a1_ps_ex2" value="c"> c) is cooking</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>6. It usually ___ (to rain) a lot in autumn.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q6_a1_ps_ex2" value="a"> a) rain</label>
-                            <label><input type="radio" name="q6_a1_ps_ex2" value="b"> b) rains</label>
-                            <label><input type="radio" name="q6_a1_ps_ex2" value="c"> c) is raining</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>7. My friend ___ (to speak) Spanish.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q7_a1_ps_ex2" value="a"> a) speak</label>
-                            <label><input type="radio" name="q7_a1_ps_ex2" value="b"> b) speaks</label>
-                            <label><input type="radio" name="q7_a1_ps_ex2" value="c"> c) is speaking</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>8. The bus ___ (to arrive) at 8:30 AM.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q8_a1_ps_ex2" value="a"> a) arrive</label>
-                            <label><input type="radio" name="q8_a1_ps_ex2" value="b"> b) arrives</label>
-                            <label><input type="radio" name="q8_a1_ps_ex2" value="c"> c) is arriving</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>9. She ___ (to have) a new car.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q9_a1_ps_ex2" value="a"> a) have</label>
-                            <label><input type="radio" name="q9_a1_ps_ex2" value="b"> b) has</label>
-                            <label><input type="radio" name="q9_a1_ps_ex2" value="c"> c) is having</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>10. The Earth ___ (to go) around the Sun.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q10_a1_ps_ex2" value="a"> a) go</label>
-                            <label><input type="radio" name="q10_a1_ps_ex2" value="b"> b) goes</label>
-                            <label><input type="radio" name="q10_a1_ps_ex2" value="c"> c) is going</label>
-                        </div>
-                    </div>
-                    <button type="button" class="check-grammar-answers-btn" data-form-id="a1_ps_ex2">Проверить Упр. 2</button>
-                    <div class="grammar-feedback" style="display:none;"></div>
-                </form>
-
-                <!-- Упражнение 3: Отрицательные предложения (don't / doesn't) -->
-                <form class="grammar-exercises-form" id="form_a1_ps_ex3">
-                    <h4>Упражнение 3: Отрицания (don't / doesn't)</h4>
-                    <div class="grammar-exercise">
-                        <p><strong>1. I ___ (not / like) spicy food.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q1_a1_ps_ex3" value="a"> a) don't like</label>
-                            <label><input type="radio" name="q1_a1_ps_ex3" value="b"> b) doesn't like</label>
-                            <label><input type="radio" name="q1_a1_ps_ex3" value="c"> c) am not like</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>2. He ___ (not / play) the piano.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q2_a1_ps_ex3" value="a"> a) don't play</label>
-                            <label><input type="radio" name="q2_a1_ps_ex3" value="b"> b) doesn't play</label>
-                            <label><input type="radio" name="q2_a1_ps_ex3" value="c"> c) isn't play</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>3. We ___ (not / go) to the beach in winter.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q3_a1_ps_ex3" value="a"> a) don't go</label>
-                            <label><input type="radio" name="q3_a1_ps_ex3" value="b"> b) doesn't go</label>
-                            <label><input type="radio" name="q3_a1_ps_ex3" value="c"> c) aren't go</label>
-                        </div>
-                    </div>
-                     <div class="grammar-exercise">
-                        <p><strong>4. She ___ (not / work) on Sundays.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q4_a1_ps_ex3" value="a"> a) don't work</label>
-                            <label><input type="radio" name="q4_a1_ps_ex3" value="b"> b) not works</label>
-                            <label><input type="radio" name="q4_a1_ps_ex3" value="c"> c) doesn't work</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>5. You ___ (not / study) German.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q5_a1_ps_ex3" value="a"> a) doesn't study</label>
-                            <label><input type="radio" name="q5_a1_ps_ex3" value="b"> b) don't study</label>
-                            <label><input type="radio" name="q5_a1_ps_ex3" value="c"> c) aren't study</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>6. The dog ___ (not / eat) vegetables.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q6_a1_ps_ex3" value="a"> a) don't eat</label>
-                            <label><input type="radio" name="q6_a1_ps_ex3" value="b"> b) doesn't eat</label>
-                            <label><input type="radio" name="q6_a1_ps_ex3" value="c"> c) not eats</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>7. My parents ___ (not / live) in this city.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q7_a1_ps_ex3" value="a"> a) doesn't live</label>
-                            <label><input type="radio" name="q7_a1_ps_ex3" value="b"> b) don't live</label>
-                            <label><input type="radio" name="q7_a1_ps_ex3" value="c"> c) aren't live</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>8. It ___ (not / snow) here in summer.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q8_a1_ps_ex3" value="a"> a) don't snow</label>
-                            <label><input type="radio" name="q8_a1_ps_ex3" value="b"> b) doesn't snow</label>
-                            <label><input type="radio" name="q8_a1_ps_ex3" value="c"> c) isn't snow</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>9. I ___ (not / have) a car.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q9_a1_ps_ex3" value="a"> a) doesn't have</label>
-                            <label><input type="radio" name="q9_a1_ps_ex3" value="b"> b) don't have</label>
-                            <label><input type="radio" name="q9_a1_ps_ex3" value="c"> c) am not have</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>10. He ___ (not / watch) horror films.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q10_a1_ps_ex3" value="a"> a) don't watch</label>
-                            <label><input type="radio" name="q10_a1_ps_ex3" value="b"> b) doesn't watch</label>
-                            <label><input type="radio" name="q10_a1_ps_ex3" value="c"> c) not watches</label>
-                        </div>
-                    </div>
-                    <button type="button" class="check-grammar-answers-btn" data-form-id="a1_ps_ex3">Проверить Упр. 3</button>
-                    <div class="grammar-feedback" style="display:none;"></div>
-                </form>
-
-                <!-- Упражнение 4: Вопросительные предложения (Do / Does) -->
-                <form class="grammar-exercises-form" id="form_a1_ps_ex4">
-                    <h4>Упражнение 4: Вопросы (Do / Does)</h4>
-                    <div class="grammar-exercise">
-                        <p><strong>1. ___ you like apples?</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q1_a1_ps_ex4" value="a"> a) Do</label>
-                            <label><input type="radio" name="q1_a1_ps_ex4" value="b"> b) Does</label>
-                            <label><input type="radio" name="q1_a1_ps_ex4" value="c"> c) Are</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>2. ___ your friend play the guitar?</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q2_a1_ps_ex4" value="a"> a) Do</label>
-                            <label><input type="radio" name="q2_a1_ps_ex4" value="b"> b) Does</label>
-                            <label><input type="radio" name="q2_a1_ps_ex4" value="c"> c) Is</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>3. ___ they live near here?</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q3_a1_ps_ex4" value="a"> a) Do</label>
-                            <label><input type="radio" name="q3_a1_ps_ex4" value="b"> b) Does</label>
-                            <label><input type="radio" name="q3_a1_ps_ex4" value="c"> c) Are</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>4. ___ it often snow in your city?</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q4_a1_ps_ex4" value="a"> a) Do</label>
-                            <label><input type="radio" name="q4_a1_ps_ex4" value="b"> b) Does</label>
-                            <label><input type="radio" name="q4_a1_ps_ex4" value="c"> c) Is</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>5. ___ we have a test today?</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q5_a1_ps_ex4" value="a"> a) Do</label>
-                            <label><input type="radio" name="q5_a1_ps_ex4" value="b"> b) Does</label>
-                            <label><input type="radio" name="q5_a1_ps_ex4" value="c"> c) Are</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>6. ___ your cat drink milk?</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q6_a1_ps_ex4" value="a"> a) Do</label>
-                            <label><input type="radio" name="q6_a1_ps_ex4" value="b"> b) Does</label>
-                            <label><input type="radio" name="q6_a1_ps_ex4" value="c"> c) Is</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>7. ___ I know you?</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q7_a1_ps_ex4" value="a"> a) Do</label>
-                            <label><input type="radio" name="q7_a1_ps_ex4" value="b"> b) Does</label>
-                            <label><input type="radio" name="q7_a1_ps_ex4" value="c"> c) Am</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>8. ___ he speak English?</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q8_a1_ps_ex4" value="a"> a) Do</label>
-                            <label><input type="radio" name="q8_a1_ps_ex4" value="b"> b) Does</label>
-                            <label><input type="radio" name="q8_a1_ps_ex4" value="c"> c) Is</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>9. ___ your parents like travelling?</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q9_a1_ps_ex4" value="a"> a) Do</label>
-                            <label><input type="radio" name="q9_a1_ps_ex4" value="b"> b) Does</label>
-                            <label><input type="radio" name="q9_a1_ps_ex4" value="c"> c) Are</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>10. ___ she go to bed early?</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q10_a1_ps_ex4" value="a"> a) Do</label>
-                            <label><input type="radio" name="q10_a1_ps_ex4" value="b"> b) Does</label>
-                            <label><input type="radio" name="q10_a1_ps_ex4" value="c"> c) Is</label>
-                        </div>
-                    </div>
-                    <button type="button" class="check-grammar-answers-btn" data-form-id="a1_ps_ex4">Проверить Упр. 4</button>
-                    <div class="grammar-feedback" style="display:none;"></div>
-                </form>
-
-                <!-- Упражнение 5: Смешанные предложения (факты, рутина) -->
-                <form class="grammar-exercises-form" id="form_a1_ps_ex5">
-                    <h4>Упражнение 5: Факты и рутина</h4>
-                    <div class="grammar-exercise">
-                        <p><strong>1. Water ___ (to boil) at 100 degrees Celsius.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q1_a1_ps_ex5" value="a"> a) boil</label>
-                            <label><input type="radio" name="q1_a1_ps_ex5" value="b"> b) boils</label>
-                            <label><input type="radio" name="q1_a1_ps_ex5" value="c"> c) is boiling</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>2. I usually ___ (to have) breakfast at 8 AM.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q2_a1_ps_ex5" value="a"> a) have</label>
-                            <label><input type="radio" name="q2_a1_ps_ex5" value="b"> b) has</label>
-                            <label><input type="radio" name="q2_a1_ps_ex5" value="c"> c) am having</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>3. The Earth ___ (to revolve) around the Sun.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q3_a1_ps_ex5" value="a"> a) revolve</label>
-                            <label><input type="radio" name="q3_a1_ps_ex5" value="b"> b) revolves</label>
-                            <label><input type="radio" name="q3_a1_ps_ex5" value="c"> c) is revolving</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>4. Cats ___ (to like) milk.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q4_a1_ps_ex5" value="a"> a) like</label>
-                            <label><input type="radio" name="q4_a1_ps_ex5" value="b"> b) likes</label>
-                            <label><input type="radio" name="q4_a1_ps_ex5" value="c"> c) are liking</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>5. My school ___ (to start) at 9 o'clock.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q5_a1_ps_ex5" value="a"> a) start</label>
-                            <label><input type="radio" name="q5_a1_ps_ex5" value="b"> b) starts</label>
-                            <label><input type="radio" name="q5_a1_ps_ex5" value="c"> c) is starting</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>6. He often ___ (to visit) his grandparents.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q6_a1_ps_ex5" value="a"> a) visit</label>
-                            <label><input type="radio" name="q6_a1_ps_ex5" value="b"> b) visits</label>
-                            <label><input type="radio" name="q6_a1_ps_ex5" value="c"> c) is visiting</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>7. We always ___ (to clean) our room on Saturdays.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q7_a1_ps_ex5" value="a"> a) clean</label>
-                            <label><input type="radio" name="q7_a1_ps_ex5" value="b"> b) cleans</label>
-                            <label><input type="radio" name="q7_a1_ps_ex5" value="c"> c) are cleaning</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>8. The moon ___ (to shine) at night.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q8_a1_ps_ex5" value="a"> a) shine</label>
-                            <label><input type="radio" name="q8_a1_ps_ex5" value="b"> b) shines</label>
-                            <label><input type="radio" name="q8_a1_ps_ex5" value="c"> c) is shining</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>9. My dad ___ (to drive) to work.</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q9_a1_ps_ex5" value="a"> a) drive</label>
-                            <label><input type="radio" name="q9_a1_ps_ex5" value="b"> b) drives</label>
-                            <label><input type="radio" name="q9_a1_ps_ex5" value="c"> c) is driving</label>
-                        </div>
-                    </div>
-                    <div class="grammar-exercise">
-                        <p><strong>10. Birds ___ (to fly).</strong></p>
-                        <div class="exercise-options">
-                            <label><input type="radio" name="q10_a1_ps_ex5" value="a"> a) fly</label>
-                            <label><input type="radio" name="q10_a1_ps_ex5" value="b"> b) flies</label>
-                            <label><input type="radio" name="q10_a1_ps_ex5" value="c"> c) are flying</label>
-                        </div>
-                    </div>
-                    <button type="button" class="check-grammar-answers-btn" data-form-id="a1_ps_ex5">Проверить Упр. 5</button>
-                    <div class="grammar-feedback" style="display:none;"></div>
-                </form>
             </div>
-        </details>
 
-        <!-- ============================ -->
-        <!-- Тема 2: Present Continuous   -->
-        <!-- ============================ -->
-        <details class="grammar-topic-details">
-            <summary class="grammar-topic-summary">
-                <h3><i class="fas fa-running topic-icon"></i> Present Continuous (Настоящее длительное время)</h3>
-            </summary>
-            <div class="topic-content">
-                <p class="topic-explanation">Используется для действий, происходящих в момент речи, временных ситуаций или для запланированных будущих действий. <br> (I <strong>am reading</strong>. They <strong>are playing</strong> now. She <strong>is not sleeping</strong>. <strong>Are</strong> you <strong>coming</strong> tomorrow?)</p>
-                
-                <!-- Упражнение 2.1 -->
-                <form class="grammar-exercises-form" id="form_a1_pc_ex1">
-                    <h4>Упражнение 1: Действия в момент речи</h4>
-                    <!-- 10 вопросов -->
-                    <p class="exercise-placeholder">[Здесь будут 10 вопросов для Упражнения 1 по Present Continuous]</p>
-                    <button type="button" class="check-grammar-answers-btn" data-form-id="a1_pc_ex1">Проверить Упр. 1</button>
-                    <div class="grammar-feedback" style="display:none;"></div>
-                </form>
-                <!-- Упражнение 2.2 -->
-                <form class="grammar-exercises-form" id="form_a1_pc_ex2">
-                    <h4>Упражнение 2: Запланированные будущие действия</h4>
-                    <p class="exercise-placeholder">[Здесь будут 10 вопросов для Упражнения 2 по Present Continuous]</p>
-                    <button type="button" class="check-grammar-answers-btn" data-form-id="a1_pc_ex2">Проверить Упр. 2</button>
-                    <div class="grammar-feedback" style="display:none;"></div>
-                </form>
-                <!-- Упражнение 2.3 -->
-                <form class="grammar-exercises-form" id="form_a1_pc_ex3">
-                    <h4>Упражнение 3: Отрицания в Present Continuous</h4>
-                    <p class="exercise-placeholder">[Здесь будут 10 вопросов для Упражнения 3 по Present Continuous]</p>
-                    <button type="button" class="check-grammar-answers-btn" data-form-id="a1_pc_ex3">Проверить Упр. 3</button>
-                    <div class="grammar-feedback" style="display:none;"></div>
-                </form>
-                <!-- Упражнение 2.4 -->
-                <form class="grammar-exercises-form" id="form_a1_pc_ex4">
-                    <h4>Упражнение 4: Вопросы в Present Continuous</h4>
-                    <p class="exercise-placeholder">[Здесь будут 10 вопросов для Упражнения 4 по Present Continuous]</p>
-                    <button type="button" class="check-grammar-answers-btn" data-form-id="a1_pc_ex4">Проверить Упр. 4</button>
-                    <div class="grammar-feedback" style="display:none;"></div>
-                </form>
-                <!-- Упражнение 2.5 -->
-                <form class="grammar-exercises-form" id="form_a1_pc_ex5">
-                    <h4>Упражнение 5: Present Simple vs Present Continuous</h4>
-                    <p class="exercise-placeholder">[Здесь будут 10 вопросов для Упражнения 5 на сравнение]</p>
-                    <button type="button" class="check-grammar-answers-btn" data-form-id="a1_pc_ex5">Проверить Упр. 5</button>
-                    <div class="grammar-feedback" style="display:none;"></div>
-                </form>
-            </div>
-        </details>
+            <!-- Упражнение 1: Утвердительные предложения (I/You/We/They) -->
+            <form class="grammar-exercises-form" id="form_a1_ps_ex1">
+                <h4>Упражнение 1: Утверждения (I, You, We, They) - Выберите правильную форму</h4>
+                <!-- 10 вопросов -->
+                <div class="grammar-exercise"><p><strong>1. I ___ (read) books in the evening.</strong></p><div class="exercise-options"><label><input type="radio" name="q1_a1_ps_ex1" value="a"> a) read</label><label><input type="radio" name="q1_a1_ps_ex1" value="b"> b) reads</label><label><input type="radio" name="q1_a1_ps_ex1" value="c"> c) am reading</label></div></div>
+                <div class="grammar-exercise"><p><strong>2. We ___ (play) football on Saturdays.</strong></p><div class="exercise-options"><label><input type="radio" name="q2_a1_ps_ex1" value="a"> a) play</label><label><input type="radio" name="q2_a1_ps_ex1" value="b"> b) plays</label><label><input type="radio" name="q2_a1_ps_ex1" value="c"> c) are playing</label></div></div>
+                <div class="grammar-exercise"><p><strong>3. You ___ (speak) English very well.</strong></p><div class="exercise-options"><label><input type="radio" name="q3_a1_ps_ex1" value="a"> a) speak</label><label><input type="radio" name="q3_a1_ps_ex1" value="b"> b) speaks</label><label><input type="radio" name="q3_a1_ps_ex1" value="c"> c) are speaking</label></div></div>
+                <div class="grammar-exercise"><p><strong>4. They ___ (live) in a big house.</strong></p><div class="exercise-options"><label><input type="radio" name="q4_a1_ps_ex1" value="a"> a) live</label><label><input type="radio" name="q4_a1_ps_ex1" value="b"> b) lives</label><label><input type="radio" name="q4_a1_ps_ex1" value="c"> c) are living</label></div></div>
+                <div class="grammar-exercise"><p><strong>5. My friends ___ (like) pizza.</strong></p><div class="exercise-options"><label><input type="radio" name="q5_a1_ps_ex1" value="a"> a) like</label><label><input type="radio" name="q5_a1_ps_ex1" value="b"> b) likes</label><label><input type="radio" name="q5_a1_ps_ex1" value="c"> c) are liking</label></div></div>
+                <div class="grammar-exercise"><p><strong>6. I ___ (get up) at 7 o'clock every morning.</strong></p><div class="exercise-options"><label><input type="radio" name="q6_a1_ps_ex1" value="a"> a) get up</label><label><input type="radio" name="q6_a1_ps_ex1" value="b"> b) gets up</label><label><input type="radio" name="q6_a1_ps_ex1" value="c"> c) am getting up</label></div></div>
+                <div class="grammar-exercise"><p><strong>7. You ___ (drink) coffee for breakfast.</strong></p><div class="exercise-options"><label><input type="radio" name="q7_a1_ps_ex1" value="a"> a) drink</label><label><input type="radio" name="q7_a1_ps_ex1" value="b"> b) drinks</label><label><input type="radio" name="q7_a1_ps_ex1" value="c"> c) are drinking</label></div></div>
+                <div class="grammar-exercise"><p><strong>8. We ___ (go) to the cinema on Fridays.</strong></p><div class="exercise-options"><label><input type="radio" name="q8_a1_ps_ex1" value="a"> a) go</label><label><input type="radio" name="q8_a1_ps_ex1" value="b"> b) goes</label><label><input type="radio" name="q8_a1_ps_ex1" value="c"> c) are going</label></div></div>
+                <div class="grammar-exercise"><p><strong>9. They ___ (study) English at school.</strong></p><div class="exercise-options"><label><input type="radio" name="q9_a1_ps_ex1" value="a"> a) study</label><label><input type="radio" name="q9_a1_ps_ex1" value="b"> b) studies</label><label><input type="radio" name="q9_a1_ps_ex1" value="c"> c) are studying</label></div></div>
+                <div class="grammar-exercise"><p><strong>10. I ___ (have) two brothers.</strong></p><div class="exercise-options"><label><input type="radio" name="q10_a1_ps_ex1" value="a"> a) have</label><label><input type="radio" name="q10_a1_ps_ex1" value="b"> b) has</label><label><input type="radio" name="q10_a1_ps_ex1" value="c"> c) am having</label></div></div>
+                <button type="button" class="check-grammar-answers-btn" data-form-id="a1_ps_ex1">Проверить Упр. 1</button>
+                <div class="grammar-feedback" style="display:none;"></div>
+            </form>
 
-        <!-- ============================ -->
-        <!-- Тема 3: Past Simple          -->
-        <!-- ============================ -->
-        <details class="grammar-topic-details">
-            <summary class="grammar-topic-summary">
-                <h3><i class="fas fa-history topic-icon"></i> Past Simple (Прошедшее простое время)</h3>
-            </summary>
-            <div class="topic-content">
-                <p class="topic-explanation">Используется для завершенных действий в прошлом. Для правильных глаголов добавляется -ed, неправильные нужно запомнить.</p>
-                <!-- 5 форм упражнений -->
-                <form class="grammar-exercises-form" id="form_a1_past_s_ex1"><h4>Упражнение 1: Правильные глаголы (+ed)</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_past_s_ex1">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-                <form class="grammar-exercises-form" id="form_a1_past_s_ex2"><h4>Упражнение 2: Неправильные глаголы (went, saw, had...)</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_past_s_ex2">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-                <form class="grammar-exercises-form" id="form_a1_past_s_ex3"><h4>Упражнение 3: Отрицания (didn't + V1)</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_past_s_ex3">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-                <form class="grammar-exercises-form" id="form_a1_past_s_ex4"><h4>Упражнение 4: Вопросы (Did + S + V1?)</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_past_s_ex4">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-                <form class="grammar-exercises-form" id="form_a1_past_s_ex5"><h4>Упражнение 5: Глагол 'to be' в Past Simple (was/were)</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_past_s_ex5">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-            </div>
-        </details>
+            <!-- Упражнение 2: Утвердительные предложения (He/She/It) -->
+            <form class="grammar-exercises-form" id="form_a1_ps_ex2">
+                <h4>Упражнение 2: Утверждения (He, She, It) - Выберите правильную форму</h4>
+                <!-- 10 вопросов -->
+                <div class="grammar-exercise"><p><strong>1. My father ___ (work) in a bank.</strong></p><div class="exercise-options"><label><input type="radio" name="q1_a1_ps_ex2" value="a"> a) work</label><label><input type="radio" name="q1_a1_ps_ex2" value="b"> b) works</label><label><input type="radio" name="q1_a1_ps_ex2" value="c"> c) is working</label></div></div>
+                <div class="grammar-exercise"><p><strong>2. She ___ (teach) music at our school.</strong></p><div class="exercise-options"><label><input type="radio" name="q2_a1_ps_ex2" value="a"> a) teach</label><label><input type="radio" name="q2_a1_ps_ex2" value="b"> b) teachs</label><label><input type="radio" name="q2_a1_ps_ex2" value="c"> c) teaches</label></div></div>
+                <div class="grammar-exercise"><p><strong>3. The cat ___ (sleep) on the sofa.</strong></p><div class="exercise-options"><label><input type="radio" name="q3_a1_ps_ex2" value="a"> a) sleep</label><label><input type="radio" name="q3_a1_ps_ex2" value="b"> b) sleeps</label><label><input type="radio" name="q3_a1_ps_ex2" value="c"> c) is sleeping</label></div></div>
+                <div class="grammar-exercise"><p><strong>4. He ___ (go) to the gym three times a week.</strong></p><div class="exercise-options"><label><input type="radio" name="q4_a1_ps_ex2" value="a"> a) go</label><label><input type="radio" name="q4_a1_ps_ex2" value="b"> b) goes</label><label><input type="radio" name="q4_a1_ps_ex2" value="c"> c) is going</label></div></div>
+                <div class="grammar-exercise"><p><strong>5. My mother ___ (cook) delicious dinners.</strong></p><div class="exercise-options"><label><input type="radio" name="q5_a1_ps_ex2" value="a"> a) cook</label><label><input type="radio" name="q5_a1_ps_ex2" value="b"> b) cooks</label><label><input type="radio" name="q5_a1_ps_ex2" value="c"> c) is cooking</label></div></div>
+                <div class="grammar-exercise"><p><strong>6. It usually ___ (rain) a lot in autumn.</strong></p><div class="exercise-options"><label><input type="radio" name="q6_a1_ps_ex2" value="a"> a) rain</label><label><input type="radio" name="q6_a1_ps_ex2" value="b"> b) rains</label><label><input type="radio" name="q6_a1_ps_ex2" value="c"> c) is raining</label></div></div>
+                <div class="grammar-exercise"><p><strong>7. My friend ___ (speak) Spanish. (friend - he/she)</strong></p><div class="exercise-options"><label><input type="radio" name="q7_a1_ps_ex2" value="a"> a) speak</label><label><input type="radio" name="q7_a1_ps_ex2" value="b"> b) speaks</label><label><input type="radio" name="q7_a1_ps_ex2" value="c"> c) is speaking</label></div></div>
+                <div class="grammar-exercise"><p><strong>8. The bus ___ (arrive) at 8:30 AM.</strong></p><div class="exercise-options"><label><input type="radio" name="q8_a1_ps_ex2" value="a"> a) arrive</label><label><input type="radio" name="q8_a1_ps_ex2" value="b"> b) arrives</label><label><input type="radio" name="q8_a1_ps_ex2" value="c"> c) is arriving</label></div></div>
+                <div class="grammar-exercise"><p><strong>9. She ___ (have) a new car.</strong></p><div class="exercise-options"><label><input type="radio" name="q9_a1_ps_ex2" value="a"> a) have</label><label><input type="radio" name="q9_a1_ps_ex2" value="b"> b) has</label><label><input type="radio" name="q9_a1_ps_ex2" value="c"> c) is having</label></div></div>
+                <div class="grammar-exercise"><p><strong>10. The Earth ___ (go) around the Sun.</strong></p><div class="exercise-options"><label><input type="radio" name="q10_a1_ps_ex2" value="a"> a) go</label><label><input type="radio" name="q10_a1_ps_ex2" value="b"> b) goes</label><label><input type="radio" name="q10_a1_ps_ex2" value="c"> c) is going</label></div></div>
+                <button type="button" class="check-grammar-answers-btn" data-form-id="a1_ps_ex2">Проверить Упр. 2</button>
+                <div class="grammar-feedback" style="display:none;"></div>
+            </form>
 
-        <!-- ============================ -->
-        <!-- Тема 4: Future Simple        -->
-        <!-- ============================ -->
-        <details class="grammar-topic-details">
-            <summary class="grammar-topic-summary">
-                <h3><i class="fas fa-paper-plane topic-icon"></i> Future Simple (Будущее простое время: will / be going to)</h3>
-            </summary>
-            <div class="topic-content">
-                 <p class="topic-explanation">'will' - для спонтанных решений, предсказаний, обещаний. 'be going to' - для планов и намерений.</p>
-                <!-- 5 форм упражнений -->
-                <form class="grammar-exercises-form" id="form_a1_fs_ex1"><h4>Упражнение 1: 'will' для спонтанных решений/обещаний</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_fs_ex1">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-                <form class="grammar-exercises-form" id="form_a1_fs_ex2"><h4>Упражнение 2: 'be going to' для планов/намерений</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_fs_ex2">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-                <form class="grammar-exercises-form" id="form_a1_fs_ex3"><h4>Упражнение 3: Отрицания (won't / isn't/aren't going to)</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_fs_ex3">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-                <form class="grammar-exercises-form" id="form_a1_fs_ex4"><h4>Упражнение 4: Вопросы (Will...? / Is/Are...going to?)</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_fs_ex4">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-                <form class="grammar-exercises-form" id="form_a1_fs_ex5"><h4>Упражнение 5: Выбор между 'will' и 'be going to'</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_fs_ex5">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-            </div>
-        </details>
+            <!-- Упражнение 3: Отрицательные предложения (don't / doesn't) -->
+            <form class="grammar-exercises-form" id="form_a1_ps_ex3">
+                <h4>Упражнение 3: Отрицания (don't / doesn't) - Заполните пропуски</h4>
+                <!-- 10 вопросов -->
+                <div class="grammar-exercise"><p><strong>1. I ___ like spicy food.</strong></p><div class="exercise-options"><label><input type="radio" name="q1_a1_ps_ex3" value="a"> a) don't</label><label><input type="radio" name="q1_a1_ps_ex3" value="b"> b) doesn't</label><label><input type="radio" name="q1_a1_ps_ex3" value="c"> c) am not</label></div></div>
+                <div class="grammar-exercise"><p><strong>2. He ___ play the piano.</strong></p><div class="exercise-options"><label><input type="radio" name="q2_a1_ps_ex3" value="a"> a) don't</label><label><input type="radio" name="q2_a1_ps_ex3" value="b"> b) doesn't</label><label><input type="radio" name="q2_a1_ps_ex3" value="c"> c) isn't</label></div></div>
+                <div class="grammar-exercise"><p><strong>3. We ___ go to the beach in winter.</strong></p><div class="exercise-options"><label><input type="radio" name="q3_a1_ps_ex3" value="a"> a) don't</label><label><input type="radio" name="q3_a1_ps_ex3" value="b"> b) doesn't</label><label><input type="radio" name="q3_a1_ps_ex3" value="c"> c) aren't</label></div></div>
+                <div class="grammar-exercise"><p><strong>4. She ___ work on Sundays.</strong></p><div class="exercise-options"><label><input type="radio" name="q4_a1_ps_ex3" value="a"> a) don't</label><label><input type="radio" name="q4_a1_ps_ex3" value="b"> b) not</label><label><input type="radio" name="q4_a1_ps_ex3" value="c"> c) doesn't</label></div></div>
+                <div class="grammar-exercise"><p><strong>5. You ___ study German.</strong></p><div class="exercise-options"><label><input type="radio" name="q5_a1_ps_ex3" value="a"> a) doesn't</label><label><input type="radio" name="q5_a1_ps_ex3" value="b"> b) don't</label><label><input type="radio" name="q5_a1_ps_ex3" value="c"> c) aren't</label></div></div>
+                <div class="grammar-exercise"><p><strong>6. The dog ___ eat vegetables.</strong></p><div class="exercise-options"><label><input type="radio" name="q6_a1_ps_ex3" value="a"> a) don't</label><label><input type="radio" name="q6_a1_ps_ex3" value="b"> b) doesn't</label><label><input type="radio" name="q6_a1_ps_ex3" value="c"> c) not</label></div></div>
+                <div class="grammar-exercise"><p><strong>7. My parents ___ live in this city.</strong></p><div class="exercise-options"><label><input type="radio" name="q7_a1_ps_ex3" value="a"> a) doesn't</label><label><input type="radio" name="q7_a1_ps_ex3" value="b"> b) don't</label><label><input type="radio" name="q7_a1_ps_ex3" value="c"> c) aren't</label></div></div>
+                <div class="grammar-exercise"><p><strong>8. It ___ snow here in summer.</strong></p><div class="exercise-options"><label><input type="radio" name="q8_a1_ps_ex3" value="a"> a) don't</label><label><input type="radio" name="q8_a1_ps_ex3" value="b"> b) doesn't</label><label><input type="radio" name="q8_a1_ps_ex3" value="c"> c) isn't</label></div></div>
+                <div class="grammar-exercise"><p><strong>9. I ___ have a car.</strong></p><div class="exercise-options"><label><input type="radio" name="q9_a1_ps_ex3" value="a"> a) doesn't</label><label><input type="radio" name="q9_a1_ps_ex3" value="b"> b) don't</label><label><input type="radio" name="q9_a1_ps_ex3" value="c"> c) am not</label></div></div>
+                <div class="grammar-exercise"><p><strong>10. He ___ watch horror films.</strong></p><div class="exercise-options"><label><input type="radio" name="q10_a1_ps_ex3" value="a"> a) don't</label><label><input type="radio" name="q10_a1_ps_ex3" value="b"> b) doesn't</label><label><input type="radio" name="q10_a1_ps_ex3" value="c"> c) not</label></div></div>
+                <button type="button" class="check-grammar-answers-btn" data-form-id="a1_ps_ex3">Проверить Упр. 3</button>
+                <div class="grammar-feedback" style="display:none;"></div>
+            </form>
 
-        <!-- ============================ -->
-        <!-- Тема 5: Articles             -->
-        <!-- ============================ -->
-        <details class="grammar-topic-details">
-            <summary class="grammar-topic-summary">
-                 <h3><i class="fas fa-font topic-icon"></i> Articles (Артикли: a, an, the, нулевой)</h3>
-            </summary>
-            <div class="topic-content">
-                <p class="topic-explanation">'a/an' - неопределенный. 'the' - определенный. Нулевой - с неисчисляемыми и мн.ч. в общем смысле.</p>
-                <!-- 5 форм упражнений -->
-                <form class="grammar-exercises-form" id="form_a1_art_ex1"><h4>Упражнение 1: 'a' vs 'an'</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_art_ex1">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-                <form class="grammar-exercises-form" id="form_a1_art_ex2"><h4>Упражнение 2: 'the' (определенный артикль)</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_art_ex2">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-                <form class="grammar-exercises-form" id="form_a1_art_ex3"><h4>Упражнение 3: Нулевой артикль</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_art_ex3">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-                <form class="grammar-exercises-form" id="form_a1_art_ex4"><h4>Упражнение 4: Смешанные случаи (a/an/the/zero)</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_art_ex4">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-                <form class="grammar-exercises-form" id="form_a1_art_ex5"><h4>Упражнение 5: С географическими названиями и уникальными объектами</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_art_ex5">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-            </div>
-        </details>
+            <!-- Упражнение 4: Вопросительные предложения (Do / Does) -->
+            <form class="grammar-exercises-form" id="form_a1_ps_ex4">
+                <h4>Упражнение 4: Вопросы (Do / Does) - Выберите правильный вспомогательный глагол</h4>
+                <!-- 10 вопросов -->
+                <div class="grammar-exercise"><p><strong>1. ___ you like apples?</strong></p><div class="exercise-options"><label><input type="radio" name="q1_a1_ps_ex4" value="a"> a) Do</label><label><input type="radio" name="q1_a1_ps_ex4" value="b"> b) Does</label><label><input type="radio" name="q1_a1_ps_ex4" value="c"> c) Are</label></div></div>
+                <div class="grammar-exercise"><p><strong>2. ___ your friend play the guitar?</strong></p><div class="exercise-options"><label><input type="radio" name="q2_a1_ps_ex4" value="a"> a) Do</label><label><input type="radio" name="q2_a1_ps_ex4" value="b"> b) Does</label><label><input type="radio" name="q2_a1_ps_ex4" value="c"> c) Is</label></div></div>
+                <div class="grammar-exercise"><p><strong>3. ___ they live near here?</strong></p><div class="exercise-options"><label><input type="radio" name="q3_a1_ps_ex4" value="a"> a) Do</label><label><input type="radio" name="q3_a1_ps_ex4" value="b"> b) Does</label><label><input type="radio" name="q3_a1_ps_ex4" value="c"> c) Are</label></div></div>
+                <div class="grammar-exercise"><p><strong>4. ___ it often snow in your city?</strong></p><div class="exercise-options"><label><input type="radio" name="q4_a1_ps_ex4" value="a"> a) Do</label><label><input type="radio" name="q4_a1_ps_ex4" value="b"> b) Does</label><label><input type="radio" name="q4_a1_ps_ex4" value="c"> c) Is</label></div></div>
+                <div class="grammar-exercise"><p><strong>5. ___ we have a test today?</strong></p><div class="exercise-options"><label><input type="radio" name="q5_a1_ps_ex4" value="a"> a) Do</label><label><input type="radio" name="q5_a1_ps_ex4" value="b"> b) Does</label><label><input type="radio" name="q5_a1_ps_ex4" value="c"> c) Are</label></div></div>
+                <div class="grammar-exercise"><p><strong>6. ___ your cat drink milk?</strong></p><div class="exercise-options"><label><input type="radio" name="q6_a1_ps_ex4" value="a"> a) Do</label><label><input type="radio" name="q6_a1_ps_ex4" value="b"> b) Does</label><label><input type="radio" name="q6_a1_ps_ex4" value="c"> c) Is</label></div></div>
+                <div class="grammar-exercise"><p><strong>7. ___ I know you?</strong></p><div class="exercise-options"><label><input type="radio" name="q7_a1_ps_ex4" value="a"> a) Do</label><label><input type="radio" name="q7_a1_ps_ex4" value="b"> b) Does</label><label><input type="radio" name="q7_a1_ps_ex4" value="c"> c) Am</label></div></div>
+                <div class="grammar-exercise"><p><strong>8. ___ he speak English?</strong></p><div class="exercise-options"><label><input type="radio" name="q8_a1_ps_ex4" value="a"> a) Do</label><label><input type="radio" name="q8_a1_ps_ex4" value="b"> b) Does</label><label><input type="radio" name="q8_a1_ps_ex4" value="c"> c) Is</label></div></div>
+                <div class="grammar-exercise"><p><strong>9. ___ your parents like travelling?</strong></p><div class="exercise-options"><label><input type="radio" name="q9_a1_ps_ex4" value="a"> a) Do</label><label><input type="radio" name="q9_a1_ps_ex4" value="b"> b) Does</label><label><input type="radio" name="q9_a1_ps_ex4" value="c"> c) Are</label></div></div>
+                <div class="grammar-exercise"><p><strong>10. ___ she go to bed early?</strong></p><div class="exercise-options"><label><input type="radio" name="q10_a1_ps_ex4" value="a"> a) Do</label><label><input type="radio" name="q10_a1_ps_ex4" value="b"> b) Does</label><label><input type="radio" name="q10_a1_ps_ex4" value="c"> c) Is</label></div></div>
+                <button type="button" class="check-grammar-answers-btn" data-form-id="a1_ps_ex4">Проверить Упр. 4</button>
+                <div class="grammar-feedback" style="display:none;"></div>
+            </form>
 
-        <!-- ============================ -->
-        <!-- Тема 6: Nouns                -->
-        <!-- ============================ -->
-        <details class="grammar-topic-details">
-            <summary class="grammar-topic-summary">
-                <h3><i class="fas fa-shapes topic-icon"></i> Nouns (Существительные)</h3>
-            </summary>
-            <div class="topic-content">
-                 <p class="topic-explanation">Единственное и множественное число (регулярное и нерегулярное), притяжательный падеж, исчисляемые и неисчисляемые существительные.</p>
-                <!-- 5 форм упражнений -->
-                <form class="grammar-exercises-form" id="form_a1_nouns_ex1"><h4>Упражнение 1: Множественное число (правила -s, -es, -ies)</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_nouns_ex1">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-                <form class="grammar-exercises-form" id="form_a1_nouns_ex2"><h4>Упражнение 2: Неправильные формы мн. числа (men, children, mice...)</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_nouns_ex2">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-                <form class="grammar-exercises-form" id="form_a1_nouns_ex3"><h4>Упражнение 3: Притяжательный падеж ('s, s')</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_nouns_ex3">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-                <form class="grammar-exercises-form" id="form_a1_nouns_ex4"><h4>Упражнение 4: Исчисляемые и неисчисляемые (a/an, some, much/many)</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_nouns_ex4">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-                <form class="grammar-exercises-form" id="form_a1_nouns_ex5"><h4>Упражнение 5: Составные существительные (e.g. toothbrush)</h4><p class="exercise-placeholder">[10 вопросов]</p><button type="button" class="check-grammar-answers-btn" data-form-id="a1_nouns_ex5">Проверить</button><div class="grammar-feedback" style="display:none;"></div></form>
-            </div>
-        </details>
-
-            <!-- ПРОДОЛЖЕНИЕ С ОСТАЛЬНЫМИ 6 ТЕМАМИ БУДЕТ В СЛЕДУЮЩЕМ ОТВЕТЕ -->
-
-            <p style="text-align:center; margin-top: 40px; font-style: italic;">Больше тем и упражнений для уровня A1 будет добавлено в ближайшее время!</p>
-
-        </section>
+            <!-- Упражнение 5: Смешанные предложения (факты, рутина) -->
+            <form class="grammar-exercises-form" id="form_a1_ps_ex5">
+                <h4>Упражнение 5: Факты и рутина - Выберите правильную форму</h4>
+                <!-- 10 вопросов -->
+                <div class="grammar-exercise"><p><strong>1. Water ___ (boil) at 100 degrees Celsius.</strong></p><div class="exercise-options"><label><input type="radio" name="q1_a1_ps_ex5" value="a"> a) boil</label><label><input type="radio" name="q1_a1_ps_ex5" value="b"> b) boils</label><label><input type="radio" name="q1_a1_ps_ex5" value="c"> c) is boiling</label></div></div>
+                <div class="grammar-exercise"><p><strong>2. I usually ___ (have) breakfast at 8 AM.</strong></p><div class="exercise-options"><label><input type="radio" name="q2_a1_ps_ex5" value="a"> a) have</label><label><input type="radio" name="q2_a1_ps_ex5" value="b"> b) has</label><label><input type="radio" name="q2_a1_ps_ex5" value="c"> c) am having</label></div></div>
+                <div class="grammar-exercise"><p><strong>3. The Earth ___ (revolve) around the Sun.</strong></p><div class="exercise-options"><label><input type="radio" name="q3_a1_ps_ex5" value="a"> a) revolve</label><label><input type="radio" name="q3_a1_ps_ex5" value="b"> b) revolves</label><label><input type="radio" name="q3_a1_ps_ex5" value="c"> c) is revolving</label></div></div>
+                <div class="grammar-exercise"><p><strong>4. Cats ___ (like) milk.</strong></p><div class="exercise-options"><label><input type="radio" name="q4_a1_ps_ex5" value="a"> a) like</label><label><input type="radio" name="q4_a1_ps_ex5" value="b"> b) likes</label><label><input type="radio" name="q4_a1_ps_ex5" value="c"> c) are liking</label></div></div>
+                <div class="grammar-exercise"><p><strong>5. My school ___ (start) at 9 o'clock.</strong></p><div class="exercise-options"><label><input type="radio" name="q5_a1_ps_ex5" value="a"> a) start</label><label><input type="radio" name="q5_a1_ps_ex5" value="b"> b) starts</label><label><input type="radio" name="q5_a1_ps_ex5" value="c"> c) is starting</label></div></div>
+                <div class="grammar-exercise"><p><strong>6. He often ___ (visit) his grandparents.</strong></p><div class="exercise-options"><label><input type="radio" name="q6_a1_ps_ex5" value="a"> a) visit</label><label><input type="radio" name="q6_a1_ps_ex5" value="b"> b) visits</label><label><input type="radio" name="q6_a1_ps_ex5" value="c"> c) is visiting</label></div></div>
+                <div class="grammar-exercise"><p><strong>7. We always ___ (clean) our room on Saturdays.</strong></p><div class="exercise-options"><label><input type="radio" name="q7_a1_ps_ex5" value="a"> a) clean</label><label><input type="radio" name="q7_a1_ps_ex5" value="b"> b) cleans</label><label><input type="radio" name="q7_a1_ps_ex5" value="c"> c) are cleaning</label></div></div>
+                <div class="grammar-exercise"><p><strong>8. The moon ___ (shine) at night.</strong></p><div class="exercise-options"><label><input type="radio" name="q8_a1_ps_ex5" value="a"> a) shine</label><label><input type="radio" name="q8_a1_ps_ex5" value="b"> b) shines</label><label><input type="radio" name="q8_a1_ps_ex5" value="c"> c) is shining</label></div></div>
+                <div class="grammar-exercise"><p><strong>9. My dad ___ (drive) to work.</strong></p><div class="exercise-options"><label><input type="radio" name="q9_a1_ps_ex5" value="a"> a) drive</label><label><input type="radio" name="q9_a1_ps_ex5" value="b"> b) drives</label><label><input type="radio" name="q9_a1_ps_ex5" value="c"> c) is driving</label></div></div>
+                <div class="grammar-exercise"><p><strong>10. Birds ___ (fly).</strong></p><div class="exercise-options"><label><input type="radio" name="q10_a1_ps_ex5" value="a"> a) fly</label><label><input type="radio" name="q10_a1_ps_ex5" value="b"> b) flies</label><label><input type="radio" name="q10_a1_ps_ex5" value="c"> c) are flying</label></div></div>
+                <button type="button" class="check-grammar-answers-btn" data-form-id="a1_ps_ex5">Проверить Упр. 5</button>
+                <div class="grammar-feedback" style="display:none;"></div>
+            </form>
+        </section> <!-- Конец #grammar-topic-content -->
     </main>
 
     <footer>
