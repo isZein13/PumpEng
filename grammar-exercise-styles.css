@@ -289,3 +289,58 @@
         padding: 15px;
     }
 }
+/* Стили для таблицы неправильных глаголов */
+.verb-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px; /* Отступ под таблицей */
+    font-size: 0.95em;
+}
+
+.verb-table th,
+.verb-table td {
+    border: 1px solid #ccc; /* Более светлая рамка */
+    padding: 10px 12px; /* Увеличил паддинг */
+    text-align: left;
+    vertical-align: middle; /* Выравнивание по центру вертикали */
+}
+
+.verb-table th {
+    background-color: #f0f4f8; /* Светло-голубой фон для заголовков таблицы */
+    font-weight: 600; /* Жирнее */
+    color: #33475b;
+}
+
+.verb-table input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.95em;
+    transition: border-color 0.2s ease;
+}
+.verb-table input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.verb-table input.correct {
+    border-color: #28a745 !important; /* Важно для переопределения :focus */
+    background-color: #e6f7e9;
+    color: #155724;
+}
+
+.verb-table input.incorrect {
+    border-color: #dc3545 !important; /* Важно для переопределения :focus */
+    background-color: #fbebed;
+    color: #721c24;
+}
+
+/* Убираем стили для .grammar-exercise и .exercise-options если они не нужны для таблицы */
+.grammar-exercises-form .grammar-exercise { /* Переопределяем, если нужно */
+    /* border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0; */
+}
