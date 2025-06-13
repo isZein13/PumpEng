@@ -1,0 +1,113 @@
+<!-- irregular-verbs-test.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест: Неправильные Глаголы (3 формы) - PumpEng</title>
+    <meta name="description" content="Проверьте свое знание трех форм английских неправильных глаголов. Введите Past Simple (V2) и Past Participle (V3).">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="grammar-exercise-styles.css"> <!-- Используем доработанные стили -->
+    <style>
+        /* Дополнительные стили для этой страницы, если нужны */
+        .verb-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .verb-table th, .verb-table td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        .verb-table th { background-color: #f2f2f2; }
+        .verb-table input[type="text"] { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        .verb-table input.correct { border-color: green; background-color: #e6ffe6; }
+        .verb-table input.incorrect { border-color: red; background-color: #ffe6e6; }
+        .verb-table .explanation { font-size: 0.9em; color: #555; margin-top: 5px;}
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Шапка -->
+    </header>
+
+    <main>
+        <nav aria-label="breadcrumb" class="breadcrumbs-container">
+            <ol class="breadcrumbs">
+                <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                <li class="breadcrumb-item"><a href="tests-overview.html">Тесты и Упражнения</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Тест: Неправильные Глаголы</li>
+            </ol>
+        </nav>
+
+        <section id="grammar-hero" style="background: linear-gradient(rgba(103, 58, 183, 0.85), rgba(69, 39, 160, 0.9));"> <!-- Темно-фиолетовый -->
+            <div class="hero-content">
+                <h1><i class="fas fa-list-ol topic-icon" style="margin-right: 10px; color: #fff; font-size: 0.9em;"></i>Тест: Три Формы Неправильных Глаголов</h1>
+                <p>Введите вторую (Past Simple) и третью (Past Participle) формы для каждого глагола.</p>
+            </div>
+        </section>
+
+        <section id="grammar-topic-content">
+            <div class="topic-explanation">
+                <p>Неправильные глаголы в английском языке образуют формы прошедшего времени и причастия прошедшего времени не по стандартным правилам (без добавления -ed). Их нужно запоминать. Этот тест поможет вам проверить свои знания.</p>
+            </div>
+
+            <!-- Блок 1: Глаголы 1-15 -->
+            <details class="exercise-details" open> <!-- Первый блок развернут -->
+                <summary class="exercise-summary">
+                    <h4>Часть 1: Глаголы 1-15</h4>
+                </summary>
+                <form class="grammar-exercises-form" id="form_iv_part1">
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Перевод</th>
+                                <th>V1 (Infinitive)</th>
+                                <th>V2 (Past Simple) - <em>Ваш ответ</em></th>
+                                <th>V3 (Past Participle) - <em>Ваш ответ</em></th>
+                            </tr>
+                        </thead>
+                        <tbody id="verb_table_part1">
+                            <!-- Глаголы будут вставлены сюда JavaScript -->
+                        </tbody>
+                    </table>
+                    <button type="button" class="check-grammar-answers-btn" data-form-id="iv_part1">Проверить Часть 1</button>
+                    <div class="grammar-feedback" style="display:none;"></div>
+                </form>
+            </details>
+
+            <!-- Блок 2: Глаголы 16-30 -->
+            <details class="exercise-details">
+                <summary class="exercise-summary">
+                    <h4>Часть 2: Глаголы 16-30</h4>
+                </summary>
+                <form class="grammar-exercises-form" id="form_iv_part2">
+                    <table class="verb-table">
+                         <thead>
+                            <tr>
+                                <th>Перевод</th>
+                                <th>V1 (Infinitive)</th>
+                                <th>V2 (Past Simple) - <em>Ваш ответ</em></th>
+                                <th>V3 (Past Participle) - <em>Ваш ответ</em></th>
+                            </tr>
+                        </thead>
+                        <tbody id="verb_table_part2">
+                            <!-- Глаголы -->
+                        </tbody>
+                    </table>
+                    <button type="button" class="check-grammar-answers-btn" data-form-id="iv_part2">Проверить Часть 2</button>
+                    <div class="grammar-feedback" style="display:none;"></div>
+                </form>
+            </details>
+            
+            <!-- Добавьте еще 8 блоков <details> для частей 3-10 по аналогии -->
+            <!-- ... -->
+
+            <p style="text-align:center; margin-top: 40px; font-style: italic;">Продолжайте практиковаться!</p>
+
+        </section>
+    </main>
+
+    <footer>
+        <!-- Подвал -->
+    </footer>
+
+    <button id="scrollToTopBtn" title="Наверх"><i class="fas fa-arrow-up"></i></button>
+    <script src="script.js"></script>
+    <script src="irregular-verbs-test-logic.js"></script>
+</body>
+</html>
