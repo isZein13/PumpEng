@@ -1,41 +1,45 @@
+<!-- tests-overview.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тесты по Английскому Языку - PumpEng</title>
-    <meta name="description" content="Пройдите онлайн тесты для определения вашего уровня английского языка (A1, A2, B1, B2, C1) от школы PumpEng. Мгновенная проверка и разбор ошибок.">
-    <link rel="stylesheet" href="styles.css"> <!-- Основные стили сайта -->
+    <title>Тесты по Английскому Языку и Ресурсы - PumpEng</title>
+    <meta name="description" content="Пройдите онлайн тесты для определения вашего уровня английского языка (A1, A2, B1) и воспользуйтесь полезными учебными ресурсами от школы PumpEng.">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Можно создать отдельный CSS для этой страницы или добавить в styles.css -->
     <link rel="stylesheet" href="tests-overview-styles.css">
 </head>
 <body>
     <header>
-        <!-- Шапка будет загружена здесь скриптом -->
+        <!-- Шапка -->
     </header>
 
     <main>
-    <nav aria-label="breadcrumb" class="breadcrumbs-container">
-        <ol class="breadcrumbs">
-            <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Тесты</li>
-        </ol>
-    </nav>
+        <nav aria-label="breadcrumb" class="breadcrumbs-container">
+            <ol class="breadcrumbs">
+                <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                <!-- Если "Тесты" - это подраздел "Ресурсов", то добавить:
+                <li class="breadcrumb-item"><a href="resources.html">Бесплатные Ресурсы</a></li>
+                -->
+                <li class="breadcrumb-item active" aria-current="page">Тесты и Упражнения</li> <!-- Обновил для ясности -->
+            </ol>
+        </nav>
+
         <section id="tests-hero">
             <div class="hero-content">
-                <h1>Определите свой уровень английского</h1>
-                <p>Выберите тест, соответствующий вашим текущим знаниям, или начните с A1, чтобы проверить основы.</p>
+                <h1>Определите свой уровень и практикуйтесь!</h1> <!-- Изменил заголовок -->
+                <p>Выберите тест, соответствующий вашим текущим знаниям, или начните с A1. Затем отточите свои навыки с помощью наших грамматических упражнений.</p> <!-- Изменил текст -->
             </div>
         </section>
 
         <section id="tests-list">
-            <h2>Доступные тесты:</h2>
+            <h2>Доступные тесты на определение уровня:</h2>
             <div class="test-cards-container">
                 <!-- Карточка для теста A1 -->
                 <div class="test-card level-a1">
                     <div class="test-card-icon">
-                        <i class="fas fa-seedling"></i> <!-- Иконка для начинающих -->
+                        <i class="fas fa-seedling"></i>
                     </div>
                     <h3>Тест A1 (Beginner)</h3>
                     <p>Проверьте свои базовые знания грамматики и лексики. Идеально для начинающих.</p>
@@ -45,7 +49,7 @@
                 <!-- Карточка для теста A2 -->
                 <div class="test-card level-a2">
                      <div class="test-card-icon">
-                        <i class="fas fa-rocket"></i> <!-- Иконка для следующего уровня -->
+                        <i class="fas fa-rocket"></i>
                     </div>
                     <h3>Тест A2 (Elementary)</h3>
                     <p>Оцените свое понимание основных времен, конструкций и разговорных фраз.</p>
@@ -55,43 +59,45 @@
                 <!-- Карточка для теста B1 -->
                 <div class="test-card level-b1">
                      <div class="test-card-icon">
-                        <i class="fas fa-graduation-cap"></i> <!-- Иконка для более продвинутого уровня -->
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3>Тест B1 (Intermediate)</h3>
                     <p>Более сложные грамматические структуры, расширенный словарный запас и понимание текстов.</p>
                     <a href="b1-test.html" class="test-card-button">Начать тест B1</a>
                 </div>
-                <div class="test-card level-b2"> <!-- Придумайте класс для цвета, например level-b2 -->
+
+                <!-- === НОВАЯ КАРТОЧКА ДЛЯ УПРАЖНЕНИЙ ПО ГРАММАТИКЕ === -->
+                <div class="test-card level-grammar"> <!-- Новый класс для стилизации, если нужно -->
                      <div class="test-card-icon">
-                        <i class="fas fa-cogs"></i> <!-- Иконка для более сложного уровня -->
+                        <i class="fas fa-pencil-ruler"></i> <!-- Иконка для упражнений -->
                     </div>
-                    <h3>Тест B2 (Upper-Intermediate)</h3>
-                    <p>Углубленная проверка грамматики, сложной лексики, идиом и способности понимать тексты на различные темы.</p>
-                    <a href="b2-test.html" class="test-card-button">Начать тест B2</a>
+                    <h3>Грамматические Упражнения</h3>
+                    <p>Отточите знания грамматики по темам для каждого уровня (A1, A2, B1 и выше).</p>
+                    <a href="grammar_levels_overview.html" class="test-card-button">К упражнениям по грамматике</a>
                 </div>
-                 <div class="test-card level-c1"> <!-- Придумайте класс для цвета, например level-c1 -->
-                     <div class="test-card-icon">
-                        <i class="fas fa-chess-king"></i> <!-- Иконка для высшего уровня мастерства -->
-                    </div>
-                    <h3>Тест C1 (Advanced)</h3>
-                    <p>Проверка владения языком на высоком уровне: нюансы грамматики, идиомы, стилистика, сложные тексты.</p>
-                    <a href="c1-test.html" class="test-card-button">Начать тест C1</a>
-                </div>
-                <!-- Сюда можно будет добавлять карточки для других тестов (B2, C1 и т.д.) -->
+                <!-- === КОНЕЦ НОВОЙ КАРТОЧКИ === -->
+
             </div>
+        </section>
+
+        <section id="additional-resources">
+            <h2>Дополнительные ресурсы:</h2>
+            <ul>
+                <li><a href="grammar-lessons.html">Видеоуроки по грамматике</a></li>
+                <li><a href="https://t.me/PumpEngBot" target="_blank">Словари в подарок от нашего бота</a></li>
+                <li><a href="English_Tenses_Comparison_Table.pdf" target="_blank">Сравнительная таблица времен (PDF)</a></li>
+                <li><a href="Prepositions_with_Russian_and_Link.pdf" target="_blank">Предлоги с переводом и примерами (PDF)</a></li> <!-- Предполагая, что вы добавили этот PDF -->
+                 <li><a href="reading-comprehension.html">Упражнения на чтение (A1-C1)</a></li>
+            </ul>
         </section>
 
     </main>
 
     <footer>
-        <!-- Подвал будет загружен здесь скриптом -->
+        <!-- Подвал -->
     </footer>
 
-     <!-- Кнопка Наверх -->
-     <button id="scrollToTopBtn" title="Наверх">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
+     <button id="scrollToTopBtn" title="Наверх"><i class="fas fa-arrow-up"></i></button>
     <script src="script.js"></script>
 </body>
 </html>
