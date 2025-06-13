@@ -29,25 +29,25 @@ document.addEventListener('DOMContentLoaded', () => {
         "a1_fs_ex3_q1": { correct: "b", explanation: "Обещание не делать чего-то в будущем (отрицание с 'will'): I won't be late." },
         "a1_fs_ex3_q2": { correct: "c", explanation: "Изменение плана (отрицание с 'be going to'): We aren't going to go." },
         "a1_fs_ex3_q3": { correct: "c", explanation: "Предположение об отсутствии действия в будущем (отрицание с 'will'): He won't help." },
-        "a1_fs_ex3_q4": { correct: "c", explanation: "Мнение/предположение об отсутствии действия ('I don't think' + 'will'): I don't think they won't come (означает 'я думаю, они придут'). Если имеется в виду 'я думаю, они не придут', то 'I think they won't come'." },
+        "a1_fs_ex3_q4": { correct: "c", explanation: "'I don't think' + 'will' для выражения сомнения в позитивном событии. 'I don't think they will come' (Я не думаю, что они придут). Если бы было 'I don't think they won't come', это значило бы 'Я думаю, они придут'." },
         "a1_fs_ex3_q5": { correct: "b", explanation: "Решение не делать чего-то (отрицание с 'be going to'): She isn't going to buy." },
         "a1_fs_ex3_q6": { correct: "c", explanation: "Предсказание на основе текущей ситуации (отрицание с 'be going to'): We aren't going to catch." },
         "a1_fs_ex3_q7": { correct: "c", explanation: "Уверенное предсказание об отсутствии действия (отрицание с 'will'): He won't forget." },
         "a1_fs_ex3_q8": { correct: "b", explanation: "Отрицание плана: They aren't going to stay." },
         "a1_fs_ex3_q9": { correct: "b", explanation: "Спонтанный отказ/решение, основанное на обстоятельствах: No, I won't." },
-        "a1_fs_ex3_q10": { correct: "b", explanation: "Предсказание на основе текущих признаков ('It's very cloudy' + 'I think' + 'will'): I think it won't be sunny." (Или 'isn't going to be' тоже возможно)." },
+        "a1_fs_ex3_q10": { correct: "b", explanation: "Предсказание на основе текущих признаков ('It's very cloudy' + 'I think' + 'will'): I think it won't be sunny. 'Isn't going to be' тоже возможно." },
 
         // --- Упражнение 4: Вопросы в Future Simple ---
         "a1_fs_ex4_q1": { correct: "b", explanation: "Вежливая просьба или предложение с 'will': Will you help...?" },
         "a1_fs_ex4_q2": { correct: "c", explanation: "Вопрос о планах с 'be going to': What is she going to wear...?" },
         "a1_fs_ex4_q3": { correct: "c", explanation: "Вопрос-предсказание с 'will': Will it be cold...?" },
         "a1_fs_ex4_q4": { correct: "b", explanation: "Вопрос о планах с 'be going to': When are they going to arrive?" },
-        "a1_fs_ex4_q5": { correct: "d", explanation: "Предложение помощи, часто используется 'Shall I...?'. 'Will I get you a drink?' также возможно, но 'Shall' более типично для предложения от первого лица." },
+        "a1_fs_ex4_q5": { correct: "d", explanation: "Предложение помощи, часто используется 'Shall I...?'. 'Will I get you a drink?' также возможно." },
         "a1_fs_ex4_q6": { correct: "c", explanation: "Вопрос о планах с 'be going to': How is he going to travel...?" },
         "a1_fs_ex4_q7": { correct: "d", explanation: "Предложение/вопрос о совместном действии, часто используется 'Shall we...?'. 'Will we meet' или 'Are we going to meet' тоже возможны." },
         "a1_fs_ex4_q8": { correct: "c", explanation: "Вопрос о планах с 'be going to' (кто собирается готовить): Who is going to cook...?" },
         "a1_fs_ex4_q9": { correct: "b", explanation: "Общий вопрос о будущем с 'will': Will you be at home...?" },
-        "a1_fs_ex4_q10": { correct: "d", explanation: "Вопрос о расписании часто задается в Present Simple: What time does the film start? (Хотя Future Simple тоже возможен)." },
+        "a1_fs_ex4_q10": { correct: "d", explanation: "Вопрос о расписании часто задается в Present Simple: What time does the film start? 'Will...start' или 'is...going to start' тоже возможны, но Present Simple самый типичный для расписаний." },
 
         // --- Упражнение 5: 'will' или 'be going to'? ---
         "a1_fs_ex5_q1": { correct: "b", explanation: "Спонтанное решение, принятое в момент речи, используется 'will'." },
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "a1_fs_ex5_q4": { correct: "b", explanation: "Предложение помощи или обещание, сделанное в момент речи, используется 'will'." },
         "a1_fs_ex5_q5": { correct: "a", explanation: "Заранее принятое решение или намерение, используется 'are going to'." },
         "a1_fs_ex5_q6": { correct: "b", explanation: "'I think' выражает мнение/предсказание, часто используется 'will'." },
-        "a1_fs_ex5_q7": { correct: "b", explanation: "Для расписаний часто используется Present Simple ('leaves'), но Future Simple ('will leave') также возможен для указания будущего факта. 'Is going to leave' тоже возможно, если это часть плана." },
+        "a1_fs_ex5_q7": { correct: "b", explanation: "Для расписаний часто используется Present Simple ('leaves'), но Future Simple ('will leave') также возможен для указания будущего факта. 'Is going to leave' менее типично для фиксированного расписания транспорта." },
         "a1_fs_ex5_q8": { correct: "b", explanation: "Спонтанное решение в ответ на ситуацию, используется 'will'." },
         "a1_fs_ex5_q9": { correct: "a", explanation: "Действие запланировано ('We've bought the paint'), используется 'are going to'." },
         "a1_fs_ex5_q10": { correct: "a", explanation: "Предупреждение или предсказание на основе очевидной опасности, используется 'are going to'." }
