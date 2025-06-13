@@ -55,10 +55,12 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
     display: flex;
     flex-direction: column;
-    /* border-top: 5px solid #27ae60; /* Зеленая верхняя рамка для всех */
+    /* border-top: 5px solid #27ae60; /* Убрана общая зеленая верхняя рамка */
 }
 
 .resource-card:hover {
+    /* Можно оставить или убрать эффект при наведении на всю карточку,
+       если акцент смещается на ссылки внутри */
     /* transform: translateY(-5px); */
     /* box-shadow: 0 10px 25px rgba(0,0,0,0.1); */
 }
@@ -66,7 +68,7 @@
 .resource-card-icon {
     font-size: 2.5em;
     margin-bottom: 15px;
-    color: #27ae60; /* Основной зеленый для иконок */
+    color: #27ae60; /* Основной зеленый для иконок по умолчанию */
     text-align: center;
 }
 
@@ -77,13 +79,13 @@
     text-align: center;
 }
 
-.resource-card p {
+.resource-card p { /* Описание категории */
     font-size: 0.95em;
     color: #555;
     line-height: 1.6;
     margin-bottom: 20px;
     flex-grow: 1; /* Параграф занимает доступное место */
-    text-align: left; /* Текст описания слева */
+    text-align: left; 
 }
 
 .resource-links {
@@ -116,28 +118,39 @@
     opacity: 0.7;
 }
 
-
+/* === ИЗМЕНЕННЫЕ СТИЛИ ДЛЯ КНОПОК-ССЫЛОК КАТЕГОРИЙ === */
 .resource-category-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 0.9em;
-    font-weight: bold;
-    color: #fff;
-    background-color: #27ae60; /* Зеленый */
+    display: inline-block; 
+    padding: 5px 0;     
+    font-size: 0.95em;   
+    font-weight: bold;   
+    color: #0056b3;      /* Синий цвет */
+    background-color: transparent; /* Без фона */
     text-decoration: none;
-    border-radius: 20px;
-    transition: background-color 0.3s ease;
-    align-self: center;
-    margin-top: auto; /* Прижать кнопку к низу, если карточки разной высоты */
+    border-radius: 0;     /* Без скругления */
+    transition: color 0.2s ease, text-decoration 0.2s ease; /* Добавил text-decoration в transition */
+    align-self: flex-start; 
+    margin-top: 15px;    /* Отступ сверху от списка ссылок */
+    border: none;        /* Убедимся, что нет рамки */
 }
+
 .resource-category-button.coming-soon {
-    background-color: #95a5a6; /* Серый для "скоро" */
+    color: #95a5a6; 
     cursor: default;
+    text-decoration: none; 
+    background-color: transparent; 
+}
+.resource-category-button.coming-soon:hover {
+    color: #95a5a6; 
+    text-decoration: none;
 }
 
 .resource-category-button:not(.coming-soon):hover {
-    background-color: #229954; /* Темнее зеленый */
+    color: #003366;      
+    text-decoration: underline; 
+    background-color: transparent; 
 }
+/* === КОНЕЦ ИЗМЕНЕННЫХ СТИЛЕЙ ДЛЯ КНОПОК-ССЫЛОК === */
 
 
 /* Адаптивность */
@@ -147,5 +160,14 @@
     }
     .resource-cards-container {
         grid-template-columns: 1fr;
+    }
+     .resource-card p { /* Описание категории */
+        text-align: center; /* Можно вернуть по центру на мобильных */
+    }
+    .resource-links {
+        text-align: center; /* Ссылки тоже по центру */
+    }
+    .resource-category-button {
+        align-self: center; /* Кнопку-ссылку тоже по центру */
     }
 }
