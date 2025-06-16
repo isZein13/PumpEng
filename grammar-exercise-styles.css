@@ -58,14 +58,14 @@
     margin-bottom: 5px;
 }
 
-/* Стили для СВОРАЧИВАЕМЫХ БЛОКОВ УПРАЖНЕНИЙ */
+/* Стили для СВОРАЧИВАЕМЫХ БЛОКОВ УПРАЖНЕНИЙ (внутри конкретной темы) */
 .exercise-details {
-    margin-bottom: 25px; /* Отступ между упражнениями */
-    border: 1px solid #e0e6eb; /* Рамка */
-    border-radius: 8px; /* Больше скругление */
-    background-color: #ffffff; /* Белый фон для всего блока упражнения */
+    margin-bottom: 25px;
+    border: 1px solid #e0e6eb;
+    border-radius: 8px;
+    background-color: #ffffff;
     overflow: hidden;
-    max-width: 850px; /* Ограничение ширины, чтобы совпадало с формой */
+    max-width: 850px; /* Ограничение ширины */
     margin-left: auto;
     margin-right: auto;
 }
@@ -74,12 +74,12 @@
 }
 
 .exercise-summary {
-    padding: 18px 25px; /* Паддинг для заголовка упражнения */
+    padding: 18px 25px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f7f9fc; /* Фон для заголовка упражнения */
+    background-color: #f7f9fc;
     border-bottom: 1px solid transparent;
     transition: background-color 0.2s ease;
     position: relative;
@@ -97,15 +97,15 @@
     background-color: #eef2f7;
 }
 
-.exercise-summary h4 {
+.exercise-summary h4 { /* Заголовок упражнения внутри summary */
     margin: 0;
     padding: 0;
     border-bottom: none;
     display: inline-flex;
     align-items: center;
     flex-grow: 1;
-    font-size: 1.25em; /* Размер заголовка упражнения */
-    color: #17a2b8; /* Цвет заголовка упражнения (бирюзовый) */
+    font-size: 1.25em;
+    color: #17a2b8; /* Бирюзовый */
     font-weight: 600;
 }
 
@@ -127,17 +127,24 @@
 /* Контент упражнения внутри details (сама форма) */
 .exercise-details .grammar-exercises-form {
     margin-bottom: 0;
-    padding: 20px 25px 25px 25px; /* Внутренние отступы для формы */
+    padding: 20px 25px 25px 25px;
     border: none;
     box-shadow: none;
     background-color: transparent; /* Форма наследует фон .exercise-details (белый) */
-    max-width: none; /* Снимаем ограничение, т.к. оно у .exercise-details */
+    max-width: none;
     margin-left: 0;
     margin-right: 0;
 }
 
-.exercise-details .grammar-exercises-form h4 { /* Скрываем дублирующийся заголовок формы */
+.exercise-details .grammar-exercises-form h4 { /* Скрываем дублирующийся заголовок формы, если он есть в HTML формы */
     display: none;
+}
+.exercise-note { /* Стиль для пояснений внутри формы, если нужны */
+    font-size: 0.9em;
+    font-style: italic;
+    color: #6c757d;
+    margin-bottom: 15px;
+    text-align: left;
 }
 
 
@@ -188,7 +195,7 @@
     vertical-align: middle;
     transform: scale(1.1);
 }
-.exercise-options label.selected-option-style {
+.exercise-options label.selected-option-style { /* JS может добавить этот класс для выбранного варианта */
     background-color: #d1e7ff;
     border-color: #74b5f3;
     font-weight: 500;
@@ -203,7 +210,7 @@
     font-size: 1.1em;
     font-weight: bold;
     color: white;
-    background-color: #007bff;
+    background-color: #007bff; /* Синяя кнопка проверки по умолчанию */
     border: none;
     border-radius: 25px;
     cursor: pointer;
@@ -257,6 +264,59 @@
     margin: 18px 0;
 }
 
+/* Стили для таблицы неправильных глаголов (из irregular-verbs-test.html) */
+.verb-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+    font-size: 0.95em;
+}
+
+.verb-table th,
+.verb-table td {
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.verb-table th {
+    background-color: #f0f4f8; /* Такой же фон, как у открытого summary упражнения */
+    font-weight: 600;
+    color: #33475b;
+}
+
+.verb-table input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.95em;
+    transition: border-color 0.2s ease;
+}
+.verb-table input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.verb-table input.correct {
+    border-color: #28a745 !important;
+    background-color: #e6f7e9 !important;
+    color: #155724;
+}
+
+.verb-table input.incorrect {
+    border-color: #dc3545 !important;
+    background-color: #fbebed !important;
+    color: #721c24;
+}
+.verb-table .verb-translate { /* Класс для ячейки с переводом, если нужно выделить */
+    /* font-style: italic; */
+}
+
+
 /* Адаптивность */
 @media (max-width: 768px) {
     #grammar-hero .hero-content h1 {
@@ -288,59 +348,12 @@
     .grammar-feedback {
         padding: 15px;
     }
-}
-/* Стили для таблицы неправильных глаголов */
-.verb-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 25px; /* Отступ под таблицей */
-    font-size: 0.95em;
-}
-
-.verb-table th,
-.verb-table td {
-    border: 1px solid #ccc; /* Более светлая рамка */
-    padding: 10px 12px; /* Увеличил паддинг */
-    text-align: left;
-    vertical-align: middle; /* Выравнивание по центру вертикали */
-}
-
-.verb-table th {
-    background-color: #f0f4f8; /* Светло-голубой фон для заголовков таблицы */
-    font-weight: 600; /* Жирнее */
-    color: #33475b;
-}
-
-.verb-table input[type="text"] {
-    width: 100%;
-    padding: 8px 10px;
-    box-sizing: border-box;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 0.95em;
-    transition: border-color 0.2s ease;
-}
-.verb-table input[type="text"]:focus {
-    border-color: #007bff;
-    outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
-}
-
-.verb-table input.correct {
-    border-color: #28a745 !important; /* Важно для переопределения :focus */
-    background-color: #e6f7e9;
-    color: #155724;
-}
-
-.verb-table input.incorrect {
-    border-color: #dc3545 !important; /* Важно для переопределения :focus */
-    background-color: #fbebed;
-    color: #721c24;
-}
-
-/* Убираем стили для .grammar-exercise и .exercise-options если они не нужны для таблицы */
-.grammar-exercises-form .grammar-exercise { /* Переопределяем, если нужно */
-    /* border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0; */
+    .verb-table th, .verb-table td {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+    .verb-table input[type="text"] {
+        font-size: 0.9em;
+        padding: 6px 8px;
+    }
 }
