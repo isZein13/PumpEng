@@ -35,59 +35,77 @@ document.addEventListener('DOMContentLoaded', () => {
             { translate: "слышать", v1: "hear", v2: "heard", v3: "heard" },
             { translate: "прятать", v1: "hide", v2: "hid", v3: "hidden" }
         ],
-        // --- ДОБАВЬТЕ ДАННЫЕ ДЛЯ ОСТАЛЬНЫХ ЧАСТЕЙ ЗДЕСЬ ---
+        // --- ДОБАВЬТЕ ДАННЫЕ ДЛЯ ОСТАЛЬНЫХ ЧАСТЕЙ ЗДЕСЬ (iv_part3 ... iv_part10) ---
         // "iv_part3": [ { translate: "...", v1: "...", v2: "...", v3: "..." }, ... ],
-        // ...
-        // "iv_part10": [ { translate: "...", v1: "...", v2: "...", v3: "..." }, ... ],
     };
 
     function populateVerbTable(partId) {
         const tbody = document.getElementById(`verb_table_${partId}`);
         const verbs = irregularVerbsData[partId];
-        if (!tbody || !verbs) {
-            // console.warn(`Table body or data not found for ${partId}`);
-            return; // Если нет данных для этой части, просто выходим
+
+        if (!tbody) {
+            // console.warn(`Table body 'verb_table_${partId}' not found for part ${partId}. Skipping population.`);
+            return; 
         }
-        if (tbody.innerHTML.trim() !== "") return; // Не перезаполнять, если уже заполнено
+        if(!verbs) {
+            // console.warn(`No verb data found for part ${partId}. Skipping population.`);
+            tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; font-style:italic;">Упражнения для этой части скоро появятся.</td></tr>`;
+            return;
+        }
+        
+        // Проверяем, не была ли таблица уже заполнена
+        if (tbody.dataset.populated === 'true') {
+            return;
+        }
 
         let html = "";
         verbs.forEach((verb, index) => {
             const qNum = index + 1;
+            // Используем partId в имени, чтобы избежать конфликтов, если все таблицы на одной странице без сворачивания
             html += `
                 <tr data-verb-v1="${verb.v1.toLowerCase()}">
                     <td>${verb.translate}</td>
                     <td>${verb.v1}</td>
-                    <td><input type="text" name="v2_${partId}_q${qNum}" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"></td>
-                    <td><input type="text" name="v3_${partId}_q${qNum}" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"></td>
+                    <td><input type="text" name="v2_${partId}_q${qNum}" id="v2_${partId}_q${qNum}" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"></td>
+                    <td><input type="text" name="v3_${partId}_q${qNum}" id="v3_${partId}_q${qNum}" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"></td>
                 </tr>
             `;
         });
         tbody.innerHTML = html;
+        tbody.dataset.populated = 'true'; // Помечаем, что таблица заполнена
     }
 
-    // Заполнение таблиц при загрузке для всех существующих частей
-    for (const partId in irregularVerbsData) {
-        if (irregularVerbsData.hasOwnProperty(partId)) {
-            populateVerbTable(partId);
-        }
-    }
-    
-    // Если есть блоки <details>, заполняем таблицу только когда блок открывается
+    // Заполнение таблиц при загрузке для всех определенных частей
     const allDetailsBlocks = document.querySelectorAll('details.exercise-details');
-    allDetailsBlocks.forEach(detailsBlock => {
-        const form = detailsBlock.querySelector('form.grammar-exercises-form');
-        if (form) {
-            const partId = form.id.replace('form_', ''); // e.g., "iv_part1"
-             if (detailsBlock.hasAttribute('open')) { // Если открыт по умолчанию
-                populateVerbTable(partId);
+
+    if (allDetailsBlocks.length > 0) {
+        allDetailsBlocks.forEach(detailsBlock => {
+            const form = detailsBlock.querySelector('form.grammar-exercises-form');
+            if (form) {
+                const partId = form.id.replace('form_', ''); 
+                if (irregularVerbsData[partId]) { // Проверяем, есть ли данные для этой части
+                    if (detailsBlock.hasAttribute('open')) {
+                        populateVerbTable(partId);
+                    }
+                    detailsBlock.addEventListener('toggle', function() {
+                        if (this.open) {
+                            populateVerbTable(partId);
+                        }
+                    });
+                }
             }
-            detailsBlock.addEventListener('toggle', function() {
-                if (this.open) {
+        });
+    } else {
+        // Если нет <details>, предполагаем, что все формы видимы и их надо заполнить
+        for (const partId in irregularVerbsData) {
+            if (irregularVerbsData.hasOwnProperty(partId)) {
+                 // Проверяем, есть ли соответствующий tbody на странице
+                if (document.getElementById(`verb_table_${partId}`)) {
                     populateVerbTable(partId);
                 }
-            });
+            }
         }
-    });
+    }
 
 
     const checkButtons = document.querySelectorAll('.check-grammar-answers-btn');
@@ -106,12 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const verbsForThisPart = irregularVerbsData[formIdSuffix];
             
             if (!tbody || !verbsForThisPart || !feedbackDiv) {
-                console.error("Required elements not found for form:", formIdSuffix);
+                console.error("Required elements not found for form:", formIdSuffix, {tbody, verbsForThisPart, feedbackDiv});
+                if(tbody && !verbsForThisPart) feedbackDiv.innerHTML = `<p>Нет данных для проверки для части: ${formIdSuffix}</p>`;
+                if(feedbackDiv) feedbackDiv.style.display = 'block';
                 return;
             }
 
-            let allVerbsCorrect = true;
-            let correctVerbCount = 0;
+            let allVerbsCorrectOverall = true; // Отслеживает, все ли глаголы (обе формы) во всем упражнении введены верно
+            let correctPairsCount = 0; // Считает количество полностью правильно введенных пар V2 и V3
             let feedbackHTML = `<h4>Результаты для "${this.textContent.replace('Проверить ', '')}":</h4>`;
 
             verbsForThisPart.forEach((verb, index) => {
@@ -119,8 +139,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const inputV2 = tbody.querySelector(`input[name="v2_${formIdSuffix}_q${qNum}"]`);
                 const inputV3 = tbody.querySelector(`input[name="v3_${formIdSuffix}_q${qNum}"]`);
 
-                const userV2 = inputV2 ? inputV2.value.trim().toLowerCase() : "";
-                const userV3 = inputV3 ? inputV3.value.trim().toLowerCase() : "";
+                // Если инпуты не найдены, пропускаем этот глагол (хотя populateVerbTable должен их создать)
+                if (!inputV2 || !inputV3) {
+                    console.warn(`Inputs for verb ${verb.v1} (q${qNum}) in ${formIdSuffix} not found.`);
+                    allVerbsCorrectOverall = false; // Считаем ошибкой, если инпутов нет
+                    return; 
+                }
+
+                const userV2 = inputV2.value.trim().toLowerCase();
+                const userV3 = inputV3.value.trim().toLowerCase();
 
                 const correctV2Options = verb.v2.toLowerCase().split('/');
                 const isV2Correct = correctV2Options.includes(userV2);
@@ -128,37 +155,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 const correctV3Options = verb.v3.toLowerCase().split('/');
                 const isV3Correct = correctV3Options.includes(userV3);
                 
+                inputV2.classList.remove('correct', 'incorrect');
+                inputV3.classList.remove('correct', 'incorrect');
+                
                 feedbackHTML += `<p><strong>${verb.v1}</strong> (<span class="verb-translate">${verb.translate}</span>): `;
-                if (inputV2) inputV2.classList.remove('correct', 'incorrect');
-                if (inputV3) inputV3.classList.remove('correct', 'incorrect');
-
-                let rowCorrect = true;
 
                 if (userV2 === "" && userV3 === "") {
                     feedbackHTML += `<span class="incorrect">Ответ не дан. ❌</span>`;
-                    rowCorrect = false;
-                    allVerbsCorrect = false;
+                    allVerbsCorrectOverall = false;
                 } else {
+                    let currentVerbPairCorrect = true;
                     // V2 check
                     if (isV2Correct) {
-                        if (inputV2) inputV2.classList.add('correct');
+                        inputV2.classList.add('correct');
                     } else {
-                        if (inputV2) inputV2.classList.add('incorrect');
-                        rowCorrect = false;
-                        allVerbsCorrect = false;
+                        inputV2.classList.add('incorrect');
+                        currentVerbPairCorrect = false;
+                        allVerbsCorrectOverall = false;
                     }
                     // V3 check
                     if (isV3Correct) {
-                        if (inputV3) inputV3.classList.add('correct');
+                        inputV3.classList.add('correct');
                     } else {
-                        if (inputV3) inputV3.classList.add('incorrect');
-                        rowCorrect = false;
-                        allVerbsCorrect = false;
+                        inputV3.classList.add('incorrect');
+                        currentVerbPairCorrect = false;
+                        allVerbsCorrectOverall = false;
                     }
 
-                    if (rowCorrect) {
+                    if (currentVerbPairCorrect) {
                         feedbackHTML += `<span class="correct">V2: ${userV2}, V3: ${userV3} - Верно! ✅</span>`;
-                        correctVerbCount++;
+                        correctPairsCount++;
                     } else {
                         feedbackHTML += `<span class="incorrect">Ваш ответ: V2: "${userV2}", V3: "${userV3}" - Неверно. ❌</span><br>`;
                         feedbackHTML += `<span class="explanation-text" style="margin-left: 10px;"><i>Правильно: V2: ${verb.v2}, V3: ${verb.v3}</i></span>`;
@@ -171,15 +197,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (verbsForThisPart.length > 0) {
-                if (allVerbsCorrect) {
+                if (allVerbsCorrectOverall && correctPairsCount === verbsForThisPart.length) { // Убедимся, что все пары верны
                     feedbackHTML = `<h4>Результаты для "${this.textContent.replace('Проверить ', '')}":</h4><p class="correct" style="text-align:center; font-weight:bold; font-size:1.2em;">Все ${verbsForThisPart.length} глаголов введены верно! Отлично! 🎉</p><hr>` + feedbackHTML;
                 } else {
-                     feedbackHTML = `<h4>Результаты для "${this.textContent.replace('Проверить ', '')}":</h4><p style="text-align:center;">Правильно введенных глаголов (обе формы): ${correctVerbCount} из ${verbsForThisPart.length}. Смотрите детали ниже.</p><hr>` + feedbackHTML;
+                     feedbackHTML = `<h4>Результаты для "${this.textContent.replace('Проверить ', '')}":</h4><p style="text-align:center;">Правильно введенных пар глаголов (V2 и V3): ${correctPairsCount} из ${verbsForThisPart.length}. Смотрите детали ниже.</p><hr>` + feedbackHTML;
                 }
             } else {
                 feedbackHTML = `<h4>Результаты для "${this.textContent.replace('Проверить ', '')}":</h4><p>Нет глаголов для проверки в этой части.</p>`;
             }
-
 
             feedbackDiv.innerHTML = feedbackHTML;
             feedbackDiv.style.display = 'block';
