@@ -1,6 +1,5 @@
 /* tests-overview-styles.css */
 
-
 #tests-hero {
     background: linear-gradient(rgba(0, 74, 173, 0.9), rgba(0, 50, 120, 0.95)); /* Основной синий градиент для тестов */
     color: white;
@@ -30,7 +29,7 @@
 /* Секция со списком тестов и упражнений */
 #tests-list {
     padding-top: 40px;
-    padding-bottom: 50px; /* Увеличил нижний отступ */
+    padding-bottom: 50px;
     background-color: #f4f7f6; /* Очень светлый фон для контраста */
 }
 
@@ -71,12 +70,12 @@
 /* Цветовое кодирование для уровней и типов */
 .test-card.level-a1 { border-top-color: #4CAF50; /* Зеленый */ }
 .test-card.level-a1 .test-card-icon i { color: #4CAF50; }
-.test-card.level-a1 .test-card-button { background-color: #4CAF50; }
+.test-card.level-a1 .test-card-button { background-color: #4CAF50; color: white; }
 .test-card.level-a1 .test-card-button:hover { background-color: #388E3C; }
 
 .test-card.level-a2 { border-top-color: #2196F3; /* Синий */ }
 .test-card.level-a2 .test-card-icon i { color: #2196F3; }
-.test-card.level-a2 .test-card-button { background-color: #2196F3; }
+.test-card.level-a2 .test-card-button { background-color: #2196F3; color: white; }
 .test-card.level-a2 .test-card-button:hover { background-color: #1976D2; }
 
 .test-card.level-b1 { border-top-color: #FFC107; /* Желтый/Оранжевый */ }
@@ -86,18 +85,32 @@
 
 .test-card.level-b2 { border-top-color: #fd7e14; /* Оранжевый */ }
 .test-card.level-b2 .test-card-icon i { color: #fd7e14; }
-.test-card.level-b2 .test-card-button { background-color: #fd7e14; }
+.test-card.level-b2 .test-card-button { background-color: #fd7e14; color: white; }
 .test-card.level-b2 .test-card-button:hover { background-color: #e65100; /* Темнее оранжевый */ }
 
 .test-card.level-c1 { border-top-color: #dc3545; /* Красный */ }
 .test-card.level-c1 .test-card-icon i { color: #dc3545; }
-.test-card.level-c1 .test-card-button { background-color: #dc3545; }
+.test-card.level-c1 .test-card-button { background-color: #dc3545; color: white; }
 .test-card.level-c1 .test-card-button:hover { background-color: #c82333; /* Темнее красный */ }
 
 .test-card.level-grammar { border-top-color: #673ab7; /* Фиолетовый */ }
 .test-card.level-grammar .test-card-icon i { color: #673ab7; }
-.test-card.level-grammar .test-card-button { background-color: #673ab7; }
+.test-card.level-grammar .test-card-button { background-color: #673ab7; color: white; }
 .test-card.level-grammar .test-card-button:hover { background-color: #512da8; /* Темнее фиолетовый */ }
+
+.test-card.level-mixed { /* Для теста по неправильным глаголам */
+    border-top-color: #455a64; /* Темно-серый / графитовый */
+}
+.test-card.level-mixed .test-card-icon i {
+    color: #455a64;
+}
+.test-card.level-mixed .test-card-button {
+    background-color: #455a64;
+    color: white;
+}
+.test-card.level-mixed .test-card-button:hover {
+    background-color: #37474f; /* Темнее графитовый */
+}
 
 
 .test-card-icon {
@@ -124,7 +137,7 @@
     padding: 12px 25px;
     font-size: 1em;
     font-weight: bold;
-    color: white;
+    /* color: white; /* Убрал отсюда, задается в темах */
     text-decoration: none;
     border-radius: 25px;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -137,9 +150,8 @@
 }
 
 /* Адаптивность для карточек */
-@media (max-width: 992px) { /* Для планшетов, если нужно 2 колонки */
-    .test-cards-container {
-        /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */ /* Можно так, или явно 2 */
+@media (max-width: 992px) {
+     .test-cards-container {
          grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -152,7 +164,7 @@
         font-size: 1.1em;
     }
     .test-cards-container {
-        grid-template-columns: 1fr; /* Одна колонка на мобильных */
+        grid-template-columns: 1fr;
         gap: 25px;
     }
     .test-card {
