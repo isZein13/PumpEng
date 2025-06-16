@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Отзывы Студентов - PumpEng</title>
-    <meta name="description" content="Читайте реальные отзывы наших студентов об обучении в языковой школе PumpEng. Узнайте, как мы помогаем достигать целей в изучении английского.">
+    <meta name="description" content="Читайте реальные отзывы и смотрите видео-отзывы наших студентов об обучении в языковой школе PumpEng.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="reviews-styles.css"> <!-- Стили для этой страницы -->
+    <link rel="stylesheet" href="reviews-styles.css"> 
 </head>
 <body>
     <header>
@@ -23,22 +23,38 @@
             </ol>
         </nav>
 
-        <section id="reviews-hero" style="background: linear-gradient(rgba(0, 123, 255, 0.85), rgba(0, 86, 179, 0.9));"> <!-- Синий градиент -->
+        <section id="reviews-hero" style="background: linear-gradient(rgba(0, 123, 255, 0.85), rgba(0, 86, 179, 0.9));">
             <div class="hero-content">
                 <h1>Что говорят наши студенты</h1>
-                <p>Мы гордимся успехами наших учеников и благодарны за их теплые слова. Здесь вы можете прочитать их впечатления об обучении в PumpEng.</p>
+                <p>Мы гордимся успехами наших учеников и благодарны за их теплые слова. Здесь вы можете прочитать и посмотреть их впечатления об обучении в PumpEng.</p>
             </div>
         </section>
 
+        <!-- === СЕКЦИЯ ДЛЯ ВИДЕО-ОТЗЫВА === -->
+        <section id="video-review-section">
+            <h2>Видео-отзыв от Александра</h2> <!-- Вы можете изменить имя, если нужно -->
+            <div class="video-container">
+                <!-- ЗАМЕНИТЕ 'ВАШ_YOUTUBE_VIDEO_ID' НА ID ВАШЕГО ВИДЕО -->
+                <iframe width="560" height="315" 
+                        src="https://youtube.com/shorts/psociHyYla4?feature=share" 
+                        title="Видео-отзыв о школе PumpEng" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+        <!-- === КОНЕЦ СЕКЦИИ ВИДЕО-ОТЗЫВА === -->
+
         <section id="all-reviews-list">
-            <h2>Отзывы наших студентов:</h2>
-            <div class="reviews-grid-container"> <!-- Новый контейнер для сетки -->
+            <h2>Текстовые отзывы наших студентов:</h2> <!-- Немного изменил заголовок -->
+            <div class="reviews-grid-container">
 
                 <!-- Пример отзыва 1 -->
                 <div class="review-card">
                     <div class="review-author">
-                        <!-- <img src="ПУТЬ_К_ФОТО_СТУДЕНТА_1.jpg" alt="Фото Анны П." class="author-photo"> -->
-                        <i class="fas fa-user-circle author-icon"></i> <!-- Иконка-заглушка -->
+                        <i class="fas fa-user-circle author-icon"></i>
                         <span class="author-name">Анна П.</span>
                         <span class="review-date">10 июня 2025</span>
                     </div>
@@ -91,15 +107,11 @@
                     <p class="review-course-taken"><em>Курс: Подготовка к IELTS</em></p>
                 </div>
 
-                <!-- Добавьте сюда больше отзывов -->
-
             </div>
 
-            <!-- Опционально: Форма для добавления отзыва -->
             <section id="add-review-form-section">
                 <h3>Оставить свой отзыв</h3>
                 <p>Мы будем благодарны, если вы поделитесь своими впечатлениями об обучении в нашей школе!</p>
-                <!-- Здесь может быть ссылка на Google Form для отзывов или встроенная форма -->
                 <a href="https://forms.gle/ВАША_ССЫЛКА_НА_ФОРМУ_ОТЗЫВОВ" target="_blank" class="sign-up-button" style="background-color: #27ae60; margin-top:10px;">Оставить отзыв</a>
             </section>
 
