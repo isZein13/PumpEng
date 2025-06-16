@@ -9,15 +9,16 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="grammar-exercise-styles.css"> <!-- Используем доработанные стили -->
+    <!-- Дополнительные стили для таблицы, если они не в grammar-exercise-styles.css -->
     <style>
-        /* Дополнительные стили для этой страницы, если нужны */
         .verb-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
         .verb-table th, .verb-table td { border: 1px solid #ddd; padding: 10px; text-align: left; }
         .verb-table th { background-color: #f2f2f2; }
         .verb-table input[type="text"] { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
-        .verb-table input.correct { border-color: green !important; background-color: #e6ffe6 !important; } /* Добавил !important */
-        .verb-table input.incorrect { border-color: red !important; background-color: #ffe6e6 !important; } /* Добавил !important */
+        .verb-table input.correct { border-color: green !important; background-color: #e6ffe6 !important; color: #155724 !important;}
+        .verb-table input.incorrect { border-color: red !important; background-color: #ffe6e6 !important; color: #721c24 !important;}
         .verb-table .explanation { font-size: 0.9em; color: #555; margin-top: 5px;}
+        .verb-table .verb-translate { font-style: italic; color: #555;} /* Для перевода в фидбеке */
     </style>
 </head>
 <body>
@@ -29,7 +30,7 @@
         <nav aria-label="breadcrumb" class="breadcrumbs-container">
             <ol class="breadcrumbs">
                 <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
-                <li class="breadcrumb-item"><a href="tests-overview.html">Тесты и Упражнения</a></li> <!-- Обновил ссылку, если нужно -->
+                <li class="breadcrumb-item"><a href="tests-overview.html">Тесты и Упражнения</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Тест: Неправильные Глаголы</li>
             </ol>
         </nav>
@@ -37,13 +38,13 @@
         <section id="grammar-hero" style="background: linear-gradient(rgba(103, 58, 183, 0.85), rgba(69, 39, 160, 0.9));">
             <div class="hero-content">
                 <h1><i class="fas fa-list-ol topic-icon" style="margin-right: 10px; color: #fff; font-size: 0.9em;"></i>Тест: Три Формы Неправильных Глаголов</h1>
-                <p>Введите вторую (Past Simple) и третью (Past Participle) формы для каждого глагола.</p>
+                <p>Введите вторую (Past Simple) и третью (Past Participle) формы для каждого глагола. Вводите ответы маленькими буквами.</p>
             </div>
         </section>
 
         <section id="grammar-topic-content">
             <div class="topic-explanation">
-                <p>Неправильные глаголы в английском языке образуют формы прошедшего времени и причастия прошедшего времени не по стандартным правилам (без добавления -ed). Их нужно запоминать. Этот тест поможет вам проверить свои знания. Вводите ответы маленькими буквами.</p>
+                <p>Неправильные глаголы в английском языке образуют формы прошедшего времени и причастия прошедшего времени не по стандартным правилам (без добавления -ed). Их нужно запоминать. Этот тест поможет вам проверить свои знания.</p>
             </div>
 
             <!-- Блок 1: Глаголы 1-15 -->
@@ -61,7 +62,7 @@
                                 <th>V3 (Past Participle) - <em>Ваш ответ</em></th>
                             </tr>
                         </thead>
-                        <tbody id="verb_table_part1">
+                        <tbody id="verb_table_iv_part1"> <!-- ИЗМЕНЕН ID -->
                             <!-- Глаголы будут вставлены сюда JavaScript -->
                         </tbody>
                     </table>
@@ -85,7 +86,7 @@
                                 <th>V3 (Past Participle) - <em>Ваш ответ</em></th>
                             </tr>
                         </thead>
-                        <tbody id="verb_table_part2">
+                        <tbody id="verb_table_iv_part2"> <!-- ИЗМЕНЕН ID -->
                             <!-- Глаголы будут вставлены сюда JavaScript -->
                         </tbody>
                     </table>
@@ -94,12 +95,127 @@
                 </form>
             </details>
             
-            <!-- Плейсхолдеры для остальных частей. Вам нужно будет создать tbody с соответствующими ID -->
-            <!-- Например, для Части 3: <tbody id="verb_table_part3"></tbody> -->
-            <!-- ... и так далее до Части 10 ... -->
+            <!-- Блок 3: Глаголы 31-45 -->
+            <details class="exercise-details">
+                <summary class="exercise-summary">
+                    <h4>Часть 3: Глаголы 31-45</h4>
+                </summary>
+                <form class="grammar-exercises-form" id="form_iv_part3">
+                    <table class="verb-table">
+                         <thead><tr><th>Перевод</th><th>V1</th><th>V2 - Ваш ответ</th><th>V3 - Ваш ответ</th></tr></thead>
+                        <tbody id="verb_table_iv_part3"></tbody>
+                    </table>
+                    <button type="button" class="check-grammar-answers-btn" data-form-id="iv_part3">Проверить Часть 3</button>
+                    <div class="grammar-feedback" style="display:none;"></div>
+                </form>
+            </details>
 
+            <!-- Блок 4: Глаголы 46-60 -->
+            <details class="exercise-details">
+                <summary class="exercise-summary">
+                    <h4>Часть 4: Глаголы 46-60</h4>
+                </summary>
+                <form class="grammar-exercises-form" id="form_iv_part4">
+                    <table class="verb-table">
+                         <thead><tr><th>Перевод</th><th>V1</th><th>V2 - Ваш ответ</th><th>V3 - Ваш ответ</th></tr></thead>
+                        <tbody id="verb_table_iv_part4"></tbody>
+                    </table>
+                    <button type="button" class="check-grammar-answers-btn" data-form-id="iv_part4">Проверить Часть 4</button>
+                    <div class="grammar-feedback" style="display:none;"></div>
+                </form>
+            </details>
 
-            <p style="text-align:center; margin-top: 40px; font-style: italic;">Продолжайте практиковаться!</p>
+            <!-- Блок 5: Глаголы 61-75 -->
+            <details class="exercise-details">
+                <summary class="exercise-summary">
+                    <h4>Часть 5: Глаголы 61-75</h4>
+                </summary>
+                <form class="grammar-exercises-form" id="form_iv_part5">
+                    <table class="verb-table">
+                         <thead><tr><th>Перевод</th><th>V1</th><th>V2 - Ваш ответ</th><th>V3 - Ваш ответ</th></tr></thead>
+                        <tbody id="verb_table_iv_part5"></tbody>
+                    </table>
+                    <button type="button" class="check-grammar-answers-btn" data-form-id="iv_part5">Проверить Часть 5</button>
+                    <div class="grammar-feedback" style="display:none;"></div>
+                </form>
+            </details>
+
+            <!-- Блок 6: Глаголы 76-90 -->
+            <details class="exercise-details">
+                <summary class="exercise-summary">
+                    <h4>Часть 6: Глаголы 76-90</h4>
+                </summary>
+                <form class="grammar-exercises-form" id="form_iv_part6">
+                    <table class="verb-table">
+                         <thead><tr><th>Перевод</th><th>V1</th><th>V2 - Ваш ответ</th><th>V3 - Ваш ответ</th></tr></thead>
+                        <tbody id="verb_table_iv_part6"></tbody>
+                    </table>
+                    <button type="button" class="check-grammar-answers-btn" data-form-id="iv_part6">Проверить Часть 6</button>
+                    <div class="grammar-feedback" style="display:none;"></div>
+                </form>
+            </details>
+
+            <!-- Блок 7: Глаголы 91-105 -->
+            <details class="exercise-details">
+                <summary class="exercise-summary">
+                    <h4>Часть 7: Глаголы 91-105</h4>
+                </summary>
+                <form class="grammar-exercises-form" id="form_iv_part7">
+                    <table class="verb-table">
+                         <thead><tr><th>Перевод</th><th>V1</th><th>V2 - Ваш ответ</th><th>V3 - Ваш ответ</th></tr></thead>
+                        <tbody id="verb_table_iv_part7"></tbody>
+                    </table>
+                    <button type="button" class="check-grammar-answers-btn" data-form-id="iv_part7">Проверить Часть 7</button>
+                    <div class="grammar-feedback" style="display:none;"></div>
+                </form>
+            </details>
+
+            <!-- Блок 8: Глаголы 106-120 -->
+            <details class="exercise-details">
+                <summary class="exercise-summary">
+                    <h4>Часть 8: Глаголы 106-120</h4>
+                </summary>
+                <form class="grammar-exercises-form" id="form_iv_part8">
+                    <table class="verb-table">
+                         <thead><tr><th>Перевод</th><th>V1</th><th>V2 - Ваш ответ</th><th>V3 - Ваш ответ</th></tr></thead>
+                        <tbody id="verb_table_iv_part8"></tbody>
+                    </table>
+                    <button type="button" class="check-grammar-answers-btn" data-form-id="iv_part8">Проверить Часть 8</button>
+                    <div class="grammar-feedback" style="display:none;"></div>
+                </form>
+            </details>
+
+            <!-- Блок 9: Глаголы 121-135 -->
+            <details class="exercise-details">
+                <summary class="exercise-summary">
+                    <h4>Часть 9: Глаголы 121-135</h4>
+                </summary>
+                <form class="grammar-exercises-form" id="form_iv_part9">
+                    <table class="verb-table">
+                         <thead><tr><th>Перевод</th><th>V1</th><th>V2 - Ваш ответ</th><th>V3 - Ваш ответ</th></tr></thead>
+                        <tbody id="verb_table_iv_part9"></tbody>
+                    </table>
+                    <button type="button" class="check-grammar-answers-btn" data-form-id="iv_part9">Проверить Часть 9</button>
+                    <div class="grammar-feedback" style="display:none;"></div>
+                </form>
+            </details>
+
+            <!-- Блок 10: Глаголы 136-150 -->
+            <details class="exercise-details">
+                <summary class="exercise-summary">
+                    <h4>Часть 10: Глаголы 136-150</h4>
+                </summary>
+                <form class="grammar-exercises-form" id="form_iv_part10">
+                    <table class="verb-table">
+                         <thead><tr><th>Перевод</th><th>V1</th><th>V2 - Ваш ответ</th><th>V3 - Ваш ответ</th></tr></thead>
+                        <tbody id="verb_table_iv_part10"></tbody>
+                    </table>
+                    <button type="button" class="check-grammar-answers-btn" data-form-id="iv_part10">Проверить Часть 10</button>
+                    <div class="grammar-feedback" style="display:none;"></div>
+                </form>
+            </details>
+
+            <p style="text-align:center; margin-top: 40px; font-style: italic;">Продолжайте практиковаться для лучших результатов!</p>
 
         </section>
     </main>
