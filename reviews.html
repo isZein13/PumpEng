@@ -1,0 +1,116 @@
+<!-- reviews.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы Студентов - PumpEng</title>
+    <meta name="description" content="Читайте реальные отзывы наших студентов об обучении в языковой школе PumpEng. Узнайте, как мы помогаем достигать целей в изучении английского.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="reviews-styles.css"> <!-- Стили для этой страницы -->
+</head>
+<body>
+    <header>
+        <!-- Шапка -->
+    </header>
+
+    <main>
+        <nav aria-label="breadcrumb" class="breadcrumbs-container">
+            <ol class="breadcrumbs">
+                <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Отзывы</li>
+            </ol>
+        </nav>
+
+        <section id="reviews-hero" style="background: linear-gradient(rgba(0, 123, 255, 0.85), rgba(0, 86, 179, 0.9));"> <!-- Синий градиент -->
+            <div class="hero-content">
+                <h1>Что говорят наши студенты</h1>
+                <p>Мы гордимся успехами наших учеников и благодарны за их теплые слова. Здесь вы можете прочитать их впечатления об обучении в PumpEng.</p>
+            </div>
+        </section>
+
+        <section id="all-reviews-list">
+            <h2>Отзывы наших студентов:</h2>
+            <div class="reviews-grid-container"> <!-- Новый контейнер для сетки -->
+
+                <!-- Пример отзыва 1 -->
+                <div class="review-card">
+                    <div class="review-author">
+                        <!-- <img src="ПУТЬ_К_ФОТО_СТУДЕНТА_1.jpg" alt="Фото Анны П." class="author-photo"> -->
+                        <i class="fas fa-user-circle author-icon"></i> <!-- Иконка-заглушка -->
+                        <span class="author-name">Анна П.</span>
+                        <span class="review-date">10 июня 2025</span>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Отличные преподаватели и удобный формат занятий! Быстро увидела прогресс в разговорном английском. Очень понравился индивидуальный подход и то, как объясняют грамматику – все становится понятно. Рекомендую PumpEng всем, кто хочет действительно выучить язык!"</p>
+                    <p class="review-course-taken"><em>Курс: Общий английский B1</em></p>
+                </div>
+
+                <!-- Пример отзыва 2 -->
+                <div class="review-card">
+                    <div class="review-author">
+                        <i class="fas fa-user-circle author-icon"></i>
+                        <span class="author-name">Сергей К.</span>
+                        <span class="review-date">05 июня 2025</span>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="review-text">"Индивидуальный подход действительно работает. Преподаватель учел все мои цели и помог подготовиться к собеседованию на английском для новой работы. Занятия были интересными и очень продуктивными. Спасибо PumpEng!"</p>
+                     <p class="review-course-taken"><em>Курс: Деловой английский</em></p>
+                </div>
+
+                <!-- Пример отзыва 3 -->
+                <div class="review-card">
+                    <div class="review-author">
+                        <i class="fas fa-user-circle author-icon"></i>
+                        <span class="author-name">Елена В.</span>
+                        <span class="review-date">28 мая 2025</span>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                    <p class="review-text">"Очень понравился разговорный клуб! Наконец-то начала говорить свободнее и перестала бояться делать ошибки. Атмосфера дружелюбная, темы для обсуждения всегда интересные. Отличная практика!"</p>
+                     <p class="review-course-taken"><em>Курс: Разговорный клуб</em></p>
+                </div>
+                
+                <!-- Пример отзыва 4 -->
+                <div class="review-card">
+                    <div class="review-author">
+                        <i class="fas fa-user-circle author-icon"></i>
+                        <span class="author-name">Михаил Б.</span>
+                         <span class="review-date">15 мая 2025</span>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Готовился к IELTS с PumpEng и сдал на нужный балл с первой попытки! Преподаватель подробно разобрал все части экзамена, дал много полезных советов и материалов. Очень доволен результатом."</p>
+                    <p class="review-course-taken"><em>Курс: Подготовка к IELTS</em></p>
+                </div>
+
+                <!-- Добавьте сюда больше отзывов -->
+
+            </div>
+
+            <!-- Опционально: Форма для добавления отзыва -->
+            <section id="add-review-form-section">
+                <h3>Оставить свой отзыв</h3>
+                <p>Мы будем благодарны, если вы поделитесь своими впечатлениями об обучении в нашей школе!</p>
+                <!-- Здесь может быть ссылка на Google Form для отзывов или встроенная форма -->
+                <a href="https://forms.gle/ВАША_ССЫЛКА_НА_ФОРМУ_ОТЗЫВОВ" target="_blank" class="sign-up-button" style="background-color: #27ae60; margin-top:10px;">Оставить отзыв</a>
+            </section>
+
+        </section>
+    </main>
+
+    <footer>
+        <!-- Подвал -->
+    </footer>
+
+    <button id="scrollToTopBtn" title="Наверх"><i class="fas fa-arrow-up"></i></button>
+    <script src="script.js"></script>
+</body>
+</html>
