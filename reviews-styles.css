@@ -202,7 +202,38 @@
 #add-review-form-section .sign-up-button:hover {
     background-color: #229954 !important;
 }
+/* Стили для описания под видео-отзывом */
+.video-review-description {
+    max-width: 800px; /* Такая же ширина, как у видео-контейнера */
+    margin: 25px auto 0 auto; /* Отступ сверху и центрирование */
+    padding: 0 15px; /* Небольшие боковые отступы */
+    text-align: left; /* Выравнивание текста по левому краю для лучшей читаемости */
+    font-size: 1em;
+    line-height: 1.65;
+    color: #444;
+}
 
+.video-review-description p {
+    margin-bottom: 15px;
+    text-align: justify; /* Или left, если предпочитаете */
+}
+
+.video-review-description p:last-child {
+    margin-bottom: 0;
+}
+
+.video-review-description strong {
+    color: #0056b3; /* Акцентный синий для выделения */
+    font-weight: 600;
+}
+
+/* Адаптивность для описания видео */
+@media (max-width: 768px) {
+    .video-review-description {
+        font-size: 0.95em;
+        text-align: left; /* Можно оставить left или сделать justify */
+    }
+}
 
 /* Адаптивность */
 @media (max-width: 992px) {
