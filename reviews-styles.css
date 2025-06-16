@@ -5,7 +5,7 @@
     color: white;
     padding: 50px 20px;
     text-align: center;
-    margin-bottom: 0;
+    margin-bottom: 0; /* Убираем отступ, если секция видео идет сразу после */
 }
 
 #reviews-hero .hero-content h1 {
@@ -21,10 +21,46 @@
     line-height: 1.6;
 }
 
+/* === Стили для секции видео-отзыва === */
+#video-review-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #ffffff; /* Белый фон для секции видео */
+    /* border-bottom: 1px solid #eee; */ /* Можно убрать, если список отзывов идет на другом фоне */
+}
+
+#video-review-section h2 {
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    color: #004AAD; /* Основной синий для заголовка */
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 800px; /* Максимальная ширина видео-плеера */
+    margin: 0 auto 30px auto; /* Центрирование и отступ снизу */
+    border-radius: 10px; /* Более скругленные углы */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Тень для "глубины" */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Убираем стандартную рамку iframe */
+}
+
+
+/* Секция со списком текстовых отзывов */
 #all-reviews-list {
     padding-top: 40px;
     padding-bottom: 50px;
-    background-color: #f8f9fa;
+    background-color: #f8f9fa; /* Светлый фон для списка отзывов */
 }
 
 #all-reviews-list h2 {
@@ -37,7 +73,7 @@
 .reviews-grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Адаптивная сетка */
-    gap: 25px;
+    gap: 30px; /* Увеличил отступ */
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -46,12 +82,18 @@
 .review-card {
     background-color: #ffffff;
     border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    padding: 30px 25px; /* Увеличил внутренние отступы */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07); /* Слегка изменил тень */
     display: flex;
     flex-direction: column;
-    border-left: 5px solid #007bff; /* Синяя акцентная линия */
+    border-left: 6px solid #007bff; /* Синяя акцентная линия */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
 
 .review-author {
     display: flex;
@@ -59,113 +101,147 @@
     margin-bottom: 15px;
 }
 
-.author-photo { /* Если будете использовать фото */
+.author-photo {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     margin-right: 15px;
     object-fit: cover;
+    border: 2px solid #eee; /* Небольшая рамка для фото */
 }
-.author-icon { /* Для иконки-заглушки */
-    font-size: 2.5em; /* Размер иконки */
-    color: #007bff;   /* Цвет иконки */
+.author-icon {
+    font-size: 2.8em; /* Немного увеличил */
+    color: #007bff;
     margin-right: 15px;
+    width: 50px; /* Задаем фиксированную ширину для выравнивания */
+    text-align: center;
 }
 
 
 .author-name {
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.15em; /* Крупнее имя */
     color: #333;
 }
 .review-date {
     font-size: 0.85em;
-    color: #777;
-    margin-left: auto; /* Сдвигает дату вправо */
+    color: #6c757d; /* Чуть темнее дата */
+    margin-left: auto;
 }
 
 .review-stars {
-    margin-bottom: 10px;
-    color: #f0a500; /* Оранжевый для звезд */
+    margin-bottom: 12px; /* Отступ */
+    color: #ffc107; /* Ярче желтый для звезд */
     font-size: 1.1em;
 }
-.review-stars .far.fa-star { /* Для пустой звезды, если рейтинг не 5 */
-    color: #ccc;
+.review-stars .far.fa-star {
+    color: #e0e0e0; /* Более светлый для пустой звезды */
 }
 
 
 .review-text {
     font-size: 1em;
-    line-height: 1.7;
-    color: #444;
+    line-height: 1.75; /* Увеличил интервал */
+    color: #343a40; /* Почти черный для лучшей читаемости */
     margin-bottom: 15px;
-    text-align: left; /* Текст отзыва слева */
+    text-align: left;
     flex-grow: 1;
+    position: relative; /* Для кавычек */
+    padding-left: 25px; /* Отступ для кавычки */
 }
-.review-text::before { /* Кавычки */
+.review-text::before {
     content: '“';
-    font-size: 1.8em;
+    font-size: 3em; /* Крупнее кавычки */
     color: #007bff;
-    margin-right: 3px;
-    float: left; /* Обтекание текстом */
-    line-height: 0.8;
+    position: absolute; /* Позиционируем кавычку */
+    left: -5px;
+    top: -10px; /* Подбираем позицию */
+    line-height: 1;
+    opacity: 0.8;
 }
-.review-text::after {
-    content: '”';
-    font-size: 1.8em;
-    color: #007bff;
-    margin-left: 3px;
-    /* float: right; */ /* Не нужно для закрывающей */
-    line-height: 0.8;
+.review-text::after { /* Убираем автоматическую закрывающую кавычку, если не нужна */
+    content: '';
 }
 
 
 .review-course-taken {
     font-size: 0.9em;
     font-style: italic;
-    color: #666;
+    color: #555; /* Чуть темнее */
     text-align: right;
-    margin-top: auto; /* Прижимает к низу, если карточки разной высоты */
+    margin-top: auto;
+    padding-top: 10px; /* Отступ от текста */
+    border-top: 1px dashed #eee; /* Легкий разделитель */
 }
 
 #add-review-form-section {
     text-align: center;
-    padding: 40px 20px;
-    background-color: #fff; /* Или можно такой же, как #all-reviews-list */
-    margin-top: 30px; /* Отступ от списка отзывов */
-    border-top: 1px solid #eee; /* Разделитель */
+    padding: 50px 20px; /* Увеличил отступы */
+    background-color: #fff;
+    margin-top: 40px;
+    border-top: 1px solid #e0e0e0;
 }
 #add-review-form-section h3 {
-    font-size: 1.6em;
+    font-size: 1.8em; /* Крупнее */
     color: #004AAD;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 #add-review-form-section p {
-    font-size: 1.05em;
+    font-size: 1.1em; /* Крупнее */
     color: #555;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
+#add-review-form-section .sign-up-button { /* Стили для кнопки оставления отзыва */
+    background-color: #27ae60 !important; /* Зеленая кнопка, !important для переопределения инлайн-стиля, если он был */
+    border-color: #27ae60 !important;
+    margin-top: 10px;
+}
+#add-review-form-section .sign-up-button:hover {
+    background-color: #229954 !important;
+}
+
 
 /* Адаптивность */
+@media (max-width: 992px) {
+    .reviews-grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Чуть меньше мин. ширина карточки */
+    }
+}
+
 @media (max-width: 768px) {
-    #reviews-hero .hero-content h1 {
+    #reviews-hero .hero-content h1,
+    #video-review-section h2 {
         font-size: 2em;
     }
     .reviews-grid-container {
         grid-template-columns: 1fr;
     }
     .review-author {
-        flex-direction: column;
-        align-items: flex-start;
+        /* flex-direction: column; */ /* Можно оставить в ряд или вернуть в столбец */
+        /* align-items: flex-start; */
     }
     .review-date {
-        margin-left: 0;
-        margin-top: 5px;
+        /* margin-left: 0; */
+        /* margin-top: 5px; */
     }
     .author-photo, .author-icon {
-        margin-bottom: 8px;
+        /* margin-bottom: 8px; */
+    }
+    .review-text {
+        padding-left: 20px; /* Уменьшаем отступ для кавычки */
+    }
+    .review-text::before {
+        font-size: 2.5em;
+        left: -2px;
+        top: -8px;
+    }
+     #add-review-form-section h3 {
+        font-size: 1.5em;
+    }
+    #add-review-form-section p {
+        font-size: 1em;
     }
 }
