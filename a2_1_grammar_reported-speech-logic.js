@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
         "a2_rs_ex2_q1": { correct: "b", explanation: "Past Simple 'visited' меняется на Past Perfect 'had visited'." },
         "a2_rs_ex2_q2": { correct: "c", explanation: "Past Simple 'bought' меняется на Past Perfect 'had bought'." },
         "a2_rs_ex2_q3": { correct: "d", explanation: "Past Simple 'saw' меняется на Past Perfect 'had seen'." },
-        "a2_rs_ex2_q4": { correct: "c", explanation: "Отрицание 'didn't come' меняется на Past Perfect 'hadn't come'." },
+        "a2_rs_ex2_q4": { correct: "c", explanation: "Отрицание 'didn't come' меняется на Past Perfect 'hadn't come'. 'came' - это V2, а нужна V3 - 'come'." },
         "a2_rs_ex2_q5": { correct: "b", explanation: "Past Simple 'made' меняется на Past Perfect 'had made'." },
         "a2_rs_ex2_q6": { correct: "c", explanation: "Past Simple 'went' меняется на Past Perfect 'had gone'." },
-        "a2_rs_ex2_q7": { correct: "d", explanation: "Отрицание 'didn't finish' меняется на Past Perfect 'hadn't finished'." },
+        "a2_rs_ex2_q7": { correct: "d", explanation: "Отрицание 'didn't finish' меняется на Past Perfect 'hadn't finished'. После 'hadn't' нужна V3 форма." },
         "a2_rs_ex2_q8": { correct: "b", explanation: "Past Simple 'took' меняется на Past Perfect 'had taken'." },
         "a2_rs_ex2_q9": { correct: "b", explanation: "Past Simple 'found' меняется на Past Perfect 'had found'." },
         "a2_rs_ex2_q10": { correct: "c", explanation: "Past Simple 'forgot' меняется на Past Perfect 'had forgotten'." },
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "a2_rs_ex5_q10": { correct: "a", explanation: "Правильный сдвиг времени (gave -> had given) и местоимения (me -> her)." }
     };
 
-    // Код для проверки ответов (полностью скопирован из вашего файла a1_...-logic.js)
+    // ... (остальной JS код для проверки остается без изменений) ...
     const checkButtons = document.querySelectorAll('.check-grammar-answers-btn');
 
     checkButtons.forEach(button => {
