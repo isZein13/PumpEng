@@ -150,6 +150,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});```
+});
 
-Мы завершили все 12 тем для уровня А2.
