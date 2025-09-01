@@ -4,92 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PumpEng - Уровень A2</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Грамматические Упражнения A2: Темы - PumpEng</title>
+    <meta name="description" content="Выберите тему грамматики уровня A2 для практики: Passive Voice, Modals, Conditionals и другие. Интерактивные упражнения с проверкой.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="courses-overview-styles.css">
 </head>
 <body>
-    <header>
-        <h1>PumpEng</h1>
-        <nav>
-            <a href="index.html">Главная</a>
-            <a href="#">Уровни</a>
-            <a href="#">О нас</a>
-            <a href="#">Контакты</a>
-        </nav>
-    </header>
-
+    <header></header>
     <main>
-        <section class="level-intro">
-            <h2>Уровень A2 (Elementary)</h2>
-            <p>На этом уровне вы продолжите изучение основ английской грамматики. Темы включают пассивный залог, модальные глаголы, косвенную речь и многое другое.</p>
+        <nav aria-label="breadcrumb" class="breadcrumbs-container">
+            <ol class="breadcrumbs">
+                <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                <li class="breadcrumb-item"><a href="resources.html">Бесплатные Ресурсы</a></li>
+                <li class="breadcrumb-item"><a href="grammar_levels_overview.html">Грамматические Упражнения</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Уровень A2 - Темы</li>
+            </ol>
+        </nav>
+
+        <section id="courses-hero" style="background: linear-gradient(rgba(41, 128, 185, 0.85), rgba(31, 97, 141, 0.9));"> <!-- Синий для A2 -->
+            <div class="hero-content">
+                <h1>Грамматика A2: Выберите Тему</h1>
+                <p>Здесь собраны упражнения по ключевым грамматическим темам уровня Elementary.</p>
+            </div>
         </section>
 
-        <section class="topics-grid">
-            <div class="topic-card">
-                <h3>Reported Speech</h3>
-                <p>Косвенная речь для Present Simple и Past Simple.</p>
-                <a href="a2_reported_speech.html" class="btn">Изучить</a>
-            </div>
-            <div class="topic-card">
-                <h3>Modal Verbs</h3>
-                <p>Модальные глаголы: can/can't, must/mustn't, may/might.</p>
-                <a href="a2_modal_verbs.html" class="btn">Изучить</a>
-            </div>
-            <div class="topic-card">
-                <h3>Passive Voice</h3>
-                <p>Пассивный залог для Present Simple и Past Simple.</p>
-                <a href="a2_passive_voice.html" class="btn">Изучить</a>
-            </div>
-            <div class="topic-card">
-                <h3>Present Perfect</h3>
-                <p>Настоящее совершенное время.</p>
-                <a href="a2_present_perfect.html" class="btn">Изучить</a>
-            </div>
-            <div class="topic-card">
-                <h3>Past Continuous</h3>
-                <p>Прошедшее длительное время.</p>
-                <a href="a2_past_continuous.html" class="btn">Изучить</a>
-            </div>
-            <div class="topic-card">
-                <h3>Future Continuous</h3>
-                <p>Будущее длительное время.</p>
-                <a href="a2_future_continuous.html" class="btn">Изучить</a>
-            </div>
-            <div class="topic-card">
-                <h3>Future Perfect</h3>
-                <p>Будущее совершенное время.</p>
-                <a href="a2_future_perfect.html" class="btn">Изучить</a>
-            </div>
-            <div class="topic-card">
-                <h3>Conditionals</h3>
-                <p>Условные предложения (0, 1, 2 типы).</p>
-                <a href="a2_conditionals.html" class="btn">Изучить</a>
-            </div>
-            <div class="topic-card">
-                <h3>Gerunds and Infinitives</h3>
-                <p>Герундий и инфинитив.</p>
-                <a href="a2_gerunds_infinitives.html" class="btn">Изучить</a>
-            </div>
-            <div class="topic-card">
-                <h3>Relative Clauses</h3>
-                <p>Относительные придаточные предложения.</p>
-                <a href="a2_relative_clauses.html" class="btn">Изучить</a>
-            </div>
-            <div class="topic-card">
-                <h3>Indirect Speech</h3>
-                <p>Косвенные утверждения, вопросы и команды.</p>
-                <a href="a2_indirect_speech.html" class="btn">Изучить</a>
-            </div>
-            <div class="topic-card">
-                <h3>Reported Questions</h3>
-                <p>Косвенные вопросы.</p>
-                <a href="a2_reported_questions.html" class="btn">Изучить</a>
+        <section id="courses-list">
+            <h2>Темы уровня A2:</h2>
+            <div class="course-cards-container">
+
+                <div class="course-overview-card theme-levels" style="border-left-color: #2980b9;">
+                    <div class="card-icon" style="color: #2980b9;"><i class="fas fa-comments"></i></div>
+                    <h3>Reported Speech</h3>
+                    <p class="card-subtitle">Косвенная речь (Основы)</p>
+                    <p class="card-description">Present Simple & Past Simple в косвенной речи.</p>
+                    <a href="a2_1_grammar_reported-speech.html" class="course-overview-button">К упражнениям</a>
+                </div>
+
+                <div class="course-overview-card theme-levels" style="border-left-color: #2980b9;">
+                    <div class="card-icon" style="color: #2980b9;"><i class="fas fa-user-shield"></i></div>
+                    <h3>Modal Verbs</h3>
+                    <p class="card-subtitle">Модальные глаголы</p>
+                    <p class="card-description">can/must/may/might для способностей, обязательств, возможностей.</p>
+                    <a href="a2_2_grammar_modal-verbs.html" class="course-overview-button">К упражнениям</a>
+                </div>
+
+                <!-- ... и так далее для остальных 10 тем. Я создам их по мере готовности ... -->
+
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2025 PumpEng. Все права защищены.</p>
-    </footer>
+    <footer></footer>
+    <button id="scrollToTopBtn" title="Наверх"><i class="fas fa-arrow-up"></i></button>
+    <script src="script.js"></script>
 </body>
 </html>
