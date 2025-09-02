@@ -1,3 +1,4 @@
+<!-- grammar_levels_overview.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -7,12 +8,10 @@
     <meta name="description" content="Практикуйте грамматику английского языка с упражнениями для уровней A1, A2, B1, B2, C1. Автоматическая проверка и объяснения.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="courses-overview-styles.css"> <!-- Используем стили как у обзора курсов для единообразия -->
+    <link rel="stylesheet" href="courses-overview-styles.css">
 </head>
 <body>
-    <header>
-        <!-- Шапка -->
-    </header>
+    <header></header>
     <main>
         <nav aria-label="breadcrumb" class="breadcrumbs-container">
             <ol class="breadcrumbs">
@@ -21,41 +20,55 @@
                 <li class="breadcrumb-item active" aria-current="page">Грамматические Упражнения</li>
             </ol>
         </nav>
-        <section id="courses-hero" style="background: linear-gradient(rgba(0, 100, 170, 0.85), rgba(0, 60, 120, 0.9));"> <!-- Другой цвет для градиента -->
+        <section id="courses-hero" style="background: linear-gradient(rgba(0, 100, 170, 0.85), rgba(0, 60, 120, 0.9));">
             <div class="hero-content">
                 <h1>Грамматические Упражнения</h1>
                 <p>Отточите свои знания грамматики английского языка с помощью наших интерактивных упражнений, разделенных по уровням сложности.</p>
             </div>
         </section>
-        <section id="courses-list"> <!-- Используем ID для применения стилей -->
+        <section id="courses-list">
             <h2>Выберите уровень:</h2>
-            <div class="course-cards-container"> <!-- Используем классы для применения стилей -->
-                <div class="course-overview-card theme-beginner"> <!-- theme-beginner или создайте новые -->
-                    <div class="card-icon"><i class="fas fa-pencil-alt"></i></div>
+            <div class="course-cards-container">
+
+                <div class="course-overview-card theme-beginner">
+                    <div class="card-icon"><i class="fas fa-leaf"></i></div>
                     <h3>Уровень A1 (Beginner)</h3>
                     <p class="card-description">Упражнения на базовые времена, артикли, существительные, прилагательные и предлоги.</p>
                     <a href="a1_grammar_overview.html" class="course-overview-button">Перейти к упражнениям A1</a>
                 </div>
-                <div class="course-overview-card theme-travel"> <!-- theme-travel или создайте новые -->
-                    <div class="card-icon"><i class="fas fa-pencil-alt"></i></div>
+
+                <div class="course-overview-card theme-levels" style="border-left-color: #2980b9;">
+                    <div class="card-icon" style="color: #2980b9;"><i class="fas fa-rocket"></i></div>
                     <h3>Уровень A2 (Elementary)</h3>
-                    <p class="card-description">Практика Past Simple, Present Continuous, модальных глаголов, сравнительных степеней.</p>
+                    <p class="card-description">Практика времен, модальных глаголов, пассивного залога, косвенной речи и условных предложений.</p>
                     <a href="a2_grammar_overview.html" class="course-overview-button">Перейти к упражнениям A2</a>
                 </div>
-                 <!-- Добавьте карточки для B1, B2, C1 по аналогии -->
-                 <div class="course-overview-card theme-business">
-                    <div class="card-icon"><i class="fas fa-pencil-alt"></i></div>
+
+                 <div class="course-overview-card theme-levels" style="border-left-color: #f39c12;">
+                    <div class="card-icon" style="color: #f39c12;"><i class="fas fa-graduation-cap"></i></div>
                     <h3>Уровень B1 (Intermediate)</h3>
                     <p class="card-description">Углубленная практика времен, условных предложений, пассивного залога и косвенной речи.</p>
-                    <a href="b1-grammar-exercises.html" class="course-overview-button">Перейти к упражнениям B1 (Скоро)</a>
+                    <a href="b1_grammar_overview.html" class="course-overview-button">Перейти к упражнениям B1</a>
                 </div>
-                <!-- И так далее для B2, C1 -->
+
+                <div class="course-overview-card theme-advanced" style="border-left-color: #d35400;">
+                    <div class="card-icon" style="color: #d35400;"><i class="fas fa-cogs"></i></div>
+                    <h3>Уровень B2 (Upper-Intermediate)</h3>
+                    <p class="card-description">Смешанные условные предложения, модальные глаголы в прошлом, инверсия и сложные конструкции.</p>
+                    <a href="b2_grammar_overview.html" class="course-overview-button">Перейти к упражнениям B2 (Скоро)</a>
+                </div>
+                
+                <div class="course-overview-card theme-professional" style="border-left-color: #c0392b;">
+                    <div class="card-icon" style="color: #c0392b;"><i class="fas fa-brain"></i></div>
+                    <h3>Уровень C1 (Advanced)</h3>
+                    <p class="card-description">Продвинутые условные предложения, инверсия, причастные обороты и другие нюансы высокого уровня.</p>
+                    <a href="c1_grammar_overview.html" class="course-overview-button">Перейти к упражнениям C1 (Скоро)</a>
+                </div>
+
             </div>
         </section>
     </main>
-    <footer>
-        <!-- Подвал -->
-    </footer>
+    <footer></footer>
     <button id="scrollToTopBtn" title="Наверх"><i class="fas fa-arrow-up"></i></button>
     <script src="script.js"></script>
 </body>
