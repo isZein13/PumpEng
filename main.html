@@ -2,11 +2,12 @@
 <!--                  ФИНАЛЬНАЯ ВЕРСИЯ ФАЙЛА main.html                      -->
 <!-- ====================================================================== -->
 
-<!-- СЕКЦИЯ INTRO (ПЕРВЫЙ ЭКРАН) -->
+<!-- СЕКЦИЯ INTRO С АНИМИРОВАННЫМ ЗАГОЛОВКОМ -->
 <section class="transparent-section no-frame">
     <div class="intro">
         <div class="intro-text">
-            <h2>Ваш персональный путь к свободному английскому</h2>
+            <!-- ДИНАМИЧЕСКИЙ ЗАГОЛОВОК -->
+            <h2>Ваш персональный путь к английскому для <span class="typing-effect"></span></h2>
             <p style="font-size: 1.1em; margin-bottom: 25px;">Подбираем программу и преподавателя под ваши цели, чтобы вы получили результат, а не просто "прошли курс".</p>
             <a href="https://forms.gle/2wo5KMXdqD9CzpwE9" class="sign-up-button">Пройти пробный урок</a>
             <p class="social-proof">✓ Присоединяйтесь к 500+ успешным студентам</p>
@@ -14,7 +15,7 @@
     </div>
 </section>
 
-<!-- ОБНОВЛЕННАЯ СЕКЦИЯ ПРЕИМУЩЕСТВ С АНИМАЦИЕЙ -->
+<!-- ОБНОВЛЕННАЯ СЕКЦИЯ ПРЕИМУЩЕСТВ -->
 <section id="advantages">
     <h2>Почему выбирают PumpEng</h2>
     <div class="advantages-container">
@@ -36,12 +37,50 @@
     </div>
 </section>
 
-<!-- ИСПРАВЛЕННАЯ СЕКЦИЯ КУРСОВ -->
+<!-- НОВАЯ СЕКЦИЯ "КАК ПРОХОДЯТ ЗАНЯТИЯ" -->
+<section id="process">
+    <h2>Как мы приведем вас к результату</h2>
+    <div class="process-container">
+        <div class="process-step reveal-on-scroll" data-delay="0s">
+            <div class="process-icon"><i class="fas fa-file-signature"></i></div>
+            <h3>1. Заявка и знакомство</h3>
+            <p>Вы оставляете заявку, мы связываемся для уточнения целей и подбора идеального преподавателя.</p>
+        </div>
+        <div class="process-step reveal-on-scroll" data-delay="0.1s">
+            <div class="process-icon"><i class="fas fa-calendar-check"></i></div>
+            <h3>2. Пробный урок</h3>
+            <p>Вы знакомитесь с учителем на бесплатном 30-минутном занятии, где мы точно определяем ваш уровень.</p>
+        </div>
+        <div class="process-step reveal-on-scroll" data-delay="0.2s">
+            <div class="process-icon"><i class="fas fa-rocket"></i></div>
+            <h3>3. Начало обучения</h3>
+            <p>Вы начинаете заниматься по персональной программе в удобное для вас время и достигаете своих целей.</p>
+        </div>
+    </div>
+</section>
+
+<!-- НОВАЯ СЕКЦИЯ С АНИМИРОВАННЫМИ ЦИФРАМИ -->
+<section id="stats">
+    <div class="stats-container">
+        <div class="stat-item">
+            <span class="stat-number" data-goal="500">0</span>+
+            <p>Счастливых студентов</p>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" data-goal="95">0</span>%
+            <p>Положительных отзывов</p>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" data-goal="5">0</span>
+            <p>Опытных преподавателей</p>
+        </div>
+    </div>
+</section>
+
+<!-- СЕКЦИЯ КУРСОВ -->
 <section id="courses-preview">
     <h2>Выберите свой курс</h2>
     <p class="section-subtitle">Мы предлагаем программы для любых целей. Вот самые популярные из них:</p>
-    
-    <!-- Используем ВАШУ оригинальную структуру для идеального отображения -->
     <div class="course-cards-container">
         <div class="course-overview-card theme-business">
             <i class="fas fa-briefcase card-icon"></i>
@@ -65,13 +104,12 @@
             <a href="speaking-club.html" class="course-overview-button">Подробнее</a>
         </div>
     </div>
-
     <div style="text-align: center; margin-top: 40px;">
         <a href="courses-overview.html" class="sign-up-button" style="background-color: #0056b3; border-color: #0056b3;">Смотреть все курсы</a>
     </div>
 </section>
 
-<!-- ИСПРАВЛЕННАЯ СЕКЦИЯ ОТЗЫВОВ -->
+<!-- СЕКЦИЯ ОТЗЫВОВ -->
 <section id="reviews">
     <h2>Нам доверяют</h2>
     <div class="reviews-grid-container">
