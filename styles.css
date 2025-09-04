@@ -1,72 +1,39 @@
 /* styles.css */
 
-/* === Стили для Хлебных крошек === */
+/* === БАЗОВЫЕ СТИЛИ И ХЛЕБНЫЕ КРОШКИ === */
 .breadcrumbs-container {
-    background-color: #f8f9fa; /* Светлый фон, как у секции #courses-preview */
-    padding: 10px 0;      /* Вертикальные отступы */
-    border-bottom: 1px solid #e9ecef; /* Тонкая линия снизу */
-    width: 100%; /* На всю ширину */
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    border-bottom: 1px solid #e9ecef;
+    width: 100%;
 }
-
 .breadcrumbs {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex; /* Располагаем элементы в ряд */
-    flex-wrap: wrap; /* Позволяем переноситься, если не помещаются */
-    /* Центрируем крошки на странице */
-    max-width: 1100px; /* Та же максимальная ширина, что и у секций */
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px; /* Отступы по бокам, как у секций */
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    padding-left: 20px;
     padding-right: 20px;
 }
-
-.breadcrumb-item {
-    font-size: 0.9em;
-    color: #555;
-}
-
-.breadcrumb-item a {
-    color: #0056b3; /* Цвет ссылок */
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.breadcrumb-item a:hover {
-    color: #003366; /* Темнее при наведении */
-    text-decoration: underline;
-}
-
-.breadcrumb-item + .breadcrumb-item::before { /* Разделитель между элементами */
-    content: ">"; /* Или можно использовать иконку FontAwesome: '\f054' (fas fa-chevron-right) */
-    /* font-family: "Font Awesome 5 Free"; /* Если используете иконку */
-    /* font-weight: 900; /* Для solid иконок */
-    padding: 0 8px; /* Отступы вокруг разделителя */
-    color: #6c757d; /* Цвет разделителя */
-}
-
-.breadcrumb-item.active { /* Стиль для текущей (неактивной) страницы */
-    color: #212529; /* Более темный цвет для текущей страницы */
-    font-weight: bold;
-}
+.breadcrumb-item { font-size: 0.9em; color: #555; }
+.breadcrumb-item a { color: #0056b3; text-decoration: none; transition: color 0.2s ease; }
+.breadcrumb-item a:hover { color: #003366; text-decoration: underline; }
+.breadcrumb-item + .breadcrumb-item::before { content: '>'; padding: 0 8px; color: #6c757d; }
+.breadcrumb-item.active { color: #212529; font-weight: bold; }
 
 html, body {
-    height: 100%; /* Важно для прижатия футера */
+    height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Применяем ко всем элементам для предсказуемости */
+    box-sizing: border-box;
 }
-
-*, *:before, *:after {
-    box-sizing: inherit; /* Наследование box-sizing */
-}
-
+*, *:before, *:after { box-sizing: inherit; }
 
 body {
     font-family: 'Arial', sans-serif;
     color: #333;
-    /* Фоновое изображение с градиентным затемнением */
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("hero-image.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -74,173 +41,82 @@ body {
     background-position: center center;
     display: flex;
     flex-direction: column;
-    min-height: 100%; /* Используем min-height для корректного растягивания */
+    min-height: 100%;
     line-height: 1.6;
 }
 
+/* === ШАПКА (HEADER) === */
 header {
     background-color: rgba(0, 0, 102, 0.9);
     padding: 15px 20px;
     text-align: center;
     color: white;
     width: 100%;
-    position: relative; /* Можно оставить, если понадобится */
+    position: relative;
     z-index: 10;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+.logo-container { display: flex; justify-content: center; margin-bottom: 5px; }
+.logo-container img { height: 40px; width: auto; }
+header h1 { margin: 5px 0 10px 0; font-size: 1.8em; font-weight: normal; color: #fff; }
+nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 5px 15px; }
+nav ul li { margin: 0; }
+nav ul li a { color: white; text-decoration: none; font-weight: bold; padding: 8px 12px; border-radius: 5px; transition: background-color 0.3s ease, color 0.3s ease; }
+nav ul li a:hover, nav ul li a:focus { background-color: rgba(255, 255, 255, 0.2); color: #f0a500; outline: none; }
 
-.logo-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5px;
-}
-
-.logo-container img {
-    height: 40px;
-    width: auto;
-}
-
-header h1 {
-    margin: 5px 0 10px 0;
-    font-size: 1.8em;
-    font-weight: normal;
-    color: #fff;
-}
-
-h2 { /* Заголовки секций */
-    color: #004AAD;
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-size: 1.6em;
-    text-align: center; /* Убедимся, что заголовки H2 по центру */
-}
-
-h3 { /* Подзаголовки */
-     color: #0056b3;
-     margin-top: 20px;
-     margin-bottom: 15px;
-     font-size: 1.3em;
-     text-align: center; /* Убедимся, что заголовки H3 по центру */
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 5px 15px;
-}
-
-nav ul li {
-    margin: 0;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-nav ul li a:hover, nav ul li a:focus {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #f0a500;
-    outline: none;
-}
-
-
+/* === ОСНОВНОЙ КОНТЕНТ (MAIN) И СТРУКТУРА СЕКЦИЙ === */
 main {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрируем дочерние элементы (контейнеры секций) */
-    flex-grow: 1; /* Занимает оставшееся место */
+    align-items: center;
+    flex-grow: 1;
     width: 100%;
     padding: 0;
     box-sizing: border-box;
     background-color: transparent;
 }
+#main-content { width: 100%; padding-top: 0; padding-bottom: 20px; display: block; }
 
-/* Контейнер для секций на главной странице */
-#main-content {
-     width: 100%;
-     /* Не задаем фон здесь, фон будет у каждой секции */
-     padding-top: 0;
-     padding-bottom: 20px;
-     display: block; /* Убедимся, что блочный */
-     /* max-width и margin убраны, центрированием занимается main */
-}
-
-/* Общие стили для всех секций */
 main section {
-    width: 90%; /* Ширина относительно родителя */
-    max-width: 1100px; /* Максимальная ширина */
-    margin: 25px auto; /* Авто-отступы для центрирования, если вдруг main не сработает */
+    width: 90%;
+    max-width: 1100px;
+    margin: 25px auto;
     padding: 35px 25px;
     background-color: rgba(255, 255, 255, 0.95);
     border: none;
     border-radius: 10px;
-    text-align: center; /* Центрируем весь текст внутри секции по умолчанию */
+    text-align: center;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
 }
+main section p { text-align: center; }
 
-/* Центрируем параграфы внутри секций */
-main section p {
-    text-align: center;
-}
+h2 { color: #004AAD; margin-top: 0; margin-bottom: 25px; font-size: 1.8em; text-align: center; }
+h3 { color: #0056b3; margin-top: 20px; margin-bottom: 15px; font-size: 1.3em; text-align: center; }
 
-/* Секция Intro на главной */
+/* === ПЕРВЫЙ ЭКРАН (INTRO) И ГЛАВНАЯ КНОПКА === */
 section.transparent-section {
     background-color: transparent;
     box-shadow: none;
     padding-top: 40px;
     padding-bottom: 20px;
     margin-bottom: 0;
-    width: 100%; /* Шире, чем обычные секции */
-    max-width: none; /* Снимаем ограничение ширины */
-}
-
-.intro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    text-align: center;
-    padding: 0 20px;
+    max-width: none;
+}
+.intro { display: flex; justify-content: center; align-items: center; width: 100%; text-align: center; padding: 0 20px; }
+.intro-text { max-width: 750px; padding: 30px 40px; background-color: rgba(0, 0, 102, 0.9); border-radius: 10px; color: white; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); }
+.intro-text h2 { color: #f0a500; margin-bottom: 15px; text-align: center; min-height: 80px; /* Резервируем место для 2 строк текста */ }
+.intro-text p { font-size: 1.1em; margin-bottom: 15px; text-align: center; }
+
+.typing-effect {
+    border-right: 2px solid #f0a500;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink {
+    0% { border-color: transparent; }
+    50% { border-color: #f0a500; }
 }
 
-.intro-text {
-    max-width: 750px;
-    padding: 30px 40px;
-    background-color: rgba(0, 0, 102, 0.9);
-    border-radius: 10px;
-    color: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.intro-text h2 {
-    color: #f0a500;
-    margin-bottom: 15px;
-    text-align: center; /* Явное центрирование */
-}
-
-.intro-text p {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-     text-align: center; /* Явное центрирование */
-}
-
-.form-info {
-    font-size: 0.9em;
-    margin-bottom: 20px;
-    opacity: 0.9;
-     text-align: center; /* Явное центрирование */
-}
-
-/* Кнопка записи */
 .sign-up-button {
     display: inline-block;
     padding: 14px 28px;
@@ -254,624 +130,91 @@ section.transparent-section {
     border: none;
     cursor: pointer;
 }
-
 .sign-up-button:hover, .sign-up-button:focus {
-    transform: translateY(-2px) scale(1.03);
+    transform: translateY(-3px) scale(1.03);
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
     background-color: #e69500;
     outline: none;
 }
+.sign-up-button:hover { box-shadow: 0 8px 20px rgba(240, 165, 0, 0.4); }
+.sign-up-button[style*="#0056b3"]:hover { box-shadow: 0 8px 20px rgba(0, 86, 179, 0.4); }
 
-/* Секция преимуществ - ФОН УБРАН */
-#advantages {
-     /* background-color: rgba(245, 245, 245, 0.95); */ /* Фон убран */
-}
+.social-proof { font-size: 0.9em; margin-top: 20px; margin-bottom: 0; opacity: 0.8; color: #f0f0f0; }
 
-.advantages-container {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin: 0 auto;
-    gap: 25px;
-    flex-wrap: wrap;
-}
+/* === СЕКЦИЯ ПРЕИМУЩЕСТВ (#advantages) === */
+.advantages-container { display: flex; justify-content: space-around; width: 100%; margin: 0 auto; gap: 25px; flex-wrap: wrap; }
+.advantage-block { flex: 1 1 28%; max-width: 320px; padding: 25px; border-radius: 10px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; background-color: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; }
+.advantage-block i { font-size: 2.8em; margin-bottom: 15px; color: #004AAD; transition: transform 0.3s ease; }
+.advantage-block h3 { font-size: 1.2em; margin-bottom: 10px; margin-top: 10px; text-align: center; }
+.advantage-block p { text-align: center; }
+.advantage-block:hover { transform: translateY(-8px); box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.1); }
+.advantage-block:hover i { transform: scale(1.15) rotate(-10deg); }
 
-.advantage-block {
-    flex: 1 1 28%;
-    max-width: 320px;
-    padding: 25px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #fff; /* Белый фон для самих блоков остается */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.advantage-block i {
-    font-size: 2.5em;
-    margin-bottom: 15px;
-    color: #004AAD;
-}
+/* === НОВАЯ СЕКЦИЯ "КАК ПРОХОДЯТ ЗАНЯТИЯ" (#process) === */
+#process { background-color: #f8f9fa; }
+.process-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; }
+.process-step { background-color: #fff; padding: 30px 25px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 4px solid #0056b3; }
+.process-step:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1); }
+.process-icon { font-size: 2.8em; color: #0056b3; margin-bottom: 15px; display: inline-block; }
+.process-step h3 { margin-top: 0; font-size: 1.2em; }
 
-.advantage-block h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    text-align: center;
-}
-.advantage-block p {
-    text-align: center;
-}
+/* === НОВАЯ СЕКЦИЯ СТАТИСТИКИ (#stats) === */
+#stats { background-color: #004AAD; color: white; padding: 40px 25px; }
+.stats-container { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
+.stat-item { text-align: center; flex: 1 1 200px; }
+.stat-number { font-size: 3em; font-weight: bold; color: #f0a500; display: block; }
+.stat-item p { margin: 5px 0 0; font-size: 1.1em; color: rgba(255, 255, 255, 0.9); }
 
+/* === СЕКЦИЯ КУРСОВ (#courses-preview) === */
+#courses-preview { padding-top: 50px; padding-bottom: 50px; background-color: #fff; }
+#courses-preview h2 { font-size: 2em; margin-bottom: 15px; color: #004AAD; }
+#courses-preview .section-subtitle { font-size: 1.15em; color: #555; max-width: 800px; margin: 0 auto 40px auto; line-height: 1.6; }
 
-.advantage-block:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-}
+/* === ПОДВАЛ (FOOTER) === */
+footer { background-color: #fff; color: #333; padding: 25px 0; width: 100%; margin-top: auto; text-align: center; }
+.social-links { display: flex; align-items: center; justify-content: center; flex-direction: row; padding: 0 20px 15px 20px; gap: 20px; flex-wrap: wrap; }
+.social-links .icons { display: flex; gap: 15px; }
+.social-links p { color: #333; margin: 0; }
+.social-links a img { width: 30px; height: 30px; transition: transform 0.3s ease, opacity 0.3s ease; opacity: 0.8; }
+.social-links a:hover img { transform: scale(1.15); opacity: 1; }
+footer p:last-child { color: #777; font-size: 0.9em; margin-top: 10px; margin-bottom: 0; text-align: center; }
 
-/* === Стили для ПРЕВЬЮ КУРСОВ НА ГЛАВНОЙ и ДЕТАЛЬНЫХ СТРАНИЦ КУРСОВ === */
-#courses-preview { /* Новое ID для секции на главной */
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background-color: #f8f9fa;
-}
-#courses-preview h2 { /* Заголовок для превью на главной */
-    font-size: 2.2em;
-    margin-bottom: 15px;
-    color: #004AAD;
-}
-#courses-preview .section-subtitle { /* Подзаголовок для превью на главной */
-    font-size: 1.15em;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-    line-height: 1.6;
-}
+/* === КНОПКА НАВЕРХ И АНИМАЦИИ === */
+#scrollToTopBtn { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; border: none; outline: none; background-color: #004AAD; color: white; cursor: pointer; padding: 12px 15px; border-radius: 50%; font-size: 18px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: background-color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease; opacity: 0.8; }
+#scrollToTopBtn:hover { background-color: #00337a; opacity: 1; }
 
-.enhanced-courses-grid { /* Контейнер для "сочных" карточек, если они на главной */
-    display: grid;
-    grid-template-columns: 1fr; /* По умолчанию одна колонка */
-    gap: 30px;
-    /* max-width можно задать, если карточек несколько, например: max-width: 900px; margin: 30px auto; */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
+.reveal-on-scroll { opacity: 0; will-change: opacity, transform; }
 
-.enhanced-course-card { /* Общие стили "сочной" карточки */
-    background-color: #ffffff;
-    border-radius: 15px;
-    padding: 25px 30px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    border-left: 7px solid; /* Для цветового акцента */
+/* === АДАПТИВНОСТЬ === */
+@media (max-width: 1200px) {
+    main section { padding: 30px 20px; }
 }
-.enhanced-course-card:hover { /* Эффект для "сочной" карточки */
-    transform: translateY(-7px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+@media (max-width: 992px) {
+    .advantage-block { flex-basis: 45%; max-width: none; }
+    main section { width: 92%; }
+    header h1 { font-size: 1.6em; }
 }
-
-/* Цветовые темы для "сочных" карточек */
-.enhanced-course-card.business-theme { border-left-color: #2c3e50; }
-.enhanced-course-card.business-theme .course-icon { color: #2c3e50; }
-
-.enhanced-course-card.travel-theme { border-left-color: #2980b9; }
-.enhanced-course-card.travel-theme .course-icon { color: #2980b9; }
-
-.enhanced-course-card.beginner-theme { border-left-color: #27ae60; }
-.enhanced-course-card.beginner-theme .course-icon { color: #27ae60; }
-/* ... добавьте другие темы по аналогии, если нужно ... */
-
-
-.enhanced-course-card .course-header {
-    text-align: center;
-    margin-bottom: 20px;
-    position: relative;
-}
-.enhanced-course-card .course-icon {
-    font-size: 2.8em;
-    margin-bottom: 15px;
-    display: block;
-}
-.enhanced-course-card .course-header h3 { /* Для заголовка H3 в "сочной" карточке (если на главной) */
-    font-size: 1.7em;
-    color: #333;
-    margin-bottom: 8px;
-    line-height: 1.3;
-    text-align: center;
-}
-.enhanced-course-card .course-tag {
-    display: inline-block;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.85em;
-    font-weight: bold;
-    color: #fff;
-    margin-top: 10px;
-}
-.popular-tag { background-color: #e74c3c; }
-.recommended-tag { background-color: #3498db; }
-.beginner-friendly-tag { background-color: #1abc9c; }
-
-.enhanced-course-card .course-audience {
-    font-size: 1.05em;
-    color: #444;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-style: italic;
-    text-align: left; /* Текст внутри блока - слева */
-}
-.enhanced-course-card .course-benefits h4, /* Для H4 в "сочной" карточке (если на главной) */
-.enhanced-course-card .course-suitable-for h4 {
-    font-size: 1.15em;
-    color: #004AAD;
-    margin-bottom: 10px;
-    margin-top: 15px;
-    text-align: left;
-}
-.enhanced-course-card ul {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 20px;
-    text-align: left;
-}
-.enhanced-course-card ul li {
-    margin-bottom: 8px;
-    padding-left: 25px;
-    position: relative;
-    font-size: 0.95em;
-    color: #555;
-    text-align: left;
-}
-.enhanced-course-card ul li::before {
-    content: '✓';
-    color: #27ae60;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    top: 1px;
-    font-size: 1.1em;
-}
-.enhanced-course-card .course-bonus {
-    font-size: 0.95em;
-    color: #333;
-    background-color: #eafaf1;
-    padding: 10px 15px;
-    border-radius: 8px;
-    margin-top: 15px;
-    margin-bottom: 25px;
-    text-align: center;
-}
-.enhanced-course-card .course-bonus strong {
-    color: #1a7e3a;
-}
-.enhanced-course-card .course-cta-button,
-.enhanced-course-card .course-secondary-button {
-    display: block;
-    width: 90%;
-    max-width: 300px;
-    margin: 10px auto;
-    padding: 12px 20px;
-    font-size: 1.05em;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 25px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-.enhanced-course-card .course-cta-button {
-    background-color: #f0a500;
-    color: white;
-    box-shadow: 0 4px 10px rgba(240, 165, 0, 0.3);
-}
-.enhanced-course-card .course-cta-button:hover {
-    background-color: #e69500;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(220, 140, 0, 0.4);
-}
-.enhanced-course-card .course-secondary-button {
-    background-color: transparent;
-    color: #004AAD;
-    border: 2px solid #004AAD;
-}
-.enhanced-course-card .course-secondary-button:hover {
-    background-color: #004AAD;
-    color: white;
-    transform: translateY(-2px);
-}
-
-/* Стили для ДЕТАЛЬНОЙ СТРАНИЦЫ КУРСА (обертка и специфичные стили для .enhanced-course-card) */
-.course-detail-content-wrapper { /* Обертка для контента на детальной странице */
-    /* background-color: #fff; */ /* Можно задать фон для всей основной части */
-    padding-top: 20px;
-    padding-bottom: 40px;
-}
-.course-detail-content-wrapper .enhanced-course-card.course-detail-card {
-    /* Если .enhanced-course-card уже имеет margin: auto, это может не понадобиться */
-    /* margin: 20px auto; */
-    max-width: 900px;  /* Ограничение ширины для лучшей читаемости */
-    border-left-width: 10px; /* Более выраженная боковая линия */
-    padding: 30px 40px; /* Больше отступов */
-    /* background-color: #fff; */ /* Убедимся, что фон белый, если у wrapper другой фон */
-}
-.course-detail-card .course-header h1 { /* Заголовок H1 на детальной странице */
-    font-size: 2em; /* Крупнее */
-    color: #333;
-    margin-bottom: 10px;
-    line-height: 1.3;
-    text-align: center;
-}
-.course-detail-card .course-audience {
-    font-size: 1.1em;
-    margin-bottom: 25px;
-}
-.course-detail-card .course-benefits h2, /* Используем H2 для подзаголовков на детальной странице */
-.course-detail-card .course-suitable-for h2,
-.course-detail-card .course-program-details h2 {
-    font-size: 1.4em;
-    color: #004AAD;
-    margin-bottom: 15px;
-    margin-top: 25px;
-    text-align: left;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 8px;
-}
-.course-detail-card ul li {
-    font-size: 1em;
-    padding-left: 30px;
-}
-.course-detail-card ul li::before {
-    font-size: 1.2em;
-    top: 0;
-}
-.course-detail-card .course-program-details p {
-    text-align: left;
-    margin-bottom: 15px;
-}
-
-
-/* Секция Ресурсы - ТЕКСТ ЦЕНТРИРОВАН */
-#resources p {
-     text-align: center;
-}
-#resources ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 0 0;
-}
-#resources li {
-    margin: 12px 0;
-    text-align: center;
-}
-#resources li a {
-    text-decoration: none;
-    color: #0056b3;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-#resources li a:hover {
-    color: #f0a500;
-    text-decoration: underline;
-}
-
-/* Секция Отзывы */
-.reviews-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-}
-.review {
-    border-radius: 8px;
-    padding: 25px;
-    text-align: left;
-    background-color: #f9f9f9;
-    border-left: 5px solid #004AAD;
-}
-.review p {
-    margin: 0;
-    font-style: italic;
-    color: #444;
-     text-align: left;
-}
-.review p::before {
-    content: '“';
-    font-size: 1.5em;
-    color: #004AAD;
-    margin-right: 5px;
-    vertical-align: middle;
-}
-.review p::after {
-    content: '”';
-    font-size: 1.5em;
-    color: #004AAD;
-    margin-left: 5px;
-     vertical-align: middle;
-}
-
-/* Секция Запись на урок */
-#sign-up {
-    background-color: rgba(0, 0, 102, 0.9);
-    color: white;
-    text-align: center;
-}
-#sign-up h2 {
-    color: #f0a500;
-     text-align: center;
-}
-#sign-up p {
-    max-width: 600px;
-    margin: 0 auto 25px auto;
-    font-size: 1.05em;
-     text-align: center;
-}
-
-/* Списки на страницах курсов (если есть еще где-то, кроме "сочных" карточек) */
-#course-topics ul, #target-audience ul { /* Старые стили для списков, могут не понадобиться */
-    display: inline-block;
-    list-style: disc;
-    text-align: left;
-    max-width: 700px;
-    margin: 15px auto;
-    padding-left: 0;
-    list-style-position: inside;
-}
-#course-topics li, #target-audience li { /* Старые стили для списков */
-    margin-bottom: 8px;
-    text-align: left;
-}
-
-/* Подвал */
-footer {
-    background-color: #fff;
-    color: #333;
-    padding: 25px 0;
-    width: 100%;
-    margin-top: auto;
-    text-align: center;
-}
-.social-links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    padding: 0 20px 15px 20px;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-.social-links .icons {
-    display: flex;
-    gap: 15px;
-}
-.social-links p {
-    color: #333;
-    margin: 0;
-}
-.social-links a img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0.8;
-}
-.social-links a:hover img {
-    transform: scale(1.15);
-    opacity: 1;
-}
-footer p:last-child { /* Копирайт */
-    color: #777;
-    font-size: 0.9em;
-    margin-top: 10px;
-    margin-bottom: 0;
-    text-align: center;
-}
-
-/* === Кнопка Наверх === */
-#scrollToTopBtn {
-    display: none;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: #004AAD;
-    color: white;
-    cursor: pointer;
-    padding: 12px 15px;
-    border-radius: 50%;
-    font-size: 18px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
-    opacity: 0.8;
-}
-#scrollToTopBtn:hover {
-    background-color: #00337a;
-    opacity: 1;
-}
-
-
-/* === Адаптивность === */
-
-/* Адаптивность для enhanced-courses-grid (если используется на главной с несколькими карточками) */
-@media (min-width: 768px) {
-    .enhanced-courses-grid { /* Для главной, если там несколько "сочных" карточек */
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Адаптивно */
-    }
-}
-/* @media (min-width: 1024px) {
-    .enhanced-courses-grid {
-        /* grid-template-columns: repeat(3, 1fr); /* Можно 3, если нужно */
-    }
-} */
-
-
-@media (max-width: 1200px) { /* Ноутбуки и большие планшеты */
-    main section { /* Уменьшаем отступы секций */
-        padding: 30px 20px;
-    }
-}
-
-@media (max-width: 992px) { /* Планшеты */
-    .advantage-block {
-        flex-basis: 45%;
-        max-width: none;
-    }
-    main section {
-        width: 92%; /* Секции чуть шире */
-    }
-    header h1 {
-        font-size: 1.6em;
-    }
-    .enhanced-course-card.course-detail-card { /* Детальная карточка на планшетах */
-        padding: 25px 30px;
-    }
-    .course-detail-card .course-header h1 {
-        font-size: 1.8em;
-    }
-}
-
-
-@media (max-width: 768px) { /* Небольшие планшеты */
-     header h1 {
-        font-size: 1.5em;
-    }
-    nav ul {
-        gap: 5px 10px;
-    }
-    nav ul li a {
-        padding: 6px 10px;
-        font-size: 0.95em;
-    }
-
-    main section {
-         padding: 25px 15px;
-         width: 95%;
-         margin: 20px auto;
-    }
-
-    .intro-text {
-         padding: 20px;
-    }
-    .intro-text h2 {
-        font-size: 1.6em;
-    }
-     .intro-text p {
-        font-size: 1em;
-    }
-
+@media (max-width: 768px) {
+    header h1 { font-size: 1.5em; }
+    nav ul { gap: 5px 10px; }
+    nav ul li a { padding: 6px 10px; font-size: 0.95em; }
+    main section { padding: 25px 15px; width: 95%; margin: 20px auto; }
+    .intro-text { padding: 20px; }
+    .intro-text h2 { font-size: 1.6em; min-height: 60px; }
     h2 { font-size: 1.4em; margin-bottom: 20px; }
     h3 { font-size: 1.15em; margin-bottom: 10px; }
-
-    .advantages-container {
-       flex-direction: column;
-       align-items: center;
-       gap: 20px;
-    }
-    .advantage-block {
-        width: 90%;
-        max-width: 400px;
-        flex-basis: auto;
-    }
-
-    .enhanced-courses-grid { /* Для главной, если там карточки */
-        grid-template-columns: 1fr;
-    }
-    .enhanced-course-card.course-detail-card { /* Детальная карточка */
-        padding: 20px 25px;
-        border-left-width: 7px;
-    }
-     .course-detail-card .course-header h1 {
-        font-size: 1.6em;
-    }
-    .course-detail-card .course-audience {
-        font-size: 1em;
-    }
-    .course-detail-card .course-benefits h2,
-    .course-detail-card .course-suitable-for h2,
-    .course-detail-card .course-program-details h2 {
-        font-size: 1.25em;
-    }
-    .enhanced-course-card ul li {
-        font-size: 0.9em;
-    }
-
-
-    .reviews-container {
-         grid-template-columns: 1fr;
-         gap: 20px;
-    }
-
-    .social-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        padding-bottom: 10px;
-    }
-     .social-links p {
-        margin: 0 0 5px 0;
-     }
-
-     #course-topics ul, #target-audience ul, #resources ul {
-        padding-left: 0;
-     }
+    .advantages-container { flex-direction: column; align-items: center; gap: 20px; }
+    .advantage-block { width: 90%; max-width: 400px; flex-basis: auto; }
+    .social-links { flex-direction: column; align-items: center; gap: 15px; padding-bottom: 10px; }
+    .social-links p { margin: 0 0 5px 0; }
 }
-
-@media (max-width: 576px) { /* Телефоны */
-    header h1 {
-        font-size: 1.4em;
-    }
-     nav ul li a {
-        font-size: 0.9em;
-        padding: 5px 8px;
-    }
-    .advantage-block {
-        width: 95%;
-    }
-    .enhanced-course-card.course-detail-card { /* Детальная карточка */
-        padding: 15px 20px;
-    }
-    .course-detail-card .course-header h1 {
-        font-size: 1.4em;
-    }
-    .course-detail-card .course-benefits h2,
-    .course-detail-card .course-suitable-for h2,
-    .course-detail-card .course-program-details h2 {
-        font-size: 1.1em;
-    }
-
-    #scrollToTopBtn { /* Кнопка Наверх на телефонах */
-        bottom: 20px;
-        right: 20px;
-        padding: 10px 13px;
-        font-size: 16px;
-    }
-}
-/* ====================================================================== */
-/*      СТИЛИ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ (АНИМАЦИЯ И ПРАВКИ)                  */
-/* ====================================================================== */
-
-/* Стили для текста под кнопкой на первом экране */
-.social-proof {
-    font-size: 0.9em;
-    margin-top: 20px;
-    margin-bottom: 0;
-    opacity: 0.8;
-    color: #f0f0f0;
-}
-
-/* Анимация появления для блоков */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.reveal-on-scroll {
-    opacity: 0; /* Изначально невидимы */
-    will-change: opacity, transform; /* Оптимизация для браузера */
+@media (max-width: 576px) {
+    header h1 { font-size: 1.4em; }
+    nav ul li a { font-size: 0.9em; padding: 5px 8px; }
+    .advantage-block { width: 95%; }
+    #scrollToTopBtn { bottom: 20px; right: 20px; padding: 10px 13px; font-size: 16px; }
 }
