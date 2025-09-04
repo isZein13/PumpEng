@@ -22,7 +22,7 @@
     </footer>
 
     <script>
-        // Скрипт для загрузки ТОЛЬКО основного контента для index.html
+        // ИСПРАВЛЕННЫЙ СКРИПТ ЗАГРУЗКИ
         async function loadMainContent() {
             try {
                 const response = await fetch('main.html');
@@ -31,6 +31,10 @@
                 const mainContentElement = document.querySelector('#main-content');
                 if (mainContentElement) {
                     mainContentElement.innerHTML = html;
+                    // ЗАПУСКАЕМ АНИМАЦИЮ ТОЛЬКО ПОСЛЕ УСПЕШНОЙ ЗАГРУЗКИ КОНТЕНТА
+                    if (typeof handleScrollAnimation === 'function') {
+                        handleScrollAnimation();
+                    }
                 } else {
                     console.error('Element with id "main-content" not found.');
                 }
@@ -42,19 +46,19 @@
                  }
             }
         }
-        // Загружаем основной контент ПОСЛЕ полной загрузки DOM
-        // Это гарантирует, что скрипт script.js тоже успеет выполниться и создать header/footer
+        
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', loadMainContent);
         } else {
-            loadMainContent(); // Загружаем сразу, если DOM уже готов
+            loadMainContent();
         }
     </script>
+    
     <!-- Кнопка Наверх -->
     <button id="scrollToTopBtn" title="Наверх">
         <i class="fas fa-arrow-up"></i>
     </button>
 
     <script src="script.js"></script>
-</body> <!-- <<-- ВОТ ПЕРЕД ЭТИМ ТЕГОМ -->
+</body>
 </html>
