@@ -89,5 +89,46 @@ if (scrollTopButton) {
     });
 }
 
+// ====================================================================== //
+//   НОВЫЙ JAVASCRIPT (добавить в конец файла script.js)              //
+// ====================================================================== //
 
-// ======== Конец логики для кнопки "Наверх" ========
+// Логика для анимации появления элементов при прокрутке
+function handleScrollAnimation() {
+    const elementsToReveal = document.querySelectorAll('.reveal-on-scroll');
+    
+    // Intersection Observer - современный и производительный способ
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = entry.target.dataset.delay || '0s';
+                entry.target.style.animation = `fadeInUp 0.8s ease-out forwards ${delay}`;
+                // Отключаем наблюдение после анимации, чтобы она не повторялась
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1 // Анимация начнется, когда элемент виден на 10%
+    });
+
+    elementsToReveal.forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// Запускаем функцию после загрузки основного контента
+// Это важно, так как ваш контент грузится динамически
+const mainContentObserver = new MutationObserver((mutationsList, observer) => {
+    for(const mutation of mutationsList) {
+        if (mutation.type === 'childList' && document.querySelector('#advantages')) {
+            handleScrollAnimation();
+            observer.disconnect(); // Отключаем наблюдение после того, как контент загружен
+            return;
+        }
+    }
+});
+
+const mainContentContainer = document.getElementById('main-content');
+if (mainContentContainer) {
+    mainContentObserver.observe(mainContentContainer, { childList: true });
+}
