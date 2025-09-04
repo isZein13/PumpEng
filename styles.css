@@ -75,7 +75,15 @@ main {
     box-sizing: border-box;
     background-color: transparent;
 }
-#main-content { width: 100%; padding-top: 0; padding-bottom: 20px; display: block; }
+/* ========================================================== */
+/*      ВОТ КЛЮЧЕВОЕ ИСПРАВЛЕНИЕ ДЛЯ РЕШЕНИЯ ПРОБЛЕМЫ        */
+/* ========================================================== */
+#main-content {
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 60px; /* Увеличиваем отступ здесь */
+    display: block;
+}
 
 main section {
     width: 90%;
@@ -105,7 +113,7 @@ section.transparent-section {
 }
 .intro { display: flex; justify-content: center; align-items: center; width: 100%; text-align: center; padding: 0 20px; }
 .intro-text { max-width: 750px; padding: 30px 40px; background-color: rgba(0, 0, 102, 0.9); border-radius: 10px; color: white; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); }
-.intro-text h2 { color: #f0a500; margin-bottom: 15px; text-align: center; min-height: 80px; /* Резервируем место для 2 строк текста */ }
+.intro-text h2 { color: #f0a500; margin-bottom: 15px; text-align: center; min-height: 90px; }
 .intro-text p { font-size: 1.1em; margin-bottom: 15px; text-align: center; }
 
 .typing-effect {
@@ -204,7 +212,7 @@ footer p:last-child { color: #777; font-size: 0.9em; margin-top: 10px; margin-bo
     nav ul li a { padding: 6px 10px; font-size: 0.95em; }
     main section { padding: 25px 15px; width: 95%; margin: 20px auto; }
     .intro-text { padding: 20px; }
-    .intro-text h2 { font-size: 1.6em; min-height: 60px; }
+    .intro-text h2 { font-size: 1.6em; min-height: 70px; }
     h2 { font-size: 1.4em; margin-bottom: 20px; }
     h3 { font-size: 1.15em; margin-bottom: 10px; }
     .advantages-container { flex-direction: column; align-items: center; gap: 20px; }
@@ -217,20 +225,4 @@ footer p:last-child { color: #777; font-size: 0.9em; margin-top: 10px; margin-bo
     nav ul li a { font-size: 0.9em; padding: 5px 8px; }
     .advantage-block { width: 95%; }
     #scrollToTopBtn { bottom: 20px; right: 20px; padding: 10px 13px; font-size: 16px; }
-}
-/* 1. Резервируем больше места для заголовка, чтобы он не прыгал при смене слов */
-.intro-text h2 {
-    min-height: 90px; /* Увеличиваем минимальную высоту */
-}
-
-/* 2. Добавляем отступ к последней секции, чтобы она не "залезала" под подвал */
-#sign-up {
-    padding-bottom: 50px; /* Добавляем отступ снизу */
-}
-
-/* Коррекция для мобильных устройств, чтобы заголовок не был слишком высоким */
-@media (max-width: 768px) {
-    .intro-text h2 {
-        min-height: 70px;
-    }
 }
