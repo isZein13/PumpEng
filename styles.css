@@ -885,3 +885,32 @@ footer p:last-child { /* Копирайт */
 #reviews .author-photo {
     background-color: #e0e0e0; /* Цвет фона, если фото нет */
 }
+/* ====================================================================== */
+/*      НОВЫЕ СТИЛИ ДЛЯ АНИМАЦИИ (добавить в конец styles.css)          */
+/* ====================================================================== */
+
+/* Стили для текста под кнопкой на первом экране */
+.social-proof {
+    font-size: 0.9em;
+    margin-top: 20px;
+    margin-bottom: 0;
+    opacity: 0.8;
+    color: #f0f0f0;
+}
+
+/* Анимация появления для блоков */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal-on-scroll {
+    opacity: 0; /* Изначально невидимы */
+    will-change: opacity, transform; /* Оптимизация для браузера */
+}
