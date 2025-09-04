@@ -218,3 +218,19 @@ footer p:last-child { color: #777; font-size: 0.9em; margin-top: 10px; margin-bo
     .advantage-block { width: 95%; }
     #scrollToTopBtn { bottom: 20px; right: 20px; padding: 10px 13px; font-size: 16px; }
 }
+/* 1. Резервируем больше места для заголовка, чтобы он не прыгал при смене слов */
+.intro-text h2 {
+    min-height: 90px; /* Увеличиваем минимальную высоту */
+}
+
+/* 2. Добавляем отступ к последней секции, чтобы она не "залезала" под подвал */
+#sign-up {
+    padding-bottom: 50px; /* Добавляем отступ снизу */
+}
+
+/* Коррекция для мобильных устройств, чтобы заголовок не был слишком высоким */
+@media (max-width: 768px) {
+    .intro-text h2 {
+        min-height: 70px;
+    }
+}
