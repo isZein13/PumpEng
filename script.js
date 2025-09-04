@@ -5,7 +5,7 @@ async function loadComponent(elementSelector, filePath) {
     try {
         const response = await fetch(filePath);
         if (!response.ok) {
-            if (response.status === 404) return;
+            if (response.status === 404) return; // Просто выходим, если файл не найден
             throw new Error(`Could not fetch ${filePath}: ${response.statusText}`);
         }
         const html = await response.text();
@@ -54,20 +54,20 @@ function startTypingEffect() {
     let wordIndex = 0;
     let letterIndex = 0;
     let isDeleting = false;
-    let currentWord = '';
-    let currentText = '';
 
     function type() {
-        currentWord = words[wordIndex];
+        const currentWord = words[wordIndex];
+        let displayText = '';
+
         if (isDeleting) {
-            currentText = currentWord.substring(0, letterIndex - 1);
+            displayText = currentWord.substring(0, letterIndex - 1);
             letterIndex--;
         } else {
-            currentText = currentWord.substring(0, letterIndex + 1);
+            displayText = currentWord.substring(0, letterIndex + 1);
             letterIndex++;
         }
 
-        typingElement.textContent = currentText;
+        typingElement.textContent = displayText;
 
         let typeSpeed = 150;
         if (isDeleting) {
@@ -75,12 +75,12 @@ function startTypingEffect() {
         }
 
         if (!isDeleting && letterIndex === currentWord.length) {
-            typeSpeed = 2000; // Пауза в конце слова
+            typeSpeed = 2000;
             isDeleting = true;
         } else if (isDeleting && letterIndex === 0) {
             isDeleting = false;
             wordIndex = (wordIndex + 1) % words.length;
-            typeSpeed = 500; // Пауза перед началом нового слова
+            typeSpeed = 500;
         }
 
         setTimeout(type, typeSpeed);
@@ -95,8 +95,10 @@ function startCounterAnimation(entries, observer) {
             const counters = document.querySelectorAll('.stat-number');
             counters.forEach(counter => {
                 const goal = +counter.getAttribute('data-goal');
+                counter.textContent = '0'; // Сброс на 0 перед анимацией
+
                 let current = 0;
-                const increment = Math.ceil(goal / 100); // Скорость анимации
+                const increment = Math.ceil(goal / 100);
 
                 const timer = setInterval(() => {
                     current += increment;
@@ -106,9 +108,9 @@ function startCounterAnimation(entries, observer) {
                     } else {
                         counter.textContent = current;
                     }
-                }, 20); // Интервал обновления
+                }, 20);
             });
-            observer.unobserve(entry.target); // Запускаем один раз
+            observer.unobserve(entry.target);
         }
     });
 }
@@ -138,7 +140,6 @@ function initializeMainPageScripts() {
     startTypingEffect();
     setupScrollAnimation();
     
-    // Настраиваем IntersectionObserver для счетчика
     const statsSection = document.querySelector('#stats');
     if (statsSection) {
         const statsObserver = new IntersectionObserver(startCounterAnimation, { threshold: 0.5 });
@@ -156,8 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mainContentContainer) {
         const contentObserver = new MutationObserver((mutationsList, observer) => {
             if (mainContentContainer.children.length > 0) {
-                initializeMainPageScripts(); // Запускаем все скрипты для страницы
-                observer.disconnect(); // Отключаемся, чтобы не следить дальше
+                initializeMainPageScripts();
+                observer.disconnect();
             }
         });
         contentObserver.observe(mainContentContainer, { childList: true });
