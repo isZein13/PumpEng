@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PumpEng - Эффективные Курсы Английского Языка Онлайн</title> <!-- Уникальный Title -->
-    <meta name="description" content="PumpEng предлагает курсы английского языка для всех уровней: от начинающих до продвинутых, деловой английский, подготовка к IELTS. Индивидуальный подход. Записывайтесь!"> <!-- Уникальное Description -->
+    <title>PumpEng - Эффективные Курсы Английского Языка Онлайн</title>
+    <meta name="description" content="PumpEng предлагает курсы английского языка для всех уровней: от начинающих до продвинутых, деловой английский, подготовка к IELTS. Индивидуальный подход. Записывайтесь!">
+    
+    <!-- ИСХОДНЫЙ ФАЙЛ СТИЛЕЙ -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- FontAwesome -->
+    
+    <!-- ========================================================== -->
+    <!--      ВОТ КЛЮЧЕВОЕ ИСПРАВЛЕНИЕ: ПОДКЛЮЧАЕМ НЕДОСТАЮЩИЕ СТИЛИ -->
+    <link rel="stylesheet" href="courses-overview-styles.css">
+    <link rel="stylesheet" href="reviews-styles.css">
+    <!-- ========================================================== -->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -22,7 +31,7 @@
     </footer>
 
     <script>
-        // ИСПРАВЛЕННЫЙ СКРИПТ ЗАГРУЗКИ
+        // Скрипт для загрузки ТОЛЬКО основного контента для index.html
         async function loadMainContent() {
             try {
                 const response = await fetch('main.html');
@@ -31,10 +40,7 @@
                 const mainContentElement = document.querySelector('#main-content');
                 if (mainContentElement) {
                     mainContentElement.innerHTML = html;
-                    // ЗАПУСКАЕМ АНИМАЦИЮ ТОЛЬКО ПОСЛЕ УСПЕШНОЙ ЗАГРУЗКИ КОНТЕНТА
-                    if (typeof handleScrollAnimation === 'function') {
-                        handleScrollAnimation();
-                    }
+                    // Этот observer теперь в script.js, здесь вызов не нужен
                 } else {
                     console.error('Element with id "main-content" not found.');
                 }
