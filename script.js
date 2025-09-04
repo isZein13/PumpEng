@@ -64,8 +64,12 @@ if (scrollTopButton) {
 // ======== Конец логики для кнопки "Наверх" ========
 
 
-// ======== ИСПРАВЛЕННАЯ ЛОГИКА АНИМАЦИИ ========
-function handleScrollAnimation() {
+// ====================================================================== //
+//   ФИНАЛЬНАЯ ВЕРСИЯ ЛОГИКИ АНИМАЦИИ (РАБОТАЕТ С ДИНАМИЧЕСКОЙ ЗАГРУЗКОЙ) //
+// ====================================================================== //
+
+// Эта функция будет искать элементы для анимации и запускать IntersectionObserver
+function setupScrollAnimation() {
     const elementsToReveal = document.querySelectorAll('.reveal-on-scroll');
     if (!elementsToReveal.length) return;
 
@@ -84,4 +88,20 @@ function handleScrollAnimation() {
     elementsToReveal.forEach(el => {
         observer.observe(el);
     });
+}
+
+// Этот observer следит за появлением контента в #main-content
+// и запускает анимацию ТОЛЬКО ОДИН РАЗ, когда контент появился.
+const mainContentContainer = document.getElementById('main-content');
+if (mainContentContainer) {
+    const contentObserver = new MutationObserver((mutationsList, observer) => {
+        // Проверяем, появились ли дочерние элементы
+        if (mainContentContainer.children.length > 0) {
+            setupScrollAnimation(); // Запускаем нашу функцию анимации
+            observer.disconnect(); // Отключаемся, чтобы не следить дальше
+        }
+    });
+
+    // Начинаем следить за изменениями в #main-content
+    contentObserver.observe(mainContentContainer, { childList: true });
 }
